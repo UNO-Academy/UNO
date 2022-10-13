@@ -8,14 +8,42 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var planOn = false
+    @State var exp: Experience? = nil
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        
+        VStack {
+            if planOn {
+                Planilha(exp: exp).padding()
+            }
+            Text("Hello, world!")
+                .padding()
+            
+            Button("aiaia") {
+                let dataTest = [
+                    "nome": "fer",
+                    "idade": "altura",
+                    "lingua": "portuguesa"
+                ]
+                DataBase.shared.setData(collectionName: "Teste", data: dataTest) { result in 
+                    print("uiui")
+                }
+                
+            }.padding()
+             .background(.yellow)
+        }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+struct Planilha: View {
+    var exp: Experience?
+    var body: some View {
+        VStack {
+            Text(exp?.name ?? "")
+            Text(String(exp?.effort ?? 0) ?? "")
+            Text(String(exp?.duration ?? 0) ?? "")
+            Text(exp?.description ?? "")
+            Text(exp?.category ?? "")
+        }.background(.red)
     }
 }
