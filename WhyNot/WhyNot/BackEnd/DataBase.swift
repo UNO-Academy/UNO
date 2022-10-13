@@ -21,12 +21,12 @@ struct Experience: Codable {
 }
 
 class DataBase {
+    static let shared = DataBase()
     let db: Firestore?
     
-    init() {
+    private init() {
         FirebaseApp.configure()
         db = Firestore.firestore()
-        
     }
     
     func getDocumentByID(collectionName: String, documentId: String, completion: @escaping(_ result: [String: Any]?) -> Void) {
@@ -46,6 +46,7 @@ class DataBase {
         }
     }
     
+    
     func getAllDocumentsOfACollection(collectionName: String, completion: @escaping(_ result: [String: Any]?) -> Void) {
         let docRef = db!.collection(collectionName)
         docRef.getDocuments() { (querySnapshot, error) in
@@ -53,6 +54,30 @@ class DataBase {
                 print(error.localizedDescription)
             } else {
                 let data = querySnapshot?.documents
+            }
+        }
+    }
+    
+    
+    func getAllDocumentsFilterBy(collectionName: String, field: String, value: Any, completion: @escaping(_ result: [String: Any]?) -> Void) {
+        let docRef = db!.collection(collectionName).whereField(field, isEqualTo: value)
+        
+        docRef.getDocuments() { (querySnapshot, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                let data = querySnapshot?.documents
+            }
+        }
+    }
+    
+    
+    func setData(collectionName: String, data: [String: Any], completion: @escaping(_ result: [String: Any]?) -> Void) {
+        db!.collection(collectionName).addDocument(data: data) { error in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                print("Deu certo")
             }
         }
     }

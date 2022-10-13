@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    let api = DataBase()
     @State var planOn = false
     @State var exp: Experience? = nil
     var body: some View {
@@ -19,10 +18,17 @@ struct ContentView: View {
             }
             Text("Hello, world!")
                 .padding()
+            
             Button("aiaia") {
-                api.getDocumentByID(collectionName: "Experience", documentId: "fON4XronjmZAs8Cf1HHU") { result in
-                    // Do Something with the result
+                let dataTest = [
+                    "nome": "fer",
+                    "idade": "altura",
+                    "lingua": "portuguesa"
+                ]
+                DataBase.shared.setData(collectionName: "Teste", data: dataTest) { result in 
+                    print("uiui")
                 }
+                
             }.padding()
              .background(.yellow)
         }
