@@ -8,7 +8,12 @@
 import Foundation
 import FirebaseFirestoreSwift
 
-struct Experience {
+protocol UpdatableIdentifiable: Identifiable {
+    /// The stable identity of the entity associated with this instance.
+    var id: Self.ID { get set }
+}
+
+struct Experience: Decodable, UpdatableIdentifiable {
     @DocumentID var id: String?
     let name: String
     let description: String
