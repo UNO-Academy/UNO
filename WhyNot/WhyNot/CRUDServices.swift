@@ -6,6 +6,11 @@
 //
 
 import Firebase
+import FirebaseFirestore
+import FirebaseStorage
+import FirebaseFirestoreSwift
+import FirebaseCore
+import UIKit
 
 class CRUDServices {
     

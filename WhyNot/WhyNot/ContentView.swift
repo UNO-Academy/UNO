@@ -20,13 +20,8 @@ struct ContentView: View {
                 .padding()
             
             Button("aiaia") {
-                let dataTest = [
-                    "nome": "fer",
-                    "idade": "altura",
-                    "lingua": "portuguesa"
-                ]
-                DataBase.shared.setData(collectionName: "Teste", data: dataTest) { result in 
-                    print("uiui")
+                Task {
+                    DataBase.shared.uploadImage()
                 }
                 
             }.padding()
