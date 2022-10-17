@@ -10,22 +10,27 @@ import FirebaseFirestore
 
 class ExperienceAPI {
 
-    private let collectionName: String = "Experience"
-    private let crudService: AnyClass?
+    private let crudService: DataBase
+    private let collectionReference: CollectionReference
+
+    init(crudService: DataBase, db: Firestore) {
+        self.crudService = crudService
+        collectionReference = db.collection("Experience")
+    }
 
     func getActiveExperiences() async throws -> [Experience] {
 
-        return crudService.getFilteredItems(
-            collectionName: collectionName,
+        return crudService.getAllDocumentsFilterBy(
+            collectionName: collectionReference,
             field: "isActive",
             value: true
         )
     }
 
-    func getExperiencesByIdList() async throws -> [Experience] {
+    func getExperiencesByIdList(_ idList: [String]) async throws -> [Experience] {
 
-        return crudService.getItemsByIdList(
-            collectionName: collectionName,
+        return crudService.getDocumentsByIdList(
+            collectionName: collectionReference,
             idList: [String]
         )
     }
