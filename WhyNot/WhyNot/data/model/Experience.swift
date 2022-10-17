@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import FirebaseFirestoreSwift
 
-class Experience {
-    let id: String
+struct Experience {
+    @DocumentID var id: String?
     let name: String
     let description: String
     let effor: Int

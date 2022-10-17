@@ -11,14 +11,14 @@ import FirebaseCore
 import UIKit
 import SwiftUI
 
-struct Experience: Codable {
-    @DocumentID var id: String?
-    var name: String
-    var description: String
-    var effort: Int
-    var duration: Int
-    var category: String
-}
+//struct Experience: Codable {
+//    @DocumentID var id: String?
+//    var name: String
+//    var description: String
+//    var effort: Int
+//    var duration: Int
+//    var category: String
+//}
 
 class DataBase {
     static let shared = DataBase()
