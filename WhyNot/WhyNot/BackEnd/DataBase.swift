@@ -6,6 +6,7 @@
 //
 
 import FirebaseFirestore
+import FirebaseStorage
 import FirebaseFirestoreSwift
 import FirebaseCore
 import UIKit
@@ -23,62 +24,55 @@ struct Experience: Codable {
 class DataBase {
     static let shared = DataBase()
     let db: Firestore?
+    let storage: Storage?
     
     private init() {
         FirebaseApp.configure()
         db = Firestore.firestore()
+        storage = Storage.storage()
     }
     
-    func getDocumentByID(collectionName: String, documentId: String, completion: @escaping(_ result: [String: Any]?) -> Void) {
-        let docRef = db!.collection(collectionName).document(documentId)
-        docRef.getDocument { document, error in
-            if let error = error {
-                print(error.localizedDescription)
-                
-            } else {
-                if let document = document {
-                    
-                    let id = document.documentID
-                    let data = document.data()
-                    completion(data)
-                }
-            }
+    func getDocumentByID(collectionRef: CollectionReference, documentId: String) async throws -> DocumentSnapshot? {
+        do {
+            return try await collectionRef.document(documentId).getDocument()
+        } catch {
+            print(error.localizedDescription)
+            throw error
         }
     }
     
     
-    func getAllDocumentsOfACollection(collectionName: String, completion: @escaping(_ result: [String: Any]?) -> Void) {
-        let docRef = db!.collection(collectionName)
-        docRef.getDocuments() { (querySnapshot, error) in
-            if let error = error {
-                print(error.localizedDescription)
-            } else {
-                let data = querySnapshot?.documents
-            }
+    func getAllDocumentsFilterBy(collectionRef: CollectionReference, field: String, value: Any) async throws -> QuerySnapshot? {
+        do {
+            let docRef = collectionRef.whereField(field, isEqualTo: value)
+            return try await docRef.getDocuments()
+        } catch {
+            print(error.localizedDescription)
+            throw error
         }
     }
     
     
-    func getAllDocumentsFilterBy(collectionName: String, field: String, value: Any, completion: @escaping(_ result: [String: Any]?) -> Void) {
-        let docRef = db!.collection(collectionName).whereField(field, isEqualTo: value)
-        
-        docRef.getDocuments() { (querySnapshot, error) in
-            if let error = error {
-                print(error.localizedDescription)
-            } else {
-                let data = querySnapshot?.documents
-            }
+    func createDocument(collectionRef: CollectionReference, data: [String: Any]) async {
+        do {
+            _ = try await collectionRef.addDocument(data: data)
+        } catch {
+            print(error.localizedDescription)
         }
     }
     
     
-    func setData(collectionName: String, data: [String: Any], completion: @escaping(_ result: [String: Any]?) -> Void) {
-        db!.collection(collectionName).addDocument(data: data) { error in
-            if let error = error {
-                print(error.localizedDescription)
-            } else {
-                print("Deu certo")
-            }
+    func updateDocument(collectionRef: DocumentReference, data:[String: Any]) async {
+        do {
+            try await collectionRef.updateData(data)
+        } catch {
+            print(error.localizedDescription)
         }
+    }
+    
+    func uploadImage() {
+       let reference  = storage?.reference()
+       let image = URL(string: "salsicha")!
+    print("a")
     }
 }
