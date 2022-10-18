@@ -29,4 +29,10 @@ class ExperienceAPI {
             idList: [String]
         )
     }
+    
+    func teste(document: QueryDocumentSnapshot) -> Experience? {
+        guard let experience: Experience = try? document.toObject() else { return nil }
+        return experience
+        
+    }
 }
