@@ -12,27 +12,19 @@ import FirebaseCore
 import UIKit
 import SwiftUI
 
-//struct Experience: Codable {
-//    @DocumentID var id: String?
-//    var name: String
-//    var description: String
-//    var effort: Int
-//    var duration: Int
-//    var category: String
-//}
+class CrudService {
 
-class DataBase {
-    static let shared = DataBase()
-    let db: Firestore?
     let storage: Storage?
     
     init() {
-        FirebaseApp.configure()
-        db = Firestore.firestore()
         storage = Storage.storage()
     }
     
-    func getDocumentByID(collectionRef: CollectionReference, documentId: String) async throws -> DocumentSnapshot? {
+    func getDocumentByID(
+        collectionRef: CollectionReference,
+        documentId: String
+    ) async throws -> DocumentSnapshot? {
+
         do {
             return try await collectionRef.document(documentId).getDocument()
         } catch {
@@ -57,9 +49,11 @@ class DataBase {
         field: String,
         value: Any
     ) async throws -> [QueryDocumentSnapshot] {
+
         do {
             let docRef = collectionRef.whereField(field, isEqualTo: value)
             return try await docRef.getDocuments().documents
+
         } catch {
             print(error.localizedDescription)
             throw error
@@ -67,7 +61,11 @@ class DataBase {
     }
     
     
-    func createDocument(collectionRef: CollectionReference, data: [String: Any]) async {
+    func createDocument(
+        collectionRef: CollectionReference,
+        data: [String: Any]
+    ) async {
+
         do {
             _ = try await collectionRef.addDocument(data: data)
         } catch {
@@ -76,7 +74,11 @@ class DataBase {
     }
     
     
-    func updateDocument(collectionRef: DocumentReference, data:[String: Any]) async {
+    func updateDocument(
+        collectionRef: DocumentReference,
+        data:[String: Any])
+    async {
+        
         do {
             try await collectionRef.updateData(data)
         } catch {
