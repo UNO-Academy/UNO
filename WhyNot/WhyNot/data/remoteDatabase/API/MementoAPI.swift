@@ -10,10 +10,10 @@ import FirebaseFirestore
 
 class MementoAPI {
 
-    private let crudService: DataBase
+    private let crudService: CrudService
     private let collectionReference: CollectionReference
 
-    init(crudService: DataBase, db: Firestore) {
+    init(crudService: CrudService, db: Firestore) {
         self.crudService = crudService
         collectionReference = db.collection("Memento")
     }
