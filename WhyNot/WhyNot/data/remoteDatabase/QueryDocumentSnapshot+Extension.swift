@@ -8,7 +8,7 @@
 import FirebaseFirestore
 
 extension QueryDocumentSnapshot {
-    func toObject<T: Decodable>() throws -> T  where T:UpdatableIdentifiable, T.ID == String? {
+    func toObject<T: Decodable>() throws -> T  where T: UpdatableIdentifiable, T.ID == String? {
         do {
             var object = try Firestore.Decoder().decode(T.self, from: data())
             object.id = self.documentID

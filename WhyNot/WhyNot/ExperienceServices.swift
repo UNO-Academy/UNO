@@ -8,15 +8,14 @@
 import Firebase
 
 class ExperienceServices {
-    
-    func update(docRef: DocumentReference, data: [String : Any]) async {
+    func update(docRef: DocumentReference, data: [String: Any]) async {
         do {
             try await docRef.updateData(data)
         } catch {
             print("\(error.localizedDescription)")
         }
     }
-    
+
     func delete(docRef: DocumentReference) async {
         do {
             try await docRef.delete()
