@@ -18,20 +18,24 @@ class ExperienceAPI {
         collectionReference = db.collection("Experience")
     }
 
-    func getActiveExperiences() async throws -> [Experience] {
+    func getActiveExperiences() async throws -> [Experience?] {
 
-        return crudService.getAllDocumentsFilterBy(
-            collectionName: collectionReference,
+        return try await crudService.getAllDocumentsFilterBy(
+            collectionRef: collectionReference,
             field: "isActive",
             value: true
-        )
+        ).map({
+            return $0.toObject()
+        })
     }
 
-    func getExperiencesByIdList(_ idList: [String]) async throws -> [Experience] {
+    func getExperiencesByIdList(_ idList: [String]) async throws -> [Experience?] {
 
-        return crudService.getDocumentsByIdList(
-            collectionName: collectionReference,
-            idList: [String]
-        )
+        return try await crudService.getDocumentByIDList(
+            collectionRef: collectionReference,
+            documentIdList: idList
+        ).map({
+            return $0?.toObject()
+        })
     }
 }

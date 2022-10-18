@@ -26,7 +26,7 @@ class DataBase {
     let db: Firestore?
     let storage: Storage?
     
-    private init() {
+    init() {
         FirebaseApp.configure()
         db = Firestore.firestore()
         storage = Storage.storage()
@@ -40,12 +40,26 @@ class DataBase {
             throw error
         }
     }
+
+    func getDocumentByIDList(
+        collectionRef: CollectionReference,
+        documentIdList: [String]
+    ) async throws -> [DocumentSnapshot?] {
+
+        try await documentIdList.asyncMap {
+            try await getDocumentByID(collectionRef: collectionRef, documentId: $0)
+        }
+    }
     
     
-    func getAllDocumentsFilterBy(collectionRef: CollectionReference, field: String, value: Any) async throws -> QuerySnapshot? {
+    func getAllDocumentsFilterBy(
+        collectionRef: CollectionReference,
+        field: String,
+        value: Any
+    ) async throws -> [QueryDocumentSnapshot] {
         do {
             let docRef = collectionRef.whereField(field, isEqualTo: value)
-            return try await docRef.getDocuments()
+            return try await docRef.getDocuments().documents
         } catch {
             print(error.localizedDescription)
             throw error
