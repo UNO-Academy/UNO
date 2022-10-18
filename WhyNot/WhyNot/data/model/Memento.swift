@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseFirestoreSwift
 
-struct Memento: Decodable, UpdatableIdentifiable {
+struct Memento: Encodable, Decodable, UpdatableIdentifiable {
     @DocumentID var id: String?
     let caption: String
     let userId: [String]

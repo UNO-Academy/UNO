@@ -16,30 +16,25 @@ class MementoAPI {
     init(crudService: DataBase, db: Firestore) {
         self.crudService = crudService
         collectionReference = db.collection("Memento")
-
-//        Task {
-//            do {
-//                let teste = try await getActiveExperiences()
-//                print(teste)
-//            } catch {
-//                print("faio")
-//            }
-//        }
     }
 
-//    func createMemento(_ memento: Memento) {
-//
-//        return crudService.createDocument(
-//            collectionReference: collectionReference,
-//            data: Firestore.Encoder().encode(memento)
-//        )
-//    }
-//
-//    func getMementosByIdList(_ idList: [String]) async throws -> [Memento] {
-//
-//        return crudService.getDocumentsByIdList(
-//            collectionReference: collectionReference,
-//            idList: [String]
-//        )
-//    }
+    func createMemento(_ memento: Memento) async {
+
+        guard let data = memento.encode() else { return }
+
+        return await crudService.createDocument(
+            collectionRef: collectionReference,
+            data: data
+        )
+    }
+
+    func getMementosByIdList(_ idList: [String]) async throws -> [Memento?] {
+
+        return try await crudService.getDocumentByIDList(
+            collectionRef: collectionReference,
+            documentIdList: idList
+        ).map({
+            return $0?.toObject()
+        })
+    }
 }

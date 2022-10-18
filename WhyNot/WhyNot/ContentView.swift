@@ -10,9 +10,7 @@ import FirebaseFirestore
 
 struct ContentView: View {
 
-    let api: ExperienceAPI = ExperienceAPI(crudService: DataBase(), db: Firestore.firestore())
-
     var body: some View {
-        Text("hello")
+        Text("Hello World")
     }
 }
