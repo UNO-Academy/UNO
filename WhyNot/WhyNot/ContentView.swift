@@ -8,40 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var planOn = false
-    @State var exp: Experience? = nil
-    
     var body: some View {
-        
-        VStack {
-            if planOn {
-                Planilha(exp: exp).padding()
-            }
-            Text("Hello, world!")
-                .padding()
-            Image("andy")
-            
-            Button("aiaia") {
-                DataBase.shared.uploadImage()
-                //Task {
-                //    await DataBase.shared.uploadImage()
-                //}
-                
-            }.padding()
-             .background(.yellow)
-        }
-    }
-}
-
-struct Planilha: View {
-    var exp: Experience?
-    var body: some View {
-        VStack {
-            Text(exp?.name ?? "")
-            Text(String(exp?.effort ?? 0) ?? "")
-            Text(String(exp?.duration ?? 0) ?? "")
-            Text(exp?.description ?? "")
-            Text(exp?.category ?? "")
-        }.background(.red)
+        Text("Hello World")
     }
 }
