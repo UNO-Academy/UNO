@@ -22,14 +22,14 @@ struct Experience: Codable {
 }
 
 class DataBase {
+    
     static let shared = DataBase()
     let db: Firestore?
-    let storage: Storage?
+    let storageRef = Storage.storage().reference()
     
     private init() {
         FirebaseApp.configure()
         db = Firestore.firestore()
-        storage = Storage.storage()
     }
     
     func getDocumentByID(collectionRef: CollectionReference, documentId: String) async throws -> DocumentSnapshot? {
@@ -61,7 +61,7 @@ class DataBase {
         }
     }
     
-    
+
     func updateDocument(collectionRef: DocumentReference, data:[String: Any]) async {
         do {
             try await collectionRef.updateData(data)
@@ -70,9 +70,12 @@ class DataBase {
         }
     }
     
+    
     func uploadImage() {
-       let reference  = storage?.reference()
-       let image = URL(string: "salsicha")!
-    print("a")
+        let image = UIImage(named:"andy")?.jpegData(compressionQuality: 1.0)
+        let riversRef = storageRef.child("images/\(UUID().uuidString).jpg")
+        riversRef.putData(image!, metadata: nil) { metadata, error in
+            print(error?.localizedDescription)
+        }
     }
 }

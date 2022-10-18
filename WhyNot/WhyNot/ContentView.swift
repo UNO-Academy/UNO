@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State var planOn = false
     @State var exp: Experience? = nil
+    
     var body: some View {
         
         VStack {
@@ -18,11 +19,13 @@ struct ContentView: View {
             }
             Text("Hello, world!")
                 .padding()
+            Image("andy")
             
             Button("aiaia") {
-                Task {
-                    DataBase.shared.uploadImage()
-                }
+                DataBase.shared.uploadImage()
+                //Task {
+                //    await DataBase.shared.uploadImage()
+                //}
                 
             }.padding()
              .background(.yellow)
