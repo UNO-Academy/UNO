@@ -11,21 +11,26 @@ import Foundation
 
 class StorageService {
     static let shared = StorageService()
-    
     private init() {
         FirebaseApp.configure()
     }
-    
-    func uploadImage(image: Data) {
-        let storageRef = Storage.storage()
+
+    func uploadImage(storageRef: Storage, image: Data) {
         let riversRef = storageRef.reference().child("images/\(UUID().uuidString).jpg")
         riversRef.putData(image, metadata: nil)
     }
     
-    func downloadImage(idImage: String) async throws -> Data? {
-        let storage = Storage.storage()
-        let imageRef = storage.reference().child("images/\(idImage).jpg")
+    func downloadImage(storageRef: Storage, path: String) async throws -> Data? {
+        let imageRef = storageRef.reference(withPath: path)
         return try await imageRef.getDataAsync(maxSize: 5 * 1024 * 1024)
+    }
+    
+    func dowloadImageWithCompletion(storageRef: Storage, path: String, completion: @escaping(()->())) {
+        let imageRef = storageRef.reference(withPath: path)
+        imageRef.getData(maxSize:  5 * 1024 * 1024) data, error in {
+            
+        }
+        
     }
     
     func dowloadImages(idImages: [String]) async -> [Data] {
