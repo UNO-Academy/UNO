@@ -10,17 +10,17 @@ import FirebaseFirestore
 
 class ExperienceAPI {
 
-    private let crudService: CrudService
+    private let crudService: CRUDServices
     private let collectionReference: CollectionReference
 
-    init(crudService: CrudService, db: Firestore) {
+    init(crudService: CRUDServices, db: Firestore) {
         self.crudService = crudService
         collectionReference = db.collection("Experience")
     }
 
     func getActiveExperiences() async throws -> [Experience?] {
 
-        return try await crudService.getAllDocumentsFilterBy(
+        return try await crudService.readDocumentsFilteredBy(
             collectionRef: collectionReference,
             field: "isActive",
             value: true
@@ -31,7 +31,7 @@ class ExperienceAPI {
 
     func getExperiencesByIdList(_ idList: [String]) async throws -> [Experience?] {
 
-        return try await crudService.getDocumentByIDList(
+        return try await crudService.readDocumentsByIDList(
             collectionRef: collectionReference,
             documentIdList: idList
         ).map({

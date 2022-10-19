@@ -10,19 +10,19 @@ import FirebaseFirestore
 
 class MementoAPI {
 
-    private let crudService: CrudService
+    private let crudService: CRUDServices
     private let collectionReference: CollectionReference
 
-    init(crudService: CrudService, db: Firestore) {
+    init(crudService: CRUDServices, db: Firestore) {
         self.crudService = crudService
         collectionReference = db.collection("Memento")
     }
 
-    func createMemento(_ memento: Memento) async {
+    func createMemento(_ memento: Memento) async throws {
 
         guard let data = memento.encode() else { return }
 
-        return await crudService.createDocument(
+        return try await crudService.createDocument(
             collectionRef: collectionReference,
             data: data
         )
@@ -30,7 +30,7 @@ class MementoAPI {
 
     func getMementosByIdList(_ idList: [String]) async throws -> [Memento?] {
 
-        return try await crudService.getDocumentByIDList(
+        return try await crudService.readDocumentsByIDList(
             collectionRef: collectionReference,
             documentIdList: idList
         ).map({
