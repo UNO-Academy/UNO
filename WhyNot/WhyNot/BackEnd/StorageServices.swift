@@ -4,13 +4,16 @@
 //
 //  Created by Fernando Santos on 18/10/22.
 //
-import FirebaseCore
-import FirebaseFirestore
+
+import Firebase
 import FirebaseStorage
 import Foundation
 
 class StorageService {
+
     static let shared = StorageService()
+    private var group: DispatchGroup?
+
     private init() {
         FirebaseApp.configure()
     }
@@ -19,40 +22,78 @@ class StorageService {
         let riversRef = storageRef.reference().child("images/\(UUID().uuidString).jpg")
         riversRef.putData(image, metadata: nil)
     }
-    
+
     func downloadImage(storageRef: Storage, path: String) async throws -> Data? {
         let imageRef = storageRef.reference(withPath: path)
         return try await imageRef.getDataAsync(maxSize: 5 * 1024 * 1024)
     }
-    
-    func dowloadImageWithCompletion(storageRef: Storage, path: String, completion: @escaping(()->())) {
+
+    // did by will
+    func downloadImage(storageRef: Storage, path: String, completion: @escaping (Result<Data, Error>) -> Void) {
         let imageRef = storageRef.reference(withPath: path)
-        imageRef.getData(maxSize:  5 * 1024 * 1024) data, error in {
-            
-        }
-        
-    }
-    
-    func dowloadImages(idImages: [String]) async -> [Data] {
-        var dowloadedImages = [Data]()
-        
-        for image in idImages {
-            do {
-                let data = try await downloadImage(idImage: image)
-                dowloadedImages.append(data!)
-            } catch {
-                print(error.localizedDescription)
+        imageRef.getData(maxSize: 1024 * 1024) { (data, error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(data!))
             }
         }
-        return dowloadedImages
     }
+    func downloadImages(storageRef: Storage, paths: [String], completion: @escaping ([Data]) -> Void) {
+        group = DispatchGroup()
+        for _ in paths {
+            group?.enter()
+        }
+        var imagesData: [Data] = []
+
+        let semaphore = DispatchSemaphore(value: 1)
+        for path in paths {
+            downloadImage(storageRef: storageRef, path: path) { [weak self] result in
+                switch result {
+                case let .success(data):
+                    semaphore.wait()
+                    imagesData.append(data)
+                    semaphore.signal()
+                case let .failure(error):
+                    print(error.localizedDescription)
+                }
+                self?.group?.leave()
+            }
+        }
+
+        group?.notify(queue: DispatchQueue.global()) {
+            print("Terminei de baixar os dados das imagens")
+            completion(imagesData)
+        }
+    }
+
+//    func dowloadImageWithCompletion(storageRef: Storage, path: String, completion: @escaping(()->())) {
+//        let imageRef = storageRef.reference(withPath: path)
+//        imageRef.getData(maxSize:  5 * 1024 * 1024) data, error in {
+//
+//        }
+//
+//    }
+//
+//    func dowloadImages(idImages: [String]) async -> [Data] {
+//        var dowloadedImages = [Data]()
+//
+//        for image in idImages {
+//            do {
+//                let data = try await downloadImage(idImage: image)
+//                dowloadedImages.append(data!)
+//            } catch {
+//                print(error.localizedDescription)
+//            }
+//        }
+//        return dowloadedImages
+//    }
 }
 
-
 extension StorageReference {
-    
+
   func getDataAsync(maxSize: Int64) async throws -> Data {
-      
+
     return try await withCheckedThrowingContinuation({ continuation in
       getData(maxSize: maxSize) { data, error in
         if error == nil && data != nil {
