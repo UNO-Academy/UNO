@@ -28,13 +28,15 @@ class CRUDServices {
         }
     }
 
-    func readDocumentsByIDList(collectionRef: CollectionReference, documentIdList: [String]) async throws -> [DocumentSnapshot?] {
+    func readDocumentsByIDList(collectionRef: CollectionReference, documentIdList: [String])
+        async throws -> [DocumentSnapshot?] {
         try await documentIdList.asyncMap {
             try await readDocumentByID(collectionRef: collectionRef, documentId: $0)
         }
     }
 
-    func readDocumentsFilteredBy(collectionRef: CollectionReference, field: String, value: Any) async throws -> [QueryDocumentSnapshot] {
+    func readDocumentsFilteredBy(collectionRef: CollectionReference, field: String, value: Any)
+        async throws -> [QueryDocumentSnapshot] {
         do {
             let docRef = collectionRef.whereField(field, isEqualTo: value)
             return try await docRef.getDocuments().documents

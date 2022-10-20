@@ -11,11 +11,6 @@ import FirebaseFirestore
 extension Encodable {
 
     func encode() -> [String: Any]? {
-
-        do {
-            return try Firestore.Encoder().encode(self)
-        } catch {
-            return nil
-        }
+        return try? Firestore.Encoder().encode(self)
     }
 }

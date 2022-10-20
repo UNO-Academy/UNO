@@ -19,7 +19,6 @@ class ExperienceAPI {
     }
 
     func getActiveExperiences() async throws -> [Experience?] {
-
         return try await crudService.readDocumentsFilteredBy(
             collectionRef: collectionReference,
             field: "isActive",
@@ -30,7 +29,6 @@ class ExperienceAPI {
     }
 
     func getExperiencesByIdList(_ idList: [String]) async throws -> [Experience?] {
-
         return try await crudService.readDocumentsByIDList(
             collectionRef: collectionReference,
             documentIdList: idList
