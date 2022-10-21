@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseFirestoreSwift
 
-struct Experience: Decodable, UpdatableIdentifiable {
+struct Experience: Encodable, Decodable, UpdatableIdentifiable {
     @DocumentID var id: String?
     let name: String
     let description: String

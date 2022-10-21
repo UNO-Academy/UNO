@@ -5,7 +5,9 @@
 //  Created by Luiz Gustavo Silva Aguiar on 11/10/22.
 //
 
+import Firebase
 import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class CRUDServices {
 
@@ -20,12 +22,16 @@ class CRUDServices {
 
     func readDocumentByID(collectionRef: CollectionReference, documentId: String) async throws -> DocumentSnapshot? {
         do {
-            // Se crashar a culpa é do scrum master
             return try await collectionRef.document(documentId).getDocument()
         } catch {
             print(error.localizedDescription)
             throw error
         }
+    }
+    
+    func getDocumentReferenceByID(collectionRef: CollectionReference, documentID: String) -> DocumentReference? {
+        let document: DocumentReference = collectionRef.document(documentID)
+        return document
     }
 
     func readDocumentsByIDList(collectionRef: CollectionReference, documentIdList: [String])
