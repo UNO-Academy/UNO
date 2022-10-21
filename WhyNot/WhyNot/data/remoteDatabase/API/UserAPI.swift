@@ -33,12 +33,38 @@ class UserAPI {
     }
 
     func updateUser(userID: String, data: [String: Any]) async throws {
-        guard let docRef = crudService.getDocumentReferenceByID(collectionRef: collectionReference, documentID: userID)
-        else {
-            print("Não foi possível encontrar a referência do documento")
-            return
+        if let docRef = crudService.getDocumentReferenceByID(collectionRef: collectionReference, documentID: userID) {
+            try await crudService.updateDocument(docRef: docRef, data: data)
         }
-        try await crudService.updateDocument(docRef: docRef, data: data)
     }
 
+    func addFriend(userID: String, friendID: String) async throws {
+        if let docRef = crudService.getDocumentReferenceByID(collectionRef: collectionReference, documentID: userID) {
+            try await crudService.pushInDocumentArray(docRef: docRef, field: UserFields.friendsID.rawValue, value: friendID)
+        }
+    }
+
+    // TODO
+    func removeFriend() {
+        
+    }
+
+    func showInterest(userID: String, experienceID: String) async throws {
+        if let docRef = crudService.getDocumentReferenceByID(collectionRef: collectionReference, documentID: userID) {
+            try await crudService.pushInDocumentArray(docRef: docRef, field: UserFields.interestExperiencesID.rawValue, value: experienceID)
+        }
+    }
+    // TODO
+    func removeInterest() {
+        
+    }
+
+    func getUserByIDList(_ idList: [String]) async throws -> [User?] {
+        return try await crudService.readDocumentsByIDList(
+            collectionRef: collectionReference,
+            documentIdList: idList
+        ).map({
+            return $0?.toObject()
+        })
+    }
 }
