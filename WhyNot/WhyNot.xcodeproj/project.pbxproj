@@ -14,6 +14,7 @@
 		2424527428FEE899006E8629 /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2424527328FEE899006E8629 /* Encodable+Extension.swift */; };
 		24B18B1628FD757A00EC9A3D /* MementoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B18B1528FD757A00EC9A3D /* MementoAPI.swift */; };
 		24B18B1828FD7BF400EC9A3D /* Memento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B18B1728FD7BF400EC9A3D /* Memento.swift */; };
+		594A5FA82902CCBE00A1C10C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594A5FA72902CCBE00A1C10C /* User.swift */; };
 		59AC84A428F609BA00EB3A9A /* CRUDServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AC84A328F609BA00EB3A9A /* CRUDServices.swift */; };
 		59B892CC28FD77DF0045EAA9 /* DocumentSnapshot+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B892CB28FD77DF0045EAA9 /* DocumentSnapshot+Extension.swift */; };
 		59B892CE28FD7FB60045EAA9 /* ModelInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B892CD28FD7FB60045EAA9 /* ModelInterface.swift */; };
@@ -45,6 +46,7 @@
 		2424527328FEE899006E8629 /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
 		24B18B1528FD757A00EC9A3D /* MementoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MementoAPI.swift; sourceTree = "<group>"; };
 		24B18B1728FD7BF400EC9A3D /* Memento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memento.swift; sourceTree = "<group>"; };
+		594A5FA72902CCBE00A1C10C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		59AC84A328F609BA00EB3A9A /* CRUDServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRUDServices.swift; sourceTree = "<group>"; };
 		59B892CB28FD77DF0045EAA9 /* DocumentSnapshot+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DocumentSnapshot+Extension.swift"; sourceTree = "<group>"; };
 		59B892CD28FD7FB60045EAA9 /* ModelInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelInterface.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				24202EA128F846F900141CCB /* Experience.swift */,
 				24B18B1728FD7BF400EC9A3D /* Memento.swift */,
 				59B892CD28FD7FB60045EAA9 /* ModelInterface.swift */,
+				594A5FA72902CCBE00A1C10C /* User.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				594A5FA82902CCBE00A1C10C /* User.swift in Sources */,
 				24202EA228F846F900141CCB /* Experience.swift in Sources */,
 				24202EA828F847E100141CCB /* ExperienceAPI.swift in Sources */,
 				24B18B1628FD757A00EC9A3D /* MementoAPI.swift in Sources */,
