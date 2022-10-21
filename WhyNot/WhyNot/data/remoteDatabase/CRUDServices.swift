@@ -78,6 +78,15 @@ class CRUDServices {
             throw error
         }
     }
+    
+    func popInDocumentArray(docRef: DocumentReference, field: String, value: Any) async throws {
+        do {
+            try await docRef.updateData([field: FieldValue.arrayRemove([value])])
+        } catch {
+            print(error.localizedDescription)
+            throw error
+        }
+    }
 
     func deleteDocument(docRef: DocumentReference) async throws {
         do {

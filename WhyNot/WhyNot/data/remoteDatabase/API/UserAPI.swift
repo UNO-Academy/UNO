@@ -44,9 +44,10 @@ class UserAPI {
         }
     }
 
-    // TODO
-    func removeFriend() {
-        
+    func removeFriend(userID: String, friendID: String) async throws {
+        if let docRef = crudService.getDocumentReferenceByID(collectionRef: collectionReference, documentID: userID) {
+            try await crudService.popInDocumentArray(docRef: docRef, field: UserFields.friendsID.rawValue, value: friendID)
+        }
     }
 
     func showInterest(userID: String, experienceID: String) async throws {
@@ -54,9 +55,11 @@ class UserAPI {
             try await crudService.pushInDocumentArray(docRef: docRef, field: UserFields.interestExperiencesID.rawValue, value: experienceID)
         }
     }
-    // TODO
-    func removeInterest() {
-        
+
+    func removeInterest(userID: String, experienceID: String) async throws {
+        if let docRef = crudService.getDocumentReferenceByID(collectionRef: collectionReference, documentID: userID) {
+            try await crudService.popInDocumentArray(docRef: docRef, field: UserFields.interestExperiencesID.rawValue, value: experienceID)
+        }
     }
 
     func getUserByIDList(_ idList: [String]) async throws -> [User?] {
