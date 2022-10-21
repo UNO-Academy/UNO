@@ -16,7 +16,7 @@ class MementoAPI {
 
     init(crudService: CRUDServices, db: Firestore) {
         self.crudService = crudService
-        collectionReference = db.collection("Memento")
+        collectionReference = db.collection(CollectionNames.memento.rawValue)
     }
 
     func createMemento(_ memento: Memento) async throws {

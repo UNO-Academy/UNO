@@ -16,9 +16,9 @@ class UserAPI {
 
     init(crudService: CRUDServices, db: Firestore) {
         self.crudService = crudService
-        collectionReference = db.collection("User")
+        collectionReference = db.collection(CollectionNames.user.rawValue)
     }
-    
+
     func createUser(user: User) async throws {
         guard let data = user.encode() else {
             print("Não foi possivel converter o objeto em documento")
@@ -26,19 +26,19 @@ class UserAPI {
         }
         return try await crudService.createDocument(collectionRef: collectionReference, data: data)
     }
-    
+
     func getUserByID(userID: String) async throws -> User? {
-        return try await (crudService.readDocumentByID(collectionRef: collectionReference, documentId: userID))?.toObject()
+        return try await
+            (crudService.readDocumentByID(collectionRef: collectionReference, documentId: userID))?.toObject()
     }
-    
+
     func updateUser(userID: String, data: [String: Any]) async throws {
-        guard let docRef = crudService.getDocumentReferenceByID(collectionRef: collectionReference, documentID: userID) else {
+        guard let docRef = crudService.getDocumentReferenceByID(collectionRef: collectionReference, documentID: userID)
+        else {
             print("Não foi possível encontrar a referência do documento")
             return
         }
         try await crudService.updateDocument(docRef: docRef, data: data)
     }
-    
-    func addFriend(userID: String, )
-}
 
+}

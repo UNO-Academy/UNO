@@ -13,7 +13,16 @@ struct User: Encodable, Decodable, UpdatableIdentifiable {
     let name: String
     let profilePicture: String
     let lastPictureUpdate: Date
-    let friendID: [String]
+    let friendsID: [String]
     let mementosID: [String]
     let interestExperiencesID: [String]
+}
+
+enum UserFields: String {
+    case name
+    case profilePicture
+    case lastPictureUpdate
+    case friendsID
+    case mementosID
+    case interestExperiencesID
 }

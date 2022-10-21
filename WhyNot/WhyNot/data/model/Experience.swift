@@ -17,3 +17,12 @@ struct Experience: Encodable, Decodable, UpdatableIdentifiable {
     let category: String
     let isActive: Bool
 }
+
+enum ExperienceFields: String {
+    case name
+    case description
+    case effort
+    case duration
+    case category
+    case isActive
+}

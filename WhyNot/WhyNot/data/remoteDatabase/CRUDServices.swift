@@ -28,7 +28,7 @@ class CRUDServices {
             throw error
         }
     }
-    
+
     func getDocumentReferenceByID(collectionRef: CollectionReference, documentID: String) -> DocumentReference? {
         let document: DocumentReference = collectionRef.document(documentID)
         return document
