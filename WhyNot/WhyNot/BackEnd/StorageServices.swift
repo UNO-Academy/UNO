@@ -66,28 +66,6 @@ class StorageService {
             completion(imagesData)
         }
     }
-
-//    func dowloadImageWithCompletion(storageRef: Storage, path: String, completion: @escaping(()->())) {
-//        let imageRef = storageRef.reference(withPath: path)
-//        imageRef.getData(maxSize:  5 * 1024 * 1024) data, error in {
-//
-//        }
-//
-//    }
-//
-//    func dowloadImages(idImages: [String]) async -> [Data] {
-//        var dowloadedImages = [Data]()
-//
-//        for image in idImages {
-//            do {
-//                let data = try await downloadImage(idImage: image)
-//                dowloadedImages.append(data!)
-//            } catch {
-//                print(error.localizedDescription)
-//            }
-//        }
-//        return dowloadedImages
-//    }
 }
 
 extension StorageReference {
