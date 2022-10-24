@@ -40,25 +40,41 @@ class UserAPI {
 
     func addFriend(userID: String, friendID: String) async throws {
         if let docRef = crudService.getDocumentReferenceByID(collectionRef: collectionReference, documentID: userID) {
-            try await crudService.pushInDocumentArray(docRef: docRef, field: UserFields.friendsID.rawValue, value: friendID)
+            try await crudService.pushInDocumentArray(
+                docRef: docRef,
+                field: UserFields.friendsID.rawValue,
+                value: friendID
+            )
         }
     }
 
     func removeFriend(userID: String, friendID: String) async throws {
         if let docRef = crudService.getDocumentReferenceByID(collectionRef: collectionReference, documentID: userID) {
-            try await crudService.popInDocumentArray(docRef: docRef, field: UserFields.friendsID.rawValue, value: friendID)
+            try await crudService.popInDocumentArray(
+                docRef: docRef,
+                field: UserFields.friendsID.rawValue,
+                value: friendID
+            )
         }
     }
 
     func showInterest(userID: String, experienceID: String) async throws {
         if let docRef = crudService.getDocumentReferenceByID(collectionRef: collectionReference, documentID: userID) {
-            try await crudService.pushInDocumentArray(docRef: docRef, field: UserFields.interestExperiencesID.rawValue, value: experienceID)
+            try await crudService.pushInDocumentArray(
+                docRef: docRef,
+                field: UserFields.interestExperiencesID.rawValue,
+                value: experienceID
+            )
         }
     }
 
     func removeInterest(userID: String, experienceID: String) async throws {
         if let docRef = crudService.getDocumentReferenceByID(collectionRef: collectionReference, documentID: userID) {
-            try await crudService.popInDocumentArray(docRef: docRef, field: UserFields.interestExperiencesID.rawValue, value: experienceID)
+            try await crudService.popInDocumentArray(
+                docRef: docRef,
+                field: UserFields.interestExperiencesID.rawValue,
+                value: experienceID
+            )
         }
     }
 
