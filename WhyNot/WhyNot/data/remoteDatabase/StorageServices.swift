@@ -25,13 +25,13 @@ class StorageService {
 
     func downloadImage(storageRef: Storage, path: String) async throws -> Data? {
         let imageRef = storageRef.reference(withPath: path)
-        return try await imageRef.getDataAsync(maxSize: 5 * 1024 * 1024)
+        return try await imageRef.getDataAsync(maxSize: Sizes.maxSize.rawValue * Sizes.maxSize.rawValue)
     }
 
     // did by will
     func downloadImage(storageRef: Storage, path: String, completion: @escaping (Result<Data, Error>) -> Void) {
         let imageRef = storageRef.reference(withPath: path)
-        imageRef.getData(maxSize: 1024 * 1024) { (data, error) in
+        imageRef.getData(maxSize: Sizes.maxSize.rawValue * Sizes.maxSize.rawValue) { (data, error) in
             if let error = error {
                 completion(.failure(error))
             } else {
@@ -68,19 +68,21 @@ class StorageService {
     }
 }
 
-extension StorageReference {
-
-  func getDataAsync(maxSize: Int64) async throws -> Data {
-
-    return try await withCheckedThrowingContinuation({ continuation in
-      getData(maxSize: maxSize) { data, error in
-        if error == nil && data != nil {
-          continuation.resume(returning: data!)
-        } else {
-          continuation.resume(throwing: error!)
-        }
-      }
-    })
-  }
+enum Sizes: Int64 {
+    case maxSize = 1024
 }
 
+extension StorageReference {
+    func getDataAsync(maxSize: Int64) async throws -> Data {
+
+    return try await withCheckedThrowingContinuation({ continuation in
+        getData(maxSize: maxSize) { data, error in
+        if error == nil && data != nil {
+        continuation.resume(returning: data!)
+        } else {
+        continuation.resume(throwing: error!)
+        }
+        }
+    })
+    }
+}
