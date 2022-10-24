@@ -18,20 +18,28 @@ class CRUDServices {
         }
     }
 
-    func readDocumentByID(collectionRef: CollectionReference, documentId: String) async throws -> QueryDocumentSnapshot? {
+    func readDocumentByID(collectionRef: CollectionReference, documentId: String) async throws -> DocumentSnapshot? {
         do {
             // Se crashar a culpa é do scrum master
-            return try await collectionRef.document(documentId).getDocument() as? QueryDocumentSnapshot
+            return try await collectionRef.document(documentId).getDocument()
         } catch {
             print(error.localizedDescription)
             throw error
         }
     }
 
-    func readDocumentsFilteredBy(collectionRef: CollectionReference, field: String, value: Any) async throws -> QuerySnapshot? {
+    func readDocumentsByIDList(collectionRef: CollectionReference, documentIdList: [String])
+        async throws -> [DocumentSnapshot?] {
+        try await documentIdList.asyncMap {
+            try await readDocumentByID(collectionRef: collectionRef, documentId: $0)
+        }
+    }
+
+    func readDocumentsFilteredBy(collectionRef: CollectionReference, field: String, value: Any)
+        async throws -> [QueryDocumentSnapshot] {
         do {
             let docRef = collectionRef.whereField(field, isEqualTo: value)
-            return try await docRef.getDocuments()
+            return try await docRef.getDocuments().documents
         } catch {
             print(error.localizedDescription)
             throw error

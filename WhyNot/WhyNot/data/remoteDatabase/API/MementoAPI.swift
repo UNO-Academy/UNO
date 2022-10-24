@@ -1,34 +1,35 @@
 //
-//  ExperienceAPI.swift
+//  MementoAPI.swift
 //  WhyNot
 //
-//  Created by Larissa Gomes de Stefano Escaliante on 13/10/22.
+//  Created by Larissa Gomes de Stefano Escaliante on 17/10/22.
 //
 
 import Foundation
 import FirebaseFirestore
 
-class ExperienceAPI {
+class MementoAPI {
 
     private let crudService: CRUDServices
     private let collectionReference: CollectionReference
 
     init(crudService: CRUDServices, db: Firestore) {
         self.crudService = crudService
-        collectionReference = db.collection("Experience")
+        collectionReference = db.collection("Memento")
     }
 
-    func getActiveExperiences() async throws -> [Experience?] {
-        return try await crudService.readDocumentsFilteredBy(
+    func createMemento(_ memento: Memento) async throws {
+
+        guard let data = memento.encode() else { return }
+
+        return try await crudService.createDocument(
             collectionRef: collectionReference,
-            field: "isActive",
-            value: true
-        ).map({
-            return $0.toObject()
-        })
+            data: data
+        )
     }
 
-    func getExperiencesByIdList(_ idList: [String]) async throws -> [Experience?] {
+    func getMementosByIdList(_ idList: [String]) async throws -> [Memento?] {
+
         return try await crudService.readDocumentsByIDList(
             collectionRef: collectionReference,
             documentIdList: idList

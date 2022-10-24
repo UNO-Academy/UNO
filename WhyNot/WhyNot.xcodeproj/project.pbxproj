@@ -10,10 +10,13 @@
 		24202EA228F846F900141CCB /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24202EA128F846F900141CCB /* Experience.swift */; };
 		24202EA428F8471300141CCB /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24202EA328F8471300141CCB /* Repository.swift */; };
 		24202EA828F847E100141CCB /* ExperienceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24202EA728F847E100141CCB /* ExperienceAPI.swift */; };
+		2424526F28FEE104006E8629 /* Sequence+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2424526E28FEE104006E8629 /* Sequence+Extension.swift */; };
+		2424527428FEE899006E8629 /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2424527328FEE899006E8629 /* Encodable+Extension.swift */; };
+		24B18B1628FD757A00EC9A3D /* MementoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B18B1528FD757A00EC9A3D /* MementoAPI.swift */; };
+		24B18B1828FD7BF400EC9A3D /* Memento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B18B1728FD7BF400EC9A3D /* Memento.swift */; };
 		59AC84A428F609BA00EB3A9A /* CRUDServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AC84A328F609BA00EB3A9A /* CRUDServices.swift */; };
-		59B892CC28FD77DF0045EAA9 /* QueryDocumentSnapshot+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B892CB28FD77DF0045EAA9 /* QueryDocumentSnapshot+Extension.swift */; };
+		59B892CC28FD77DF0045EAA9 /* DocumentSnapshot+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B892CB28FD77DF0045EAA9 /* DocumentSnapshot+Extension.swift */; };
 		59B892CE28FD7FB60045EAA9 /* ModelInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B892CD28FD7FB60045EAA9 /* ModelInterface.swift */; };
-		59E2D58C28FED4C8007A1503 /* StorageServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E2D58B28FED4C8007A1503 /* StorageServices.swift */; };
 		59E2D58F28FEDF22007A1503 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 59E2D58E28FEDF22007A1503 /* .swiftlint.yml */; };
 		8608FCD528F05AE1007FC0BA /* WhyNotApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8608FCD428F05AE1007FC0BA /* WhyNotApp.swift */; };
 		8608FCD928F05AE3007FC0BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8608FCD828F05AE3007FC0BA /* Assets.xcassets */; };
@@ -21,6 +24,7 @@
 		8608FCE328F05BA4007FC0BA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8608FCE228F05BA4007FC0BA /* GoogleService-Info.plist */; };
 		8608FCE628F05C96007FC0BA /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8608FCE528F05C96007FC0BA /* FirebaseFirestore */; };
 		8608FCE828F05C96007FC0BA /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 8608FCE728F05C96007FC0BA /* FirebaseStorage */; };
+		862C53D32906AE7200068528 /* StorageServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862C53D22906AE7200068528 /* StorageServices.swift */; };
 		86DFFE4E28F44CD30075153A /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 86DFFE4D28F44CD30075153A /* FirebaseDatabase */; };
 		86DFFE5028F44CD30075153A /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 86DFFE4F28F44CD30075153A /* FirebaseDatabaseSwift */; };
 		86DFFE5228F44CD30075153A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 86DFFE5128F44CD30075153A /* FirebaseFirestore */; };
@@ -37,16 +41,20 @@
 		24202EA128F846F900141CCB /* Experience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experience.swift; sourceTree = "<group>"; };
 		24202EA328F8471300141CCB /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		24202EA728F847E100141CCB /* ExperienceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceAPI.swift; sourceTree = "<group>"; };
+		2424526E28FEE104006E8629 /* Sequence+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extension.swift"; sourceTree = "<group>"; };
+		2424527328FEE899006E8629 /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
+		24B18B1528FD757A00EC9A3D /* MementoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MementoAPI.swift; sourceTree = "<group>"; };
+		24B18B1728FD7BF400EC9A3D /* Memento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memento.swift; sourceTree = "<group>"; };
 		59AC84A328F609BA00EB3A9A /* CRUDServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRUDServices.swift; sourceTree = "<group>"; };
-		59B892CB28FD77DF0045EAA9 /* QueryDocumentSnapshot+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QueryDocumentSnapshot+Extension.swift"; sourceTree = "<group>"; };
+		59B892CB28FD77DF0045EAA9 /* DocumentSnapshot+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DocumentSnapshot+Extension.swift"; sourceTree = "<group>"; };
 		59B892CD28FD7FB60045EAA9 /* ModelInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelInterface.swift; sourceTree = "<group>"; };
-		59E2D58B28FED4C8007A1503 /* StorageServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServices.swift; sourceTree = "<group>"; };
 		59E2D58E28FEDF22007A1503 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		8608FCD128F05AE1007FC0BA /* WhyNot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhyNot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8608FCD428F05AE1007FC0BA /* WhyNotApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhyNotApp.swift; sourceTree = "<group>"; };
 		8608FCD828F05AE3007FC0BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8608FCDB28F05AE3007FC0BA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8608FCE228F05BA4007FC0BA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		862C53D22906AE7200068528 /* StorageServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServices.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				24202EA128F846F900141CCB /* Experience.swift */,
+				24B18B1728FD7BF400EC9A3D /* Memento.swift */,
 				59B892CD28FD7FB60045EAA9 /* ModelInterface.swift */,
 			);
 			path = model;
@@ -94,7 +103,8 @@
 		24202EA528F847B300141CCB /* remoteDatabase */ = {
 			isa = PBXGroup;
 			children = (
-				59B892CB28FD77DF0045EAA9 /* QueryDocumentSnapshot+Extension.swift */,
+				59AC84A328F609BA00EB3A9A /* CRUDServices.swift */,
+				862C53D22906AE7200068528 /* StorageServices.swift */,
 				24202EA628F847D100141CCB /* API */,
 			);
 			path = remoteDatabase;
@@ -104,8 +114,19 @@
 			isa = PBXGroup;
 			children = (
 				24202EA728F847E100141CCB /* ExperienceAPI.swift */,
+				24B18B1528FD757A00EC9A3D /* MementoAPI.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		2424527228FEE50C006E8629 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				59B892CB28FD77DF0045EAA9 /* DocumentSnapshot+Extension.swift */,
+				2424526E28FEE104006E8629 /* Sequence+Extension.swift */,
+				2424527328FEE899006E8629 /* Encodable+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		8608FCC828F05AE1007FC0BA = {
@@ -128,8 +149,8 @@
 		8608FCD328F05AE1007FC0BA /* WhyNot */ = {
 			isa = PBXGroup;
 			children = (
+				2424527228FEE50C006E8629 /* Extension */,
 				24202E9F28F846CB00141CCB /* data */,
-				8650E40E28F442990048FA9B /* BackEnd */,
 				8608FCD428F05AE1007FC0BA /* WhyNotApp.swift */,
 				8608FCD828F05AE3007FC0BA /* Assets.xcassets */,
 				8608FCE228F05BA4007FC0BA /* GoogleService-Info.plist */,
@@ -144,15 +165,6 @@
 				8608FCDB28F05AE3007FC0BA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		8650E40E28F442990048FA9B /* BackEnd */ = {
-			isa = PBXGroup;
-			children = (
-				59AC84A328F609BA00EB3A9A /* CRUDServices.swift */,
-				59E2D58B28FED4C8007A1503 /* StorageServices.swift */,
-			);
-			path = BackEnd;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,10 +280,14 @@
 			files = (
 				24202EA228F846F900141CCB /* Experience.swift in Sources */,
 				24202EA828F847E100141CCB /* ExperienceAPI.swift in Sources */,
-				59E2D58C28FED4C8007A1503 /* StorageServices.swift in Sources */,
+				24B18B1628FD757A00EC9A3D /* MementoAPI.swift in Sources */,
+				2424526F28FEE104006E8629 /* Sequence+Extension.swift in Sources */,
 				8608FCD528F05AE1007FC0BA /* WhyNotApp.swift in Sources */,
-				59B892CC28FD77DF0045EAA9 /* QueryDocumentSnapshot+Extension.swift in Sources */,
+				862C53D32906AE7200068528 /* StorageServices.swift in Sources */,
+				59B892CC28FD77DF0045EAA9 /* DocumentSnapshot+Extension.swift in Sources */,
+				24B18B1828FD7BF400EC9A3D /* Memento.swift in Sources */,
 				24202EA428F8471300141CCB /* Repository.swift in Sources */,
+				2424527428FEE899006E8629 /* Encodable+Extension.swift in Sources */,
 				59AC84A428F609BA00EB3A9A /* CRUDServices.swift in Sources */,
 				59B892CE28FD7FB60045EAA9 /* ModelInterface.swift in Sources */,
 				8608FCD528F05AE1007FC0BA /* WhyNotApp.swift in Sources */,
