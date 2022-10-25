@@ -15,7 +15,6 @@ class CRUDServices {
         do {
             _ = try await collectionRef.addDocument(data: data)
         } catch {
-            print((error.localizedDescription))
             throw error
         }
     }
@@ -24,7 +23,6 @@ class CRUDServices {
         do {
             return try await collectionRef.document(documentId).getDocument()
         } catch {
-            print(error.localizedDescription)
             throw error
         }
     }
@@ -47,7 +45,6 @@ class CRUDServices {
             let docRef = collectionRef.whereField(field, isEqualTo: value)
             return try await docRef.getDocuments().documents
         } catch {
-            print(error.localizedDescription)
             throw error
         }
     }
@@ -56,7 +53,6 @@ class CRUDServices {
         do {
             return try await collectionRef.getDocuments()
         } catch {
-            print(error.localizedDescription)
             throw error
         }
     }
@@ -65,7 +61,6 @@ class CRUDServices {
         do {
             try await docRef.updateData(data)
         } catch {
-            print("\(error.localizedDescription)")
             throw error
         }
     }
@@ -74,7 +69,6 @@ class CRUDServices {
         do {
             try await docRef.updateData([field: FieldValue.arrayUnion([value])])
         } catch {
-            print(error.localizedDescription)
             throw error
         }
     }
@@ -83,7 +77,6 @@ class CRUDServices {
         do {
             try await docRef.updateData([field: FieldValue.arrayRemove([value])])
         } catch {
-            print(error.localizedDescription)
             throw error
         }
     }
@@ -92,7 +85,6 @@ class CRUDServices {
         do {
             try await docRef.delete()
         } catch {
-            print(error.localizedDescription)
             throw error
         }
     }
