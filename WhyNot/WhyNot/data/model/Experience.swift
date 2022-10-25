@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseFirestoreSwift
 
-struct Experience: Decodable, UpdatableIdentifiable {
+struct Experience: Codable, UpdatableIdentifiable {
     @DocumentID var id: String?
     let name: String
     let description: String
@@ -16,4 +16,13 @@ struct Experience: Decodable, UpdatableIdentifiable {
     let duration: Int
     let category: String
     let isActive: Bool
+}
+
+enum ExperienceFields: String {
+    case name
+    case description
+    case effort
+    case duration
+    case category
+    case isActive
 }

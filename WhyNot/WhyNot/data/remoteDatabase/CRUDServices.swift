@@ -5,7 +5,9 @@
 //  Created by Luiz Gustavo Silva Aguiar on 11/10/22.
 //
 
+import Firebase
 import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class CRUDServices {
 
@@ -13,19 +15,21 @@ class CRUDServices {
         do {
             _ = try await collectionRef.addDocument(data: data)
         } catch {
-            print((error.localizedDescription))
             throw error
         }
     }
 
     func readDocumentByID(collectionRef: CollectionReference, documentId: String) async throws -> DocumentSnapshot? {
         do {
-            // Se crashar a culpa é do scrum master
             return try await collectionRef.document(documentId).getDocument()
         } catch {
-            print(error.localizedDescription)
             throw error
         }
+    }
+
+    func getDocumentReferenceByID(collectionRef: CollectionReference, documentID: String) -> DocumentReference? {
+        let document: DocumentReference = collectionRef.document(documentID)
+        return document
     }
 
     func readDocumentsByIDList(collectionRef: CollectionReference, documentIdList: [String])
@@ -41,7 +45,6 @@ class CRUDServices {
             let docRef = collectionRef.whereField(field, isEqualTo: value)
             return try await docRef.getDocuments().documents
         } catch {
-            print(error.localizedDescription)
             throw error
         }
     }
@@ -50,7 +53,6 @@ class CRUDServices {
         do {
             return try await collectionRef.getDocuments()
         } catch {
-            print(error.localizedDescription)
             throw error
         }
     }
@@ -59,7 +61,6 @@ class CRUDServices {
         do {
             try await docRef.updateData(data)
         } catch {
-            print("\(error.localizedDescription)")
             throw error
         }
     }
@@ -68,7 +69,14 @@ class CRUDServices {
         do {
             try await docRef.updateData([field: FieldValue.arrayUnion([value])])
         } catch {
-            print(error.localizedDescription)
+            throw error
+        }
+    }
+
+    func popInDocumentArray(docRef: DocumentReference, field: String, value: Any) async throws {
+        do {
+            try await docRef.updateData([field: FieldValue.arrayRemove([value])])
+        } catch {
             throw error
         }
     }
@@ -77,7 +85,6 @@ class CRUDServices {
         do {
             try await docRef.delete()
         } catch {
-            print("\(error.localizedDescription)")
             throw error
         }
     }

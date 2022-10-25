@@ -8,10 +8,17 @@
 import Foundation
 import FirebaseFirestoreSwift
 
-struct Memento: Encodable, Decodable, UpdatableIdentifiable {
+struct Memento: Codable, UpdatableIdentifiable {
     @DocumentID var id: String?
     let caption: String
-    let userId: [String]
-    let experienceId: String
-    let imagesId: [String]
+    let userID: [String]
+    let experienceID: String
+    let imagesID: [String]
+}
+
+enum MementoFields: String {
+    case caption
+    case userID
+    case experienceID
+    case imagesID
 }
