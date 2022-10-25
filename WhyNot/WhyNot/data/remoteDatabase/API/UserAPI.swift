@@ -24,22 +24,31 @@ class UserAPI {
             print("Não foi possivel converter o objeto em documento")
             return
         }
+
         return try await crudService.createDocument(collectionRef: collectionReference, data: data)
     }
 
     func getUserByID(userID: String) async throws -> User? {
-        return try await
-            (crudService.readDocumentByID(collectionRef: collectionReference, documentId: userID))?.toObject()
+        return try await crudService.readDocumentByID(
+            collectionRef: collectionReference,
+            documentId: userID
+        )?.toObject()
     }
 
     func updateUser(userID: String, data: [String: Any]) async throws {
-        if let docRef = crudService.getDocumentReferenceByID(collectionRef: collectionReference, documentID: userID) {
+        if let docRef = crudService.getDocumentReferenceByID(
+            collectionRef: collectionReference,
+            documentID: userID
+        ) {
             try await crudService.updateDocument(docRef: docRef, data: data)
         }
     }
 
     func addFriend(userID: String, friendID: String) async throws {
-        if let docRef = crudService.getDocumentReferenceByID(collectionRef: collectionReference, documentID: userID) {
+        if let docRef = crudService.getDocumentReferenceByID(
+            collectionRef: collectionReference,
+            documentID: userID
+        ) {
             try await crudService.pushInDocumentArray(
                 docRef: docRef,
                 field: UserFields.friendsID.rawValue,
@@ -49,7 +58,10 @@ class UserAPI {
     }
 
     func removeFriend(userID: String, friendID: String) async throws {
-        if let docRef = crudService.getDocumentReferenceByID(collectionRef: collectionReference, documentID: userID) {
+        if let docRef = crudService.getDocumentReferenceByID(
+            collectionRef: collectionReference,
+            documentID: userID
+        ) {
             try await crudService.popInDocumentArray(
                 docRef: docRef,
                 field: UserFields.friendsID.rawValue,
@@ -59,7 +71,10 @@ class UserAPI {
     }
 
     func showInterest(userID: String, experienceID: String) async throws {
-        if let docRef = crudService.getDocumentReferenceByID(collectionRef: collectionReference, documentID: userID) {
+        if let docRef = crudService.getDocumentReferenceByID(
+            collectionRef: collectionReference,
+            documentID: userID
+        ) {
             try await crudService.pushInDocumentArray(
                 docRef: docRef,
                 field: UserFields.interestExperiencesID.rawValue,
@@ -69,7 +84,10 @@ class UserAPI {
     }
 
     func removeInterest(userID: String, experienceID: String) async throws {
-        if let docRef = crudService.getDocumentReferenceByID(collectionRef: collectionReference, documentID: userID) {
+        if let docRef = crudService.getDocumentReferenceByID(
+            collectionRef: collectionReference,
+            documentID: userID
+        ) {
             try await crudService.popInDocumentArray(
                 docRef: docRef,
                 field: UserFields.interestExperiencesID.rawValue,

@@ -8,7 +8,7 @@
 import FirebaseFirestoreSwift
 import Foundation
 
-struct User: Encodable, Decodable, UpdatableIdentifiable {
+struct User: Codable, UpdatableIdentifiable {
     @DocumentID var id: String?
     let name: String
     let profilePicture: String
