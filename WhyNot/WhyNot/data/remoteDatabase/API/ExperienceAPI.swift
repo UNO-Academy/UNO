@@ -5,8 +5,9 @@
 //  Created by Larissa Gomes de Stefano Escaliante on 13/10/22.
 //
 
-import Foundation
+import Firebase
 import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class ExperienceAPI {
 
@@ -15,13 +16,13 @@ class ExperienceAPI {
 
     init(crudService: CRUDServices, db: Firestore) {
         self.crudService = crudService
-        collectionReference = db.collection("Experience")
+        collectionReference = db.collection(CollectionNames.experience.rawValue)
     }
 
     func getActiveExperiences() async throws -> [Experience?] {
         return try await crudService.readDocumentsFilteredBy(
             collectionRef: collectionReference,
-            field: "isActive",
+            field: ExperienceFields.isActive.rawValue,
             value: true
         ).map({
             return $0.toObject()

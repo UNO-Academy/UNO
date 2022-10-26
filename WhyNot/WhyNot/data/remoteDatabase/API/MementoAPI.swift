@@ -5,8 +5,9 @@
 //  Created by Larissa Gomes de Stefano Escaliante on 17/10/22.
 //
 
-import Foundation
+import Firebase
 import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class MementoAPI {
 
@@ -15,7 +16,7 @@ class MementoAPI {
 
     init(crudService: CRUDServices, db: Firestore) {
         self.crudService = crudService
-        collectionReference = db.collection("Memento")
+        collectionReference = db.collection(CollectionNames.memento.rawValue)
     }
 
     func createMemento(_ memento: Memento) async throws {
