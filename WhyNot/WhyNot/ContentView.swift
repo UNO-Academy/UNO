@@ -9,7 +9,23 @@ import Foundation
 import SwiftUI
 
 struct ContentView: View {
+
     var body: some View {
-        Text("Essa contentView só extiste pra larissa não surtar")
+        TabView {
+            // TODO: colocar aas labels nos localizables
+            ExperiencesView()
+                .tabItem {
+                    Label("Pesquisar", systemImage: "magnifyingglass")
+                }
+
+            ExperiencesView()
+                .tabItem {
+                    Label("Experiências", systemImage: "square.stack")
+                }
+            ExperiencesView()
+                .tabItem {
+                    Label("Perfil", systemImage: "person")
+                }
+        } .accentColor(.orange)
     }
 }
