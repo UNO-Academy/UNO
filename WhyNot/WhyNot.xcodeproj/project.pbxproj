@@ -23,6 +23,7 @@
 		86048452290FF2BD0055AF30 /* LoveYaLikeASisterSolid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 86048451290FF2BD0055AF30 /* LoveYaLikeASisterSolid.ttf */; };
 		86048454290FF3D00055AF30 /* CustomFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86048453290FF3D00055AF30 /* CustomFonts.swift */; };
 		86048456290FF4BB0055AF30 /* FontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86048455290FF4BB0055AF30 /* FontSize.swift */; };
+		86048458290FFFD70055AF30 /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86048457290FFFD70055AF30 /* Space.swift */; };
 		8608FCD528F05AE1007FC0BA /* WhyNotApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8608FCD428F05AE1007FC0BA /* WhyNotApp.swift */; };
 		8608FCD928F05AE3007FC0BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8608FCD828F05AE3007FC0BA /* Assets.xcassets */; };
 		8608FCDC28F05AE3007FC0BA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8608FCDB28F05AE3007FC0BA /* Preview Assets.xcassets */; };
@@ -62,6 +63,7 @@
 		86048451290FF2BD0055AF30 /* LoveYaLikeASisterSolid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LoveYaLikeASisterSolid.ttf; sourceTree = "<group>"; };
 		86048453290FF3D00055AF30 /* CustomFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFonts.swift; sourceTree = "<group>"; };
 		86048455290FF4BB0055AF30 /* FontSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSize.swift; sourceTree = "<group>"; };
+		86048457290FFFD70055AF30 /* Space.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Space.swift; sourceTree = "<group>"; };
 		8608FCD128F05AE1007FC0BA /* WhyNot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhyNot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8608FCD428F05AE1007FC0BA /* WhyNotApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhyNotApp.swift; sourceTree = "<group>"; };
 		8608FCD828F05AE3007FC0BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 			children = (
 				862BBBF0290F311E0005C8D1 /* Fonts */,
 				863A8F00290C10A0000DBA1B /* Colors.swift */,
+				86048457290FFFD70055AF30 /* Space.swift */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				24B18B1628FD757A00EC9A3D /* MementoAPI.swift in Sources */,
 				2424526F28FEE104006E8629 /* Sequence+Extension.swift in Sources */,
 				8608FCD528F05AE1007FC0BA /* WhyNotApp.swift in Sources */,
+				86048458290FFFD70055AF30 /* Space.swift in Sources */,
 				862C53D32906AE7200068528 /* StorageServices.swift in Sources */,
 				59B892CC28FD77DF0045EAA9 /* DocumentSnapshot+Extension.swift in Sources */,
 				24B18B1828FD7BF400EC9A3D /* Memento.swift in Sources */,
