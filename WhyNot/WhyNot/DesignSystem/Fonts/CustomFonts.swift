@@ -8,6 +8,6 @@
 import Foundation
 
 enum CustomFonts {
-    static var LYLSS: String { return "Love Ya Like A Sister Solid" }
-    static var LYLS: String { return "Love Ya Like A Sister" }
+    static var SolidThemeFont: String { return "Love Ya Like A Sister Solid" }
+    static var ThemeFont: String { return "Love Ya Like A Sister" }
 }
