@@ -5,6 +5,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>LoveYaLikeASister-Regular.ttf</string>
+		<string>LoveYaLikeASisterSolid.ttf</string>
 	</array>
 </dict>
 </plist>
