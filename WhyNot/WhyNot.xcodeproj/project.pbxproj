@@ -21,13 +21,19 @@
 		59B892CC28FD77DF0045EAA9 /* DocumentSnapshot+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B892CB28FD77DF0045EAA9 /* DocumentSnapshot+Extension.swift */; };
 		59B892CE28FD7FB60045EAA9 /* ModelInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B892CD28FD7FB60045EAA9 /* ModelInterface.swift */; };
 		59E2D58F28FEDF22007A1503 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 59E2D58E28FEDF22007A1503 /* .swiftlint.yml */; };
+		86048452290FF2BD0055AF30 /* LoveYaLikeASisterSolid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 86048451290FF2BD0055AF30 /* LoveYaLikeASisterSolid.ttf */; };
+		86048454290FF3D00055AF30 /* CustomFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86048453290FF3D00055AF30 /* CustomFonts.swift */; };
+		86048456290FF4BB0055AF30 /* FontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86048455290FF4BB0055AF30 /* FontSize.swift */; };
+		86048458290FFFD70055AF30 /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86048457290FFFD70055AF30 /* Space.swift */; };
 		8608FCD528F05AE1007FC0BA /* WhyNotApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8608FCD428F05AE1007FC0BA /* WhyNotApp.swift */; };
 		8608FCD928F05AE3007FC0BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8608FCD828F05AE3007FC0BA /* Assets.xcassets */; };
 		8608FCDC28F05AE3007FC0BA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8608FCDB28F05AE3007FC0BA /* Preview Assets.xcassets */; };
 		8608FCE328F05BA4007FC0BA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8608FCE228F05BA4007FC0BA /* GoogleService-Info.plist */; };
 		8608FCE628F05C96007FC0BA /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8608FCE528F05C96007FC0BA /* FirebaseFirestore */; };
 		8608FCE828F05C96007FC0BA /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 8608FCE728F05C96007FC0BA /* FirebaseStorage */; };
+		862BBBF2290F31370005C8D1 /* LoveYaLikeASister-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 862BBBF1290F31370005C8D1 /* LoveYaLikeASister-Regular.ttf */; };
 		862C53D32906AE7200068528 /* StorageServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862C53D22906AE7200068528 /* StorageServices.swift */; };
+		863A8F01290C10A0000DBA1B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A8F00290C10A0000DBA1B /* Colors.swift */; };
 		86BA9D1129096A3800C1F330 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BA9D1029096A3800C1F330 /* ContentView.swift */; };
 		86DFFE4E28F44CD30075153A /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 86DFFE4D28F44CD30075153A /* FirebaseDatabase */; };
 		86DFFE5028F44CD30075153A /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 86DFFE4F28F44CD30075153A /* FirebaseDatabaseSwift */; };
@@ -56,12 +62,19 @@
 		59B892CB28FD77DF0045EAA9 /* DocumentSnapshot+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DocumentSnapshot+Extension.swift"; sourceTree = "<group>"; };
 		59B892CD28FD7FB60045EAA9 /* ModelInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelInterface.swift; sourceTree = "<group>"; };
 		59E2D58E28FEDF22007A1503 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		86048451290FF2BD0055AF30 /* LoveYaLikeASisterSolid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LoveYaLikeASisterSolid.ttf; sourceTree = "<group>"; };
+		86048453290FF3D00055AF30 /* CustomFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFonts.swift; sourceTree = "<group>"; };
+		86048455290FF4BB0055AF30 /* FontSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSize.swift; sourceTree = "<group>"; };
+		86048457290FFFD70055AF30 /* Space.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Space.swift; sourceTree = "<group>"; };
 		8608FCD128F05AE1007FC0BA /* WhyNot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhyNot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8608FCD428F05AE1007FC0BA /* WhyNotApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhyNotApp.swift; sourceTree = "<group>"; };
 		8608FCD828F05AE3007FC0BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8608FCDB28F05AE3007FC0BA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8608FCE228F05BA4007FC0BA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		862BBBF1290F31370005C8D1 /* LoveYaLikeASister-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LoveYaLikeASister-Regular.ttf"; sourceTree = "<group>"; };
+		862BBBF3290F31D30005C8D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		862C53D22906AE7200068528 /* StorageServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServices.swift; sourceTree = "<group>"; };
+		863A8F00290C10A0000DBA1B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		86BA9D1029096A3800C1F330 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -176,6 +189,8 @@
 			isa = PBXGroup;
 			children = (
 				24BE3E2C291002B200261E0A /* Scenes */,
+				862BBBF3290F31D30005C8D1 /* Info.plist */,
+				863A8EFF290C0060000DBA1B /* DesignSystem */,
 				2424527228FEE50C006E8629 /* Extension */,
 				24202E9F28F846CB00141CCB /* data */,
 				8608FCD428F05AE1007FC0BA /* WhyNotApp.swift */,
@@ -193,6 +208,27 @@
 				8608FCDB28F05AE3007FC0BA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		862BBBF0290F311E0005C8D1 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				86048451290FF2BD0055AF30 /* LoveYaLikeASisterSolid.ttf */,
+				862BBBF1290F31370005C8D1 /* LoveYaLikeASister-Regular.ttf */,
+				86048453290FF3D00055AF30 /* CustomFonts.swift */,
+				86048455290FF4BB0055AF30 /* FontSize.swift */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		863A8EFF290C0060000DBA1B /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				862BBBF0290F311E0005C8D1 /* Fonts */,
+				863A8F00290C10A0000DBA1B /* Colors.swift */,
+				86048457290FFFD70055AF30 /* Space.swift */,
+			);
+			path = DesignSystem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,8 +308,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				862BBBF2290F31370005C8D1 /* LoveYaLikeASister-Regular.ttf in Resources */,
 				59E2D58F28FEDF22007A1503 /* .swiftlint.yml in Resources */,
 				8608FCDC28F05AE3007FC0BA /* Preview Assets.xcassets in Resources */,
+				86048452290FF2BD0055AF30 /* LoveYaLikeASisterSolid.ttf in Resources */,
 				8608FCD928F05AE3007FC0BA /* Assets.xcassets in Resources */,
 				8608FCE328F05BA4007FC0BA /* GoogleService-Info.plist in Resources */,
 			);
@@ -308,12 +346,16 @@
 			files = (
 				594A5FA82902CCBE00A1C10C /* User.swift in Sources */,
 				24202EA228F846F900141CCB /* Experience.swift in Sources */,
+				86048456290FF4BB0055AF30 /* FontSize.swift in Sources */,
 				86BA9D1129096A3800C1F330 /* ContentView.swift in Sources */,
+				86048454290FF3D00055AF30 /* CustomFonts.swift in Sources */,
+				863A8F01290C10A0000DBA1B /* Colors.swift in Sources */,
 				24202EA828F847E100141CCB /* ExperienceAPI.swift in Sources */,
 				24BE3E2F291002F400261E0A /* ExperiencesView.swift in Sources */,
 				24B18B1628FD757A00EC9A3D /* MementoAPI.swift in Sources */,
 				2424526F28FEE104006E8629 /* Sequence+Extension.swift in Sources */,
 				8608FCD528F05AE1007FC0BA /* WhyNotApp.swift in Sources */,
+				86048458290FFFD70055AF30 /* Space.swift in Sources */,
 				862C53D32906AE7200068528 /* StorageServices.swift in Sources */,
 				59B892CC28FD77DF0045EAA9 /* DocumentSnapshot+Extension.swift in Sources */,
 				24B18B1828FD7BF400EC9A3D /* Memento.swift in Sources */,
@@ -451,9 +493,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WhyNot/Preview Content\"";
-				DEVELOPMENT_TEAM = 8VP3WGJ23G;
+				DEVELOPMENT_TEAM = 7XM8M8X33C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WhyNot/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -464,7 +508,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = WhyNot.com.WhyNot;
+				PRODUCT_BUNDLE_IDENTIFIER = WhyNot.com.WhyNotFer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -480,9 +524,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WhyNot/Preview Content\"";
-				DEVELOPMENT_TEAM = 8VP3WGJ23G;
+				DEVELOPMENT_TEAM = 7XM8M8X33C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WhyNot/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -493,7 +539,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = WhyNot.com.WhyNot;
+				PRODUCT_BUNDLE_IDENTIFIER = WhyNot.com.WhyNotFer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

@@ -27,5 +27,9 @@ struct ContentView: View {
                     Label("Perfil", systemImage: "person")
                 }
         } .accentColor(.orange)
+        Text("Essa contentView só extiste pra larissa não surtar")
+            .font(Font.custom(CustomFonts.SolidThemeFont, size: FontSize.largeTitle))
+            .foregroundColor(Color.CustomColors.CardTitle)
+            .padding(Space.halfSpace)
     }
 }
