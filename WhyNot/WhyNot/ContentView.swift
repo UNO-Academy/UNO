@@ -10,26 +10,32 @@ import SwiftUI
 
 struct ContentView: View {
 
-    var body: some View {
-        TabView {
-            // TODO: colocar aas labels nos localizables
-            ExperiencesView()
-                .tabItem {
-                    Label("Pesquisar", systemImage: "magnifyingglass")
-                }
+    @State var selection = 0
 
+    var body: some View {
+        TabView(selection: $selection) {
+            // TODO: colocar aas labels nos localizables
+            SearchView()
+                .tabItem {
+                    Label(
+                        "Pesquisar",
+                        systemImage: TabBar.getIcon(tab: Tab.search, selection: selection)
+                    )
+                }.tag(0)
             ExperiencesView()
                 .tabItem {
-                    Label("Experiências", systemImage: "square.stack")
-                }
-            ExperiencesView()
+                    Label(
+                        "Experiências",
+                        systemImage: TabBar.getIcon(tab: Tab.experience, selection: selection)
+                    )
+                }.tag(1)
+            ProfileView()
                 .tabItem {
-                    Label("Perfil", systemImage: "person")
-                }
-        } .accentColor(.orange)
-        Text("Essa contentView só extiste pra larissa não surtar")
-            .font(Font.custom(CustomFonts.SolidThemeFont, size: FontSize.largeTitle))
-            .foregroundColor(Color.CustomColors.CardTitle)
-            .padding(Space.halfSpace)
+                    Label(
+                        "Perfil",
+                        systemImage: TabBar.getIcon(tab: Tab.profile, selection: selection)
+                    )
+                }.tag(2)
+        } .accentColor(Color.CustomColors.ClicableColor)
     }
 }
