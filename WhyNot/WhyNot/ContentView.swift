@@ -87,5 +87,11 @@ struct Experience_Previews: PreviewProvider {
                        cost: 1,
                        category: "a",
                        isActive: false))
+struct ContentView: View {
+    var body: some View {
+        Text("Essa contentView só extiste pra larissa não surtar")
+            .font(Font.custom(CustomFonts.SolidThemeFont, size: FontSize.largeTitle))
+            .foregroundColor(Color.CustomColors.CardTitle)
+            .padding(Space.halfSpace)
     }
 }
