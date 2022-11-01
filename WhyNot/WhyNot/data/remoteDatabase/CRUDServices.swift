@@ -19,7 +19,11 @@ class CRUDServices {
         }
     }
 
-    func createDocumentWithID(collectionRef: CollectionReference, documentID: String, data: [String: Any]) async throws {
+    func createDocumentWithID(
+        collectionRef: CollectionReference,
+        documentID: String,
+        data: [String: Any]
+    ) async throws {
         do {
             _ = try await collectionRef.document(documentID).setData(data)
         } catch {
