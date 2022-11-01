@@ -14,6 +14,7 @@ struct Experience: Codable, UpdatableIdentifiable {
     let description: String
     let effort: Int
     let duration: Int
+    let cost: Int
     let category: String
     let isActive: Bool
 }

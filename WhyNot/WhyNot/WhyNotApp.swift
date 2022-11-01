@@ -12,7 +12,15 @@ import Firebase
 struct WhyNotApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView().onAppear {
+            TagsView(expirience: Experience(id: "aaa",
+                                                  name: "aaa",
+                                                  description: "aaa",
+                                                  effort: 2,
+                                                  duration: 2,
+                                                  cost: 1,
+                                                  category:"a",
+                                                  isActive: false))
+            .onAppear {
                 FirebaseApp.configure()
             }
         }
