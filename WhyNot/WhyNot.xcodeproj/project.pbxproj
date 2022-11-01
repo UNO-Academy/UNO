@@ -17,6 +17,7 @@
 		594A5FA82902CCBE00A1C10C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594A5FA72902CCBE00A1C10C /* User.swift */; };
 		594A5FAA2902CDB700A1C10C /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594A5FA92902CDB700A1C10C /* UserAPI.swift */; };
 		59AC84A428F609BA00EB3A9A /* CRUDServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AC84A328F609BA00EB3A9A /* CRUDServices.swift */; };
+		59ADEF252911654500B025C4 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ADEF242911654500B025C4 /* AuthenticationManager.swift */; };
 		59B892CC28FD77DF0045EAA9 /* DocumentSnapshot+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B892CB28FD77DF0045EAA9 /* DocumentSnapshot+Extension.swift */; };
 		59B892CE28FD7FB60045EAA9 /* ModelInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B892CD28FD7FB60045EAA9 /* ModelInterface.swift */; };
 		59E2D58F28FEDF22007A1503 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 59E2D58E28FEDF22007A1503 /* .swiftlint.yml */; };
@@ -44,6 +45,7 @@
 		86DFFE5C28F44CD30075153A /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 86DFFE5B28F44CD30075153A /* FirebaseRemoteConfigSwift */; };
 		86DFFE5E28F44CD30075153A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 86DFFE5D28F44CD30075153A /* FirebaseStorage */; };
 		86DFFE6028F44CD30075153A /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 86DFFE5F28F44CD30075153A /* FirebaseStorageCombine-Community */; };
+		F48BB8D975248989EF399729 /* Pods_WhyNot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4554FF230424CCE66A2DCC02 /* Pods_WhyNot.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,12 +56,15 @@
 		2424527328FEE899006E8629 /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
 		24B18B1528FD757A00EC9A3D /* MementoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MementoAPI.swift; sourceTree = "<group>"; };
 		24B18B1728FD7BF400EC9A3D /* Memento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memento.swift; sourceTree = "<group>"; };
+		4554FF230424CCE66A2DCC02 /* Pods_WhyNot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhyNot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		594A5FA72902CCBE00A1C10C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		594A5FA92902CDB700A1C10C /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
 		59AC84A328F609BA00EB3A9A /* CRUDServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRUDServices.swift; sourceTree = "<group>"; };
+		59ADEF242911654500B025C4 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		59B892CB28FD77DF0045EAA9 /* DocumentSnapshot+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DocumentSnapshot+Extension.swift"; sourceTree = "<group>"; };
 		59B892CD28FD7FB60045EAA9 /* ModelInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelInterface.swift; sourceTree = "<group>"; };
 		59E2D58E28FEDF22007A1503 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		759BE891DCFB16285BD6D973 /* Pods-WhyNot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhyNot.release.xcconfig"; path = "Target Support Files/Pods-WhyNot/Pods-WhyNot.release.xcconfig"; sourceTree = "<group>"; };
 		86048451290FF2BD0055AF30 /* LoveYaLikeASisterSolid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LoveYaLikeASisterSolid.ttf; sourceTree = "<group>"; };
 		86048453290FF3D00055AF30 /* CustomFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFonts.swift; sourceTree = "<group>"; };
 		86048455290FF4BB0055AF30 /* FontSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSize.swift; sourceTree = "<group>"; };
@@ -74,6 +79,7 @@
 		862C53D22906AE7200068528 /* StorageServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServices.swift; sourceTree = "<group>"; };
 		863A8F00290C10A0000DBA1B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		86BA9D1029096A3800C1F330 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		97775007B441FDADD3916700 /* Pods-WhyNot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhyNot.debug.xcconfig"; path = "Target Support Files/Pods-WhyNot/Pods-WhyNot.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +99,7 @@
 				86DFFE5228F44CD30075153A /* FirebaseFirestore in Frameworks */,
 				86DFFE6028F44CD30075153A /* FirebaseStorageCombine-Community in Frameworks */,
 				8608FCE828F05C96007FC0BA /* FirebaseStorage in Frameworks */,
+				F48BB8D975248989EF399729 /* Pods_WhyNot.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +132,7 @@
 			children = (
 				59AC84A328F609BA00EB3A9A /* CRUDServices.swift */,
 				862C53D22906AE7200068528 /* StorageServices.swift */,
+				59ADEF242911654500B025C4 /* AuthenticationManager.swift */,
 				24202EA628F847D100141CCB /* API */,
 			);
 			path = remoteDatabase;
@@ -150,12 +158,22 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		25BA7FE7CD1F909C2692C027 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4554FF230424CCE66A2DCC02 /* Pods_WhyNot.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8608FCC828F05AE1007FC0BA = {
 			isa = PBXGroup;
 			children = (
 				59E2D58E28FEDF22007A1503 /* .swiftlint.yml */,
 				8608FCD328F05AE1007FC0BA /* WhyNot */,
 				8608FCD228F05AE1007FC0BA /* Products */,
+				9EF61333FF75819CA1540DC9 /* Pods */,
+				25BA7FE7CD1F909C2692C027 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -212,6 +230,15 @@
 			path = DesignSystem;
 			sourceTree = "<group>";
 		};
+		9EF61333FF75819CA1540DC9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				97775007B441FDADD3916700 /* Pods-WhyNot.debug.xcconfig */,
+				759BE891DCFB16285BD6D973 /* Pods-WhyNot.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -219,10 +246,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8608FCDF28F05AE3007FC0BA /* Build configuration list for PBXNativeTarget "WhyNot" */;
 			buildPhases = (
+				47BC5CF67A35B21CC7F57206 /* [CP] Check Pods Manifest.lock */,
 				8608FCCD28F05AE1007FC0BA /* Sources */,
 				8608FCCE28F05AE1007FC0BA /* Frameworks */,
 				8608FCCF28F05AE1007FC0BA /* Resources */,
 				59E2D58D28FEDEE4007A1503 /* ShellScript */,
+				E57E34C7A4297DBEE0F22DA7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -301,6 +330,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		47BC5CF67A35B21CC7F57206 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WhyNot-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		59E2D58D28FEDEE4007A1503 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -318,6 +369,23 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
+		E57E34C7A4297DBEE0F22DA7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WhyNot/Pods-WhyNot-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WhyNot/Pods-WhyNot-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WhyNot/Pods-WhyNot-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -334,6 +402,7 @@
 				24202EA828F847E100141CCB /* ExperienceAPI.swift in Sources */,
 				24B18B1628FD757A00EC9A3D /* MementoAPI.swift in Sources */,
 				2424526F28FEE104006E8629 /* Sequence+Extension.swift in Sources */,
+				59ADEF252911654500B025C4 /* AuthenticationManager.swift in Sources */,
 				8608FCD528F05AE1007FC0BA /* WhyNotApp.swift in Sources */,
 				86048458290FFFD70055AF30 /* Space.swift in Sources */,
 				862C53D32906AE7200068528 /* StorageServices.swift in Sources */,
@@ -467,6 +536,7 @@
 		};
 		8608FCE028F05AE3007FC0BA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97775007B441FDADD3916700 /* Pods-WhyNot.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -498,6 +568,7 @@
 		};
 		8608FCE128F05AE3007FC0BA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 759BE891DCFB16285BD6D973 /* Pods-WhyNot.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
