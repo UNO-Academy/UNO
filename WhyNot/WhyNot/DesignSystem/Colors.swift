@@ -17,4 +17,16 @@ extension Color {
         static var RedSwipe: Color { return Color("RedSwipeWN") }
         static var TitleColor: Color { return Color("TitleColor") }
     }
+
+    enum PrimaryPallet {
+        static var red: Color { return Color("primaryRed") }
+        static var yellow: Color { return Color("primaryYellow") }
+        static var green: Color { return Color("primaryGreen") }
+    }
+
+    enum SecondaryPallet {
+        static var red: Color { return Color("secondaryRed") }
+        static var yellow: Color { return Color("secondaryYellow") }
+        static var green: Color { return Color("secondaryGreen") }
+    }
 }
