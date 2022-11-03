@@ -12,8 +12,7 @@ import Firebase
 struct WhyNotApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
-            .onAppear {
+            ContentView().onAppear {
                 FirebaseApp.configure()
             }
         }

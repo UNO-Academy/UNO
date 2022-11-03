@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct TagView: View {
-    var tagData: TagData
+    var tagData: TagType
 
     var body: some View {
-        tagData.getTag()
-            .foregroundColor(Color.CustomColors.CardTitle)
+        HStack {
+            tagData.getText()
+            tagData.getImage()
+        }.foregroundColor(Color.CustomColors.CardTitle)
             .padding(Space.halfSpace)
             .background(.white)
             .cornerRadius(Space.halfSpace)
@@ -25,10 +27,11 @@ struct TagsView: View {
     var body: some View {
         VStack {
             HStack {
-                TagView(tagData: TagData(tagType: TagType.effort(experience.effort)))
-                TagView(tagData: TagData(tagType: TagType.duration(experience.duration)))
-                TagView(tagData: TagData(tagType: TagType.cost(experience.cost)))
+                TagView(tagData: TagType.effort(experience.effort))
+                TagView(tagData: TagType.duration(experience.duration))
+                TagView(tagData: TagType.cost(experience.cost))
             }
         }
     }
 }
+
