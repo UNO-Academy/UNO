@@ -8,6 +8,7 @@
 import SwiftUI
 
 enum Tab {
+
     case search
     case experience
     case profile
