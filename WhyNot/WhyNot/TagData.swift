@@ -11,40 +11,54 @@ enum TagType {
     case effort(Int), duration(Int), cost(Int)
 }
 
+enum TagValue: String {
+    case effort1 = "Cheap"
+    case effort2 = "Affordable"
+    case effort3 = "Expensive"
+
+    case duration1 = "Short"
+    case duration2 = "Medium"
+    case duration3 = "Long"
+
+    case cost1 = "Easy"
+    case cost2 = "Normal"
+    case cost3 = "Hard"
+}
+
 struct TagData {
     var tagType: TagType
 
     func getTag() -> Text {
         switch tagType {
-        case .effort(let int):
+        case .effort(let value):
             let image = Image(systemName: "stopwatch.fill")
-            switch int {
+            switch value {
             case 1:
-                return Text("\("Cheap") \(image)")
+                return Text("\(TagValue.effort1.rawValue) \(image)")
             case 2:
-                return Text("\("Affordable") \(image)")
+                return Text("\(TagValue.effort2.rawValue) \(image)")
             default:
-                return Text("\("Expensive") \(image)")
+                return Text("\(TagValue.effort3.rawValue) \(image)")
             }
-        case .duration(let int):
+        case .duration(let value):
             let image = Image(systemName: "dollarsign.circle.fill")
-            switch int {
+            switch value {
             case 1:
-                return Text("\("Short") \(image)")
+                return Text("\(TagValue.duration1.rawValue) \(image)")
             case 2:
-                return Text("\("Medium") \(image)")
+                return Text("\(TagValue.duration2.rawValue) \(image)")
             default:
-                return Text("\("Long") \(image)")
+                return Text("\(TagValue.duration3.rawValue) \(image)")
             }
-        case .cost(let int):
+        case .cost(let value):
             let image = Image(systemName: "bolt.circle.fill")
-            switch int {
+            switch value {
             case 1:
-                return Text("\("Easy") \(image)")
+                return Text("\(TagValue.cost1.rawValue) \(image)")
             case 2:
-                return Text("\("Normal") \(image)")
+                return Text("\(TagValue.cost2.rawValue) \(image)")
             default:
-                return Text("\("Hard") \(image)")
+                return Text("\(TagValue.cost3.rawValue) \(image)")
             }
         }
     }
