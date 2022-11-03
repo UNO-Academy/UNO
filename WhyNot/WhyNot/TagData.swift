@@ -55,6 +55,7 @@ enum TagType {
 }
 
 enum TagValue: String {
+    //TODO: quando o paulo fizer o localizable mudar isso aqui 
     case effort1 = "Cheap"
     case effort2 = "Affordable"
     case effort3 = "Expensive"
