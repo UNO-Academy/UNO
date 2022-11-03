@@ -11,11 +11,7 @@ class AuthenticationManager {
     let auth = Auth.auth()
 
     func createAccount(_ email: String, _ password: String) async throws -> AuthDataResult {
-        do {
-            return try await auth.createUser(withEmail: email, password: password)
-        } catch {
-            throw error
-        }
+        return try await auth.createUser(withEmail: email, password: password)
     }
 
     func signIn(_ email: String, _ password: String, completion: @escaping (Result<String, Error>) -> Void ) {
@@ -27,12 +23,8 @@ class AuthenticationManager {
             completion(.success(userID))
         }
     }
-    
+
     func signOut() throws {
-        do {
-            try auth.signOut()
-        } catch {
-            throw error
-        }
+        try auth.signOut()
     }
 }
