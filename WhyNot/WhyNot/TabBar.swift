@@ -31,7 +31,7 @@ struct TabBarView: View {
 
 struct TabItem: View {
 
-    @State var tab: Tab
+    let tab: Tab
 
     var body: some View {
         tab.getIcon()
