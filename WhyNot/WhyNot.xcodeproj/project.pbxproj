@@ -14,6 +14,7 @@
 		2424527428FEE899006E8629 /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2424527328FEE899006E8629 /* Encodable+Extension.swift */; };
 		24B18B1628FD757A00EC9A3D /* MementoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B18B1528FD757A00EC9A3D /* MementoAPI.swift */; };
 		24B18B1828FD7BF400EC9A3D /* Memento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B18B1728FD7BF400EC9A3D /* Memento.swift */; };
+		27C0716F291438570076D6C4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27C07171291438570076D6C4 /* Localizable.strings */; };
 		594A5FA82902CCBE00A1C10C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594A5FA72902CCBE00A1C10C /* User.swift */; };
 		594A5FAA2902CDB700A1C10C /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594A5FA92902CDB700A1C10C /* UserAPI.swift */; };
 		59AC84A428F609BA00EB3A9A /* CRUDServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AC84A328F609BA00EB3A9A /* CRUDServices.swift */; };
@@ -54,6 +55,9 @@
 		2424527328FEE899006E8629 /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
 		24B18B1528FD757A00EC9A3D /* MementoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MementoAPI.swift; sourceTree = "<group>"; };
 		24B18B1728FD7BF400EC9A3D /* Memento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memento.swift; sourceTree = "<group>"; };
+		27C07170291438570076D6C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		27C071722914385E0076D6C4 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		27C071732914385F0076D6C4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		594A5FA72902CCBE00A1C10C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		594A5FA92902CDB700A1C10C /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
 		59AC84A328F609BA00EB3A9A /* CRUDServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRUDServices.swift; sourceTree = "<group>"; };
@@ -208,6 +212,7 @@
 				862BBBF0290F311E0005C8D1 /* Fonts */,
 				863A8F00290C10A0000DBA1B /* Colors.swift */,
 				86048457290FFFD70055AF30 /* Space.swift */,
+				27C07171291438570076D6C4 /* Localizable.strings */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -269,6 +274,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
+				ru,
 			);
 			mainGroup = 8608FCC828F05AE1007FC0BA;
 			packageReferences = (
@@ -292,6 +299,7 @@
 				862BBBF2290F31370005C8D1 /* LoveYaLikeASister-Regular.ttf in Resources */,
 				59E2D58F28FEDF22007A1503 /* .swiftlint.yml in Resources */,
 				8608FCDC28F05AE3007FC0BA /* Preview Assets.xcassets in Resources */,
+				27C0716F291438570076D6C4 /* Localizable.strings in Resources */,
 				86048452290FF2BD0055AF30 /* LoveYaLikeASisterSolid.ttf in Resources */,
 				8608FCD928F05AE3007FC0BA /* Assets.xcassets in Resources */,
 				8608FCE328F05BA4007FC0BA /* GoogleService-Info.plist in Resources */,
@@ -349,6 +357,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		27C07171291438570076D6C4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27C07170291438570076D6C4 /* en */,
+				27C071722914385E0076D6C4 /* pt-BR */,
+				27C071732914385F0076D6C4 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		8608FCDD28F05AE3007FC0BA /* Debug */ = {

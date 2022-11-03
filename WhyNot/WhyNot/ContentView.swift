@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Essa contentView só extiste pra larissa não surtar")
+        Text(String(localized: "experiencesScreenTitle"))
             .font(Font.custom(CustomFonts.SolidThemeFont, size: FontSize.largeTitle))
             .foregroundColor(Color.CustomColors.CardTitle)
             .padding(Space.halfSpace)
