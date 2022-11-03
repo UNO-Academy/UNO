@@ -34,4 +34,3 @@ struct TagsView: View {
         }
     }
 }
-
