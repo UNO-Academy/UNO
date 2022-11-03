@@ -14,14 +14,9 @@ class AuthenticationManager {
         return try await auth.createUser(withEmail: email, password: password)
     }
 
-    func signIn(_ email: String, _ password: String, completion: @escaping (Result<String, Error>) -> Void ) {
-        auth.signIn(withEmail: email, password: password) { authResult, error in
-            if let error = error {
-                completion(.failure(error))
-            }
-            let userID = authResult?.user.uid ?? "Unknown"
-            completion(.success(userID))
-        }
+    func signIn(_ email: String, _ password: String) async throws -> String {
+        let result: AuthDataResult = try await auth.signIn(withEmail: email, password: password)
+        return result.user.uid
     }
 
     func signOut() throws {
