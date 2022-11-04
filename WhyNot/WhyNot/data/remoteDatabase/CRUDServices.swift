@@ -31,7 +31,10 @@ class CRUDServices {
         }
     }
 
-    func readDocumentByID(collectionRef: CollectionReference, documentId: String) async throws -> DocumentSnapshot? {
+    func readDocumentByID(
+        collectionRef: CollectionReference,
+        documentId: String
+    ) async throws -> DocumentSnapshot? {
         do {
             return try await collectionRef.document(documentId).getDocument()
         } catch {
