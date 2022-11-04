@@ -1,0 +1,6 @@
+framework module Pods_WhyNot {
+  umbrella header "Pods-WhyNot-umbrella.h"
+
+  export *
+  module * { export * }
+}
