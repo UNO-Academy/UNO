@@ -24,15 +24,14 @@ enum Tab {
         }
     }
 
-    // TODO: colocar aas labels nos localizables
     func getName() -> String {
         switch self {
         case .search:
-            return "Pesquisar"
+            return String(localized: "searchTabLabel")
         case .experience:
-            return "Experiências"
+            return String(localized: "experiencesTabLabel")
         case .profile:
-            return "Perfil"
+            return String(localized: "profileTabLabel")
         }
     }
 }

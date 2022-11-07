@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProfileView: View {
     var body: some View {
-        Text("Perfil")
+        Text(String(localized: "profileTabLabel"))
             .font(Font.custom(CustomFonts.SolidThemeFont, size: FontSize.largeTitle))
             .foregroundColor(Color.CustomColors.CardTitle)
             .padding(Space.halfSpace)
