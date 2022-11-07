@@ -13,6 +13,7 @@ enum Space {
     static var space1x: CGFloat { return 8 }
     static var space2x: CGFloat { return 16 }
     static var space4x: CGFloat { return 32 }
+    static var space8x: CGFloat { return 64 }
 }
 
 enum Radius {

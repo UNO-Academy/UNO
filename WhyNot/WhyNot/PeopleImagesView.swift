@@ -8,19 +8,27 @@
 import SwiftUI
 
 struct PeopleImagesView: View {
+    var images: [UIImage]
+    let imageBiulder = PeopleImageViewBiulder()
+
     var body: some View {
-        Image("imagemTeste")
-            .resizable()
-            .frame(width: 100, height: 100)
-            .clipShape(Circle())
-            .padding(4)
-            .background(Color.green)
-            .clipShape(Circle())
+        HStack(spacing: -Space.space8x) {
+            ForEach(0..<images.count) { imageIdx in
+                imageBiulder.getPeopleImageView(image: images[imageIdx],
+                                                imageIndex: imageIdx,
+                                                totalImageNumber: images.count)
+            }
+        }
     }
 }
 
 struct PeopleProvider: PreviewProvider {
     static var previews: some View {
-        PeopleImagesView()
+        PeopleImagesView(images: [UIImage(named: "imagemTeste")!,
+                                  UIImage(named: "imagemTeste")!,
+                                  UIImage(named: "imagemTeste")!,
+                                  UIImage(named: "imagemTeste")!,
+                                  UIImage(named: "imagemTeste")!,
+                                  UIImage(named: "imagemTeste")!])
     }
 }
