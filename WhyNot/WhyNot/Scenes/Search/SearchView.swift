@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SearchView: View {
     var body: some View {
-        Text("Essa contentView só extiste pra larissa não surtar")
+        Text("Pesquisar")
             .font(Font.custom(CustomFonts.SolidThemeFont, size: FontSize.largeTitle))
             .foregroundColor(Color.CustomColors.CardTitle)
             .padding(Space.halfSpace)

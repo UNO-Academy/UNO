@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ExperiencesView: View {
     var body: some View {
-        Text("Essa contentView só extiste pra larissa não surtar")
+        Text("Experiências")
             .font(Font.custom(CustomFonts.SolidThemeFont, size: FontSize.largeTitle))
             .foregroundColor(Color.CustomColors.CardTitle)
             .padding(Space.halfSpace)
