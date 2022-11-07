@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  WhyNot
+
+  Created by Paulo Bassani on 03/11/22.
+  
+*/
+
+//TabBar
+"searchTabLabel" = "Search";
+"experiencesTabLabel" = "Experiences";
+"profileTabLabel" = "Profile";
+
+//Experiences Screen
+"experiencesScreenTitle" = "Experiences";
+"activitiesTableTitle" = "Activities";
+"experiencedTableTitle" = "Lived";
+"daysRemainingCounter" = "Days Left";
+
+//Experience detail Screen
+
+//Login Screen
