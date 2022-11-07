@@ -21,7 +21,6 @@ struct PeopleImageViewBiulder {
                 .padding(Space.halfSpace)
                 .background(Color.CustomColors.CardTitle)
                 .clipShape(Circle())))
-
         }
 
         if imageIndex == 4 {

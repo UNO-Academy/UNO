@@ -14,21 +14,8 @@ struct PeopleImagesView: View {
     var body: some View {
         HStack(spacing: -Space.space8x) {
             ForEach(0..<images.count) { imageIdx in
-                imageBiulder.getPeopleImageView(image: images[imageIdx],
-                                                imageIndex: imageIdx,
-                                                totalImageNumber: images.count)
+                imageBiulder.getPeopleImageView(image: images[imageIdx], imageIndex: imageIdx, totalImageNumber: images.count)
             }
         }
-    }
-}
-
-struct PeopleProvider: PreviewProvider {
-    static var previews: some View {
-        PeopleImagesView(images: [UIImage(named: "imagemTeste")!,
-                                  UIImage(named: "imagemTeste")!,
-                                  UIImage(named: "imagemTeste")!,
-                                  UIImage(named: "imagemTeste")!,
-                                  UIImage(named: "imagemTeste")!,
-                                  UIImage(named: "imagemTeste")!])
     }
 }
