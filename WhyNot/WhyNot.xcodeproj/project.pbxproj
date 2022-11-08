@@ -231,6 +231,7 @@
 				738659AFE9D568E5B78203F5 /* Pods_WhyNot.framework */,
 			);
 			name = Frameworks;
+        };
 		24BE3E2C291002B200261E0A /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -614,11 +615,8 @@
 				2424527428FEE899006E8629 /* Encodable+Extension.swift in Sources */,
 				59AC84A428F609BA00EB3A9A /* CRUDServices.swift in Sources */,
 				59B892CE28FD7FB60045EAA9 /* ModelInterface.swift in Sources */,
-<<<<<<< HEAD
 				8608FCD528F05AE1007FC0BA /* WhyNotApp.swift in Sources */,
 				59778DB6291589E5008748E6 /* AuthenticationManager.swift in Sources */,
-=======
->>>>>>> develop
 				594A5FAA2902CDB700A1C10C /* UserAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
