@@ -19,3 +19,14 @@ struct PeopleImagesView: View {
         }
     }
 }
+
+struct Preview: PreviewProvider {
+    static var previews: some View {
+        PeopleImagesView(images: [UIImage(named: "AppIcon")!,
+                                  UIImage(named: "AppIcon")!,
+                                  UIImage(named: "AppIcon")!,
+                                  UIImage(named: "AppIcon")!,
+                                  UIImage(named: "AppIcon")!,
+                                  UIImage(named: "AppIcon")!])
+    }
+}

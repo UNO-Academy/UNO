@@ -8,26 +8,31 @@
 import Foundation
 import SwiftUI
 
+enum ViewBiulderConstants: Int {
+    case ratio = 21
+    case maxImages = 4
+}
+
 struct PeopleImageViewBiulder {
 
     @ViewBuilder func getPeopleImageView(image: UIImage, imageIndex: Int, totalImageNumber: Int) -> some View {
-        if imageIndex <= 3 {
+        if imageIndex < ViewBiulderConstants.maxImages.rawValue {
             return(
             AnyView(Image(uiImage: image)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 100, height: 100)
+                .frame(width: CGFloat(ViewBiulderConstants.ratio.rawValue), height: CGFloat(ViewBiulderConstants.ratio.rawValue))
                 .clipShape(Circle())
                 .padding(Space.halfSpace)
                 .background(Color.CustomColors.CardTitle)
                 .clipShape(Circle())))
         }
 
-        if imageIndex == 4 {
+        if imageIndex == ViewBiulderConstants.maxImages.rawValue {
             return(
-            AnyView(Text("+\(totalImageNumber - 4)")
+            AnyView(Text("+\(totalImageNumber - ViewBiulderConstants.maxImages.rawValue)")
                 .font(.largeTitle)
-                .frame(width: 100, height: 100)
+                .frame(width: CGFloat(ViewBiulderConstants.ratio.rawValue), height: CGFloat(ViewBiulderConstants.ratio.rawValue))
                 .background(.white)
                 .clipShape(Circle())
                 .padding(Space.halfSpace)
