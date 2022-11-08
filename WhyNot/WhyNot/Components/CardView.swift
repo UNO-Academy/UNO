@@ -26,6 +26,16 @@ struct CardView: View {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(experience: Experience(id: "", name: "", description: "", effort: 2, duration: 3, category: "", isActive: true))
+        CardView(
+            experience: Experience(
+                id: "",
+                name: "",
+                description: "",
+                effort: 2,
+                duration: 3,
+                category: "",
+                isActive: true
+            )
+        )
     }
 }
