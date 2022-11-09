@@ -25,12 +25,10 @@ struct TagsView: View {
     var experience: Experience
 
     var body: some View {
-        VStack {
-            HStack {
-                TagView(tagData: TagType.effort(experience.effort))
-                TagView(tagData: TagType.duration(experience.duration))
-                TagView(tagData: TagType.cost(experience.cost))
-            }
+        HStack {
+            TagView(tagData: TagType.effort(experience.effort))
+            TagView(tagData: TagType.duration(experience.duration))
+            TagView(tagData: TagType.cost(experience.cost))
         }
     }
 }
