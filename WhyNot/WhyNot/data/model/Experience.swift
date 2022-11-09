@@ -17,6 +17,7 @@ struct Experience: Codable, UpdatableIdentifiable {
     let cost: Int
     let category: String
     let isActive: Bool
+    let expirationDate: Date
 }
 
 enum ExperienceFields: String {

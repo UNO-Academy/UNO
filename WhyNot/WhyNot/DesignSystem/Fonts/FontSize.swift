@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 enum FontSize {
-    static var largeTitle: CGFloat { return 34 }
+    static var largeTitle: CGFloat { return 32 }
     static var title1: CGFloat { return  28 }
     static var title2: CGFloat { return 22 }
     static var title3: CGFloat { return 20 }
