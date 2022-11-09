@@ -14,25 +14,17 @@ struct CardView: View {
 
     var body: some View {
         HStack(spacing: Space.space1x) {
+            Spacer()
+
             VStack {
                 Text(experience.name)
                     .font(.system(size: 20))
                     .bold()
 
-                LazyHStack(alignment: .center) {
-                    TagView(
-                        tagData: .duration(experience.duration)
-                    )
-
-                    TagView(
-                        tagData: .cost(experience.cost)
-                    )
-
-                    TagView(
-                        tagData: .effort(experience.effort)
-                    )
-                }
+                TagsView(experience: experience)
             }
+
+            Spacer()
 
             CategoryIcon(
                 type: .cooking,
