@@ -12,7 +12,7 @@ struct TagView: View {
 
     var body: some View {
         HStack {
-            tagData.getText()
+            tagData.getText().multilineTextAlignment(.center)
             tagData.getImage()
         }.foregroundColor(Color.CustomColors.CardTitle)
             .padding(Space.halfSpace)
