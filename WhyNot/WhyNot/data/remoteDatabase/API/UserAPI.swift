@@ -13,19 +13,25 @@ class UserAPI {
 
     private let crudService: CRUDServices
     private let collectionReference: CollectionReference
+    private let authManager: AuthenticationManager
 
-    init(crudService: CRUDServices, db: Firestore) {
+    init(crudService: CRUDServices, authManager: AuthenticationManager, db: Firestore) {
         self.crudService = crudService
+        self.authManager = authManager
         collectionReference = db.collection(CollectionNames.user.rawValue)
     }
 
-    func createUser(user: User) async throws {
+    func createUser(email: String, password: String, user: User) async throws {
         guard let data = user.encode() else {
             print("Não foi possivel converter o objeto em documento")
             return
         }
-
-        return try await crudService.createDocument(collectionRef: collectionReference, data: data)
+        let result = try await authManager.createAccount(email, password)
+        try await crudService.createDocumentWithID(
+            collectionRef: collectionReference,
+            documentID: result.user.uid,
+            data: data
+        )
     }
 
     func getUserByID(userID: String) async throws -> User? {

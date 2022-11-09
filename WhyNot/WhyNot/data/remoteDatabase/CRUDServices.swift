@@ -11,7 +11,10 @@ import FirebaseFirestoreSwift
 
 class CRUDServices {
 
-    func createDocument(collectionRef: CollectionReference, data: [String: Any]) async throws {
+    func createDocument(
+        collectionRef: CollectionReference,
+        data: [String: Any]
+    ) async throws {
         do {
             _ = try await collectionRef.addDocument(data: data)
         } catch {
@@ -19,7 +22,22 @@ class CRUDServices {
         }
     }
 
-    func readDocumentByID(collectionRef: CollectionReference, documentId: String) async throws -> DocumentSnapshot? {
+    func createDocumentWithID(
+        collectionRef: CollectionReference,
+        documentID: String,
+        data: [String: Any]
+    ) async throws {
+        do {
+            _ = try await collectionRef.document(documentID).setData(data)
+        } catch {
+            throw error
+        }
+    }
+
+    func readDocumentByID(
+        collectionRef: CollectionReference,
+        documentId: String
+    ) async throws -> DocumentSnapshot? {
         do {
             return try await collectionRef.document(documentId).getDocument()
         } catch {
@@ -27,20 +45,28 @@ class CRUDServices {
         }
     }
 
-    func getDocumentReferenceByID(collectionRef: CollectionReference, documentID: String) -> DocumentReference? {
+    func getDocumentReferenceByID(
+        collectionRef: CollectionReference,
+        documentID: String
+    ) -> DocumentReference? {
         let document: DocumentReference = collectionRef.document(documentID)
         return document
     }
 
-    func readDocumentsByIDList(collectionRef: CollectionReference, documentIdList: [String])
+    func readDocumentsByIDList(
+        collectionRef: CollectionReference,
+        documentIdList: [String]
+    )
         async throws -> [DocumentSnapshot?] {
         try await documentIdList.asyncMap {
             try await readDocumentByID(collectionRef: collectionRef, documentId: $0)
         }
     }
 
-    func readDocumentsFilteredBy(collectionRef: CollectionReference, field: String, value: Any)
-        async throws -> [QueryDocumentSnapshot] {
+    func readDocumentsFilteredBy(
+        collectionRef: CollectionReference,
+        field: String, value: Any
+    ) async throws -> [QueryDocumentSnapshot] {
         do {
             let docRef = collectionRef.whereField(field, isEqualTo: value)
             return try await docRef.getDocuments().documents
@@ -49,7 +75,9 @@ class CRUDServices {
         }
     }
 
-    func readAllDocuments(collectionRef: CollectionReference) async throws -> QuerySnapshot? {
+    func readAllDocuments(
+        collectionRef: CollectionReference
+    ) async throws -> QuerySnapshot? {
         do {
             return try await collectionRef.getDocuments()
         } catch {
@@ -57,7 +85,10 @@ class CRUDServices {
         }
     }
 
-    func updateDocument(docRef: DocumentReference, data: [String: Any]) async throws {
+    func updateDocument(
+        docRef: DocumentReference,
+        data: [String: Any]
+    ) async throws {
         do {
             try await docRef.updateData(data)
         } catch {
@@ -65,7 +96,10 @@ class CRUDServices {
         }
     }
 
-    func pushInDocumentArray(docRef: DocumentReference, field: String, value: Any) async throws {
+    func pushInDocumentArray(
+        docRef: DocumentReference,
+        field: String, value: Any
+    ) async throws {
         do {
             try await docRef.updateData([field: FieldValue.arrayUnion([value])])
         } catch {
@@ -73,7 +107,10 @@ class CRUDServices {
         }
     }
 
-    func popInDocumentArray(docRef: DocumentReference, field: String, value: Any) async throws {
+    func popInDocumentArray(
+        docRef: DocumentReference,
+        field: String, value: Any
+    ) async throws {
         do {
             try await docRef.updateData([field: FieldValue.arrayRemove([value])])
         } catch {
@@ -81,7 +118,9 @@ class CRUDServices {
         }
     }
 
-    func deleteDocument(docRef: DocumentReference) async throws {
+    func deleteDocument(
+        docRef: DocumentReference
+    ) async throws {
         do {
             try await docRef.delete()
         } catch {
