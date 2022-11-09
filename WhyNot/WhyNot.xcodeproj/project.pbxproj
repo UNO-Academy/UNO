@@ -43,7 +43,7 @@
 		8699EEA92911614A00875333 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8699EEA82911614A00875333 /* TagView.swift */; };
 		8699EEAB2911616500875333 /* TagData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8699EEAA2911616500875333 /* TagData.swift */; };
 		86815CF62913E77A00C41522 /* PeopleImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86815CF52913E77A00C41522 /* PeopleImagesView.swift */; };
-		86815CF82913E78D00C41522 /* PeopleImagesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86815CF72913E78D00C41522 /* PeopleImagesData.swift */; };
+		86815CF82913E78D00C41522 /* PeopleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86815CF72913E78D00C41522 /* PeopleViewModel.swift */; };
 		86BA9D1129096A3800C1F330 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BA9D1029096A3800C1F330 /* ContentView.swift */; };
 		86DFFE4E28F44CD30075153A /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 86DFFE4D28F44CD30075153A /* FirebaseDatabase */; };
 		86DFFE5028F44CD30075153A /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 86DFFE4F28F44CD30075153A /* FirebaseDatabaseSwift */; };
@@ -61,6 +61,7 @@
 		D64727DC2913E93C007B13ED /* WhyNotUserInterfaceTestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64727DB2913E93C007B13ED /* WhyNotUserInterfaceTestsLaunchTests.swift */; };
 		D6E24D6929114C6F0018C0C6 /* ExperienceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E24D6829114C6F0018C0C6 /* ExperienceType.swift */; };
 		D6E24D6D29114CCF0018C0C6 /* CategoryIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E24D6C29114CCF0018C0C6 /* CategoryIcon.swift */; };
+		86F5A40F291A8CCA003EEC8A /* UIElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F5A40E291A8CCA003EEC8A /* UIElement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,7 +122,7 @@
 		8699EEA82911614A00875333 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		8699EEAA2911616500875333 /* TagData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagData.swift; sourceTree = "<group>"; };
 		86815CF52913E77A00C41522 /* PeopleImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleImagesView.swift; sourceTree = "<group>"; };
-		86815CF72913E78D00C41522 /* PeopleImagesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleImagesData.swift; sourceTree = "<group>"; };
+		86815CF72913E78D00C41522 /* PeopleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewModel.swift; sourceTree = "<group>"; };
 		86BA9D1029096A3800C1F330 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BD3E99553D198918995701FA /* Pods-WhyNot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhyNot.release.xcconfig"; path = "Target Support Files/Pods-WhyNot/Pods-WhyNot.release.xcconfig"; sourceTree = "<group>"; };
 		D64727CA2913E922007B13ED /* WhyNotUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhyNotUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +132,7 @@
 		D64727DB2913E93C007B13ED /* WhyNotUserInterfaceTestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhyNotUserInterfaceTestsLaunchTests.swift; sourceTree = "<group>"; };
 		D6E24D6829114C6F0018C0C6 /* ExperienceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceType.swift; sourceTree = "<group>"; };
 		D6E24D6C29114CCF0018C0C6 /* CategoryIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryIcon.swift; sourceTree = "<group>"; };
+		86F5A40E291A8CCA003EEC8A /* UIElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIElement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,6 +304,7 @@
 			children = (
 				24BE3E2C291002B200261E0A /* Scenes */,
 				D6E766C329114A7A000D940F /* Components */,
+				86F5A40D291A8C68003EEC8A /* UNO-102 */,
 				862BBBF3290F31D30005C8D1 /* Info.plist */,
 				863A8EFF290C0060000DBA1B /* DesignSystem */,
 				2424527228FEE50C006E8629 /* Extension */,
@@ -317,8 +320,6 @@
 				862BBBF3290F31D30005C8D1 /* Info.plist */,
 				8608FCE228F05BA4007FC0BA /* GoogleService-Info.plist */,
 				8608FCDA28F05AE3007FC0BA /* Preview Content */,
-				86815CF52913E77A00C41522 /* PeopleImagesView.swift */,
-				86815CF72913E78D00C41522 /* PeopleImagesData.swift */,
 			);
 			path = WhyNot;
 			sourceTree = "<group>";
@@ -385,6 +386,16 @@
 				D6E24D6C29114CCF0018C0C6 /* CategoryIcon.swift */,
 			);
 			path = Components;
+            sourceTree = "<group>";
+        };
+		86F5A40D291A8C68003EEC8A /* UNO-102 */ = {
+			isa = PBXGroup;
+			children = (
+				86815CF72913E78D00C41522 /* PeopleViewModel.swift */,
+				86815CF52913E77A00C41522 /* PeopleImagesView.swift */,
+				86F5A40E291A8CCA003EEC8A /* UIElement.swift */,
+			);
+			path = "UNO-102";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -607,6 +618,7 @@
 				248FD9FF2913E167003DA666 /* WhyNotApp.swift in Sources */,
 				D6E24D6D29114CCF0018C0C6 /* CategoryIcon.swift in Sources */,
 				86815CF82913E78D00C41522 /* PeopleImagesData.swift in Sources */,
+				86815CF82913E78D00C41522 /* PeopleViewModel.swift in Sources */,
 				594A5FA82902CCBE00A1C10C /* User.swift in Sources */,
 				24202EA228F846F900141CCB /* Experience.swift in Sources */,
 				86048456290FF4BB0055AF30 /* FontSize.swift in Sources */,
@@ -614,6 +626,7 @@
 				86815CF62913E77A00C41522 /* PeopleImagesView.swift in Sources */,
 				86048454290FF3D00055AF30 /* CustomFonts.swift in Sources */,
 				863A8F01290C10A0000DBA1B /* Colors.swift in Sources */,
+				86F5A40F291A8CCA003EEC8A /* UIElement.swift in Sources */,
 				24202EA828F847E100141CCB /* ExperienceAPI.swift in Sources */,
 				24BE3E2F291002F400261E0A /* ExperiencesView.swift in Sources */,
 				24B18B1628FD757A00EC9A3D /* MementoAPI.swift in Sources */,
