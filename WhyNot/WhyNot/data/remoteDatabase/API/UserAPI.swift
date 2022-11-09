@@ -18,6 +18,14 @@ class UserAPI {
         self.crudService = crudService
         collectionReference = db.collection(CollectionNames.user.rawValue)
     }
+    
+    func isLogged() -> Bool {
+        return false
+    }
+    
+    func getLoggedUser() -> User? {
+        return User(id: "", name: "", profilePicture: "", lastPictureUpdate: Date(), friendsID: [], mementosID: [], interestExperiencesID: [])
+    }
 
     func createUser(user: User) async throws {
         guard let data = user.encode() else {
