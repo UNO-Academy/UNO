@@ -6,7 +6,11 @@ target 'WhyNot' do
   use_frameworks!
 
   # Pods for WhyNot
+  pod 'Firebase'
+  pod 'FirebaseStorage'
   pod 'FirebaseCore'
+  pod 'FirebaseFirestore'
+  pod 'FirebaseFirestoreSwift'
   pod 'FirebaseAuth'
 
 end
