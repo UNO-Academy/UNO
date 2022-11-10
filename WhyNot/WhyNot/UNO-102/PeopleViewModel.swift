@@ -25,14 +25,10 @@ class PeopleVM: ObservableObject {
     }
 
     func howManyPeopleRemains() -> Int {
-        return images.count - maxImagesNumberPossible
+        return max(images.count - maxImagesNumberPossible, 0)
     }
 
     func needPlusCard() -> Bool {
-        if images.count > maxImagesNumberPossible {
-            return true
-        } else {
-            return false
-        }
+        return images.count > maxImagesNumberPossible
     }
 }
