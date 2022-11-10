@@ -15,6 +15,7 @@ struct User: Codable, UpdatableIdentifiable {
     let lastPictureUpdate: Date
     let friendsID: [String]
     let mementosID: [String]
+    let doneExperiencesID: [String]
     let interestExperiencesID: [String]
 }
 

@@ -10,11 +10,14 @@ import Firebase
 
 @main
 struct WhyNotApp: App {
+
+    init() {
+        FirebaseApp.configure()
+    }
+
     var body: some Scene {
         WindowGroup {
-            ContentView().onAppear {
-                FirebaseApp.configure()
-            }
+            ContentView()
         }
     }
 }
