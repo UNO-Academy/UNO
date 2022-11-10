@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct PeopleImagesView: View {
-    @ObservedObject var viewModel: PeopleVM
+    @ObservedObject var viewModel: PeopleImagesViewModel
 
     init(images: [UIImage]) {
-        viewModel = PeopleVM(images: images)
+        viewModel = PeopleImagesViewModel(images: images)
     }
 
     var body: some View {
