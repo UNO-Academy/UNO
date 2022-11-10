@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseFirestoreSwift
+import FirebaseFirestore
 
 struct Experience: Codable, UpdatableIdentifiable {
     @DocumentID var id: String?
@@ -17,7 +18,7 @@ struct Experience: Codable, UpdatableIdentifiable {
     let cost: Int
     let category: String
     let isActive: Bool
-    let expirationDate: Date
+    let expirationDate: Timestamp
 }
 
 enum ExperienceFields: String {
@@ -25,6 +26,8 @@ enum ExperienceFields: String {
     case description
     case effort
     case duration
+    case cost
     case category
     case isActive
+    case expirationDate
 }

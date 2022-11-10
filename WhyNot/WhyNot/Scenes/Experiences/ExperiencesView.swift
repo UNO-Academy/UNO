@@ -13,6 +13,7 @@ struct Teste: Identifiable {
 
 struct ExperiencesView: View {
     let weekExperiences: [Teste] = [Teste(id: 1), Teste(id: 2), Teste(id: 3), Teste(id: 4)]
+    let viewModel = ExperiencesViewModel(ExperienceRepository())
 
     var body: some View {
         ScrollView {

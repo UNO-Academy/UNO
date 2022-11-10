@@ -65,7 +65,8 @@ class CRUDServices {
 
     func readDocumentsFilteredBy(
         collectionRef: CollectionReference,
-        field: String, value: Any
+        field: String,
+        value: Any
     ) async throws -> [QueryDocumentSnapshot] {
         do {
             let docRef = collectionRef.whereField(field, isEqualTo: value)
