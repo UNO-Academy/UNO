@@ -16,11 +16,10 @@ struct PeopleImagesView: View {
 
     var body: some View {
         HStack(spacing: -Space.halfSpace) {
-            ForEach(0 ..< viewModel.getActualMaxImagesNumber()) { imageIdx in
-                let personImage = viewModel.getPeopleImage(index: imageIdx)
-                PersonImage(personImage: Image(uiImage: personImage))
+            ForEach(viewModel.getPeopleImages(), id: \.self) { image in
+                PersonImage(personImage: Image(uiImage: image))
             }
-
+            
             if viewModel.needPlusCard() {
                 let remainingPeople = viewModel.howManyPeopleRemains()
                 RemainingPeople(remainingPeopleNumber: remainingPeople)

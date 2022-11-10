@@ -16,8 +16,12 @@ class PeopleVM: ObservableObject {
         self.images = images
     }
 
-    func getPeopleImage(index: Int) -> UIImage {
-        return images[index]
+    func getPeopleImages() -> [UIImage] {
+        var images = [UIImage]()
+        for image in 0..<getActualMaxImagesNumber() {
+            images.append(self.images[image])
+        }
+        return images
     }
 
     func getActualMaxImagesNumber() -> Int {

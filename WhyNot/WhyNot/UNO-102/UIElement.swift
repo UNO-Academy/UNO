@@ -21,9 +21,6 @@ struct PersonImage: View {
             .aspectRatio(contentMode: .fill)
             .frame(width: PeopleConstants.ratio.rawValue, height: PeopleConstants.ratio.rawValue)
             .clipShape(Circle())
-            .padding(Space.stroke)
-            .background(Color.CustomColors.CardTitle)
-            .clipShape(Circle())
     }
 }
 
@@ -35,9 +32,6 @@ struct RemainingPeople: View {
             .font(.system(size: PeopleConstants.fontSize.rawValue))
             .frame(width: PeopleConstants.ratio.rawValue, height: PeopleConstants.ratio.rawValue)
             .background(.white)
-            .clipShape(Circle())
-            .padding(Space.stroke)
-            .background(Color.CustomColors.CardTitle)
             .clipShape(Circle())
     }
 }

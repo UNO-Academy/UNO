@@ -39,5 +39,4 @@ class WhyNotUnitTests: XCTestCase {
         XCTAssertEqual(viewModel.howManyPeopleRemains(), 0)
         XCTAssertEqual(viewModel.needPlusCard(), false)
     }
-
 }
