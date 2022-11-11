@@ -102,11 +102,11 @@ class UserAPI {
         }
     }
 
-    func getUserFriendsInterestedInExperience(userID: String, experienceID: String) async throws {
-        if let docRef = collectionReference.where(FieldPath.documentID(), isEqualTo: userID)
-        ) {
+    func getUserFriendsInterestedInAnExperience(userID: String, experienceID: String) async throws {
+        let data = try await collectionReference.document(userID).getDocument()
+        let friendsList = data[UserFields.friendsID.rawValue] as! [String]
+        
 
-        }
     }
 
     func getUserByIDList(_ idList: [String]) async throws -> [User?] {
