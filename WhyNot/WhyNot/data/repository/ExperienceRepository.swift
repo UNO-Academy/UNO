@@ -33,10 +33,10 @@ class ExperienceRepository {
             return ActiveExperiences(toDoExperiences: list, doneExperiences: [])
         }
 
-        let toDo = list.filter() {
+        let toDo = list.filter {
             !user.doneExperiencesID.contains($0.id!)
         }
-        let done = list.filter() {
+        let done = list.filter {
             user.doneExperiencesID.contains($0.id!)
         }
 
