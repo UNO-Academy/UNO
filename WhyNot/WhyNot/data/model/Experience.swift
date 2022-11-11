@@ -11,14 +11,14 @@ import FirebaseFirestore
 
 struct Experience: Codable, UpdatableIdentifiable {
     @DocumentID var id: String?
-    let name: String
-    let description: String
-    let effort: Int
-    let duration: Int
-    let cost: Int
     let category: String
-    let isActive: Bool
+    let cost: Int
+    let description: String
+    let duration: Int
+    let effort: Int
     let expirationDate: Timestamp
+    let isActive: Bool
+    let name: String
 }
 
 enum ExperienceFields: String {
