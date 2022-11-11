@@ -8,10 +8,10 @@
 import Foundation
 import SwiftUI
 
-class PeopleImagesViewModel: ObservableObject {
+class PersonImageViewModel: ObservableObject {
     let maxImagesNumberPossible = 4
     var images: [UIImage]
-    
+
     init(images: [UIImage]) {
         self.images = images
     }

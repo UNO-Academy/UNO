@@ -9,9 +9,9 @@ import XCTest
 @testable import WhyNot
 
 class WhyNotUnitTests: XCTestCase {
-
+    // TODO: Perguntar pro batata como criar novas classes de testes
     func testMoreThan4Person() {
-        let viewModel = PeopleVM(images: [
+        let viewModel = PersonImageViewModel(images: [
             UIImage(named: "AppIcon")!,
             UIImage(named: "AppIcon")!,
             UIImage(named: "AppIcon")!,
@@ -24,7 +24,7 @@ class WhyNotUnitTests: XCTestCase {
     }
 
     func testLessThan4Person() {
-        let viewModel = PeopleVM(images: [
+        let viewModel = PersonImageViewModel(images: [
             UIImage(named: "AppIcon")!,
             UIImage(named: "AppIcon")!
         ])
@@ -34,7 +34,7 @@ class WhyNotUnitTests: XCTestCase {
     }
 
     func testNoPeople() {
-        let viewModel = PeopleVM(images: [])
+        let viewModel = PersonImageViewModel(images: [])
         XCTAssertEqual(viewModel.getActualMaxImagesNumber(), 0)
         XCTAssertEqual(viewModel.howManyPeopleRemains(), 0)
         XCTAssertEqual(viewModel.needPlusCard(), false)

@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct PeopleImagesView: View {
-    @ObservedObject var viewModel: PeopleImagesViewModel
+struct PersonImageCollection: View {
+    @ObservedObject var viewModel: PersonImageViewModel
 
     init(images: [UIImage]) {
-        viewModel = PeopleImagesViewModel(images: images)
+        viewModel = PersonImageViewModel(images: images)
     }
 
     var body: some View {
