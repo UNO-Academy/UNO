@@ -128,3 +128,16 @@ class CRUDServices {
         }
     }
 }
+
+extension CRUDServices {
+    //For user queries
+    func friendsInterestedInExperience(
+        collectionRef: CollectionReference,
+        friendsID: [String],
+        experienceID: String) -> [String] {
+            collectionRef.where(FieldPath.documentID(), in: friendsID).whereField(
+                UserFields.interestExperiencesID.rawValue,
+                arrayContains: experienceID
+            )
+    }
+}
