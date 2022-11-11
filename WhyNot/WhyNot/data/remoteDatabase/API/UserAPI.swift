@@ -102,6 +102,13 @@ class UserAPI {
         }
     }
 
+    func getUserFriendsInterestedInExperience(userID: String, experienceID: String) async throws {
+        if let docRef = collectionReference.where(FieldPath.documentID(), isEqualTo: userID)
+        ) {
+
+        }
+    }
+
     func getUserByIDList(_ idList: [String]) async throws -> [User?] {
         return try await crudService.readDocumentsByIDList(
             collectionRef: collectionReference,
