@@ -8,14 +8,15 @@
 import FirebaseFirestore
 
 extension DocumentSnapshot {
-    func toObject<T: Decodable>() -> T?  where T: UpdatableIdentifiable, T.ID == String? {
+    func toObject<T: Decodable>() throws -> T  where T: UpdatableIdentifiable, T.ID == String? {
         do {
-            var object = try Firestore.Decoder().decode(T.self, from: data()!)
+            print(self.data())
+            var object = try Firestore.Decoder().decode(T.self, from: self.data())
             object.id = self.documentID
             return object
         } catch {
             print("Não foi possível decodificar o documento")
-            return nil
+            throw error
         }
     }
 }

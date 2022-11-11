@@ -115,7 +115,7 @@ class UserAPI {
             collectionRef: collectionReference,
             documentIdList: idList
         ).map({
-            return $0?.toObject()
+            return try $0?.toObject()
         })
     }
 }

@@ -25,8 +25,8 @@ class ExperienceAPI {
             field: ExperienceFields.isActive.rawValue,
             value: true
         )
-        return teste.map({
-            return $0.toObject()!
+        return try teste.map({
+            return try $0.toObject()
         })
     }
 
@@ -35,7 +35,7 @@ class ExperienceAPI {
             collectionRef: collectionReference,
             documentIdList: idList
         ).map({
-            return $0?.toObject()
+            return try $0?.toObject()
         })
     }
 }

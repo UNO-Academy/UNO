@@ -35,7 +35,7 @@ class MementoAPI {
             collectionRef: collectionReference,
             documentIdList: idList
         ).map({
-            return $0?.toObject()
+            return try $0?.toObject()
         })
     }
 }
