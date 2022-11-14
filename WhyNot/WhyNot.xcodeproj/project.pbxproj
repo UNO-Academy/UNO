@@ -372,6 +372,14 @@
 			path = Tag;
 			sourceTree = "<group>";
 		};
+		86DA3D122922677300A88479 /* CategoryIcon */ = {
+			isa = PBXGroup;
+			children = (
+				D6E24D6C29114CCF0018C0C6 /* CategoryIcon.swift */,
+			);
+			path = CategoryIcon;
+			sourceTree = "<group>";
+		};
 		D64727CB2913E922007B13ED /* WhyNotUnitTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -400,9 +408,9 @@
 		D6E766C329114A7A000D940F /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				86DA3D122922677300A88479 /* CategoryIcon */,
 				86DA3CEF291E6B0800A88479 /* Tag */,
 				86DA3CEE291E699B00A88479 /* PersonImage */,
-				D6E24D6C29114CCF0018C0C6 /* CategoryIcon.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
