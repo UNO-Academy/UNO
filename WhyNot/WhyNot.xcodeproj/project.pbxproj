@@ -46,6 +46,8 @@
 		8699EEAB2911616500875333 /* TagData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8699EEAA2911616500875333 /* TagData.swift */; };
 		86BA9D1129096A3800C1F330 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BA9D1029096A3800C1F330 /* ContentView.swift */; };
 		86CCE30C291D20460077E1E9 /* WhyNotUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CCE30B291D20460077E1E9 /* WhyNotUnitTests.swift */; };
+		86DA3D1529226F3500A88479 /* ShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DA3D1429226F3500A88479 /* ShareButton.swift */; };
+		86DA3D1729226F5F00A88479 /* ShareViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DA3D1629226F5F00A88479 /* ShareViewModel.swift */; };
 		86DFFE4E28F44CD30075153A /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 86DFFE4D28F44CD30075153A /* FirebaseDatabase */; };
 		86DFFE5028F44CD30075153A /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 86DFFE4F28F44CD30075153A /* FirebaseDatabaseSwift */; };
 		86DFFE5228F44CD30075153A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 86DFFE5128F44CD30075153A /* FirebaseFirestore */; };
@@ -119,6 +121,8 @@
 		86BA9D1029096A3800C1F330 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		86CCE309291D20460077E1E9 /* WhyNotUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhyNotUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86CCE30B291D20460077E1E9 /* WhyNotUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhyNotUnitTests.swift; sourceTree = "<group>"; };
+		86DA3D1429226F3500A88479 /* ShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareButton.swift; sourceTree = "<group>"; };
+		86DA3D1629226F5F00A88479 /* ShareViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewModel.swift; sourceTree = "<group>"; };
 		86F5A40E291A8CCA003EEC8A /* PersonImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonImage.swift; sourceTree = "<group>"; };
 		BD3E99553D198918995701FA /* Pods-WhyNot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhyNot.release.xcconfig"; path = "Target Support Files/Pods-WhyNot/Pods-WhyNot.release.xcconfig"; sourceTree = "<group>"; };
 		D64727CC2913E922007B13ED /* WhyNotUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhyNotUnitTests.swift; sourceTree = "<group>"; };
@@ -380,6 +384,15 @@
 			path = CategoryIcon;
 			sourceTree = "<group>";
 		};
+		86DA3D1329226F2400A88479 /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				86DA3D1429226F3500A88479 /* ShareButton.swift */,
+				86DA3D1629226F5F00A88479 /* ShareViewModel.swift */,
+			);
+			path = Share;
+			sourceTree = "<group>";
+		};
 		D64727CB2913E922007B13ED /* WhyNotUnitTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -408,6 +421,7 @@
 		D6E766C329114A7A000D940F /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				86DA3D1329226F2400A88479 /* Share */,
 				86DA3D122922677300A88479 /* CategoryIcon */,
 				86DA3CEF291E6B0800A88479 /* Tag */,
 				86DA3CEE291E699B00A88479 /* PersonImage */,
@@ -638,10 +652,12 @@
 				594A5FA82902CCBE00A1C10C /* User.swift in Sources */,
 				24202EA228F846F900141CCB /* Experience.swift in Sources */,
 				86048456290FF4BB0055AF30 /* FontSize.swift in Sources */,
+				86DA3D1729226F5F00A88479 /* ShareViewModel.swift in Sources */,
 				86BA9D1129096A3800C1F330 /* ContentView.swift in Sources */,
 				86815CF62913E77A00C41522 /* PersonImageCollection.swift in Sources */,
 				86048454290FF3D00055AF30 /* CustomFonts.swift in Sources */,
 				863A8F01290C10A0000DBA1B /* Colors.swift in Sources */,
+				86DA3D1529226F3500A88479 /* ShareButton.swift in Sources */,
 				86F5A40F291A8CCA003EEC8A /* PersonImage.swift in Sources */,
 				24202EA828F847E100141CCB /* ExperienceAPI.swift in Sources */,
 				24BE3E2F291002F400261E0A /* ExperiencesView.swift in Sources */,
