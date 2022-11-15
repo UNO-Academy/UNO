@@ -32,4 +32,24 @@ enum ExperienceType: String {
             return .SecondaryPallet.green
         }
     }
+
+    public func getCorrectPrimaryColor(
+        _ isEnable: Bool = true
+    ) -> Color {
+        if isEnable {
+            return primaryColor
+        } else {
+            return Color.PrimaryPallet.disable
+        }
+    }
+
+    public func getCorrectSecondaryColor(
+        _ isEnable: Bool = true
+    ) -> Color {
+        if isEnable {
+            return primaryColor
+        } else {
+            return Color.SecondaryPallet.disable
+        }
+    }
 }
