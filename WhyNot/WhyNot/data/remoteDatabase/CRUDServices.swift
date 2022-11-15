@@ -131,7 +131,7 @@ class CRUDServices {
 }
 
 extension CRUDServices {
-    //For user queries
+    // For user queries
     func friendsInterestedInAnExperience(
         collectionRef: CollectionReference,
         friendsID: [String],
@@ -139,8 +139,8 @@ extension CRUDServices {
             var friends: [String] = []
             for id in friendsID {
                 guard let document = try await collectionRef.document(id).getDocument().data() else { continue }
-                guard let aux = document[UserFields.interestExperiencesID.rawValue] as? [String] else { continue }
-                if aux.contains(experienceID) {
+                guard let data = document[UserFields.interestExperiencesID.rawValue] as? [String] else { continue }
+                if data.contains(experienceID) {
                     friends.append(id)
                 }
             }
