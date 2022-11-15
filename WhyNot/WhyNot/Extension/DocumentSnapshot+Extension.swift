@@ -11,7 +11,7 @@ import FirebaseFirestoreSwift
 extension DocumentSnapshot {
     func toObject<T: Decodable>() throws -> T  where T: UpdatableIdentifiable, T.ID == String? {
         do {
-            var object = try self.data(as: T.self)
+            let object = try self.data(as: T.self)
             return object
         } catch {
             throw error
