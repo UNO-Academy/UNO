@@ -7,32 +7,47 @@
 
 import SwiftUI
 
+class CardViewModel: ObservableObject {
+
+    @Published var isEnable = false
+    @Published var experience: Experience
+
+    init(
+        isEnable: Bool = false,
+        experience: Experience
+    ) {
+        self.isEnable = isEnable
+        self.experience = experience
+    }
+}
+
 struct CardView: View {
 
-    let experience: Experience
-    @State var isEnable = true
+    @ObservedObject var viewModel: CardViewModel
 
     var body: some View {
         HStack(spacing: Space.space1x) {
             Spacer()
 
             VStack {
-                Text(experience.name)
+                Text(viewModel.experience.name)
                     .font(.system(size: 20))
                     .bold()
 
-                TagsView(experience: experience)
+                TagsView(experience: viewModel.experience)
             }
 
             Spacer()
 
             CategoryIcon(
                 type: .cooking,
-                isEnable: $isEnable
+                isEnable: $viewModel.isEnable
             )
         }.background(
             RoundedRectangle(cornerRadius: Radius.defaultRadius)
-                .fill(isEnable ? ExperienceType.cooking.primaryColor : Color.SecondaryPallet.disable)
+                .fill(
+                    viewModel.isEnable ? ExperienceType.cooking.primaryColor : Color.SecondaryPallet.disable
+                )
         )
     }
 }
@@ -40,7 +55,7 @@ struct CardView: View {
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
         CardView(
-            experience: Experience(
+            viewModel: CardViewModel(experience: Experience(
                 id: "",
                 name: "Adventure Time",
                 description: "",
@@ -49,7 +64,7 @@ struct CardView_Previews: PreviewProvider {
                 cost: 2,
                 category: "",
                 isActive: true
-            )
+            ))
         )
     }
 }
