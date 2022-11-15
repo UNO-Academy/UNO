@@ -132,13 +132,18 @@ class CRUDServices {
 
 extension CRUDServices {
     //For user queries
-    func friendsInterestedInExperience(
+    func friendsInterestedInAnExperience(
         collectionRef: CollectionReference,
         friendsID: [String],
-        experienceID: String) -> [String] {
-            collectionRef.where(FieldPath.documentID(), in: friendsID).whereField(
-                UserFields.interestExperiencesID.rawValue,
-                arrayContains: experienceID
-            )
-    } 
+        experienceID: String) async throws -> [String] {
+            var friends: [String] = []
+            for id in friendsID {
+                guard let document = try await collectionRef.document(id).getDocument().data() else { continue }
+                guard let aux = document[UserFields.interestExperiencesID.rawValue] as? [String] else { continue }
+                if aux.contains(experienceID) {
+                    friends.append(id)
+                }
+            }
+            return friends
+    }
 }
