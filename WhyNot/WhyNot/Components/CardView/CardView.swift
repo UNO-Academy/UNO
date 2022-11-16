@@ -8,47 +8,38 @@
 import SwiftUI
 import Firebase
 
-class CardViewModel: ObservableObject {
-
-    @Published var experience: Experience
-
-    init(experience: Experience) {
-        self.experience = experience
-    }
-}
-
 struct CardView: View {
 
     @ObservedObject var viewModel: CardViewModel
 
     var body: some View {
         HStack(spacing: Space.space1x) {
-            Spacer()
+            VStack(
+                alignment: .leading,
+                spacing: Space.space1x
+            ) {
 
-            VStack(alignment: .leading) {
                 Text(viewModel.experience.name)
-                    .font(.system(size: 20))
+                    .font(.system(size: FontSize.title3))
                     .bold()
 
                 TagsView(experience: viewModel.experience)
 
                 PersonImageCollection(images: [UIImage(named: "adventure")!])
             }
+            .padding(.leading, Space.space2x)
 
             Spacer()
 
             CategoryIcon(
-                type: .cooking,
+                type: viewModel.experienceType,
                 isEnable: viewModel.experience.isActive
             )
         }
-        .aspectRatio(340 / 95, contentMode: .fit)
+        .aspectRatio(contentMode: .fit)
         .background(
             RoundedRectangle(cornerRadius: Radius.defaultRadius)
-                .fill(
-                    ExperienceType.cooking
-                        .getCorrectPrimaryColor(viewModel.experience.isActive)
-                )
+                .fill(viewModel.getFillColor())
         )
     }
 }
@@ -58,10 +49,10 @@ struct CardView_Previews: PreviewProvider {
         CardView(
             viewModel: CardViewModel(experience: Experience(
                 id: "",
-                category: "Adventure Time",
+                category: "cooking",
                 cost: 1,
                 description: "",
-                duration: 3,
+                duration: 1,
                 effort: 3,
                 expirationDate: Timestamp(date: Date()),
                 isActive: true,

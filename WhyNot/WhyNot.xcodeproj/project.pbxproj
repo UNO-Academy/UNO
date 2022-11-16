@@ -51,6 +51,7 @@
 		D61A46CB292493C700C455A9 /* CategoryIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61A46CA292493C700C455A9 /* CategoryIcon.swift */; };
 		D64727C52913E658007B13ED /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64727C42913E658007B13ED /* CardView.swift */; };
 		D6BC81EF2924AAB8006F44C2 /* TagTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BC81EE2924AAB8006F44C2 /* TagTypeTests.swift */; };
+		D6BC81F129250181006F44C2 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BC81F029250181006F44C2 /* CardViewModel.swift */; };
 		D6E24D6929114C6F0018C0C6 /* ExperienceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E24D6829114C6F0018C0C6 /* ExperienceType.swift */; };
 		D6E596D5291E7A840052D4E9 /* ExperienceTypeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E596D4291E7A840052D4E9 /* ExperienceTypeTest.swift */; };
 /* End PBXBuildFile section */
@@ -120,6 +121,7 @@
 		D64727C42913E658007B13ED /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		D64727D72913E93C007B13ED /* WhyNotUserInterfaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhyNotUserInterfaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6BC81EE2924AAB8006F44C2 /* TagTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TagTypeTests.swift; path = ../../../../../TagTypeTests.swift; sourceTree = "<group>"; };
+		D6BC81F029250181006F44C2 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		D6E24D6829114C6F0018C0C6 /* ExperienceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceType.swift; sourceTree = "<group>"; };
 		D6E596D4291E7A840052D4E9 /* ExperienceTypeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceTypeTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -404,6 +406,7 @@
 			isa = PBXGroup;
 			children = (
 				D64727C42913E658007B13ED /* CardView.swift */,
+				D6BC81F029250181006F44C2 /* CardViewModel.swift */,
 			);
 			path = CardView;
 			sourceTree = "<group>";
@@ -691,6 +694,7 @@
 				86048456290FF4BB0055AF30 /* FontSize.swift in Sources */,
 				A3CD5CE9291A9EFD003895C1 /* ExperiencesViewModel.swift in Sources */,
 				D61A46CB292493C700C455A9 /* CategoryIcon.swift in Sources */,
+				D6BC81F129250181006F44C2 /* CardViewModel.swift in Sources */,
 				86BA9D1129096A3800C1F330 /* ContentView.swift in Sources */,
 				86815CF62913E77A00C41522 /* PersonImageCollection.swift in Sources */,
 				86048454290FF3D00055AF30 /* CustomFonts.swift in Sources */,
