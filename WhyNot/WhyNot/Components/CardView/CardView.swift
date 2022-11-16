@@ -10,14 +10,9 @@ import Firebase
 
 class CardViewModel: ObservableObject {
 
-    @Published var isEnable = false
     @Published var experience: Experience
 
-    init(
-        isEnable: Bool = false,
-        experience: Experience
-    ) {
-        self.isEnable = isEnable
+    init(experience: Experience) {
         self.experience = experience
     }
 }
@@ -47,7 +42,7 @@ struct CardView: View {
                 isEnable: viewModel.experience.isActive
             )
         }
-        .aspectRatio(contentMode: .fit)
+        .aspectRatio(340 / 95, contentMode: .fit)
         .background(
             RoundedRectangle(cornerRadius: Radius.defaultRadius)
                 .fill(
