@@ -10,9 +10,10 @@ import SwiftUI
 class CardViewModel: ObservableObject {
 
     @Published var experience: Experience
+    @Published var friendsImages: [UIImage]
 
     var experienceType: ExperienceType {
-        switch experience.category {
+        switch experience.category.lowercased() {
         case "adventure":
             return .adventure
         case "cooking":
@@ -26,12 +27,15 @@ class CardViewModel: ObservableObject {
         return experience.isActive
     }
 
-    init(experience: Experience) {
+    init(
+        experience: Experience,
+        friendsImages: [UIImage]
+    ) {
         self.experience = experience
+        self.friendsImages = friendsImages
     }
 
     func getFillColor() -> Color {
         return experienceType.getCorrectPrimaryColor(isActive)
     }
 }
-

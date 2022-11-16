@@ -52,6 +52,7 @@
 		D64727C52913E658007B13ED /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64727C42913E658007B13ED /* CardView.swift */; };
 		D6BC81EF2924AAB8006F44C2 /* TagTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BC81EE2924AAB8006F44C2 /* TagTypeTests.swift */; };
 		D6BC81F129250181006F44C2 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BC81F029250181006F44C2 /* CardViewModel.swift */; };
+		D6BC81F4292505B0006F44C2 /* CardViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BC81F3292505B0006F44C2 /* CardViewModelTest.swift */; };
 		D6E24D6929114C6F0018C0C6 /* ExperienceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E24D6829114C6F0018C0C6 /* ExperienceType.swift */; };
 		D6E596D5291E7A840052D4E9 /* ExperienceTypeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E596D4291E7A840052D4E9 /* ExperienceTypeTest.swift */; };
 /* End PBXBuildFile section */
@@ -122,6 +123,7 @@
 		D64727D72913E93C007B13ED /* WhyNotUserInterfaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhyNotUserInterfaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6BC81EE2924AAB8006F44C2 /* TagTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TagTypeTests.swift; path = ../../../../../TagTypeTests.swift; sourceTree = "<group>"; };
 		D6BC81F029250181006F44C2 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+		D6BC81F3292505B0006F44C2 /* CardViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardViewModelTest.swift; path = ../../../../../../CardViewModelTest.swift; sourceTree = "<group>"; };
 		D6E24D6829114C6F0018C0C6 /* ExperienceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceType.swift; sourceTree = "<group>"; };
 		D6E596D4291E7A840052D4E9 /* ExperienceTypeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceTypeTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -394,6 +396,14 @@
 			path = WhyNotUserInterfaceTests;
 			sourceTree = "<group>";
 		};
+		D6BC81F22925059F006F44C2 /* CardView */ = {
+			isa = PBXGroup;
+			children = (
+				D6BC81F3292505B0006F44C2 /* CardViewModelTest.swift */,
+			);
+			path = CardView;
+			sourceTree = "<group>";
+		};
 		D6E24D6729114C540018C0C6 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
@@ -414,6 +424,7 @@
 		D6E596D0291E7A240052D4E9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				D6BC81F22925059F006F44C2 /* CardView */,
 				D6BC81EE2924AAB8006F44C2 /* TagTypeTests.swift */,
 			);
 			path = Components;
@@ -729,6 +740,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6BC81F4292505B0006F44C2 /* CardViewModelTest.swift in Sources */,
 				86CCE30C291D20460077E1E9 /* WhyNotUnitTests.swift in Sources */,
 				D6BC81EF2924AAB8006F44C2 /* TagTypeTests.swift in Sources */,
 				D6E596D5291E7A840052D4E9 /* ExperienceTypeTest.swift in Sources */,

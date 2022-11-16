@@ -36,7 +36,6 @@ class when_creating_an_enabled_category_get_the_correct_primary_color_successful
 
 }
 
-// swiftlint:disable type_name
 class when_creating_an_enabled_category_get_the_correct_secondary_color_successfully: XCTestCase {
 
     func test_correct_color_for_cooking_category() {
@@ -62,7 +61,6 @@ class when_creating_an_enabled_category_get_the_correct_secondary_color_successf
 
 }
 
-// swiftlint:disable type_name
 class when_creating_a_disabled_category_get_the_correct_primary_color_successfully: XCTestCase {
 
     func test_correct_color_for_cooking_category() {
@@ -88,7 +86,6 @@ class when_creating_a_disabled_category_get_the_correct_primary_color_successful
 
 }
 
-// swiftlint:disable type_name
 class when_creating_a_disabled_category_get_the_correct_secondary_color_successfully: XCTestCase {
 
     func test_correct_color_for_cooking_category() {
