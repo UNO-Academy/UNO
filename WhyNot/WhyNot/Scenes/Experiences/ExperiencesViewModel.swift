@@ -27,7 +27,9 @@ class ExperiencesViewModel: ObservableObject {
     }
 
     func getDaysLeft() -> Int? {
-        guard let expirationDay = getDayFromDate(toDoExperiesces[0].expirationDate.dateValue() ?? .distantPast) else { return nil }
+        guard let expirationDay = getDayFromDate(
+            toDoExperiesces[0].expirationDate.dateValue()
+        ) else { return nil }
         guard let nowDay = getDayFromDate(Date.now) else { return nil }
         return expirationDay - nowDay
     }
