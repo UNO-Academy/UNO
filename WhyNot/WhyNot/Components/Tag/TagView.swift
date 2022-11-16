@@ -15,7 +15,7 @@ struct TagView: View {
     var body: some View {
         HStack {
             tagData.getText()
-                .font(.system(size: FontSize.caption2))
+                .font(.system(size: FontSize.caption1))
                 .multilineTextAlignment(.center)
             tagData.getImage()
         }
@@ -34,6 +34,7 @@ struct TagsView: View {
             TagView(tagData: TagType.effort(experience.effort))
             TagView(tagData: TagType.duration(experience.duration))
             TagView(tagData: TagType.cost(experience.cost))
+            Spacer()
         }
     }
 }
