@@ -9,7 +9,8 @@ import SwiftUI
 
 enum FriendsConstants {
     static var ratio: CGFloat { return CGFloat(44) }
-    static var buttonText: String { return "Request" }
+    static var request: Text { return Text("Request").foregroundColor(Color.CustomColors.ClicableColor) }
+    static var sent: Text { return Text("Sent").foregroundColor(Color.green) }
 }
 
 struct FriendsCard: View {
@@ -28,7 +29,7 @@ struct FriendsCard: View {
                 action()
             },
             label: {
-                Text(FriendsConstants.buttonText)
+                FriendsConstants.request
                     .foregroundColor(Color.CustomColors.ClicableColor)
             })
         }
