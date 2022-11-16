@@ -59,7 +59,7 @@ struct ExperiencesView: View {
 
     var activitiesList: some View {
         VStack {
-            ForEach(weekExperiences) { experience in
+            ForEach(weekExperiences) { _ in
                 Rectangle()
                     .frame(height: 100)
             }
@@ -85,7 +85,7 @@ struct ExperiencesView: View {
 
     var livedList: some View {
         VStack {
-            ForEach(weekExperiences) { experience in
+            ForEach(weekExperiences) { _ in
                 Rectangle()
                     .frame(height: 100)
             }
