@@ -57,7 +57,9 @@ struct CardView_Previews: PreviewProvider {
                     isActive: true,
                     name: "Teste"
                 ),
-                friendsImages: []
+                friendsImages: [
+                    UIImage(named: "adventure")!
+                ]
             )
         )
     }
