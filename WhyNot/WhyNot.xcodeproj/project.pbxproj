@@ -50,8 +50,7 @@
 		A3CD5CE9291A9EFD003895C1 /* ExperiencesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CD5CE8291A9EFD003895C1 /* ExperiencesViewModel.swift */; };
 		D61A46CB292493C700C455A9 /* CategoryIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61A46CA292493C700C455A9 /* CategoryIcon.swift */; };
 		D64727C52913E658007B13ED /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64727C42913E658007B13ED /* CardView.swift */; };
-		D64727DA2913E93C007B13ED /* WhyNotUserInterfaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64727D92913E93C007B13ED /* WhyNotUserInterfaceTests.swift */; };
-		D64727DC2913E93C007B13ED /* WhyNotUserInterfaceTestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64727DB2913E93C007B13ED /* WhyNotUserInterfaceTestsLaunchTests.swift */; };
+		D6BC81EF2924AAB8006F44C2 /* TagTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BC81EE2924AAB8006F44C2 /* TagTypeTests.swift */; };
 		D6E24D6929114C6F0018C0C6 /* ExperienceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E24D6829114C6F0018C0C6 /* ExperienceType.swift */; };
 		D6E596D5291E7A840052D4E9 /* ExperienceTypeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E596D4291E7A840052D4E9 /* ExperienceTypeTest.swift */; };
 /* End PBXBuildFile section */
@@ -120,8 +119,7 @@
 		D61A46CA292493C700C455A9 /* CategoryIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryIcon.swift; sourceTree = "<group>"; };
 		D64727C42913E658007B13ED /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		D64727D72913E93C007B13ED /* WhyNotUserInterfaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhyNotUserInterfaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D64727D92913E93C007B13ED /* WhyNotUserInterfaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhyNotUserInterfaceTests.swift; sourceTree = "<group>"; };
-		D64727DB2913E93C007B13ED /* WhyNotUserInterfaceTestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhyNotUserInterfaceTestsLaunchTests.swift; sourceTree = "<group>"; };
+		D6BC81EE2924AAB8006F44C2 /* TagTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TagTypeTests.swift; path = ../../../../../TagTypeTests.swift; sourceTree = "<group>"; };
 		D6E24D6829114C6F0018C0C6 /* ExperienceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceType.swift; sourceTree = "<group>"; };
 		D6E596D4291E7A840052D4E9 /* ExperienceTypeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceTypeTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -390,8 +388,6 @@
 		D64727D82913E93C007B13ED /* WhyNotUserInterfaceTests */ = {
 			isa = PBXGroup;
 			children = (
-				D64727D92913E93C007B13ED /* WhyNotUserInterfaceTests.swift */,
-				D64727DB2913E93C007B13ED /* WhyNotUserInterfaceTestsLaunchTests.swift */,
 			);
 			path = WhyNotUserInterfaceTests;
 			sourceTree = "<group>";
@@ -415,6 +411,7 @@
 		D6E596D0291E7A240052D4E9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				D6BC81EE2924AAB8006F44C2 /* TagTypeTests.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -729,6 +726,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86CCE30C291D20460077E1E9 /* WhyNotUnitTests.swift in Sources */,
+				D6BC81EF2924AAB8006F44C2 /* TagTypeTests.swift in Sources */,
 				D6E596D5291E7A840052D4E9 /* ExperienceTypeTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -737,8 +735,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D64727DC2913E93C007B13ED /* WhyNotUserInterfaceTestsLaunchTests.swift in Sources */,
-				D64727DA2913E93C007B13ED /* WhyNotUserInterfaceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -889,7 +885,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WhyNot/Preview Content\"";
-				DEVELOPMENT_TEAM = 7XM8M8X33C;
+				DEVELOPMENT_TEAM = D7KS69836R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WhyNot/Info.plist;
@@ -921,7 +917,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WhyNot/Preview Content\"";
-				DEVELOPMENT_TEAM = 7XM8M8X33C;
+				DEVELOPMENT_TEAM = D7KS69836R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WhyNot/Info.plist;
