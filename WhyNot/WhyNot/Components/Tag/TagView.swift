@@ -14,7 +14,9 @@ struct TagView: View {
 
     var body: some View {
         HStack {
-            tagData.getText().multilineTextAlignment(.center)
+            tagData.getText()
+                .font(.system(size: FontSize.caption2))
+                .multilineTextAlignment(.center)
             tagData.getImage()
         }
         .foregroundColor(Color.CustomColors.CardTitle)
@@ -40,7 +42,7 @@ struct TagsViewPreview: PreviewProvider {
     static var previews: some View {
         TagsView(experience: Experience(
             category: "cooking",
-            cost: 2,
+            cost: 1,
             description: "lala",
             duration: 3,
             effort: 2,
