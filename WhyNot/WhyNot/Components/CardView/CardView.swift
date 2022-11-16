@@ -30,25 +30,27 @@ struct CardView: View {
         HStack(spacing: Space.space1x) {
             Spacer()
 
-            VStack {
+            VStack(alignment: .leading) {
                 Text(viewModel.experience.name)
                     .font(.system(size: 20))
                     .bold()
 
                 TagsView(experience: viewModel.experience)
+
+                
             }
 
             Spacer()
 
             CategoryIcon(
                 type: .cooking,
-                isEnable: $viewModel.isEnable
+                isEnable: viewModel.experience.isActive
             )
         }.background(
             RoundedRectangle(cornerRadius: Radius.defaultRadius)
                 .fill(
                     ExperienceType.cooking
-                        .getCorrectPrimaryColor(viewModel.isEnable)
+                        .getCorrectPrimaryColor(viewModel.experience.isActive)
                 )
         )
     }
