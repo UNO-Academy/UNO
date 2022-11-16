@@ -25,18 +25,16 @@ struct CardView: View {
 
                 TagsView(experience: viewModel.experience)
 
-                PersonImageCollection(images: [UIImage(named: "adventure")!])
+                PersonImageCollection(images: viewModel.friendsImages)
             }
             .padding(.leading, Space.space2x)
-
-            Spacer()
 
             CategoryIcon(
                 type: viewModel.experienceType,
                 isEnable: viewModel.experience.isActive
             )
         }
-        .aspectRatio(contentMode: .fit)
+        .aspectRatio(370 / 95, contentMode: .fit)
         .background(
             RoundedRectangle(cornerRadius: Radius.defaultRadius)
                 .fill(viewModel.getFillColor())
@@ -47,17 +45,20 @@ struct CardView: View {
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
         CardView(
-            viewModel: CardViewModel(experience: Experience(
-                id: "",
-                category: "cooking",
-                cost: 1,
-                description: "",
-                duration: 1,
-                effort: 3,
-                expirationDate: Timestamp(date: Date()),
-                isActive: true,
-                name: "Teste"
-            ))
+            viewModel: CardViewModel(
+                experience: Experience(
+                    id: "",
+                    category: "cooking",
+                    cost: 2,
+                    description: "",
+                    duration: 2,
+                    effort: 2,
+                    expirationDate: Timestamp(date: Date()),
+                    isActive: true,
+                    name: "Teste"
+                ),
+                friendsImages: []
+            )
         )
     }
 }

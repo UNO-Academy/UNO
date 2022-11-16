@@ -15,7 +15,7 @@ struct TagView: View {
     var body: some View {
         HStack {
             tagData.getText()
-                .font(.system(size: FontSize.caption1))
+                .font(.system(size: FontSize.caption2))
                 .multilineTextAlignment(.center)
             tagData.getImage()
         }
