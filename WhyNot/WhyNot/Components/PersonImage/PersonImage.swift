@@ -7,30 +7,28 @@
 
 import SwiftUI
 
-enum PeopleConstants: CGFloat {
-    case ratio = 21
-    case fontSize = 10
-}
-
 struct PersonImage: View {
+    let ratio: CGFloat
     var personImage: Image
 
     var body: some View {
         personImage
             .resizable()
             .aspectRatio(contentMode: .fill)
-            .frame(width: PeopleConstants.ratio.rawValue, height: PeopleConstants.ratio.rawValue)
+            .frame(width: ratio, height: ratio)
             .clipShape(Circle())
     }
 }
 
 struct RemainingPeople: View {
+    let ratio: CGFloat
+    let fontSize: CGFloat
     var remainingPeopleNumber: Int
 
     var body: some View {
         Text("+\(remainingPeopleNumber)")
-            .font(.system(size: PeopleConstants.fontSize.rawValue))
-            .frame(width: PeopleConstants.ratio.rawValue, height: PeopleConstants.ratio.rawValue)
+            .font(.system(size: fontSize))
+            .frame(width: ratio, height: ratio)
             .background(.white)
             .clipShape(Circle())
     }

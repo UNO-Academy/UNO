@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+enum PeopleConstants: CGFloat {
+    case ratio = 21
+    case fontSize = 10
+}
+
 struct PersonImageCollection: View {
     @ObservedObject var viewModel: PersonImageViewModel
 
@@ -17,12 +22,12 @@ struct PersonImageCollection: View {
     var body: some View {
         HStack(spacing: -Space.halfSpace) {
             ForEach(viewModel.getPeopleImages(), id: \.self) { image in
-                PersonImage(personImage: Image(uiImage: image))
+                PersonImage(ratio: PeopleConstants.ratio.rawValue, personImage: Image(uiImage: image))
             }
             
             if viewModel.needPlusCard() {
                 let remainingPeople = viewModel.howManyPeopleRemains()
-                RemainingPeople(remainingPeopleNumber: remainingPeople)
+                RemainingPeople(ratio: PeopleConstants.ratio.rawValue, fontSize: PeopleConstants.fontSize.rawValue, remainingPeopleNumber: remainingPeople)
             }
         }
     }

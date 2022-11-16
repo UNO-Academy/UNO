@@ -46,6 +46,8 @@
 		8699EEAB2911616500875333 /* TagData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8699EEAA2911616500875333 /* TagData.swift */; };
 		86BA9D1129096A3800C1F330 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BA9D1029096A3800C1F330 /* ContentView.swift */; };
 		86CCE30C291D20460077E1E9 /* WhyNotUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CCE30B291D20460077E1E9 /* WhyNotUnitTests.swift */; };
+		86DA3D1A292278DC00A88479 /* FriendsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DA3D19292278DC00A88479 /* FriendsList.swift */; };
+		86DA3D1C292285F000A88479 /* FriendCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DA3D1B292285F000A88479 /* FriendCard.swift */; };
 		86DFFE4E28F44CD30075153A /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 86DFFE4D28F44CD30075153A /* FirebaseDatabase */; };
 		86DFFE5028F44CD30075153A /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 86DFFE4F28F44CD30075153A /* FirebaseDatabaseSwift */; };
 		86DFFE5228F44CD30075153A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 86DFFE5128F44CD30075153A /* FirebaseFirestore */; };
@@ -119,6 +121,8 @@
 		86BA9D1029096A3800C1F330 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		86CCE309291D20460077E1E9 /* WhyNotUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhyNotUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86CCE30B291D20460077E1E9 /* WhyNotUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhyNotUnitTests.swift; sourceTree = "<group>"; };
+		86DA3D19292278DC00A88479 /* FriendsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsList.swift; sourceTree = "<group>"; };
+		86DA3D1B292285F000A88479 /* FriendCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCard.swift; sourceTree = "<group>"; };
 		86F5A40E291A8CCA003EEC8A /* PersonImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonImage.swift; sourceTree = "<group>"; };
 		BD3E99553D198918995701FA /* Pods-WhyNot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhyNot.release.xcconfig"; path = "Target Support Files/Pods-WhyNot/Pods-WhyNot.release.xcconfig"; sourceTree = "<group>"; };
 		D64727CC2913E922007B13ED /* WhyNotUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhyNotUnitTests.swift; sourceTree = "<group>"; };
@@ -380,6 +384,15 @@
 			path = CategoryIcon;
 			sourceTree = "<group>";
 		};
+		86DA3D18292278A400A88479 /* FriendsList */ = {
+			isa = PBXGroup;
+			children = (
+				86DA3D19292278DC00A88479 /* FriendsList.swift */,
+				86DA3D1B292285F000A88479 /* FriendCard.swift */,
+			);
+			path = FriendsList;
+			sourceTree = "<group>";
+		};
 		D64727CB2913E922007B13ED /* WhyNotUnitTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -408,6 +421,7 @@
 		D6E766C329114A7A000D940F /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				86DA3D18292278A400A88479 /* FriendsList */,
 				86DA3D122922677300A88479 /* CategoryIcon */,
 				86DA3CEF291E6B0800A88479 /* Tag */,
 				86DA3CEE291E699B00A88479 /* PersonImage */,
@@ -650,6 +664,7 @@
 				2424526F28FEE104006E8629 /* Sequence+Extension.swift in Sources */,
 				86048458290FFFD70055AF30 /* Space.swift in Sources */,
 				8699EEA92911614A00875333 /* TagView.swift in Sources */,
+				86DA3D1A292278DC00A88479 /* FriendsList.swift in Sources */,
 				24BE3E31291012C600261E0A /* TabIcon.swift in Sources */,
 				24BE3E3529101A8A00261E0A /* SearchView.swift in Sources */,
 				D6E24D6929114C6F0018C0C6 /* ExperienceType.swift in Sources */,
@@ -659,6 +674,7 @@
 				24B18B1828FD7BF400EC9A3D /* Memento.swift in Sources */,
 				24202EA428F8471300141CCB /* Repository.swift in Sources */,
 				24BE3E392911618B00261E0A /* TabBar.swift in Sources */,
+				86DA3D1C292285F000A88479 /* FriendCard.swift in Sources */,
 				2424527428FEE899006E8629 /* Encodable+Extension.swift in Sources */,
 				59AC84A428F609BA00EB3A9A /* CRUDServices.swift in Sources */,
 				59B892CE28FD7FB60045EAA9 /* ModelInterface.swift in Sources */,
