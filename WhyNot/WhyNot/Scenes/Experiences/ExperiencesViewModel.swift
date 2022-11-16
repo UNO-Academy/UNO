@@ -8,8 +8,9 @@
 import SwiftUI
 
 class ExperiencesViewModel: ObservableObject {
-    @State var toDoExperiesces: [Experience] = []
-    @State var doneExperiences: [Experience] = []
+    @Published var toDoExperiesces: [Experience] = []
+    @Published var doneExperiences: [Experience] = []
+    @Published var daysLeft: Int = 0
 
     let repository: ExperienceRepository
 
@@ -21,18 +22,28 @@ class ExperiencesViewModel: ObservableObject {
     func loadExperiences() {
         Task {
             let experiesces = try await repository.getActiveExperiences()
-            toDoExperiesces = experiesces.toDoExperiences
-            doneExperiences = experiesces.doneExperiences
+            self.toDoExperiesces = experiesces.toDoExperiences
+            self.doneExperiences = experiesces.doneExperiences
+            self.daysLeft = getDaysLeft()
         }
     }
 
-    func getDaysLeft() -> Int? {
-        guard let expirationDay = getDayFromDate(toDoExperiesces[0].expirationDate.dateValue() ?? .distantPast) else { return nil }
-        guard let nowDay = getDayFromDate(Date.now) else { return nil }
+    func getDaysLeft() -> Int {
+        let expirationDay = getExpirationDay()
+        guard let nowDay = Date.now.getDay() else { return 0 }
         return expirationDay - nowDay
     }
 
-    func getDayFromDate(_ date: Date) -> Int? {
-        return Calendar.current.dateComponents([.day], from: date).day
+    func getExpirationDay() -> Int {
+        var date: Date = Date.now
+
+        if !toDoExperiesces.isEmpty {
+            date = toDoExperiesces[0].expirationDate.dateValue()
+        } else if !doneExperiences.isEmpty {
+            date = doneExperiences[0].expirationDate.dateValue()
+        }
+
+        guard let day = date.getDay() else { return 0 }
+        return day
     }
 }

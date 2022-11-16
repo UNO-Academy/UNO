@@ -8,8 +8,13 @@
 import FirebaseFirestore
 
 struct ActiveExperiences {
-    let toDoExperiences: [Experience]
-    let doneExperiences: [Experience]
+    var toDoExperiences: [Experience]
+    var doneExperiences: [Experience]
+
+    init(toDo: [Experience], done: [Experience]) {
+        self.toDoExperiences = toDo
+        self.doneExperiences = done
+    }
 }
 
 class ExperienceRepository {
@@ -30,17 +35,26 @@ class ExperienceRepository {
         let list = try await loadExperiences()
 
         guard let user = userAPI.getLoggedUser() else {
-            return ActiveExperiences(toDoExperiences: list, doneExperiences: [])
+            let teste = ActiveExperiences(toDo: list, done: [])
+            print(teste)
+            print(teste.toDoExperiences)
+            print(list)
+            let campo = teste.toDoExperiences
+            print("Teste: \(teste)")
+            return teste
         }
 
-        let toDo = list.filter {
-            !user.doneExperiencesID.contains($0.id!)
-        }
-        let done = list.filter {
-            user.doneExperiencesID.contains($0.id!)
-        }
+        return list.reduce(ActiveExperiences(toDo: [], done: [])) { experiences, item in
+            var activeExperiences = experiences
 
-        return ActiveExperiences(toDoExperiences: toDo, doneExperiences: done)
+            if user.doneExperiencesID.contains(item.id!) {
+                activeExperiences.doneExperiences.append(item)
+            } else {
+                activeExperiences.toDoExperiences.append(item)
+            }
+
+            return activeExperiences
+        }
     }
 
     func loadExperiences() async throws -> [Experience] {
