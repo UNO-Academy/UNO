@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 class CardViewModel: ObservableObject {
 
@@ -46,7 +47,8 @@ struct CardView: View {
         }.background(
             RoundedRectangle(cornerRadius: Radius.defaultRadius)
                 .fill(
-                    viewModel.isEnable ? ExperienceType.cooking.primaryColor : Color.SecondaryPallet.disable
+                    ExperienceType.cooking
+                        .getCorrectPrimaryColor(viewModel.isEnable)
                 )
         )
     }
@@ -57,13 +59,14 @@ struct CardView_Previews: PreviewProvider {
         CardView(
             viewModel: CardViewModel(experience: Experience(
                 id: "",
-                name: "Adventure Time",
-                description: "",
-                effort: 2,
-                duration: 3,
+                category: "Adventure Time",
                 cost: 2,
-                category: "",
-                isActive: true
+                description: "",
+                duration: 3,
+                effort: 2,
+                expirationDate: Timestamp(date: Date()),
+                isActive: true,
+                name: "Teste"
             ))
         )
     }
