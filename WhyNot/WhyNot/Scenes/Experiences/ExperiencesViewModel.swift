@@ -8,9 +8,15 @@
 import SwiftUI
 
 class ExperiencesViewModel: ObservableObject {
-    @Published var toDoExperiesces: [Experience] = []
+
+    @Published var toDoExperiences: [Experience] = []
     @Published var doneExperiences: [Experience] = []
+
     @Published var daysLeft: Int = 0
+
+    @Published var mustShowEmptyLived: Bool = false
+    @Published var mustShowSpaceLeft: Bool = false
+    @Published var mustShowAllDone: Bool = false
 
     let repository: ExperienceRepository
 
@@ -22,9 +28,15 @@ class ExperiencesViewModel: ObservableObject {
     func loadExperiences() {
         Task {
             let experiesces = try await repository.getActiveExperiences()
-            self.toDoExperiesces = experiesces.toDoExperiences
+
+            self.toDoExperiences = experiesces.toDoExperiences
             self.doneExperiences = experiesces.doneExperiences
+
             self.daysLeft = getDaysLeft()
+
+            self.mustShowEmptyLived = doneExperiences.isEmpty
+            self.mustShowSpaceLeft = !doneExperiences.isEmpty && !toDoExperiences.isEmpty
+            self.mustShowAllDone = toDoExperiences.isEmpty
         }
     }
 
@@ -37,8 +49,8 @@ class ExperiencesViewModel: ObservableObject {
     func getExpirationDay() -> Int {
         var date: Date = Date.now
 
-        if !toDoExperiesces.isEmpty {
-            date = toDoExperiesces[0].expirationDate.dateValue()
+        if !toDoExperiences.isEmpty {
+            date = toDoExperiences[0].expirationDate.dateValue()
         } else if !doneExperiences.isEmpty {
             date = doneExperiences[0].expirationDate.dateValue()
         }

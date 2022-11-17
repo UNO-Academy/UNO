@@ -9,7 +9,7 @@ import Foundation
 import FirebaseFirestoreSwift
 import FirebaseFirestore
 
-struct Experience: Codable {
+struct Experience: Codable, Identifiable {
     @DocumentID var id: String?
     let category: String
     let cost: Int

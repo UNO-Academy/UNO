@@ -16,7 +16,9 @@ extension Color {
         static var PurpleSwipe: Color { return Color("PurpleSwipeWN") }
         static var RedSwipe: Color { return Color("RedSwipeWN") }
         static var TitleColor: Color { return Color("TitleColorWN") }
+        static var TitleColorReversed: Color { return Color("TitleColorReversed") }
         static var TabBarSymbol: Color { return Color("TabBarSymbol") }
+        static var CardBackground: Color {return Color("CardBackground") }
     }
 
     enum PrimaryPallet {

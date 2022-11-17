@@ -7,12 +7,7 @@
 
 import SwiftUI
 
-struct Teste: Identifiable {
-    var id: Int
-}
-
 struct ExperiencesView: View {
-    let weekExperiences: [Teste] = [Teste(id: 1), Teste(id: 2), Teste(id: 3), Teste(id: 4)]
     let viewModel = ExperiencesViewModel(ExperienceRepository())
 
     var body: some View {
@@ -63,7 +58,16 @@ struct ExperiencesView: View {
 
     var activitiesList: some View {
         VStack {
-            ForEach(weekExperiences) { experience in
+            if viewModel.mustShowAllDone {
+                EmptyListCard(
+                    icon: "flag.2.crossed.fill",
+                    line1: String(localized: "cardAllDoneLine1"),
+                    line2: String(localized: "cardAllDoneLine2"),
+                    textColor: Color.CustomColors.TitleColorReversed,
+                    backgoundColor: Color.CustomColors.DaysLeft
+                )
+            }
+            ForEach(viewModel.toDoExperiences) { _ in
                 Rectangle()
                     .frame(height: 100)
             }
@@ -89,7 +93,24 @@ struct ExperiencesView: View {
 
     var livedList: some View {
         VStack {
-            ForEach(weekExperiences) { experience in
+            if viewModel.mustShowEmptyLived {
+                EmptyListCard(
+                    icon: "flag.slash",
+                    line1: String(localized: "cardEmptyLivedTextLine1"),
+                    line2: String(localized: "cardEmptyLivedTextLine2"),
+                    textColor: Color.CustomColors.TitleColor,
+                    backgoundColor: Color.CustomColors.CardBackground
+                )
+            } else if viewModel.mustShowSpaceLeft {
+                EmptyListCard(
+                    icon: "tray",
+                    line1: String(localized: "cardSpaceLeftLine1"),
+                    line2: String(localized: "cardSpaceLeftLine2"),
+                    textColor: Color.CustomColors.TitleColor,
+                    backgoundColor: Color.CustomColors.CardBackground
+                )
+            }
+            ForEach(viewModel.doneExperiences) { _ in
                 Rectangle()
                     .frame(height: 100)
             }

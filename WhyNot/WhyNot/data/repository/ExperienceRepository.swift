@@ -35,13 +35,7 @@ class ExperienceRepository {
         let list = try await loadExperiences()
 
         guard let user = userAPI.getLoggedUser() else {
-            let teste = ActiveExperiences(toDo: list, done: [])
-            print(teste)
-            print(teste.toDoExperiences)
-            print(list)
-            let campo = teste.toDoExperiences
-            print("Teste: \(teste)")
-            return teste
+            return ActiveExperiences(toDo: list, done: [])
         }
 
         return list.reduce(ActiveExperiences(toDo: [], done: [])) { experiences, item in

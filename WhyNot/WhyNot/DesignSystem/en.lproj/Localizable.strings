@@ -16,6 +16,12 @@
 "activitiesTableTitle" = "Activities";
 "experiencedTableTitle" = "Lived";
 "daysRemainingCounter" = "days left";
+"cardEmptyLivedTextLine1" = "Let's live a bit!";
+"cardEmptyLivedTextLine2" = "Go big or go home.";
+"cardSpaceLeftLine1" = "You’ve some space left";
+"cardSpaceLeftLine2" = "for good memories.";
+"cardAllDoneLine1" = "You’ve created a few memories.";
+"cardAllDoneLine2" = "What will come next?";
 
 //Experience detail Screen
 

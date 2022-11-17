@@ -16,6 +16,12 @@
 "activitiesTableTitle" = "Atividades";
 "experiencedTableTitle" = "Vividos";
 "daysRemainingCounter" = "Dias Restantes";
+"cardEmptyLivedTextLine1" = "Vamos viver um pouco!";
+"cardEmptyLivedTextLine2" = "Vá grande ou vá para casa.";
+"cardSpaceLeftLine1" = "Você ainda tem espaço";
+"cardSpaceLeftLine2" = "para boas lembranças.";
+"cardAllDoneLine1" = "Você criou algumas memórias.";
+"cardAllDoneLine2" = "O que virá a seguir?";
 
 //Experience detail Screen
 

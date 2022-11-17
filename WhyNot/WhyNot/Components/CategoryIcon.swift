@@ -17,7 +17,7 @@ struct CategoryIcon: View {
             .resizable()
             .aspectRatio(1, contentMode: .fit)
             .background(
-                RoundedRectangle(cornerRadius: Radius.defaultRadius)
+                RoundedRectangle(cornerRadius: CornerRadius.defaultRadius)
                     .fill(isEnable ? type.secondaryColor : Color.SecondaryPallet.disable)
             )
     }
