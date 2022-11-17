@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ExperiencesView: View {
-    let viewModel = ExperiencesViewModel(ExperienceRepository())
+    let viewModel = ExperiencesViewModel(ExperienceRepositoryImpl())
 
     var body: some View {
         ScrollView {

@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		24202EA228F846F900141CCB /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24202EA128F846F900141CCB /* Experience.swift */; };
-		24202EA428F8471300141CCB /* ExperienceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24202EA328F8471300141CCB /* ExperienceRepository.swift */; };
+		24202EA428F8471300141CCB /* ExperienceRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24202EA328F8471300141CCB /* ExperienceRepositoryImpl.swift */; };
 		24202EA828F847E100141CCB /* ExperienceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24202EA728F847E100141CCB /* ExperienceAPI.swift */; };
 		2424526F28FEE104006E8629 /* Sequence+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2424526E28FEE104006E8629 /* Sequence+Extension.swift */; };
 		2424527428FEE899006E8629 /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2424527328FEE899006E8629 /* Encodable+Extension.swift */; };
 		242B43DE2926630600F0C3C1 /* EmptyListCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B43DD2926630600F0C3C1 /* EmptyListCard.swift */; };
 		242B43E129266DA500F0C3C1 /* CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B43E029266DA500F0C3C1 /* CornerRadius.swift */; };
+		242B43E32926825300F0C3C1 /* ExperiencesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B43E22926825300F0C3C1 /* ExperiencesViewModelTests.swift */; };
+		242B43E5292682E400F0C3C1 /* ActiveExperiences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B43E4292682E400F0C3C1 /* ActiveExperiences.swift */; };
+		242B43E72926832100F0C3C1 /* ExperienceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B43E62926832100F0C3C1 /* ExperienceRepository.swift */; };
 		248FD9FF2913E167003DA666 /* WhyNotApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8608FCD428F05AE1007FC0BA /* WhyNotApp.swift */; };
 		248FDA012925322F003DA666 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248FDA002925322F003DA666 /* Date+Extension.swift */; };
 		24B18B1628FD757A00EC9A3D /* MementoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B18B1528FD757A00EC9A3D /* MementoAPI.swift */; };
@@ -55,12 +58,15 @@
 
 /* Begin PBXFileReference section */
 		24202EA128F846F900141CCB /* Experience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experience.swift; sourceTree = "<group>"; };
-		24202EA328F8471300141CCB /* ExperienceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceRepository.swift; sourceTree = "<group>"; };
+		24202EA328F8471300141CCB /* ExperienceRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceRepositoryImpl.swift; sourceTree = "<group>"; };
 		24202EA728F847E100141CCB /* ExperienceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceAPI.swift; sourceTree = "<group>"; };
 		2424526E28FEE104006E8629 /* Sequence+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extension.swift"; sourceTree = "<group>"; };
 		2424527328FEE899006E8629 /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
 		242B43DD2926630600F0C3C1 /* EmptyListCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListCard.swift; sourceTree = "<group>"; };
 		242B43E029266DA500F0C3C1 /* CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadius.swift; sourceTree = "<group>"; };
+		242B43E22926825300F0C3C1 /* ExperiencesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperiencesViewModelTests.swift; sourceTree = "<group>"; };
+		242B43E4292682E400F0C3C1 /* ActiveExperiences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveExperiences.swift; sourceTree = "<group>"; };
+		242B43E62926832100F0C3C1 /* ExperienceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceRepository.swift; sourceTree = "<group>"; };
 		248FDA002925322F003DA666 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		24B18B1528FD757A00EC9A3D /* MementoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MementoAPI.swift; sourceTree = "<group>"; };
 		24B18B1728FD7BF400EC9A3D /* Memento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memento.swift; sourceTree = "<group>"; };
@@ -152,6 +158,7 @@
 				24B18B1728FD7BF400EC9A3D /* Memento.swift */,
 				59B892CD28FD7FB60045EAA9 /* CollectionNames.swift */,
 				594A5FA72902CCBE00A1C10C /* User.swift */,
+				242B43E4292682E400F0C3C1 /* ActiveExperiences.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -326,7 +333,8 @@
 		A3CD5CEA291AAD61003895C1 /* repository */ = {
 			isa = PBXGroup;
 			children = (
-				24202EA328F8471300141CCB /* ExperienceRepository.swift */,
+				24202EA328F8471300141CCB /* ExperienceRepositoryImpl.swift */,
+				242B43E62926832100F0C3C1 /* ExperienceRepository.swift */,
 			);
 			path = repository;
 			sourceTree = "<group>";
@@ -335,6 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				D64727CC2913E922007B13ED /* WhyNotUnitTests.swift */,
+				242B43E22926825300F0C3C1 /* ExperiencesViewModelTests.swift */,
 			);
 			path = WhyNotUnitTests;
 			sourceTree = "<group>";
@@ -566,6 +575,7 @@
 				86048456290FF4BB0055AF30 /* FontSize.swift in Sources */,
 				A3CD5CE9291A9EFD003895C1 /* ExperiencesViewModel.swift in Sources */,
 				86BA9D1129096A3800C1F330 /* ContentView.swift in Sources */,
+				242B43E5292682E400F0C3C1 /* ActiveExperiences.swift in Sources */,
 				86048454290FF3D00055AF30 /* CustomFonts.swift in Sources */,
 				863A8F01290C10A0000DBA1B /* Colors.swift in Sources */,
 				24202EA828F847E100141CCB /* ExperienceAPI.swift in Sources */,
@@ -585,12 +595,13 @@
 				59B892CC28FD77DF0045EAA9 /* DocumentSnapshot+Extension.swift in Sources */,
 				24BE3E3729101A9500261E0A /* ProfileView.swift in Sources */,
 				24B18B1828FD7BF400EC9A3D /* Memento.swift in Sources */,
-				24202EA428F8471300141CCB /* ExperienceRepository.swift in Sources */,
+				24202EA428F8471300141CCB /* ExperienceRepositoryImpl.swift in Sources */,
 				24BE3E392911618B00261E0A /* TabBar.swift in Sources */,
 				2424527428FEE899006E8629 /* Encodable+Extension.swift in Sources */,
 				59AC84A428F609BA00EB3A9A /* CRUDServices.swift in Sources */,
 				59B892CE28FD7FB60045EAA9 /* CollectionNames.swift in Sources */,
 				59778DB6291589E5008748E6 /* AuthenticationManager.swift in Sources */,
+				242B43E72926832100F0C3C1 /* ExperienceRepository.swift in Sources */,
 				594A5FAA2902CDB700A1C10C /* UserAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -599,6 +610,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				242B43E32926825300F0C3C1 /* ExperiencesViewModelTests.swift in Sources */,
 				D64727CD2913E922007B13ED /* WhyNotUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

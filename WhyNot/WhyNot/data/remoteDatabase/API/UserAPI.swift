@@ -22,9 +22,10 @@ class UserAPI {
     }
 
     func isLogged() -> Bool {
-        return false
+        return authManager.isLogged
     }
 
+    // TODO: arrumar isso
     func getLoggedUser() -> User? {
         return nil
     }
