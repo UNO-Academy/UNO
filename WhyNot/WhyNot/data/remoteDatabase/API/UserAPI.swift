@@ -21,14 +21,6 @@ class UserAPI {
         collectionReference = db.collection(CollectionNames.user.rawValue)
     }
 
-    func isLogged() -> Bool {
-        return false
-    }
-
-    func getLoggedUser() -> User? {
-        return nil
-    }
-
     func createUser(email: String, password: String, user: User) async throws {
         guard let data = user.encode() else {
             print("Não foi possivel converter o objeto em documento")
@@ -111,8 +103,8 @@ class UserAPI {
     }
 
     func getUserFriendsInterestedInAnExperience(userID: String, experienceID: String) async throws -> [User] {
-        let data = try await collectionReference.document(userID).getDocument()
-        guard var friendsList = data[UserFields.friendsID.rawValue] as? [String] else { return [] }
+        let userData = try await collectionReference.document(userID).getDocument()
+        guard var friendsList = userData[UserFields.friendsID.rawValue] as? [String] else { return [] }
         friendsList = try await crudService.friendsInterestedInAnExperience(
             collectionRef: collectionReference,
             friendsID: friendsList,
