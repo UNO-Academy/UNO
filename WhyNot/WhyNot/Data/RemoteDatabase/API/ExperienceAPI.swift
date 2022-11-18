@@ -11,12 +11,11 @@ import FirebaseFirestoreSwift
 
 class ExperienceAPI {
 
-    private let crudService: CRUDServices
+    private let crudService = CRUDServices.shared
     private let collectionReference: CollectionReference
 
-    init(crudService: CRUDServices, db: Firestore) {
-        self.crudService = crudService
-        collectionReference = db.collection(CollectionNames.experience.rawValue)
+    init() {
+        collectionReference = Firestore.firestore().collection(CollectionNames.experience.rawValue)
     }
 
     func getActiveExperiences() async throws -> [Experience] {

@@ -13,18 +13,11 @@ class UserRepositoryImpl: UserRepository {
     private var isLogged: Bool = false
     private var user: User?
 
-    private let api: UserAPI
-    private let authManager: AuthenticationManager
-
-    init() {
-        let crudService = CRUDServices()
-        let db = Firestore.firestore()
-        authManager = AuthenticationManager()
-        api = UserAPI(crudService: crudService, db: db)
-    }
+    private let api = UserAPI()
+    private let authManager = AuthenticationManager()
 
     func isUserLogged() -> Bool {
-        return authManager.isLogged
+        return isLogged
     }
 
     func getLoggedUser() -> User? {

@@ -11,12 +11,11 @@ import FirebaseFirestoreSwift
 
 class MementoAPI {
 
-    private let crudService: CRUDServices
+    private let crudService = CRUDServices.shared
     private let collectionReference: CollectionReference
 
-    init(crudService: CRUDServices, db: Firestore) {
-        self.crudService = crudService
-        collectionReference = db.collection(CollectionNames.memento.rawValue)
+    init() {
+        collectionReference = Firestore.firestore().collection(CollectionNames.memento.rawValue)
     }
 
     func createMemento(_ memento: Memento) async throws {

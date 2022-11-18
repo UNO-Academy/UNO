@@ -9,14 +9,8 @@ import FirebaseFirestore
 
 class ExperienceRepositoryImpl: ExperienceRepository {
 
-    let experienceAPI: ExperienceAPI
+    let experienceAPI = ExperienceAPI()
     var experiencesList: [Experience]?
-
-    init() {
-        let crudService = CRUDServices()
-        let db = Firestore.firestore()
-        experienceAPI = ExperienceAPI(crudService: crudService, db: db)
-    }
 
     func fetchExperiences() async throws -> [Experience] {
         guard let list = experiencesList else {

@@ -11,12 +11,11 @@ import FirebaseFirestoreSwift
 
 class UserAPI {
 
-    private let crudService: CRUDServices
+    private let crudService = CRUDServices.shared
     private let collectionReference: CollectionReference
 
-    init(crudService: CRUDServices, db: Firestore) {
-        self.crudService = crudService
-        collectionReference = db.collection(CollectionNames.user.rawValue)
+    init() {
+        collectionReference = Firestore.firestore().collection(CollectionNames.user.rawValue)
     }
 
     func createUser(id: String, user: User) async throws {

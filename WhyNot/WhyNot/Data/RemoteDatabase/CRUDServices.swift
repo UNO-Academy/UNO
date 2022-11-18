@@ -11,6 +11,8 @@ import FirebaseFirestoreSwift
 
 class CRUDServices {
 
+    static let shared = CRUDServices()
+
     func createDocument(
         collectionRef: CollectionReference,
         data: [String: Any]
