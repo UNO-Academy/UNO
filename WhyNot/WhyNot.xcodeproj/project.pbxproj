@@ -195,15 +195,6 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		242B43DF292664E600F0C3C1 /* Tag */ = {
-			isa = PBXGroup;
-			children = (
-				8699EEAA2911616500875333 /* TagData.swift */,
-				8699EEA82911614A00875333 /* TagView.swift */,
-			);
-			path = Tag;
-			sourceTree = "<group>";
-		};
 		24BE3E2C291002B200261E0A /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +273,8 @@
 		8608FCD328F05AE1007FC0BA /* WhyNot */ = {
 			isa = PBXGroup;
 			children = (
+				8699EEAA2911616500875333 /* TagData.swift */,
+				8699EEA82911614A00875333 /* TagView.swift */,
 				24BE3E2C291002B200261E0A /* Scenes */,
 				D6E766C329114A7A000D940F /* Components */,
 				863A8EFF290C0060000DBA1B /* DesignSystem */,
@@ -360,7 +353,6 @@
 		D6E766C329114A7A000D940F /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				242B43DF292664E600F0C3C1 /* Tag */,
 				D6E24D6C29114CCF0018C0C6 /* CategoryIcon.swift */,
 				242B43DD2926630600F0C3C1 /* EmptyListCard.swift */,
 			);
