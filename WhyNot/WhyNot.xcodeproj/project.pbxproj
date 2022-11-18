@@ -83,7 +83,6 @@
 		24BE3E382911618B00261E0A /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		27C07170291438570076D6C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		27C071722914385E0076D6C4 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		27C071732914385F0076D6C4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4B23B84298FBEECA6AFF2BCD /* Pods-WhyNotUnitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhyNotUnitTests.debug.xcconfig"; path = "Target Support Files/Pods-WhyNotUnitTests/Pods-WhyNotUnitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		594A5FA72902CCBE00A1C10C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		594A5FA92902CDB700A1C10C /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
@@ -548,7 +547,6 @@
 				en,
 				Base,
 				"pt-BR",
-				ru,
 			);
 			mainGroup = 8608FCC828F05AE1007FC0BA;
 			productRefGroup = 8608FCD228F05AE1007FC0BA /* Products */;
@@ -770,7 +768,6 @@
 			children = (
 				27C07170291438570076D6C4 /* en */,
 				27C071722914385E0076D6C4 /* pt-BR */,
-				27C071732914385F0076D6C4 /* ru */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
