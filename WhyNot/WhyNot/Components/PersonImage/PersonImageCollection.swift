@@ -24,10 +24,14 @@ struct PersonImageCollection: View {
             ForEach(viewModel.getPeopleImages(), id: \.self) { image in
                 PersonImage(ratio: PeopleConstants.ratio.rawValue, personImage: Image(uiImage: image))
             }
-            
+
             if viewModel.needPlusCard() {
                 let remainingPeople = viewModel.howManyPeopleRemains()
-                RemainingPeople(ratio: PeopleConstants.ratio.rawValue, fontSize: PeopleConstants.fontSize.rawValue, remainingPeopleNumber: remainingPeople)
+                RemainingPeople(
+                    ratio: PeopleConstants.ratio.rawValue,
+                    fontSize: PeopleConstants.fontSize.rawValue,
+                    remainingPeopleNumber: remainingPeople
+                )
             }
         }
     }
