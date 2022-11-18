@@ -50,7 +50,6 @@
 		A3CD5CE9291A9EFD003895C1 /* ExperiencesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CD5CE8291A9EFD003895C1 /* ExperiencesViewModel.swift */; };
 		D61A46CB292493C700C455A9 /* CategoryIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61A46CA292493C700C455A9 /* CategoryIcon.swift */; };
 		D64727C52913E658007B13ED /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64727C42913E658007B13ED /* CardView.swift */; };
-		D66D4D6329265EA50081772C /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66D4D6229265EA50081772C /* Localization.swift */; };
 		D66D4D6629265EC80081772C /* LocalizedKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66D4D6529265EC80081772C /* LocalizedKeys.swift */; };
 		D6BC81EF2924AAB8006F44C2 /* TagTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BC81EE2924AAB8006F44C2 /* TagTypeTests.swift */; };
 		D6BC81F129250181006F44C2 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BC81F029250181006F44C2 /* CardViewModel.swift */; };
@@ -122,7 +121,6 @@
 		D61A46CA292493C700C455A9 /* CategoryIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryIcon.swift; sourceTree = "<group>"; };
 		D64727C42913E658007B13ED /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		D64727D72913E93C007B13ED /* WhyNotUserInterfaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhyNotUserInterfaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D66D4D6229265EA50081772C /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		D66D4D6529265EC80081772C /* LocalizedKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedKeys.swift; sourceTree = "<group>"; };
 		D6BC81EE2924AAB8006F44C2 /* TagTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TagTypeTests.swift; path = ../../../../../TagTypeTests.swift; sourceTree = "<group>"; };
 		D6BC81F029250181006F44C2 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
@@ -412,7 +410,6 @@
 			isa = PBXGroup;
 			children = (
 				D66D4D6429265EB50081772C /* Keys */,
-				D66D4D6229265EA50081772C /* Localization.swift */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -730,7 +727,6 @@
 				86815CF82913E78D00C41522 /* PersonImageViewModel.swift in Sources */,
 				594A5FA82902CCBE00A1C10C /* User.swift in Sources */,
 				24202EA228F846F900141CCB /* Experience.swift in Sources */,
-				D66D4D6329265EA50081772C /* Localization.swift in Sources */,
 				86048456290FF4BB0055AF30 /* FontSize.swift in Sources */,
 				A3CD5CE9291A9EFD003895C1 /* ExperiencesViewModel.swift in Sources */,
 				D61A46CB292493C700C455A9 /* CategoryIcon.swift in Sources */,

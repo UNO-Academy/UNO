@@ -8,5 +8,5 @@
 import SwiftUI
 
 enum LocalizedKeys: String {
-    
+    case profileViewTitle
 }
