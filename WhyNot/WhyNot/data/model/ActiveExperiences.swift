@@ -10,9 +10,4 @@ import Foundation
 struct ActiveExperiences {
     var toDoExperiences: [Experience]
     var doneExperiences: [Experience]
-
-    init(toDo: [Experience], done: [Experience]) {
-        self.toDoExperiences = toDo
-        self.doneExperiences = done
-    }
 }

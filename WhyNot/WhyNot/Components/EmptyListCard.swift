@@ -10,8 +10,7 @@ import SwiftUI
 struct EmptyListCard: View {
 
     let icon: String
-    let line1: String
-    let line2: String
+    let text: String
     let textColor: Color
     let backgoundColor: Color
 
@@ -22,12 +21,10 @@ struct EmptyListCard: View {
                 Image(systemName: icon)
                     .font(.system(size: FontSize.title1))
                     .foregroundColor(textColor)
-                Text(line1)
+                Text(text)
                     .font(.system(size: FontSize.callout))
                     .foregroundColor(textColor)
-                Text(line2)
-                    .font(.system(size: FontSize.callout))
-                    .foregroundColor(textColor)
+                    .multilineTextAlignment(.center)
             }
             Spacer()
         }
@@ -43,8 +40,7 @@ struct EmptyListCard_Previews: PreviewProvider {
     static var previews: some View {
         EmptyListCard(
             icon: "flag.slash",
-            line1: String(localized: "cardEmptyLivedTextLine1"),
-            line2: String(localized: "cardEmptyLivedTextLine2"),
+            text: String(localized: "cardEmptyLivedTextLine"),
             textColor: Color.CustomColors.TitleColor,
             backgoundColor: Color.CustomColors.CardBackground
         )

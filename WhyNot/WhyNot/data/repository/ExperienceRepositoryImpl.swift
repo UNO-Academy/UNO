@@ -25,10 +25,10 @@ class ExperienceRepositoryImpl: ExperienceRepository {
         let list = try await loadExperiences()
 
         guard let user = userAPI.getLoggedUser() else {
-            return ActiveExperiences(toDo: list, done: [])
+            return ActiveExperiences(toDoExperiences: list, doneExperiences: [])
         }
 
-        return list.reduce(ActiveExperiences(toDo: [], done: [])) { experiences, item in
+        return list.reduce(ActiveExperiences(toDoExperiences: [], doneExperiences: [])) { experiences, item in
             var activeExperiences = experiences
 
             if user.doneExperiencesID.contains(item.id!) {

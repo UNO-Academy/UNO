@@ -20,30 +20,35 @@ class ExperiencesViewModel: ObservableObject {
 
     let repository: ExperienceRepository
 
-    init(_ repository: ExperienceRepository) {
+    init(_ repository: ExperienceRepository, completion: @escaping (() -> Void) = {}) {
         self.repository = repository
-        loadExperiences()
+        loadExperiences(completion)
     }
 
-    func loadExperiences() {
+    func loadExperiences(_ completion: @escaping () -> Void) {
         Task {
-            let experiesces = try await repository.getActiveExperiences()
+            let experiences = try await repository.getActiveExperiences()
 
-            self.toDoExperiences = experiesces.toDoExperiences
-            self.doneExperiences = experiesces.doneExperiences
+            DispatchQueue.main.async {
+                self.toDoExperiences = experiences.doneExperiences
+                self.doneExperiences = experiences.toDoExperiences
 
-            self.daysLeft = getDaysLeft()
+                self.daysLeft = self.getDaysLeft()
 
-            self.mustShowEmptyLived = doneExperiences.isEmpty
-            self.mustShowSpaceLeft = !doneExperiences.isEmpty && !toDoExperiences.isEmpty
-            self.mustShowAllDone = toDoExperiences.isEmpty
+                self.mustShowEmptyLived = self.doneExperiences.isEmpty
+                self.mustShowSpaceLeft = !self.doneExperiences.isEmpty && !self.toDoExperiences.isEmpty
+                self.mustShowAllDone = self.toDoExperiences.isEmpty
+
+                completion()
+            }
         }
     }
 
     func getDaysLeft() -> Int {
         let expirationDay = getExpirationDay()
         guard let nowDay = Date.now.getDay() else { return 0 }
-        return expirationDay - nowDay
+        let left = expirationDay - nowDay
+        return left >= 0 ? left : 0
     }
 
     func getExpirationDay() -> Int {

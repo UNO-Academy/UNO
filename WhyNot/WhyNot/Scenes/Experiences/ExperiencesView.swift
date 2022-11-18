@@ -61,8 +61,7 @@ struct ExperiencesView: View {
             if viewModel.mustShowAllDone {
                 EmptyListCard(
                     icon: "flag.2.crossed.fill",
-                    line1: String(localized: "cardAllDoneLine1"),
-                    line2: String(localized: "cardAllDoneLine2"),
+                    text: String(localized: "cardAllDoneText"),
                     textColor: Color.CustomColors.TitleColorReversed,
                     backgoundColor: Color.CustomColors.DaysLeft
                 )
@@ -96,16 +95,14 @@ struct ExperiencesView: View {
             if viewModel.mustShowEmptyLived {
                 EmptyListCard(
                     icon: "flag.slash",
-                    line1: String(localized: "cardEmptyLivedTextLine1"),
-                    line2: String(localized: "cardEmptyLivedTextLine2"),
+                    text: String(localized: "cardEmptyLivedText"),
                     textColor: Color.CustomColors.TitleColor,
                     backgoundColor: Color.CustomColors.CardBackground
                 )
             } else if viewModel.mustShowSpaceLeft {
                 EmptyListCard(
                     icon: "tray",
-                    line1: String(localized: "cardSpaceLeftLine1"),
-                    line2: String(localized: "cardSpaceLeftLine2"),
+                    text: String(localized: "cardSpaceLeftText"),
                     textColor: Color.CustomColors.TitleColor,
                     backgoundColor: Color.CustomColors.CardBackground
                 )

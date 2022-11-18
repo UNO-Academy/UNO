@@ -14,3 +14,15 @@ target 'WhyNot' do
   pod 'FirebaseAuth'
 
 end
+
+target 'WhyNotUnitTests' do
+  
+  use_frameworks!
+
+  pod 'Firebase'
+  pod 'FirebaseStorage'
+  pod 'FirebaseCore'
+  pod 'FirebaseFirestore'
+  pod 'FirebaseFirestoreSwift'
+  pod 'FirebaseAuth'
+end
