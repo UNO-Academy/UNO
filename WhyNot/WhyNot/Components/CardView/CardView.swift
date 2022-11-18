@@ -26,8 +26,7 @@ struct CardView: View {
                 TagsView(experience: viewModel.experience)
 
                 PersonImageCollection(images: viewModel.friendsImages)
-            }.padding(.vertical, Space.borderSpace)
-            .padding(.leading, Space.borderSpace)
+            }.padding([.vertical, .leading], Space.borderSpace)
 
             CategoryIcon(
                 type: viewModel.experienceType,

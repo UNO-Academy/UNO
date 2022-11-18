@@ -25,33 +25,33 @@ enum TagType {
     private func getEffortTextFor(value: Int) -> Text {
         switch value {
         case 1:
-            return Text("\(TagValue.effort1.rawValue)")
+            return Text(NSLocalizedString(TagValue.effort1.rawValue, comment: ""))
         case 2:
-            return Text("\(TagValue.effort2.rawValue)")
+            return Text(NSLocalizedString(TagValue.effort2.rawValue, comment: ""))
         default:
-            return Text("\(TagValue.effort3.rawValue)")
+            return Text(NSLocalizedString(TagValue.effort3.rawValue, comment: ""))
         }
     }
 
     private func getDurationTextFor(value: Int) -> Text {
         switch value {
         case 1:
-            return Text("\(TagValue.duration1.rawValue)")
+            return Text(NSLocalizedString(TagValue.duration1.rawValue, comment: ""))
         case 2:
-            return Text("\(TagValue.duration2.rawValue)")
+            return Text(NSLocalizedString(TagValue.duration2.rawValue, comment: ""))
         default:
-            return Text("\(TagValue.duration3.rawValue)")
+            return Text(NSLocalizedString(TagValue.duration3.rawValue, comment: ""))
         }
     }
 
     private func getCostTextFor(value: Int) -> Text {
         switch value {
         case 1:
-            return Text("\(TagValue.cost1.rawValue)")
+            return Text(NSLocalizedString(TagValue.cost1.rawValue, comment: ""))
         case 2:
-            return Text("\(TagValue.cost2.rawValue)")
+            return Text(NSLocalizedString(TagValue.cost2.rawValue, comment: ""))
         default:
-            return Text("\(TagValue.cost3.rawValue)")
+            return Text(NSLocalizedString(TagValue.cost3.rawValue, comment: ""))
         }
     }
 
@@ -69,16 +69,16 @@ enum TagType {
 
 enum TagValue: String {
     // TODO: quando o paulo fizer o localizable mudar isso aqui 
-    case effort1 = "Easy"
-    case effort2 = "Normal"
-    case effort3 = "Hard"
+    case effort1 = "effort1Tag"
+    case effort2 = "effort2Tag"
+    case effort3 = "effort3Tag"
 
-    case duration1 = "Short"
-    case duration2 = "Medium"
-    case duration3 = "Long"
+    case duration1 = "duration1Tag"
+    case duration2 = "duration2Tag"
+    case duration3 = "duration3Tag"
 
-    case cost1 = "Cheap"
-    case cost2 = "Affordable"
-    case cost3 = "Expensive"
+    case cost1 = "cost1Tag"
+    case cost2 = "cost2Tag"
+    case cost3 = "cost3Tag"
 
 }
