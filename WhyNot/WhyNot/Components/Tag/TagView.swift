@@ -10,6 +10,7 @@ import Firebase
 
 struct TagView: View {
 
+    let imageWidth: CGFloat = 13
     var tagData: TagType
 
     var body: some View {
@@ -18,6 +19,8 @@ struct TagView: View {
                 .font(.system(size: FontSize.caption2))
                 .multilineTextAlignment(.center)
             tagData.getImage()
+                .resizable()
+                .frame(width: imageWidth, height: imageWidth)
         }
         .foregroundColor(Color.CustomColors.CardTitle)
         .padding(Space.halfSpace)
