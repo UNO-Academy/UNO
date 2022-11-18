@@ -6,18 +6,10 @@
 //
 
 import Foundation
-import FirebaseFirestore
 
 class GetActiveExperiencesUseCaseImpl: GetActiveExperiencesUseCase {
     let experienceRepository: ExperienceRepository = ExperienceRepositoryImpl()
-    let userRepository: UserAPI
-
-    init() {
-        let crudService = CRUDServices()
-        let db = Firestore.firestore()
-        let auth = AuthenticationManager()
-        userRepository = UserAPI(crudService: crudService, authManager: auth, db: db)
-    }
+    let userRepository: UserRepository = UserRepositoryImpl()
 
     func execute() async throws -> ActiveExperiences {
         let list = try await experienceRepository.fetchExperiences()

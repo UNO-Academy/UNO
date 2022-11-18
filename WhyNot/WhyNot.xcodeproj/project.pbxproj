@@ -22,6 +22,8 @@
 		242B43ED2927AE2A00F0C3C1 /* TagData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B43EB2927AE2A00F0C3C1 /* TagData.swift */; };
 		242B43F22927ED5B00F0C3C1 /* GetActiveExperiencesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B43F12927ED5B00F0C3C1 /* GetActiveExperiencesUseCase.swift */; };
 		242B43F52927F24000F0C3C1 /* GetActiveExperiencesUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B43F42927F24000F0C3C1 /* GetActiveExperiencesUseCaseImpl.swift */; };
+		242B43F82927F56500F0C3C1 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B43F72927F56500F0C3C1 /* UserRepository.swift */; };
+		242B43FA2927F5AB00F0C3C1 /* UserRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B43F92927F5AB00F0C3C1 /* UserRepositoryImpl.swift */; };
 		248FD9FF2913E167003DA666 /* WhyNotApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8608FCD428F05AE1007FC0BA /* WhyNotApp.swift */; };
 		248FDA012925322F003DA666 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248FDA002925322F003DA666 /* Date+Extension.swift */; };
 		24B18B1628FD757A00EC9A3D /* MementoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B18B1528FD757A00EC9A3D /* MementoAPI.swift */; };
@@ -89,6 +91,8 @@
 		242B43EB2927AE2A00F0C3C1 /* TagData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagData.swift; sourceTree = "<group>"; };
 		242B43F12927ED5B00F0C3C1 /* GetActiveExperiencesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetActiveExperiencesUseCase.swift; sourceTree = "<group>"; };
 		242B43F42927F24000F0C3C1 /* GetActiveExperiencesUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetActiveExperiencesUseCaseImpl.swift; sourceTree = "<group>"; };
+		242B43F72927F56500F0C3C1 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		242B43F92927F5AB00F0C3C1 /* UserRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryImpl.swift; sourceTree = "<group>"; };
 		248FDA002925322F003DA666 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		24B18B1528FD757A00EC9A3D /* MementoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MementoAPI.swift; sourceTree = "<group>"; };
 		24B18B1728FD7BF400EC9A3D /* Memento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memento.swift; sourceTree = "<group>"; };
@@ -408,6 +412,8 @@
 			children = (
 				24202EA328F8471300141CCB /* ExperienceRepositoryImpl.swift */,
 				242B43E62926832100F0C3C1 /* ExperienceRepository.swift */,
+				242B43F72927F56500F0C3C1 /* UserRepository.swift */,
+				242B43F92927F5AB00F0C3C1 /* UserRepositoryImpl.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -701,6 +707,7 @@
 				862C53D32906AE7200068528 /* StorageServices.swift in Sources */,
 				59B892CC28FD77DF0045EAA9 /* DocumentSnapshot+Extension.swift in Sources */,
 				242B43F22927ED5B00F0C3C1 /* GetActiveExperiencesUseCase.swift in Sources */,
+				242B43FA2927F5AB00F0C3C1 /* UserRepositoryImpl.swift in Sources */,
 				24BE3E3729101A9500261E0A /* ProfileView.swift in Sources */,
 				24B18B1828FD7BF400EC9A3D /* Memento.swift in Sources */,
 				242B43EC2927AE2A00F0C3C1 /* TagView.swift in Sources */,
@@ -709,6 +716,7 @@
 				2424527428FEE899006E8629 /* Encodable+Extension.swift in Sources */,
 				59AC84A428F609BA00EB3A9A /* CRUDServices.swift in Sources */,
 				59B892CE28FD7FB60045EAA9 /* CollectionNames.swift in Sources */,
+				242B43F82927F56500F0C3C1 /* UserRepository.swift in Sources */,
 				59778DB6291589E5008748E6 /* AuthenticationManager.swift in Sources */,
 				242B43E72926832100F0C3C1 /* ExperienceRepository.swift in Sources */,
 				594A5FAA2902CDB700A1C10C /* UserAPI.swift in Sources */,
