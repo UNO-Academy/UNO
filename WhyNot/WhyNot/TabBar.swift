@@ -17,10 +17,10 @@ struct TabBarView: View {
                 .tabItem {
                     TabItem(tab: Tab.search)
                 }.tag(0)
-            //ExperiencesView()
-//                .tabItem {
-//                    TabItem(tab: Tab.experience)
-//                }.tag(1)
+            // ExperiencesView()
+            //                .tabItem {
+            //                    TabItem(tab: Tab.experience)
+            //                }.tag(1)
             ProfileView()
                 .tabItem {
                     TabItem(tab: Tab.profile)
