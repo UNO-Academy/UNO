@@ -20,6 +20,8 @@
 		242B43E92927AE1F00F0C3C1 /* CategoryIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B43E82927AE1F00F0C3C1 /* CategoryIcon.swift */; };
 		242B43EC2927AE2A00F0C3C1 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B43EA2927AE2A00F0C3C1 /* TagView.swift */; };
 		242B43ED2927AE2A00F0C3C1 /* TagData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B43EB2927AE2A00F0C3C1 /* TagData.swift */; };
+		242B43F22927ED5B00F0C3C1 /* GetActiveExperiencesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B43F12927ED5B00F0C3C1 /* GetActiveExperiencesUseCase.swift */; };
+		242B43F52927F24000F0C3C1 /* GetActiveExperiencesUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B43F42927F24000F0C3C1 /* GetActiveExperiencesUseCaseImpl.swift */; };
 		248FD9FF2913E167003DA666 /* WhyNotApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8608FCD428F05AE1007FC0BA /* WhyNotApp.swift */; };
 		248FDA012925322F003DA666 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248FDA002925322F003DA666 /* Date+Extension.swift */; };
 		24B18B1628FD757A00EC9A3D /* MementoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B18B1528FD757A00EC9A3D /* MementoAPI.swift */; };
@@ -85,6 +87,8 @@
 		242B43E82927AE1F00F0C3C1 /* CategoryIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryIcon.swift; sourceTree = "<group>"; };
 		242B43EA2927AE2A00F0C3C1 /* TagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		242B43EB2927AE2A00F0C3C1 /* TagData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagData.swift; sourceTree = "<group>"; };
+		242B43F12927ED5B00F0C3C1 /* GetActiveExperiencesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetActiveExperiencesUseCase.swift; sourceTree = "<group>"; };
+		242B43F42927F24000F0C3C1 /* GetActiveExperiencesUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetActiveExperiencesUseCaseImpl.swift; sourceTree = "<group>"; };
 		248FDA002925322F003DA666 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		24B18B1528FD757A00EC9A3D /* MementoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MementoAPI.swift; sourceTree = "<group>"; };
 		24B18B1728FD7BF400EC9A3D /* Memento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memento.swift; sourceTree = "<group>"; };
@@ -161,17 +165,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		24202E9F28F846CB00141CCB /* data */ = {
+		24202E9F28F846CB00141CCB /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				A3CD5CEA291AAD61003895C1 /* repository */,
-				24202EA528F847B300141CCB /* remoteDatabase */,
-				24202EA028F846E100141CCB /* model */,
+				A3CD5CEA291AAD61003895C1 /* Repository */,
+				24202EA528F847B300141CCB /* RemoteDatabase */,
+				24202EA028F846E100141CCB /* Model */,
 			);
-			path = data;
+			path = Data;
 			sourceTree = "<group>";
 		};
-		24202EA028F846E100141CCB /* model */ = {
+		24202EA028F846E100141CCB /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				D6E24D6829114C6F0018C0C6 /* ExperienceType.swift */,
@@ -181,10 +185,10 @@
 				594A5FA72902CCBE00A1C10C /* User.swift */,
 				242B43E4292682E400F0C3C1 /* ActiveExperiences.swift */,
 			);
-			path = model;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		24202EA528F847B300141CCB /* remoteDatabase */ = {
+		24202EA528F847B300141CCB /* RemoteDatabase */ = {
 			isa = PBXGroup;
 			children = (
 				59778DB5291589E5008748E6 /* AuthenticationManager.swift */,
@@ -192,7 +196,7 @@
 				862C53D22906AE7200068528 /* StorageServices.swift */,
 				24202EA628F847D100141CCB /* API */,
 			);
-			path = remoteDatabase;
+			path = RemoteDatabase;
 			sourceTree = "<group>";
 		};
 		24202EA628F847D100141CCB /* API */ = {
@@ -214,6 +218,23 @@
 				248FDA002925322F003DA666 /* Date+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		242B43EE2927ED2800F0C3C1 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				242B43EF2927ED2E00F0C3C1 /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		242B43EF2927ED2E00F0C3C1 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				242B43F12927ED5B00F0C3C1 /* GetActiveExperiencesUseCase.swift */,
+				242B43F42927F24000F0C3C1 /* GetActiveExperiencesUseCaseImpl.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 		24BE3E2C291002B200261E0A /* Scenes */ = {
@@ -297,11 +318,12 @@
 		8608FCD328F05AE1007FC0BA /* WhyNot */ = {
 			isa = PBXGroup;
 			children = (
+				242B43EE2927ED2800F0C3C1 /* Domain */,
 				24BE3E2C291002B200261E0A /* Scenes */,
 				D6E766C329114A7A000D940F /* Components */,
 				863A8EFF290C0060000DBA1B /* DesignSystem */,
 				2424527228FEE50C006E8629 /* Extension */,
-				24202E9F28F846CB00141CCB /* data */,
+				24202E9F28F846CB00141CCB /* Data */,
 				8608FCD428F05AE1007FC0BA /* WhyNotApp.swift */,
 				86BA9D1029096A3800C1F330 /* ContentView.swift */,
 				24BE3E382911618B00261E0A /* TabBar.swift */,
@@ -381,13 +403,13 @@
 			path = CategoryIcon;
 			sourceTree = "<group>";
 		};
-		A3CD5CEA291AAD61003895C1 /* repository */ = {
+		A3CD5CEA291AAD61003895C1 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
 				24202EA328F8471300141CCB /* ExperienceRepositoryImpl.swift */,
 				242B43E62926832100F0C3C1 /* ExperienceRepository.swift */,
 			);
-			path = repository;
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		D64727D82913E93C007B13ED /* WhyNotUserInterfaceTests */ = {
@@ -655,6 +677,7 @@
 				594A5FA82902CCBE00A1C10C /* User.swift in Sources */,
 				24202EA228F846F900141CCB /* Experience.swift in Sources */,
 				86048456290FF4BB0055AF30 /* FontSize.swift in Sources */,
+				242B43F52927F24000F0C3C1 /* GetActiveExperiencesUseCaseImpl.swift in Sources */,
 				A3CD5CE9291A9EFD003895C1 /* ExperiencesViewModel.swift in Sources */,
 				86BA9D1129096A3800C1F330 /* ContentView.swift in Sources */,
 				242B43E5292682E400F0C3C1 /* ActiveExperiences.swift in Sources */,
@@ -677,6 +700,7 @@
 				D6E24D6929114C6F0018C0C6 /* ExperienceType.swift in Sources */,
 				862C53D32906AE7200068528 /* StorageServices.swift in Sources */,
 				59B892CC28FD77DF0045EAA9 /* DocumentSnapshot+Extension.swift in Sources */,
+				242B43F22927ED5B00F0C3C1 /* GetActiveExperiencesUseCase.swift in Sources */,
 				24BE3E3729101A9500261E0A /* ProfileView.swift in Sources */,
 				24B18B1828FD7BF400EC9A3D /* Memento.swift in Sources */,
 				242B43EC2927AE2A00F0C3C1 /* TagView.swift in Sources */,

@@ -8,5 +8,5 @@
 import Foundation
 
 protocol ExperienceRepository {
-    func getActiveExperiences() async throws -> ActiveExperiences
+    func fetchExperiences() async throws -> [Experience]
 }

@@ -18,16 +18,16 @@ class ExperiencesViewModel: ObservableObject {
     @Published var mustShowSpaceLeft: Bool = false
     @Published var mustShowAllDone: Bool = false
 
-    let repository: ExperienceRepository
+    let getActiveExperiences: GetActiveExperiencesUseCase
 
-    init(_ repository: ExperienceRepository, completion: @escaping (() -> Void) = {}) {
-        self.repository = repository
+    init(_ useCase: GetActiveExperiencesUseCase, completion: @escaping (() -> Void) = {}) {
+        self.getActiveExperiences = useCase
         loadExperiences(completion)
     }
 
     func loadExperiences(_ completion: @escaping () -> Void) {
         Task {
-            let experiences = try await repository.getActiveExperiences()
+            let experiences = try await getActiveExperiences.execute()
 
             DispatchQueue.main.async {
                 self.toDoExperiences = experiences.toDoExperiences
