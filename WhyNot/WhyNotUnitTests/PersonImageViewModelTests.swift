@@ -8,8 +8,8 @@
 import XCTest
 @testable import WhyNot
 
-class WhyNotUnitTests: XCTestCase {
-    // TODO: Perguntar pro batata como criar novas classes de testes
+class PersonImageViewModelTests: XCTestCase {
+
     func testMoreThan4Person() {
         let viewModel = PersonImageViewModel(images: [
             UIImage(named: "AppIcon")!,
