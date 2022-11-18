@@ -270,7 +270,6 @@
 				59E2D58E28FEDF22007A1503 /* .swiftlint.yml */,
 				8608FCD328F05AE1007FC0BA /* WhyNot */,
 				D64727CB2913E922007B13ED /* WhyNotUnitTests */,
-				D64727D82913E93C007B13ED /* WhyNotUserInterfaceTests */,
 				86CCE30A291D20460077E1E9 /* WhyNotUnitTests */,
 				8608FCD228F05AE1007FC0BA /* Products */,
 				276E91717FC3D30EC41A898D /* Pods */,
@@ -389,13 +388,6 @@
 				D6E596D0291E7A240052D4E9 /* Components */,
 			);
 			path = WhyNotUnitTests;
-			sourceTree = "<group>";
-		};
-		D64727D82913E93C007B13ED /* WhyNotUserInterfaceTests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = WhyNotUserInterfaceTests;
 			sourceTree = "<group>";
 		};
 		D66D4D6029265E500081772C /* Utils */ = {
