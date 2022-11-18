@@ -13,7 +13,7 @@ enum PeopleConstants: CGFloat {
 }
 
 struct PersonImageCollection: View {
-    
+
     @ObservedObject var viewModel: PersonImageViewModel
 
     init(images: [UIImage]) {
@@ -28,7 +28,12 @@ struct PersonImageCollection: View {
 
             if viewModel.needPlusCard() {
                 let remainingPeople = viewModel.howManyPeopleRemains()
-                RemainingPeople(ratio: PeopleConstants.ratio.rawValue, fontSize: PeopleConstants.fontSize.rawValue, remainingPeopleNumber: remainingPeople)
+
+                RemainingPeople(
+                    ratio: PeopleConstants.ratio.rawValue,
+                    fontSize: PeopleConstants.fontSize.rawValue,
+                    remainingPeopleNumber: remainingPeople
+                )
             }
         }
     }
