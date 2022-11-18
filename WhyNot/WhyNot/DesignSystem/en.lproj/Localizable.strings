@@ -1,10 +1,5 @@
-/* 
-  Localizable.strings
-  WhyNot
-
-  Created by Paulo Bassani on 03/11/22.
-  
-*/
+// Common Utils
+"editKey" = "Edit";
 
 //TabBar
 "searchTabLabel" = "Search";

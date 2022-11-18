@@ -7,6 +7,14 @@
 
 import SwiftUI
 
-enum LocalizedKeys: String {
-    case profileViewTitle
+enum LocalizedKeys {
+
+    enum CommonUtils: String {
+        case editKey
+    }
+
+    enum ProfileView: String {
+        case profileViewTitle
+    }
+
 }

@@ -12,6 +12,8 @@ struct ProfileView: View {
         NavigationView {
             VStack {
                 Image("adventure")
+                    .resizable()
+                    .frame(width: 100, height: 100)
                     .clipShape(Circle())
 
                 Text("Name")
@@ -20,17 +22,23 @@ struct ProfileView: View {
                         size: FontSize.title2
                     ))
 
-                Form {
-                    Text("Friends")
+                Group {
+                    Form {
+                        Text("Friends")
+                    }
                 }
 
                 Spacer()
             }
             .padding(.top)
             .toolbar {
-                Button("Edit") {
+                Button {
 
+                } label: {
+                    Image(systemName: "square.and.pencil")
+                        .foregroundColor(.black)
                 }
+
             }
             .navigationTitle("Profile")
         }
