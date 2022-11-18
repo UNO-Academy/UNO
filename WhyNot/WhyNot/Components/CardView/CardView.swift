@@ -13,28 +13,28 @@ struct CardView: View {
     @ObservedObject var viewModel: CardViewModel
 
     var body: some View {
-        HStack(spacing: Space.space1x) {
+        HStack {
             VStack(
                 alignment: .leading,
                 spacing: Space.space1x
             ) {
-
                 Text(viewModel.experience.name)
                     .font(.system(size: FontSize.title3))
+                    .foregroundColor(Color.CustomColors.CardTitle)
                     .bold()
 
                 TagsView(experience: viewModel.experience)
 
                 PersonImageCollection(images: viewModel.friendsImages)
-            }
-            .padding(.leading, Space.space2x)
+            }.padding(.vertical, Space.borderSpace)
+            .padding(.leading, Space.borderSpace)
 
             CategoryIcon(
                 type: viewModel.experienceType,
                 isEnable: viewModel.experience.isActive
             )
         }
-        .aspectRatio(370 / 95, contentMode: .fit)
+        .aspectRatio(AspectRatio.cardAspectRatio, contentMode: .fit)
         .background(
             RoundedRectangle(cornerRadius: Radius.defaultRadius)
                 .fill(viewModel.getFillColor())
