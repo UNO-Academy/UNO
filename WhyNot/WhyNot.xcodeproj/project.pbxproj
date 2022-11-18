@@ -53,7 +53,6 @@
 		D64727DA2913E93C007B13ED /* WhyNotUserInterfaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64727D92913E93C007B13ED /* WhyNotUserInterfaceTests.swift */; };
 		D64727DC2913E93C007B13ED /* WhyNotUserInterfaceTestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64727DB2913E93C007B13ED /* WhyNotUserInterfaceTestsLaunchTests.swift */; };
 		D6E24D6929114C6F0018C0C6 /* ExperienceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E24D6829114C6F0018C0C6 /* ExperienceType.swift */; };
-		D6E24D6D29114CCF0018C0C6 /* CategoryIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E24D6C29114CCF0018C0C6 /* CategoryIcon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,7 +110,6 @@
 		D64727D92913E93C007B13ED /* WhyNotUserInterfaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhyNotUserInterfaceTests.swift; sourceTree = "<group>"; };
 		D64727DB2913E93C007B13ED /* WhyNotUserInterfaceTestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhyNotUserInterfaceTestsLaunchTests.swift; sourceTree = "<group>"; };
 		D6E24D6829114C6F0018C0C6 /* ExperienceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceType.swift; sourceTree = "<group>"; };
-		D6E24D6C29114CCF0018C0C6 /* CategoryIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryIcon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -353,7 +351,6 @@
 		D6E766C329114A7A000D940F /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				D6E24D6C29114CCF0018C0C6 /* CategoryIcon.swift */,
 				242B43DD2926630600F0C3C1 /* EmptyListCard.swift */,
 			);
 			path = Components;
@@ -561,7 +558,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				248FD9FF2913E167003DA666 /* WhyNotApp.swift in Sources */,
-				D6E24D6D29114CCF0018C0C6 /* CategoryIcon.swift in Sources */,
 				594A5FA82902CCBE00A1C10C /* User.swift in Sources */,
 				24202EA228F846F900141CCB /* Experience.swift in Sources */,
 				86048456290FF4BB0055AF30 /* FontSize.swift in Sources */,
