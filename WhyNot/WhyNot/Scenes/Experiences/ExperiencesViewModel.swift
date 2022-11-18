@@ -30,8 +30,8 @@ class ExperiencesViewModel: ObservableObject {
             let experiences = try await repository.getActiveExperiences()
 
             DispatchQueue.main.async {
-                self.toDoExperiences = experiences.doneExperiences
-                self.doneExperiences = experiences.toDoExperiences
+                self.toDoExperiences = experiences.toDoExperiences
+                self.doneExperiences = experiences.doneExperiences
 
                 self.daysLeft = self.getDaysLeft()
 
