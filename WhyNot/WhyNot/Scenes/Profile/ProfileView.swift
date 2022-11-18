@@ -9,9 +9,36 @@ import SwiftUI
 
 struct ProfileView: View {
     var body: some View {
-        Text(String(localized: "profileTabLabel"))
-            .font(Font.custom(CustomFonts.SolidThemeFont, size: FontSize.largeTitle))
-            .foregroundColor(Color.CustomColors.CardTitle)
-            .padding(Space.halfSpace)
+        NavigationView {
+            VStack {
+                Image("adventure")
+                    .clipShape(Circle())
+
+                Text("Name")
+                    .font(.custom(
+                        CustomFonts.SolidThemeFont,
+                        size: FontSize.title2
+                    ))
+
+                Form {
+                    Text("Friends")
+                }
+
+                Spacer()
+            }
+            .padding(.top)
+            .toolbar {
+                Button("Edit") {
+
+                }
+            }
+            .navigationTitle("Profile")
+        }
+    }
+}
+
+struct ProfilePreviewProvider: PreviewProvider {
+    static var previews: some View {
+        ProfileView()
     }
 }
