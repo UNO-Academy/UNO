@@ -1,10 +1,5 @@
-/* 
-  Localizable.strings
-  WhyNot
-
-  Created by Paulo Bassani on 03/11/22.
-  
-*/
+// Common Utils
+"editKey"
 
 //TabBar
 "searchTabLabel" = "Busca";
@@ -29,3 +24,5 @@
 "cost1Tag" = "Barato";
 "cost2Tag" = "Acessível";
 "cost3Tag" = "Caro";
+
+//
