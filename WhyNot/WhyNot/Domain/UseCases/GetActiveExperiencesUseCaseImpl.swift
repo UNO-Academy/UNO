@@ -8,8 +8,13 @@
 import Foundation
 
 class GetActiveExperiencesUseCaseImpl: GetActiveExperiencesUseCase {
-    let experienceRepository: ExperienceRepository = ExperienceRepositoryImpl()
-    let userRepository: UserRepository = UserRepositoryImpl()
+    let experienceRepository: ExperienceRepository
+    let userRepository: UserRepository
+
+    init(experienceRepository: ExperienceRepository, userRepository: UserRepository) {
+        self.experienceRepository = experienceRepository
+        self.userRepository = userRepository
+    }
 
     func execute() async throws -> ActiveExperiences {
         let list = try await experienceRepository.fetchExperiences()

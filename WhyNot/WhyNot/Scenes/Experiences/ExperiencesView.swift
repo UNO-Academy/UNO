@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct ExperiencesView: View {
-    @ObservedObject var viewModel = ExperiencesViewModel(GetActiveExperiencesUseCaseImpl())
+    @ObservedObject var viewModel = ExperiencesViewModel(GetActiveExperiencesUseCaseImpl(
+        experienceRepository: ExperienceRepositoryImpl(),
+        userRepository: UserRepositoryImpl()
+    ))
 
     var body: some View {
         ScrollView {

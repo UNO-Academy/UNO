@@ -24,6 +24,7 @@
 		242B43F52927F24000F0C3C1 /* GetActiveExperiencesUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B43F42927F24000F0C3C1 /* GetActiveExperiencesUseCaseImpl.swift */; };
 		242B43F82927F56500F0C3C1 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B43F72927F56500F0C3C1 /* UserRepository.swift */; };
 		242B43FA2927F5AB00F0C3C1 /* UserRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B43F92927F5AB00F0C3C1 /* UserRepositoryImpl.swift */; };
+		242B43FE2928024C00F0C3C1 /* GetActiveExperiencesUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B43FD2928024C00F0C3C1 /* GetActiveExperiencesUseCaseTests.swift */; };
 		248FD9FF2913E167003DA666 /* WhyNotApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8608FCD428F05AE1007FC0BA /* WhyNotApp.swift */; };
 		248FDA012925322F003DA666 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248FDA002925322F003DA666 /* Date+Extension.swift */; };
 		24B18B1628FD757A00EC9A3D /* MementoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B18B1528FD757A00EC9A3D /* MementoAPI.swift */; };
@@ -93,6 +94,7 @@
 		242B43F42927F24000F0C3C1 /* GetActiveExperiencesUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetActiveExperiencesUseCaseImpl.swift; sourceTree = "<group>"; };
 		242B43F72927F56500F0C3C1 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		242B43F92927F5AB00F0C3C1 /* UserRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryImpl.swift; sourceTree = "<group>"; };
+		242B43FD2928024C00F0C3C1 /* GetActiveExperiencesUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetActiveExperiencesUseCaseTests.swift; sourceTree = "<group>"; };
 		248FDA002925322F003DA666 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		24B18B1528FD757A00EC9A3D /* MementoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MementoAPI.swift; sourceTree = "<group>"; };
 		24B18B1728FD7BF400EC9A3D /* Memento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memento.swift; sourceTree = "<group>"; };
@@ -376,6 +378,7 @@
 			children = (
 				242B43E22926825300F0C3C1 /* ExperiencesViewModelTests.swift */,
 				86CCE30B291D20460077E1E9 /* WhyNotUnitTests.swift */,
+				242B43FD2928024C00F0C3C1 /* GetActiveExperiencesUseCaseTests.swift */,
 			);
 			path = WhyNotUnitTests;
 			sourceTree = "<group>";
@@ -728,6 +731,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				242B43E32926825300F0C3C1 /* ExperiencesViewModelTests.swift in Sources */,
+				242B43FE2928024C00F0C3C1 /* GetActiveExperiencesUseCaseTests.swift in Sources */,
 				86CCE30C291D20460077E1E9 /* WhyNotUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
