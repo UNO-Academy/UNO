@@ -19,7 +19,6 @@ struct PersonImageCollection: View {
             ForEach(viewModel.getPeopleImages(), id: \.self) { image in
                 PersonImage(personImage: Image(uiImage: image))
             }
-            
             if viewModel.needPlusCard() {
                 let remainingPeople = viewModel.howManyPeopleRemains()
                 RemainingPeople(remainingPeopleNumber: remainingPeople)

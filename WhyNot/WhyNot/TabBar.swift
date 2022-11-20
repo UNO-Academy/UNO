@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct TabBarView: View {
-
-    @State var selection = 0
+    @EnvironmentObject var selection: URLManager
 
     var body: some View {
-        TabView(selection: $selection) {
+        TabView(selection: $selection.currentTab) {
             SearchView()
                 .tabItem {
                     TabItem(tab: Tab.search)
