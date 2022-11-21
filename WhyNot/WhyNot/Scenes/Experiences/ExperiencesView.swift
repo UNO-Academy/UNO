@@ -11,7 +11,6 @@ struct ExperiencesView: View {
     var body: some View {
         Text(String(localized: "experiencesScreenTitle"))
             .font(Font.custom(CustomFonts.SolidThemeFont, size: FontSize.largeTitle))
-            .foregroundColor(Color.CustomColors.CardTitle)
             .padding(Space.halfSpace)
     }
 }

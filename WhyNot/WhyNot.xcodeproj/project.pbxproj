@@ -62,6 +62,9 @@
 		D64727DC2913E93C007B13ED /* WhyNotUserInterfaceTestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64727DB2913E93C007B13ED /* WhyNotUserInterfaceTestsLaunchTests.swift */; };
 		D6E24D6929114C6F0018C0C6 /* ExperienceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E24D6829114C6F0018C0C6 /* ExperienceType.swift */; };
 		D6E24D6D29114CCF0018C0C6 /* CategoryIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E24D6C29114CCF0018C0C6 /* CategoryIcon.swift */; };
+		EE6446242922AF2500199DDE /* ExperiencesDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6446232922AF2500199DDE /* ExperiencesDetailsView.swift */; };
+		EE644630292B974C00199DDE /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE64462F292B974C00199DDE /* LikeButton.swift */; };
+		EE644633292B9A9D00199DDE /* DoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE644632292B9A9D00199DDE /* DoneButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +130,9 @@
 		D64727DB2913E93C007B13ED /* WhyNotUserInterfaceTestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhyNotUserInterfaceTestsLaunchTests.swift; sourceTree = "<group>"; };
 		D6E24D6829114C6F0018C0C6 /* ExperienceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceType.swift; sourceTree = "<group>"; };
 		D6E24D6C29114CCF0018C0C6 /* CategoryIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryIcon.swift; sourceTree = "<group>"; };
+		EE6446232922AF2500199DDE /* ExperiencesDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperiencesDetailsView.swift; sourceTree = "<group>"; };
+		EE64462F292B974C00199DDE /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
+		EE644632292B9A9D00199DDE /* DoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				24BE3E2E291002F400261E0A /* ExperiencesView.swift */,
+				EE6446232922AF2500199DDE /* ExperiencesDetailsView.swift */,
 			);
 			path = Experiences;
 			sourceTree = "<group>";
@@ -408,11 +415,29 @@
 		D6E766C329114A7A000D940F /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				EE644631292B9A8A00199DDE /* DoneButton */,
+				EE64462E292B971E00199DDE /* LikeButton */,
 				86DA3D122922677300A88479 /* CategoryIcon */,
 				86DA3CEF291E6B0800A88479 /* Tag */,
 				86DA3CEE291E699B00A88479 /* PersonImage */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		EE64462E292B971E00199DDE /* LikeButton */ = {
+			isa = PBXGroup;
+			children = (
+				EE64462F292B974C00199DDE /* LikeButton.swift */,
+			);
+			path = LikeButton;
+			sourceTree = "<group>";
+		};
+		EE644631292B9A8A00199DDE /* DoneButton */ = {
+			isa = PBXGroup;
+			children = (
+				EE644632292B9A9D00199DDE /* DoneButton.swift */,
+			);
+			path = DoneButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -644,6 +669,7 @@
 				863A8F01290C10A0000DBA1B /* Colors.swift in Sources */,
 				86F5A40F291A8CCA003EEC8A /* PersonImage.swift in Sources */,
 				24202EA828F847E100141CCB /* ExperienceAPI.swift in Sources */,
+				EE644630292B974C00199DDE /* LikeButton.swift in Sources */,
 				24BE3E2F291002F400261E0A /* ExperiencesView.swift in Sources */,
 				24B18B1628FD757A00EC9A3D /* MementoAPI.swift in Sources */,
 				8699EEAB2911616500875333 /* TagData.swift in Sources */,
@@ -655,9 +681,11 @@
 				D6E24D6929114C6F0018C0C6 /* ExperienceType.swift in Sources */,
 				862C53D32906AE7200068528 /* StorageServices.swift in Sources */,
 				59B892CC28FD77DF0045EAA9 /* DocumentSnapshot+Extension.swift in Sources */,
+				EE6446242922AF2500199DDE /* ExperiencesDetailsView.swift in Sources */,
 				24BE3E3729101A9500261E0A /* ProfileView.swift in Sources */,
 				24B18B1828FD7BF400EC9A3D /* Memento.swift in Sources */,
 				24202EA428F8471300141CCB /* Repository.swift in Sources */,
+				EE644633292B9A9D00199DDE /* DoneButton.swift in Sources */,
 				24BE3E392911618B00261E0A /* TabBar.swift in Sources */,
 				2424527428FEE899006E8629 /* Encodable+Extension.swift in Sources */,
 				59AC84A428F609BA00EB3A9A /* CRUDServices.swift in Sources */,

@@ -18,5 +18,9 @@
 "daysRemainingCounter" = "Days Left";
 
 //Experience detail Screen
+"doneButton" = "Done";
+"doneButtonDisabled" = "You've done great";
+"yesButton" = "Yes";
+"alertConfirmationMessage" = "Have you done this experience?";
 
 //Login Screen

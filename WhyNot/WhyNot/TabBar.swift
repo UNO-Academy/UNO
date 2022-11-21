@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TabBarView: View {
 
-    @State var selection = 0
+    @State var selection = 1
 
     var body: some View {
         TabView(selection: $selection) {
@@ -25,7 +25,7 @@ struct TabBarView: View {
                 .tabItem {
                     TabItem(tab: Tab.profile)
                 }.tag(2)
-        }.accentColor(Color.CustomColors.TabBarSymbol)
+        }.accentColor(Color.CustomColors.ClicableColor)
     }
 }
 

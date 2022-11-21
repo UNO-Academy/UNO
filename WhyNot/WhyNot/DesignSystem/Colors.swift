@@ -8,10 +8,12 @@
 import SwiftUI
 
 extension Color {
+    
     enum CustomColors {
         static var CardTitle: Color { return Color("CardTitleWN") }
         static var ClicableColor: Color { return Color("ClicableColorWN") }
         static var DaysLeft: Color { return Color("DaysLeftWN") }
+        static var doneDisabledBtn: Color { return Color("DoneDisabledBtn") }
         static var OrangeSwipe: Color { return Color("OrangeSwipeWN") }
         static var PurpleSwipe: Color { return Color("PurpleSwipeWN") }
         static var RedSwipe: Color { return Color("RedSwipeWN") }
@@ -32,4 +34,5 @@ extension Color {
         static var green: Color { return Color("secondaryGreen") }
         static var disable: Color { return Color("secondaryDisable") }
     }
+
 }

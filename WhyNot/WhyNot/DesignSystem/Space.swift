@@ -19,4 +19,5 @@ enum Space {
 
 enum Radius {
     static var defaultRadius: CGFloat { return 16 }
+    static var halfRadius: CGFloat { return 8 }
 }

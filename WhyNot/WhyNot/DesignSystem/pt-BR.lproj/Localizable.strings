@@ -18,5 +18,9 @@
 "daysRemainingCounter" = "Dias Restantes";
 
 //Experience detail Screen
+"doneButton" = "Concluído";
+"doneButtonDisabled" = "Você se consagrou";
+"yesButton" = "Sim";
+"alertConfirmationMessage" = "Você concluío essa experiência?";
 
 //Login Screen
