@@ -17,7 +17,6 @@
 		242B43E32926825300F0C3C1 /* ExperiencesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B43E22926825300F0C3C1 /* ExperiencesViewModelTests.swift */; };
 		242B43E5292682E400F0C3C1 /* ActiveExperiences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B43E4292682E400F0C3C1 /* ActiveExperiences.swift */; };
 		242B43E72926832100F0C3C1 /* ExperienceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B43E62926832100F0C3C1 /* ExperienceRepository.swift */; };
-		242B43E92927AE1F00F0C3C1 /* CategoryIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B43E82927AE1F00F0C3C1 /* CategoryIcon.swift */; };
 		242B43EC2927AE2A00F0C3C1 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B43EA2927AE2A00F0C3C1 /* TagView.swift */; };
 		242B43ED2927AE2A00F0C3C1 /* TagData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B43EB2927AE2A00F0C3C1 /* TagData.swift */; };
 		242B43F22927ED5B00F0C3C1 /* GetActiveExperiencesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B43F12927ED5B00F0C3C1 /* GetActiveExperiencesUseCase.swift */; };
@@ -25,6 +24,7 @@
 		242B43F82927F56500F0C3C1 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B43F72927F56500F0C3C1 /* UserRepository.swift */; };
 		242B43FA2927F5AB00F0C3C1 /* UserRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B43F92927F5AB00F0C3C1 /* UserRepositoryImpl.swift */; };
 		242B43FE2928024C00F0C3C1 /* GetActiveExperiencesUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B43FD2928024C00F0C3C1 /* GetActiveExperiencesUseCaseTests.swift */; };
+		242B4405292D0DC400F0C3C1 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B4404292D0DC400F0C3C1 /* Category.swift */; };
 		248FD9FF2913E167003DA666 /* WhyNotApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8608FCD428F05AE1007FC0BA /* WhyNotApp.swift */; };
 		248FDA012925322F003DA666 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248FDA002925322F003DA666 /* Date+Extension.swift */; };
 		24B18B1628FD757A00EC9A3D /* MementoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B18B1528FD757A00EC9A3D /* MementoAPI.swift */; };
@@ -87,7 +87,6 @@
 		242B43E22926825300F0C3C1 /* ExperiencesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperiencesViewModelTests.swift; sourceTree = "<group>"; };
 		242B43E4292682E400F0C3C1 /* ActiveExperiences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveExperiences.swift; sourceTree = "<group>"; };
 		242B43E62926832100F0C3C1 /* ExperienceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceRepository.swift; sourceTree = "<group>"; };
-		242B43E82927AE1F00F0C3C1 /* CategoryIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryIcon.swift; sourceTree = "<group>"; };
 		242B43EA2927AE2A00F0C3C1 /* TagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		242B43EB2927AE2A00F0C3C1 /* TagData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagData.swift; sourceTree = "<group>"; };
 		242B43F12927ED5B00F0C3C1 /* GetActiveExperiencesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetActiveExperiencesUseCase.swift; sourceTree = "<group>"; };
@@ -95,6 +94,7 @@
 		242B43F72927F56500F0C3C1 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		242B43F92927F5AB00F0C3C1 /* UserRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryImpl.swift; sourceTree = "<group>"; };
 		242B43FD2928024C00F0C3C1 /* GetActiveExperiencesUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetActiveExperiencesUseCaseTests.swift; sourceTree = "<group>"; };
+		242B4404292D0DC400F0C3C1 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		248FDA002925322F003DA666 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		24B18B1528FD757A00EC9A3D /* MementoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MementoAPI.swift; sourceTree = "<group>"; };
 		24B18B1728FD7BF400EC9A3D /* Memento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memento.swift; sourceTree = "<group>"; };
@@ -314,6 +314,7 @@
 				8608FCD228F05AE1007FC0BA /* Products */,
 				276E91717FC3D30EC41A898D /* Pods */,
 				358E8653B5C448645BAE6FE5 /* Frameworks */,
+				242B43FF292BBF2400F0C3C1 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -402,14 +403,6 @@
 			path = Tag;
 			sourceTree = "<group>";
 		};
-		86DA3D122922677300A88479 /* CategoryIcon */ = {
-			isa = PBXGroup;
-			children = (
-				242B43E82927AE1F00F0C3C1 /* CategoryIcon.swift */,
-			);
-			path = CategoryIcon;
-			sourceTree = "<group>";
-		};
 		A3CD5CEA291AAD61003895C1 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
@@ -434,9 +427,9 @@
 			isa = PBXGroup;
 			children = (
 				242B43DD2926630600F0C3C1 /* EmptyListCard.swift */,
-				86DA3D122922677300A88479 /* CategoryIcon */,
 				86DA3CEF291E6B0800A88479 /* Tag */,
 				86DA3CEE291E699B00A88479 /* PersonImage */,
+				242B4404292D0DC400F0C3C1 /* Category.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -460,6 +453,8 @@
 			dependencies = (
 			);
 			name = WhyNot;
+			packageProductDependencies = (
+			);
 			productName = WhyNot;
 			productReference = 8608FCD128F05AE1007FC0BA /* WhyNot.app */;
 			productType = "com.apple.product-type.application";
@@ -508,8 +503,8 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1330;
-				LastUpgradeCheck = 1330;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1410;
 				TargetAttributes = {
 					8608FCD028F05AE1007FC0BA = {
 						CreatedOnToolsVersion = 13.3.1;
@@ -535,6 +530,8 @@
 				ru,
 			);
 			mainGroup = 8608FCC828F05AE1007FC0BA;
+			packageReferences = (
+			);
 			productRefGroup = 8608FCD228F05AE1007FC0BA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -580,6 +577,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		59E2D58D28FEDEE4007A1503 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -699,7 +697,6 @@
 				24BE3E2F291002F400261E0A /* ExperiencesView.swift in Sources */,
 				24B18B1628FD757A00EC9A3D /* MementoAPI.swift in Sources */,
 				248FDA012925322F003DA666 /* Date+Extension.swift in Sources */,
-				242B43E92927AE1F00F0C3C1 /* CategoryIcon.swift in Sources */,
 				2424526F28FEE104006E8629 /* Sequence+Extension.swift in Sources */,
 				86048458290FFFD70055AF30 /* Space.swift in Sources */,
 				242B43E129266DA500F0C3C1 /* CornerRadius.swift in Sources */,
@@ -720,6 +717,7 @@
 				59AC84A428F609BA00EB3A9A /* CRUDServices.swift in Sources */,
 				59B892CE28FD7FB60045EAA9 /* CollectionNames.swift in Sources */,
 				242B43F82927F56500F0C3C1 /* UserRepository.swift in Sources */,
+				242B4405292D0DC400F0C3C1 /* Category.swift in Sources */,
 				59778DB6291589E5008748E6 /* AuthenticationManager.swift in Sources */,
 				242B43E72926832100F0C3C1 /* ExperienceRepository.swift in Sources */,
 				594A5FAA2902CDB700A1C10C /* UserAPI.swift in Sources */,
@@ -773,6 +771,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -833,6 +832,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -892,7 +892,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WhyNot/Preview Content\"";
-				DEVELOPMENT_TEAM = 7XM8M8X33C;
+				DEVELOPMENT_TEAM = D7KS69836R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WhyNot/Info.plist;
@@ -924,7 +924,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WhyNot/Preview Content\"";
-				DEVELOPMENT_TEAM = 7XM8M8X33C;
+				DEVELOPMENT_TEAM = D7KS69836R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WhyNot/Info.plist;

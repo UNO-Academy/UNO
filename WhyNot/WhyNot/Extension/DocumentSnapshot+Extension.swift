@@ -9,6 +9,7 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 extension DocumentSnapshot {
+
     func toObject<T: Decodable>() throws -> T {
         do {
             return try self.data(as: T.self)

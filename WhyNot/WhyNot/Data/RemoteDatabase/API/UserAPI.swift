@@ -98,6 +98,22 @@ class UserAPI {
         }
     }
 
+    func getUserFriendsInterestedInAnExperience(userID: String, experienceID: String) async throws -> [User] {
+        let userData = try await collectionReference.document(userID).getDocument()
+        guard var friendsList = userData[UserFields.friendsID.rawValue] as? [String] else { return [] }
+        friendsList = try await crudService.friendsInterestedInAnExperience(
+            collectionRef: collectionReference,
+            friendsID: friendsList,
+            experienceID: experienceID
+        )
+        return try await crudService.readDocumentsByIDList(
+            collectionRef: collectionReference,
+            documentIdList: friendsList
+        ).compactMap({
+            try $0?.toObject()
+        })
+    }
+
     func getUserByIDList(_ idList: [String]) async throws -> [User?] {
         return try await crudService.readDocumentsByIDList(
             collectionRef: collectionReference,

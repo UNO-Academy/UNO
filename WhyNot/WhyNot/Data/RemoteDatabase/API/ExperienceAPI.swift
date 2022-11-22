@@ -19,12 +19,11 @@ class ExperienceAPI {
     }
 
     func getActiveExperiences() async throws -> [Experience] {
-        let teste = try await crudService.readDocumentsFilteredBy(
+        return try await crudService.readDocumentsFilteredBy(
             collectionRef: collectionReference,
             field: ExperienceFields.isActive.rawValue,
             value: true
-        )
-        return try teste.map({
+        ).map({
             return try $0.toObject()
         })
     }
