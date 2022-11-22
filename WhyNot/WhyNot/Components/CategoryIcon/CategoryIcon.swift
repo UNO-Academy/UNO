@@ -10,7 +10,7 @@ import SwiftUI
 struct CategoryIcon: View {
 
     let type: ExperienceType
-    @Binding var isEnable: Bool
+    let isEnable: Bool
 
     var body: some View {
         Image(type.rawValue)
@@ -18,7 +18,7 @@ struct CategoryIcon: View {
             .aspectRatio(1, contentMode: .fit)
             .background(
                 RoundedRectangle(cornerRadius: Radius.defaultRadius)
-                    .fill(isEnable ? type.secondaryColor : Color.SecondaryPallet.disable)
+                    .fill(type.getCorrectSecondaryColor(isEnable))
             )
     }
 }
@@ -28,7 +28,7 @@ private struct CategoryIconPreviewHelper: View {
     @State var isEnable: Bool
 
     var body: some View {
-        CategoryIcon(type: .adventure, isEnable: $isEnable)
+        CategoryIcon(type: .adventure, isEnable: isEnable)
     }
 
 }
