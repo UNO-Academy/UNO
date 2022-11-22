@@ -16,6 +16,8 @@
 "activitiesTableTitle" = "Activities";
 "experiencedTableTitle" = "Lived";
 "daysRemainingCounter" = "Days Left";
+"DoneActionLabel" = "Done";
+"LikedActionLabel" = "Liked";
 
 //Experience detail Screen
 

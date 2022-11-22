@@ -16,6 +16,8 @@
 "activitiesTableTitle" = "Atividades";
 "experiencedTableTitle" = "Vividos";
 "daysRemainingCounter" = "Dias Restantes";
+"DoneActionLabel" = "Feito";
+"LikedActionLabel" = "Gostei";
 
 //Experience detail Screen
 

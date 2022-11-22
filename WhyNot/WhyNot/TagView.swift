@@ -14,7 +14,7 @@ struct TagView: View {
         HStack {
             tagData.getText()
             tagData.getImage()
-        }.foregroundColor(Color.CustomColors.CardTitle)
+        }.foregroundColor(Color.CustomColors.cardTitle)
             .padding(Space.halfSpace)
             .background(.white)
             .cornerRadius(Space.halfSpace)
