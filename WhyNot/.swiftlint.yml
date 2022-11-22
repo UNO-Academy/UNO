@@ -6,6 +6,7 @@ excluded:
 - Carthage
 - Pods
 - SwiftLint/Common/3rdPartyLib
+- WhyNotUniTests/
 identifier_name:
   min_length: 1
 reporter: "xcode"

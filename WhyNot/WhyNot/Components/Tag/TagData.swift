@@ -8,37 +8,50 @@
 import SwiftUI
 
 enum TagType {
+
     case effort(Int), duration(Int), cost(Int)
 
     func getText() -> Text {
         switch self {
         case .effort(let value):
-            switch value {
-            case 1:
-                return Text("\(TagValue.effort1.rawValue)")
-            case 2:
-                return Text("\(TagValue.effort2.rawValue)")
-            default:
-                return Text("\(TagValue.effort3.rawValue)")
-            }
+            return getEffortTextFor(value: value)
         case .duration(let value):
-            switch value {
-            case 1:
-                return Text("\(TagValue.duration1.rawValue)")
-            case 2:
-                return Text("\(TagValue.duration2.rawValue)")
-            default:
-                return Text("\(TagValue.duration3.rawValue)")
-            }
+            return getDurationTextFor(value: value)
         case .cost(let value):
-            switch value {
-            case 1:
-                return Text("\(TagValue.cost1.rawValue)")
-            case 2:
-                return Text("\(TagValue.cost2.rawValue)")
-            default:
-                return Text("\(TagValue.cost3.rawValue)")
-            }
+            return getCostTextFor(value: value)
+        }
+    }
+
+    private func getEffortTextFor(value: Int) -> Text {
+        switch value {
+        case 1:
+            return Text(NSLocalizedString(TagValue.effort1.rawValue, comment: ""))
+        case 2:
+            return Text(NSLocalizedString(TagValue.effort2.rawValue, comment: ""))
+        default:
+            return Text(NSLocalizedString(TagValue.effort3.rawValue, comment: ""))
+        }
+    }
+
+    private func getDurationTextFor(value: Int) -> Text {
+        switch value {
+        case 1:
+            return Text(NSLocalizedString(TagValue.duration1.rawValue, comment: ""))
+        case 2:
+            return Text(NSLocalizedString(TagValue.duration2.rawValue, comment: ""))
+        default:
+            return Text(NSLocalizedString(TagValue.duration3.rawValue, comment: ""))
+        }
+    }
+
+    private func getCostTextFor(value: Int) -> Text {
+        switch value {
+        case 1:
+            return Text(NSLocalizedString(TagValue.cost1.rawValue, comment: ""))
+        case 2:
+            return Text(NSLocalizedString(TagValue.cost2.rawValue, comment: ""))
+        default:
+            return Text(NSLocalizedString(TagValue.cost3.rawValue, comment: ""))
         }
     }
 
@@ -56,15 +69,16 @@ enum TagType {
 
 enum TagValue: String {
     // TODO: quando o paulo fizer o localizable mudar isso aqui 
-    case effort1 = "Cheap"
-    case effort2 = "Affordable"
-    case effort3 = "Expensive"
+    case effort1 = "effort1Tag"
+    case effort2 = "effort2Tag"
+    case effort3 = "effort3Tag"
 
-    case duration1 = "Short"
-    case duration2 = "Medium"
-    case duration3 = "Long"
+    case duration1 = "duration1Tag"
+    case duration2 = "duration2Tag"
+    case duration3 = "duration3Tag"
 
-    case cost1 = "Easy"
-    case cost2 = "Normal"
-    case cost3 = "Hard"
+    case cost1 = "cost1Tag"
+    case cost2 = "cost2Tag"
+    case cost3 = "cost3Tag"
+
 }

@@ -20,3 +20,14 @@
 //Experience detail Screen
 
 //Login Screen
+
+// Tags
+"effort1Tag" = "Easy";
+"effort2Tag" = "Normal";
+"effort3Tag" = "Hard";
+"duration1Tag" = "Short";
+"duration2Tag" = "Medium";
+"duration3Tag" = "Long";
+"cost1Tag" = "Cheap";
+"cost2Tag" = "Affordable";
+"cost3Tag" = "Expensive";
