@@ -1,9 +1,9 @@
-/* 
+/*
   Localizable.strings
   WhyNot
 
   Created by Paulo Bassani on 03/11/22.
-  
+
 */
 
 //TabBar
@@ -15,7 +15,7 @@
 "experiencesScreenTitle" = "Experiences";
 "activitiesTableTitle" = "Activities";
 "experiencedTableTitle" = "Lived";
-"daysRemainingCounter" = "Days Left";
+"daysRemainingCounter" = "Days left";
 "DoneActionLabel" = "Done";
 "LikedActionLabel" = "Liked";
 

@@ -65,7 +65,8 @@ class CRUDServices {
 
     func readDocumentsFilteredBy(
         collectionRef: CollectionReference,
-        field: String, value: Any
+        field: String,
+        value: Any
     ) async throws -> [QueryDocumentSnapshot] {
         do {
             let docRef = collectionRef.whereField(field, isEqualTo: value)
@@ -126,5 +127,23 @@ class CRUDServices {
         } catch {
             throw error
         }
+    }
+}
+
+extension CRUDServices {
+    // For user queries
+    func friendsInterestedInAnExperience(
+        collectionRef: CollectionReference,
+        friendsID: [String],
+        experienceID: String) async throws -> [String] {
+            var friends: [String] = []
+            for id in friendsID {
+                guard let document = try await collectionRef.document(id).getDocument().data() else { continue }
+                guard let interestExperiencesList = document[UserFields.interestExperiencesID.rawValue] as? [String] else { continue }
+                if interestExperiencesList.contains(experienceID) {
+                    friends.append(id)
+                }
+            }
+            return friends
     }
 }
