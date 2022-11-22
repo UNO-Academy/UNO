@@ -57,7 +57,7 @@ struct CardView_Previews: PreviewProvider {
                     name: "Teste"
                 ),
                 friendsImages: [
-                    UIImage(named: "adventure")!
+                    UIImage(systemName: "person.fill")
                 ]
             )
         )
