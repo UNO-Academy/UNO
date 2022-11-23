@@ -1,0 +1,40 @@
+/*
+  Localizable.strings
+  WhyNot
+
+  Created by Paulo Bassani on 03/11/22.
+
+*/
+
+//TabBar
+"searchTabLabel" = "Busca";
+"experiencesTabLabel" = "Experiências";
+"profileTabLabel" = "Perfil";
+
+//Experiences Screen
+"experiencesScreenTitle" = "Experiências";
+"activitiesTableTitle" = "Atividades";
+"experiencedTableTitle" = "Vividos";
+"daysRemainingCounter" = "Dias restantes";
+"dayRemaningCounter" = "Dia restante";
+"doneActionLabel" = "Feito";
+"likedActionLabel" = "Gostei";
+"unlikedActionLabel" = "Desgostei";
+"cardEmptyLivedText" = "Vamos viver um pouco!\nVá grande ou vá para casa.";
+"cardSpaceLeftText" = "Você ainda tem espaço\npara boas lembranças.";
+"cardAllDoneText" = "Você criou algumas memórias.\nO que virá a seguir?";
+
+//Experience detail Screen
+
+//Login Screen
+
+//Tags
+"effort1Tag" = "Fácil";
+"effort2Tag" = "Normal";
+"effort3Tag" = "Difícil";
+"duration1Tag" = "Curto";
+"duration2Tag" = "Médio";
+"duration3Tag" = "Longo";
+"cost1Tag" = "Barato";
+"cost2Tag" = "Acessível";
+"cost3Tag" = "Caro";
