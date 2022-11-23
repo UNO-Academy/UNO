@@ -8,7 +8,7 @@
 import SwiftUI
 
 public extension Color {
-    enum CustomColors {
+    enum CustomColor {
         static var cardTitle: Color { return Color("CardTitleWN") }
         static var clicableColor: Color { return Color("ClicableColorWN") }
         static var daysLeft: Color { return Color("DaysLeftWN") }

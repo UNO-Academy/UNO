@@ -11,7 +11,7 @@ struct ProfileView: View {
     var body: some View {
         Text(String(localized: "profileTabLabel"))
             .font(Font.custom(CustomFonts.SolidThemeFont, size: FontSize.largeTitle))
-            .foregroundColor(Color.CustomColors.cardTitle)
+            .foregroundColor(Color.CustomColor.cardTitle)
             .padding(Space.halfSpace)
     }
 }

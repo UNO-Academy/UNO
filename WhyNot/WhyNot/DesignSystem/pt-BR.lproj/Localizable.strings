@@ -15,13 +15,17 @@
 "experiencesScreenTitle" = "Experiências";
 "activitiesTableTitle" = "Atividades";
 "experiencedTableTitle" = "Vividos";
-"daysRemainingCounter" = "Dias Restantes";
-"DoneActionLabel" = "Feito";
-"LikedActionLabel" = "Gostei";
+"daysRemainingCounter" = "Dias restantes";
+"dayRemaningCounter" = "Dia restante";
+"doneActionLabel" = "Feito";
+"likedActionLabel" = "Gostei";
+"unlikedActionLabel" = "Desgostei";
 
 //Experience detail Screen
 
 //Login Screen
+
+//Tags
 "effort1Tag" = "Fácil";
 "effort2Tag" = "Normal";
 "effort3Tag" = "Difícil";
