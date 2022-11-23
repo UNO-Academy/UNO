@@ -54,6 +54,7 @@
 		D6BC81EF2924AAB8006F44C2 /* TagTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BC81EE2924AAB8006F44C2 /* TagTypeTests.swift */; };
 		D6BC81F129250181006F44C2 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BC81F029250181006F44C2 /* CardViewModel.swift */; };
 		D6BC81F4292505B0006F44C2 /* CardViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BC81F3292505B0006F44C2 /* CardViewModelTest.swift */; };
+		D6C1A0BE292E45CC006DC170 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C1A0BD292E45CC006DC170 /* ProfileViewModel.swift */; };
 		D6E24D6929114C6F0018C0C6 /* ExperienceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E24D6829114C6F0018C0C6 /* ExperienceType.swift */; };
 		D6E596D5291E7A840052D4E9 /* ExperienceTypeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E596D4291E7A840052D4E9 /* ExperienceTypeTest.swift */; };
 /* End PBXBuildFile section */
@@ -125,6 +126,7 @@
 		D6BC81EE2924AAB8006F44C2 /* TagTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TagTypeTests.swift; path = ../../../../../TagTypeTests.swift; sourceTree = "<group>"; };
 		D6BC81F029250181006F44C2 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		D6BC81F3292505B0006F44C2 /* CardViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardViewModelTest.swift; path = ../../../../../../CardViewModelTest.swift; sourceTree = "<group>"; };
+		D6C1A0BD292E45CC006DC170 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		D6E24D6829114C6F0018C0C6 /* ExperienceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceType.swift; sourceTree = "<group>"; };
 		D6E596D4291E7A840052D4E9 /* ExperienceTypeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceTypeTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -232,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				24BE3E3629101A9500261E0A /* ProfileView.swift */,
+				D6C1A0BD292E45CC006DC170 /* ProfileViewModel.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -734,6 +737,7 @@
 				8699EEAB2911616500875333 /* TagData.swift in Sources */,
 				2424526F28FEE104006E8629 /* Sequence+Extension.swift in Sources */,
 				86048458290FFFD70055AF30 /* Space.swift in Sources */,
+				D6C1A0BE292E45CC006DC170 /* ProfileViewModel.swift in Sources */,
 				8699EEA92911614A00875333 /* TagView.swift in Sources */,
 				24BE3E31291012C600261E0A /* TabIcon.swift in Sources */,
 				D66D4D6629265EC80081772C /* LocalizedKeys.swift in Sources */,
@@ -928,6 +932,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -960,6 +965,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

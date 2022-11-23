@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct ProfileView: View {
+
+    private let viewModel: ProfileViewModel
+
     var body: some View {
         NavigationView {
             VStack {
-                Image("adventure")
+                Image(systemName: "person.fill")
                     .resizable()
                     .frame(width: 100, height: 100)
                     .clipShape(Circle())
@@ -22,18 +25,17 @@ struct ProfileView: View {
                         size: FontSize.title2
                     ))
 
-                Group {
-                    Form {
-                        Text("Friends")
-                    }
-                }
+                Form {
+                    Text("Friends")
+                    Text("Notifications")
+                }.scrollContentBackground(.hidden)
 
                 Spacer()
             }
             .padding(.top)
             .toolbar {
                 Button {
-
+                    viewModel.editingAction()
                 } label: {
                     Image(systemName: "square.and.pencil")
                         .foregroundColor(.black)
@@ -45,8 +47,8 @@ struct ProfileView: View {
     }
 }
 
-struct ProfilePreviewProvider: PreviewProvider {
-    static var previews: some View {
-        ProfileView()
-    }
-}
+//struct ProfilePreviewProvider: PreviewProvider {
+//    static var previews: some View {
+//        ProfileView()
+//    }
+//}
