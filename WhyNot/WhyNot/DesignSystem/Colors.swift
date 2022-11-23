@@ -15,7 +15,7 @@ public extension Color {
         static var orangeSwipe: Color { return Color("OrangeSwipeWN") }
         static var purpleSwipe: Color { return Color("PurpleSwipeWN") }
         static var redSwipe: Color { return Color("RedSwipeWN") }
-        static var titleColor: Color { return Color("TitleColor") }
+        static var titleColor: Color { return Color("TitleColorWN") }
         static var tabBarSymbol: Color { return Color("TabBarSymbol") }
     }
 
