@@ -14,7 +14,7 @@ struct ExperiencesView: View {
     ))
 
     var body: some View {
-        ScrollView {
+        VStack {
             title
                 .padding(.top, Space.spaceTitleTop)
                 .padding(.bottom, Space.space2x)
@@ -69,12 +69,28 @@ struct ExperiencesView: View {
                     backgoundColor: Color.CustomColors.DaysLeft
                 )
             }
-            ForEach(viewModel.toDoExperiences) { experience in
-                CardView(
-                    viewModel: CardViewModel(
-                        experience: experience
+            List {
+                ForEach(viewModel.toDoExperiences) { experience in
+                    CardView(
+                        viewModel: CardViewModel(
+                            experience: experience
+                        )
                     )
-                )
+                    .swipeActions(edge: .trailing) {
+                        Button {
+                            print("call done function")
+                        } label: {
+                            Label("doneActionLabel", systemImage: "flag.fill")
+                        } .tint(Color.CustomColors.OrangeSwipe)
+                    }
+                    .swipeActions(edge: .leading) {
+                        Button {
+                            print("call like function")
+                        } label: {
+                            Label("likedActionLabel", systemImage: "heart.fill")
+                        } .tint(Color.CustomColors.PurpleSwipe)
+                    }
+                }
             }
         }
     }
@@ -113,9 +129,12 @@ struct ExperiencesView: View {
                     backgoundColor: Color.CustomColors.CardBackground
                 )
             }
-            ForEach(viewModel.doneExperiences) { _ in
-                Rectangle()
-                    .frame(height: 100)
+            ForEach(viewModel.doneExperiences) { experience in
+                CardView(
+                    viewModel: CardViewModel(
+                        experience: experience
+                    )
+                )
             }
         }
     }
