@@ -10,7 +10,6 @@ import SwiftUI
 class CardViewModel: ObservableObject {
 
     @Published var experience: Experience
-    @Published var friendsImages: [UIImage]
 
     var experienceType: ExperienceType {
         switch experience.category.lowercased() {
@@ -27,15 +26,19 @@ class CardViewModel: ObservableObject {
         return experience.isActive
     }
 
-    init(
-        experience: Experience,
-        friendsImages: [UIImage]
-    ) {
+    init(experience: Experience) {
         self.experience = experience
-        self.friendsImages = friendsImages
     }
 
     func getFillColor() -> Color {
         return experienceType.getCorrectPrimaryColor(isActive)
+    }
+
+    func getPersonImages() -> [UIImage] {
+        guard let friendsInterested = experience.friendsInterested else { return [] }
+        return friendsInterested.compactMap {
+            guard let data = $0.profilePicture else { return nil }
+            return UIImage(data: data)
+        }
     }
 }

@@ -24,7 +24,7 @@
 		242B43F82927F56500F0C3C1 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B43F72927F56500F0C3C1 /* UserRepository.swift */; };
 		242B43FA2927F5AB00F0C3C1 /* UserRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B43F92927F5AB00F0C3C1 /* UserRepositoryImpl.swift */; };
 		242B43FE2928024C00F0C3C1 /* GetActiveExperiencesUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B43FD2928024C00F0C3C1 /* GetActiveExperiencesUseCaseTests.swift */; };
-		242B4405292D0DC400F0C3C1 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B4404292D0DC400F0C3C1 /* Category.swift */; };
+		242B4405292D0DC400F0C3C1 /* CategoryIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B4404292D0DC400F0C3C1 /* CategoryIcon.swift */; };
 		248FD9FF2913E167003DA666 /* WhyNotApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8608FCD428F05AE1007FC0BA /* WhyNotApp.swift */; };
 		248FDA012925322F003DA666 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248FDA002925322F003DA666 /* Date+Extension.swift */; };
 		24B18B1628FD757A00EC9A3D /* MementoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B18B1528FD757A00EC9A3D /* MementoAPI.swift */; };
@@ -98,7 +98,7 @@
 		242B43F72927F56500F0C3C1 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		242B43F92927F5AB00F0C3C1 /* UserRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryImpl.swift; sourceTree = "<group>"; };
 		242B43FD2928024C00F0C3C1 /* GetActiveExperiencesUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetActiveExperiencesUseCaseTests.swift; sourceTree = "<group>"; };
-		242B4404292D0DC400F0C3C1 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		242B4404292D0DC400F0C3C1 /* CategoryIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryIcon.swift; sourceTree = "<group>"; };
 		248FDA002925322F003DA666 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		24B18B1528FD757A00EC9A3D /* MementoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MementoAPI.swift; sourceTree = "<group>"; };
 		24B18B1728FD7BF400EC9A3D /* Memento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memento.swift; sourceTree = "<group>"; };
@@ -450,11 +450,11 @@
 		D6E766C329114A7A000D940F /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				24C5CBE3292D1E750082515C /* Card */,
 				242B43DD2926630600F0C3C1 /* EmptyListCard.swift */,
+				242B4404292D0DC400F0C3C1 /* CategoryIcon.swift */,
+				24C5CBE3292D1E750082515C /* Card */,
 				86DA3CEF291E6B0800A88479 /* Tag */,
 				86DA3CEE291E699B00A88479 /* PersonImage */,
-				242B4404292D0DC400F0C3C1 /* Category.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -761,7 +761,7 @@
 				59AC84A428F609BA00EB3A9A /* CRUDServices.swift in Sources */,
 				59B892CE28FD7FB60045EAA9 /* CollectionNames.swift in Sources */,
 				242B43F82927F56500F0C3C1 /* UserRepository.swift in Sources */,
-				242B4405292D0DC400F0C3C1 /* Category.swift in Sources */,
+				242B4405292D0DC400F0C3C1 /* CategoryIcon.swift in Sources */,
 				59778DB6291589E5008748E6 /* AuthenticationManager.swift in Sources */,
 				242B43E72926832100F0C3C1 /* ExperienceRepository.swift in Sources */,
 				594A5FAA2902CDB700A1C10C /* UserAPI.swift in Sources */,

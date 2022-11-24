@@ -10,4 +10,6 @@ import Foundation
 protocol UserRepository {
     func isUserLogged() -> Bool
     func getLoggedUser() -> User?
+    func createUser(email: String, password: String, user: User) async throws
+    func getFriendsInteretedInExperience(_ experienceId: String) async throws -> [User]
 }

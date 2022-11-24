@@ -11,7 +11,8 @@ import Foundation
 struct User: Codable {
     @DocumentID var id: String?
     let name: String
-    let profilePicture: String
+    let profilePictureID: String
+    var profilePicture: Data?
     let lastPictureUpdate: Date
     let friendsID: [String]
     let mementosID: [String]

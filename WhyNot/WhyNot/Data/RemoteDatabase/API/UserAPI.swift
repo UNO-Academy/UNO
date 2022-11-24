@@ -12,10 +12,13 @@ import FirebaseFirestoreSwift
 class UserAPI {
 
     private let crudService = CRUDServices.shared
+    private let storageService = StorageService.shared
     private let collectionReference: CollectionReference
+    private let storageReference: Storage
 
     init() {
         collectionReference = Firestore.firestore().collection(CollectionNames.user.rawValue)
+        storageReference = Storage.storage()
     }
 
     func createUser(id: String, user: User) async throws {
@@ -98,7 +101,7 @@ class UserAPI {
         }
     }
 
-    func getUserFriendsInterestedInAnExperience(userID: String, experienceID: String) async throws -> [User?] {
+    func getUserFriendsInterestedInAnExperience(userID: String, experienceID: String) async throws -> [User] {
         let data = try await collectionReference.document(userID).getDocument()
         guard var friendsList = data[UserFields.friendsID.rawValue] as? [String] else { return [] }
 
@@ -110,7 +113,7 @@ class UserAPI {
         return try await crudService.readDocumentsByIDList(
             collectionRef: collectionReference,
             documentIdList: friendsList
-        ).map({
+        ).compactMap({
             return try $0?.toObject()
         })
     }
@@ -122,5 +125,9 @@ class UserAPI {
         ).map({
             return try $0?.toObject()
         })
+    }
+
+    func getProfilePictureByPathList(_ paths: [String], completion: @escaping ([Data]) -> Void) async throws {
+        storageService.downloadImages(storageRef: storageReference, paths: paths, completion: completion)
     }
 }

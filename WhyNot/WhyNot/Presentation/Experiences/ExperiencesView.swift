@@ -69,9 +69,12 @@ struct ExperiencesView: View {
                     backgoundColor: Color.CustomColors.DaysLeft
                 )
             }
-            ForEach(viewModel.toDoExperiences) { _ in
-                Rectangle()
-                    .frame(height: 100)
+            ForEach(viewModel.toDoExperiences) { experience in
+                CardView(
+                    viewModel: CardViewModel(
+                        experience: experience
+                    )
+                )
             }
         }
     }
