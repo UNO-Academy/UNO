@@ -22,7 +22,7 @@ struct TagView: View {
                 .resizable()
                 .frame(width: imageWidth, height: imageWidth)
         }
-        .foregroundColor(Color.CustomColors.CardTitle)
+        .foregroundColor(Color.CustomColor.cardTitle)
         .padding(Space.halfSpace)
         .background(.white)
         .cornerRadius(Space.halfSpace)

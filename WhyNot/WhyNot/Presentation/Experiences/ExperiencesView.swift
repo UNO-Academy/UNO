@@ -30,7 +30,7 @@ struct ExperiencesView: View {
         HStack {
             Text(String(localized: "experiencesScreenTitle"))
                 .font(Font.custom(CustomFonts.SolidThemeFont, size: FontSize.largeTitle))
-                .foregroundColor(Color.CustomColors.TitleColor)
+                .foregroundColor(Color.CustomColor.titleColor)
             Spacer()
         }
     }
@@ -47,15 +47,15 @@ struct ExperiencesView: View {
         HStack {
             Text(String(localized: "activitiesTableTitle"))
                 .font(Font.custom(CustomFonts.SolidThemeFont, size: FontSize.title2))
-                .foregroundColor(Color.CustomColors.TitleColor)
+                .foregroundColor(Color.CustomColor.titleColor)
             Spacer()
             Text("\(viewModel.daysLeft)")
                 .font(Font.custom(CustomFonts.SolidThemeFont, size: FontSize.title2))
-                .foregroundColor(Color.CustomColors.DaysLeft)
+                .foregroundColor(Color.CustomColor.daysLeft)
                 .padding(.trailing, -1)
             Text(String(localized: "daysRemainingCounter"))
                 .font(Font.custom(CustomFonts.SolidThemeFont, size: FontSize.callout))
-                .foregroundColor(Color.CustomColors.DaysLeft)
+                .foregroundColor(Color.CustomColor.daysLeft)
         }
     }
 
@@ -65,8 +65,8 @@ struct ExperiencesView: View {
                 EmptyListCard(
                     icon: "flag.2.crossed.fill",
                     text: String(localized: "cardAllDoneText"),
-                    textColor: Color.CustomColors.TitleColorReversed,
-                    backgoundColor: Color.CustomColors.DaysLeft
+                    textColor: Color.CustomColor.titleColorReversed,
+                    backgoundColor: Color.CustomColor.daysLeft
                 )
             }
             List {
@@ -81,17 +81,24 @@ struct ExperiencesView: View {
                             print("call done function")
                         } label: {
                             Label("doneActionLabel", systemImage: "flag.fill")
-                        } .tint(Color.CustomColors.OrangeSwipe)
+                        } .tint(Color.CustomColor.orangeSwipe)
                     }
                     .swipeActions(edge: .leading) {
                         Button {
                             print("call like function")
                         } label: {
                             Label("likedActionLabel", systemImage: "heart.fill")
-                        } .tint(Color.CustomColors.PurpleSwipe)
+                        } .tint(Color.CustomColor.purpleSwipe)
                     }
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets())
+                    .listRowBackground(Color.clear)
+                    .ignoresSafeArea()
+                    .padding(.bottom, 10)
+
                 }
             }
+            .listStyle(.plain)
         }
     }
 
@@ -107,7 +114,7 @@ struct ExperiencesView: View {
         HStack {
             Text(String(localized: "experiencedTableTitle"))
                 .font(Font.custom(CustomFonts.SolidThemeFont, size: FontSize.title2))
-                .foregroundColor(Color.CustomColors.TitleColor)
+                .foregroundColor(Color.CustomColor.titleColor)
             Spacer()
         }
     }
@@ -118,15 +125,15 @@ struct ExperiencesView: View {
                 EmptyListCard(
                     icon: "flag.slash",
                     text: String(localized: "cardEmptyLivedText"),
-                    textColor: Color.CustomColors.TitleColor,
-                    backgoundColor: Color.CustomColors.CardBackground
+                    textColor: Color.CustomColor.titleColor,
+                    backgoundColor: Color.CustomColor.cardBackground
                 )
             } else if viewModel.mustShowSpaceLeft {
                 EmptyListCard(
                     icon: "tray",
                     text: String(localized: "cardSpaceLeftText"),
-                    textColor: Color.CustomColors.TitleColor,
-                    backgoundColor: Color.CustomColors.CardBackground
+                    textColor: Color.CustomColor.titleColor,
+                    backgoundColor: Color.CustomColor.cardBackground
                 )
             }
             ForEach(viewModel.doneExperiences) { experience in

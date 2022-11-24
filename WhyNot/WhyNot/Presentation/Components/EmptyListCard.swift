@@ -41,8 +41,8 @@ struct EmptyListCard_Previews: PreviewProvider {
         EmptyListCard(
             icon: "flag.slash",
             text: String(localized: "cardEmptyLivedTextLine"),
-            textColor: Color.CustomColors.TitleColor,
-            backgoundColor: Color.CustomColors.CardBackground
+            textColor: Color.CustomColor.titleColor,
+            backgoundColor: Color.CustomColor.cardBackground
         )
     }
 }

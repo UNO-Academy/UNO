@@ -8,17 +8,18 @@
 import SwiftUI
 
 public extension Color {
-    enum CustomColors {
-        static var CardTitle: Color { return Color("CardTitleWN") }
-        static var ClicableColor: Color { return Color("ClicableColorWN") }
-        static var DaysLeft: Color { return Color("DaysLeftWN") }
-        static var OrangeSwipe: Color { return Color("OrangeSwipeWN") }
-        static var PurpleSwipe: Color { return Color("PurpleSwipeWN") }
-        static var RedSwipe: Color { return Color("RedSwipeWN") }
-        static var TitleColor: Color { return Color("TitleColorWN") }
-        static var TitleColorReversed: Color { return Color("TitleColorReversed") }
-        static var TabBarSymbol: Color { return Color("TabBarSymbol") }
-        static var CardBackground: Color {return Color("CardBackground") }
+
+    enum CustomColor {
+        static var cardTitle: Color { return Color("CardTitleWN") }
+        static var clicableColor: Color { return Color("ClicableColorWN") }
+        static var daysLeft: Color { return Color("DaysLeftWN") }
+        static var orangeSwipe: Color { return Color("OrangeSwipeWN") }
+        static var purpleSwipe: Color { return Color("PurpleSwipeWN") }
+        static var redSwipe: Color { return Color("RedSwipeWN") }
+        static var titleColor: Color { return Color("TitleColorWN") }
+        static var tabBarSymbol: Color { return Color("TabBarSymbol") }
+        static var titleColorReversed: Color { return Color("TitleColorReversed") }
+        static var cardBackground: Color {return Color("CardBackground") }
     }
 
     enum PrimaryPallet {

@@ -28,8 +28,10 @@ enum TagType {
             return Text(NSLocalizedString(TagValue.effort1.rawValue, comment: ""))
         case 2:
             return Text(NSLocalizedString(TagValue.effort2.rawValue, comment: ""))
-        default:
+        case 3:
             return Text(NSLocalizedString(TagValue.effort3.rawValue, comment: ""))
+        default:
+            return Text("-")
         }
     }
 
@@ -39,8 +41,10 @@ enum TagType {
             return Text(NSLocalizedString(TagValue.duration1.rawValue, comment: ""))
         case 2:
             return Text(NSLocalizedString(TagValue.duration2.rawValue, comment: ""))
-        default:
+        case 3:
             return Text(NSLocalizedString(TagValue.duration3.rawValue, comment: ""))
+        default:
+            return Text("-")
         }
     }
 
@@ -50,8 +54,10 @@ enum TagType {
             return Text(NSLocalizedString(TagValue.cost1.rawValue, comment: ""))
         case 2:
             return Text(NSLocalizedString(TagValue.cost2.rawValue, comment: ""))
-        default:
+        case 3:
             return Text(NSLocalizedString(TagValue.cost3.rawValue, comment: ""))
+        default:
+            return Text("-")
         }
     }
 
