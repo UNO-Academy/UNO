@@ -1,9 +1,9 @@
-/* 
+/*
   Localizable.strings
   WhyNot
 
   Created by Paulo Bassani on 03/11/22.
-  
+
 */
 
 //TabBar
@@ -14,15 +14,21 @@
 //Experiences Screen
 "experiencesScreenTitle" = "Experiências";
 "activitiesTableTitle" = "Atividades";
-"experiencedTableTitle" = "Vividos";
-"daysRemainingCounter" = "Dias Restantes";
-"cardEmptyLivedText" = "Vamos viver um pouco!\nVá grande ou vá para casa.";
+"experiencedTableTitle" = "Vivenciados";
+"daysRemainingCounter" = "Dias restantes";
+"dayRemaningCounter" = "Dia restante";
+"doneActionLabel" = "Feito";
+"likedActionLabel" = "Gostei";
+"unlikedActionLabel" = "Desgostei";
+"cardEmptyLivedText" = "Vamos viver um pouco!\nVamos longe ou volte pra casa.";
 "cardSpaceLeftText" = "Você ainda tem espaço\npara boas lembranças.";
 "cardAllDoneText" = "Você criou algumas memórias.\nO que virá a seguir?";
 
 //Experience detail Screen
 
 //Login Screen
+
+//Tags
 "effort1Tag" = "Fácil";
 "effort2Tag" = "Normal";
 "effort3Tag" = "Difícil";

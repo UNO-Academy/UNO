@@ -20,7 +20,7 @@ struct CardView: View {
             ) {
                 Text(viewModel.experience.name)
                     .font(.system(size: FontSize.title3))
-                    .foregroundColor(Color.CustomColors.CardTitle)
+                    .foregroundColor(Color.CustomColor.cardTitle)
                     .bold()
 
                 TagsView(experience: viewModel.experience)

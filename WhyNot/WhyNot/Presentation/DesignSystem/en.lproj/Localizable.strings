@@ -1,9 +1,9 @@
-/* 
+/*
   Localizable.strings
   WhyNot
 
   Created by Paulo Bassani on 03/11/22.
-  
+
 */
 
 //TabBar
@@ -15,7 +15,11 @@
 "experiencesScreenTitle" = "Experiences";
 "activitiesTableTitle" = "Activities";
 "experiencedTableTitle" = "Lived";
-"daysRemainingCounter" = "days left";
+"daysRemainingCounter" = "Days left";
+"dayRemaningCounter" = "Day left";
+"doneActionLabel" = "Done";
+"likedActionLabel" = "Liked";
+"unlikedActionLabel" = "Unliked";
 "cardEmptyLivedText" = "Let's live a bit!\nGo big or go home.";
 "cardSpaceLeftText" = "You’ve some space left\nfor good memories.";
 "cardAllDoneText" = "You’ve created a few memories.\nWhat will come next?";
