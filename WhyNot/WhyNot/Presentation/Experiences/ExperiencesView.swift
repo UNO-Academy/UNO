@@ -14,16 +14,43 @@ struct ExperiencesView: View {
     ))
 
     var body: some View {
+        List {
+            topScreen
+                .listRowSeparator(.hidden)
+                .listRowInsets(EdgeInsets())
+                .listRowBackground(Color.clear)
+                .ignoresSafeArea()
+            activitiesList
+            topLeaved
+                .listRowSeparator(.hidden)
+                .listRowInsets(EdgeInsets())
+                .listRowBackground(Color.clear)
+                .ignoresSafeArea()
+                .padding(.bottom, Space.space1x)
+                .padding(.top, Space.space1x)
+            livedList
+                .padding(.bottom, Space.space2x)
+        }
+        .listStyle(.plain)
+        .padding(.horizontal, Space.space2x)
+    }
+
+    var topScreen: some View {
         VStack {
             title
                 .padding(.top, Space.spaceTitleTop)
                 .padding(.bottom, Space.space2x)
-            activitiesSession
-                .padding(.bottom, Space.space2x)
-            livedSession
-                .padding(.bottom, Space.space2x)
+            activitiesTitle
+                .padding(.bottom, Space.space1x)
+            if viewModel.mustShowAllDone {
+                EmptyListCard(
+                    icon: "flag.2.crossed.fill",
+                    text: String(localized: "cardAllDoneText"),
+                    textColor: Color.CustomColor.titleColorReversed,
+                    backgoundColor: Color.CustomColor.daysLeft
+                )
+            }
         }
-        .padding(.horizontal, Space.space2x)
     }
 
     var title: some View {
@@ -32,14 +59,6 @@ struct ExperiencesView: View {
                 .font(Font.custom(CustomFonts.SolidThemeFont, size: FontSize.largeTitle))
                 .foregroundColor(Color.CustomColor.titleColor)
             Spacer()
-        }
-    }
-
-    var activitiesSession: some View {
-        VStack {
-            activitiesTitle
-                .padding(.bottom, Space.space1x)
-            activitiesList
         }
     }
 
@@ -60,67 +79,38 @@ struct ExperiencesView: View {
     }
 
     var activitiesList: some View {
-        VStack {
-            if viewModel.mustShowAllDone {
-                EmptyListCard(
-                    icon: "flag.2.crossed.fill",
-                    text: String(localized: "cardAllDoneText"),
-                    textColor: Color.CustomColor.titleColorReversed,
-                    backgoundColor: Color.CustomColor.daysLeft
+        ForEach(viewModel.toDoExperiences) { experience in
+            CardView(
+                viewModel: CardViewModel(
+                    experience: experience
                 )
+            )
+            .swipeActions(edge: .leading) {
+                Button {
+                    print("call like function")
+                } label: {
+                    Label("likedActionLabel", systemImage: "heart.fill")
+                } .tint(Color.CustomColor.purpleSwipe)
             }
-            List {
-                ForEach(viewModel.toDoExperiences) { experience in
-                    CardView(
-                        viewModel: CardViewModel(
-                            experience: experience
-                        )
-                    )
-                    .swipeActions(edge: .trailing) {
-                        Button {
-                            print("call done function")
-                        } label: {
-                            Label("doneActionLabel", systemImage: "flag.fill")
-                        } .tint(Color.CustomColor.orangeSwipe)
-                    }
-                    .swipeActions(edge: .leading) {
-                        Button {
-                            print("call like function")
-                        } label: {
-                            Label("likedActionLabel", systemImage: "heart.fill")
-                        } .tint(Color.CustomColor.purpleSwipe)
-                    }
-                    .listRowSeparator(.hidden)
-                    .listRowInsets(EdgeInsets())
-                    .listRowBackground(Color.clear)
-                    .ignoresSafeArea()
-                    .padding(.bottom, 10)
-
-                }
+            .swipeActions(edge: .trailing) {
+                Button {
+                    print("call done function")
+                } label: {
+                    Label("doneActionLabel", systemImage: "flag.fill")
+                } .tint(Color.CustomColor.orangeSwipe)
             }
-            .listStyle(.plain)
+            .listRowSeparator(.hidden)
+            .listRowInsets(EdgeInsets())
+            .listRowBackground(Color.clear)
+            .ignoresSafeArea()
+            .padding(.bottom, Space.space1x)
         }
     }
 
-    var livedSession: some View {
+    var topLeaved: some View {
         VStack {
             livedTitle
                 .padding(.bottom, Space.space1x)
-            livedList
-        }
-    }
-
-    var livedTitle: some View {
-        HStack {
-            Text(String(localized: "experiencedTableTitle"))
-                .font(Font.custom(CustomFonts.SolidThemeFont, size: FontSize.title2))
-                .foregroundColor(Color.CustomColor.titleColor)
-            Spacer()
-        }
-    }
-
-    var livedList: some View {
-        VStack {
             if viewModel.mustShowEmptyLived {
                 EmptyListCard(
                     icon: "flag.slash",
@@ -136,13 +126,29 @@ struct ExperiencesView: View {
                     backgoundColor: Color.CustomColor.cardBackground
                 )
             }
-            ForEach(viewModel.doneExperiences) { experience in
-                CardView(
-                    viewModel: CardViewModel(
-                        experience: experience
-                    )
+        }
+    }
+
+    var livedTitle: some View {
+        HStack {
+            Text(String(localized: "experiencedTableTitle"))
+                .font(Font.custom(CustomFonts.SolidThemeFont, size: FontSize.title2))
+                .foregroundColor(Color.CustomColor.titleColor)
+            Spacer()
+        }
+    }
+
+    var livedList: some View {
+        ForEach(viewModel.doneExperiences) { experience in
+            CardView(
+                viewModel: CardViewModel(
+                    experience: experience
                 )
-            }
+            )
+            .listRowSeparator(.hidden)
+            .listRowInsets(EdgeInsets())
+            .listRowBackground(Color.clear)
+            .ignoresSafeArea()
         }
     }
 }

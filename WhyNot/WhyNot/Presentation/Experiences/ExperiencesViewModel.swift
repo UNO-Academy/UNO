@@ -25,7 +25,11 @@ class ExperiencesViewModel: ObservableObject {
         loadExperiences(completion)
     }
 
-    func loadExperiences(_ completion: @escaping () -> Void) {
+//    func likeExperience(_ experience: Experience) {
+//        
+//    }
+
+    private func loadExperiences(_ completion: @escaping () -> Void) {
         Task {
             let experiences = try await getActiveExperiences.execute()
 
@@ -44,14 +48,14 @@ class ExperiencesViewModel: ObservableObject {
         }
     }
 
-    func getDaysLeft() -> Int {
+    private func getDaysLeft() -> Int {
         let expirationDay = getExpirationDay()
         guard let nowDay = Date.now.getDay() else { return 0 }
         let left = expirationDay - nowDay
         return left >= 0 ? left : 0
     }
 
-    func getExpirationDay() -> Int {
+    private func getExpirationDay() -> Int {
         var date: Date = Date.now
 
         if !toDoExperiences.isEmpty {
