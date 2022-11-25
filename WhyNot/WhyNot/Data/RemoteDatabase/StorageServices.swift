@@ -11,6 +11,7 @@ import Foundation
 
 class StorageService {
 
+    static let shared = StorageService()
     private var group: DispatchGroup?
 
     func uploadImage(storageRef: Storage, image: Data) {

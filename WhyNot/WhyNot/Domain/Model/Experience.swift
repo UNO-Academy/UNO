@@ -19,6 +19,7 @@ struct Experience: Codable, Identifiable {
     let expirationDate: Timestamp
     let isActive: Bool
     let name: String
+    var friendsInterested: [User]?
 }
 
 enum ExperienceFields: String {

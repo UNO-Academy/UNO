@@ -17,7 +17,11 @@ class GetActiveExperiencesUseCaseImpl: GetActiveExperiencesUseCase {
     }
 
     func execute() async throws -> ActiveExperiences {
-        let list = try await experienceRepository.fetchExperiences()
+        var list = try await experienceRepository.fetchExperiences()
+
+        for i in 0 ..< list.count {
+            list[i].friendsInterested = try await userRepository.getFriendsInteretedInExperience(list[i].id!)
+        }
 
         guard let user = userRepository.getLoggedUser() else {
             return ActiveExperiences(toDoExperiences: list, doneExperiences: [])

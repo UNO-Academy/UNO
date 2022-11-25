@@ -28,4 +28,16 @@ class UserRepositoryImpl: UserRepository {
         let result = try await authManager.createAccount(email, password)
         try await api.createUser(id: result.user.uid, user: user)
     }
+
+    func getFriendsInteretedInExperience(_ experienceId: String) async throws -> [User] {
+        guard let userId = self.user?.id else { return [] }
+        var friends = try await api.getUserFriendsInterestedInAnExperience(userID: userId, experienceID: experienceId)
+        let picturesPath = friends.map { $0.profilePictureID }
+        try await api.getProfilePictureByPathList(picturesPath) { data in
+            for i in 0 ..< data.count {
+                friends[i].profilePicture = data[i]
+            }
+        }
+        return friends
+    }
 }

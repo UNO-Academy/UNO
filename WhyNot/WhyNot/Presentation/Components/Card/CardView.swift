@@ -25,7 +25,7 @@ struct CardView: View {
 
                 TagsView(experience: viewModel.experience)
 
-                PersonImageCollection(images: viewModel.friendsImages)
+                PersonImageCollection(images: viewModel.getPersonImages())
             }.padding([.vertical, .leading], Space.borderSpace)
 
             CategoryIcon(
@@ -55,10 +55,7 @@ struct CardView_Previews: PreviewProvider {
                     expirationDate: Timestamp(date: Date()),
                     isActive: true,
                     name: "Teste"
-                ),
-                friendsImages: [
-                    UIImage(systemName: "person.fill")!
-                ]
+                )
             )
         )
     }
