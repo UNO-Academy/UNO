@@ -26,3 +26,17 @@
 "cost1Tag" = "Cheap";
 "cost2Tag" = "Affordable";
 "cost3Tag" = "Expensive";
+
+// MonthsShort
+"janShort" = "JAN";
+"febShort" = "FEB";
+"marShort" = "MAR";
+"aprShort" = "APR";
+"mayShort" = "MAY";
+"junShort" = "JUN";
+"julShort" = "JUL";
+"augShort" = "AUG";
+"sepShort" = "SEP";
+"octShort" = "OCT";
+"novShort" = "NOV";
+"devShort" = "DEC";

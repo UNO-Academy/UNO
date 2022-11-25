@@ -51,10 +51,12 @@
 		D61A46CB292493C700C455A9 /* CategoryIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61A46CA292493C700C455A9 /* CategoryIcon.swift */; };
 		D64727C52913E658007B13ED /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64727C42913E658007B13ED /* CardView.swift */; };
 		D66D4D6629265EC80081772C /* LocalizedKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66D4D6529265EC80081772C /* LocalizedKeys.swift */; };
+		D6A35826292F969B00A3996F /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A35825292F969B00A3996F /* DateExtensions.swift */; };
 		D6BC81EF2924AAB8006F44C2 /* TagTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BC81EE2924AAB8006F44C2 /* TagTypeTests.swift */; };
 		D6BC81F129250181006F44C2 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BC81F029250181006F44C2 /* CardViewModel.swift */; };
 		D6BC81F4292505B0006F44C2 /* CardViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BC81F3292505B0006F44C2 /* CardViewModelTest.swift */; };
 		D6C1A0BE292E45CC006DC170 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C1A0BD292E45CC006DC170 /* ProfileViewModel.swift */; };
+		D6C1A0C1292E5662006DC170 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C1A0C0292E5662006DC170 /* NotificationView.swift */; };
 		D6E24D6929114C6F0018C0C6 /* ExperienceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E24D6829114C6F0018C0C6 /* ExperienceType.swift */; };
 		D6E596D5291E7A840052D4E9 /* ExperienceTypeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E596D4291E7A840052D4E9 /* ExperienceTypeTest.swift */; };
 /* End PBXBuildFile section */
@@ -123,10 +125,12 @@
 		D64727C42913E658007B13ED /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		D64727D72913E93C007B13ED /* WhyNotUserInterfaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhyNotUserInterfaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D66D4D6529265EC80081772C /* LocalizedKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedKeys.swift; sourceTree = "<group>"; };
+		D6A35825292F969B00A3996F /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		D6BC81EE2924AAB8006F44C2 /* TagTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TagTypeTests.swift; path = ../../../../../TagTypeTests.swift; sourceTree = "<group>"; };
 		D6BC81F029250181006F44C2 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		D6BC81F3292505B0006F44C2 /* CardViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardViewModelTest.swift; path = ../../../../../../CardViewModelTest.swift; sourceTree = "<group>"; };
 		D6C1A0BD292E45CC006DC170 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		D6C1A0C0292E5662006DC170 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		D6E24D6829114C6F0018C0C6 /* ExperienceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceType.swift; sourceTree = "<group>"; };
 		D6E596D4291E7A840052D4E9 /* ExperienceTypeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceTypeTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -207,6 +211,7 @@
 				59B892CB28FD77DF0045EAA9 /* DocumentSnapshot+Extension.swift */,
 				2424526E28FEE104006E8629 /* Sequence+Extension.swift */,
 				2424527328FEE899006E8629 /* Encodable+Extension.swift */,
+				D6A35825292F969B00A3996F /* DateExtensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -233,6 +238,7 @@
 		24BE3E3229101A7900261E0A /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				D6C1A0BF292E55FA006DC170 /* Notification */,
 				24BE3E3629101A9500261E0A /* ProfileView.swift */,
 				D6C1A0BD292E45CC006DC170 /* ProfileViewModel.swift */,
 			);
@@ -423,6 +429,14 @@
 				D6BC81F3292505B0006F44C2 /* CardViewModelTest.swift */,
 			);
 			path = CardView;
+			sourceTree = "<group>";
+		};
+		D6C1A0BF292E55FA006DC170 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				D6C1A0C0292E5662006DC170 /* NotificationView.swift */,
+			);
+			path = Notification;
 			sourceTree = "<group>";
 		};
 		D6E24D6729114C540018C0C6 /* Enums */ = {
@@ -746,8 +760,10 @@
 				862C53D32906AE7200068528 /* StorageServices.swift in Sources */,
 				59B892CC28FD77DF0045EAA9 /* DocumentSnapshot+Extension.swift in Sources */,
 				24BE3E3729101A9500261E0A /* ProfileView.swift in Sources */,
+				D6C1A0C1292E5662006DC170 /* NotificationView.swift in Sources */,
 				24B18B1828FD7BF400EC9A3D /* Memento.swift in Sources */,
 				24202EA428F8471300141CCB /* ExperienceRepository.swift in Sources */,
+				D6A35826292F969B00A3996F /* DateExtensions.swift in Sources */,
 				24BE3E392911618B00261E0A /* TabBar.swift in Sources */,
 				2424527428FEE899006E8629 /* Encodable+Extension.swift in Sources */,
 				D64727C52913E658007B13ED /* CardView.swift in Sources */,

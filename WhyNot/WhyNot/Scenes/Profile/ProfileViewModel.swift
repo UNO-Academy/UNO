@@ -21,7 +21,7 @@ class ProfileViewModel: ObservableObject {
     }
 
     public func cancelAction() {
-        
+
     }
 
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProfileView: View {
 
-    private let viewModel: ProfileViewModel
+    let viewModel: ProfileViewModel?
 
     var body: some View {
         NavigationView {
@@ -35,7 +35,7 @@ struct ProfileView: View {
             .padding(.top)
             .toolbar {
                 Button {
-                    viewModel.editingAction()
+                    viewModel?.editingAction()
                 } label: {
                     Image(systemName: "square.and.pencil")
                         .foregroundColor(.black)
