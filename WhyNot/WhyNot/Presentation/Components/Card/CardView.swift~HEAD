@@ -20,12 +20,12 @@ struct CardView: View {
             ) {
                 Text(viewModel.experience.name)
                     .font(.system(size: FontSize.title3))
-                    .foregroundColor(Color.CustomColor.cardTitle)
+                    .foregroundColor(Color.CustomColors.CardTitle)
                     .bold()
 
                 TagsView(experience: viewModel.experience)
 
-                PersonImageCollection(images: viewModel.getPersonImages())
+                PersonImageCollection(images: viewModel.friendsImages)
             }.padding([.vertical, .leading], Space.borderSpace)
 
             CategoryIcon(
@@ -55,7 +55,10 @@ struct CardView_Previews: PreviewProvider {
                     expirationDate: Timestamp(date: Date()),
                     isActive: true,
                     name: "Teste"
-                )
+                ),
+                friendsImages: [
+                    UIImage(systemName: "person.fill")!
+                ]
             )
         )
     }

@@ -8,11 +8,10 @@
 import FirebaseFirestoreSwift
 import Foundation
 
-struct User: Codable, Hashable {
+struct User: Codable {
     @DocumentID var id: String?
     let name: String
-    let profilePictureID: String
-    var profilePicture: Data?
+    let profilePicture: String
     let lastPictureUpdate: Date
     let friendsID: [String]
     let mementosID: [String]
