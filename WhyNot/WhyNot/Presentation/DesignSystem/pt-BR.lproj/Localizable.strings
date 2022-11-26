@@ -25,6 +25,9 @@
 "cardAllDoneText" = "Você criou algumas memórias.\nO que virá a seguir?";
 
 //Experience detail Screen
+"RequestFriendshipLabel" = "Adicionar";
+"SentFriendshipLabel" = "Enviado";
+"RemoveFriendshipLabel" = "Remover";
 
 //Login Screen
 

@@ -8,7 +8,7 @@
 import SwiftUI
 
 enum FriendsConstants {
-    static var ratio: CGFloat {
+    static var friendRatioSize: CGFloat {
         return CGFloat(44)
     }
 }
@@ -61,14 +61,25 @@ class FriendCardViewModel: ObservableObject, Hashable {
         action()
     }
 
-    func getButtonLabel() -> Text {
+    func getButtonLabel() -> String {
         switch friendStatus {
         case .request:
-            return Text("Request").foregroundColor(Color.CustomColor.clicableColor)
+            return NSLocalizedString("RequestFriendshipLabel", comment: "")
         case .sent:
-            return Text("Sent").foregroundColor(Color.green)
+            return NSLocalizedString("SentFriendshipLabel", comment: "")
         case .remove:
-            return Text("remove").foregroundColor(Color.red)
+            return NSLocalizedString("RemoveFriendshipLabel", comment: "")
+        }
+    }
+
+    func getButtonCollor() -> Color {
+        switch friendStatus {
+        case .request:
+            return Color.CustomColor.clicableColor
+        case .sent:
+            return Color.green
+        case .remove:
+            return Color.red
         }
     }
 }

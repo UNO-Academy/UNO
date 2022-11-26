@@ -8,15 +8,17 @@
 import SwiftUI
 
 struct FriendCardView: View {
+
     @ObservedObject var viewModel: FriendCardViewModel
 
     var body: some View {
         HStack {
             HStack(spacing: Space.space1x) {
                 PersonImage(
-                    ratio: FriendsConstants.ratio,
+                    ratio: FriendsConstants.friendRatioSize,
                     personImage: Image(uiImage: viewModel.getImage())
                 )
+
                 Text(viewModel.getName()).foregroundColor(Color.CustomColor.titleColor)
             }
 
@@ -26,7 +28,7 @@ struct FriendCardView: View {
                 Button(action: {
                     viewModel.performAction()
                 }, label: {
-                    viewModel.getButtonLabel()
+                    Text(viewModel.getButtonLabel()).foregroundColor(viewModel.getButtonCollor())
                 })
             }
         }
