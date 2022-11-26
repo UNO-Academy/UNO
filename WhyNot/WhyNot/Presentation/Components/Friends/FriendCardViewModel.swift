@@ -20,6 +20,7 @@ enum FriendStatus {
 class FriendCardViewModel: ObservableObject, Hashable {
     var image: Data?
     var name: String
+    var id: String
     var friendStatus: FriendStatus
     var haveButton: Bool
     var action: () -> Void
@@ -30,15 +31,16 @@ class FriendCardViewModel: ObservableObject, Hashable {
         haveButton: Bool = false,
         action: @escaping () -> Void = {}
     ) {
-        self.name = user.name
         self.image = user.lastPicture
+        self.name = user.name
+        self.id = user.id!
         self.friendStatus = friendStatus
         self.haveButton = haveButton
         self.action = action
     }
 
     static func == (lhs: FriendCardViewModel, rhs: FriendCardViewModel) -> Bool {
-        return lhs.name == rhs.name
+        return lhs.id == rhs.id
     }
 
     func hash(into hasher: inout Hasher) {

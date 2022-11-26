@@ -23,7 +23,18 @@ struct Vider: PreviewProvider {
 
     static var previews: some View {
         FriendsCollectionView(friends: [
-            User(name: "Joana",
+            User(id: "1",
+            name: "Joana",
+            profilePicture: "",
+            lastPicture: nil,
+            lastPictureUpdate: Date(),
+            friendsID: [],
+            mementosID: [],
+            doneExperiencesID: [],
+            interestExperiencesID: []
+        ),
+            User(id: "2",
+            name: "Joana",
             profilePicture: "",
             lastPicture: nil,
             lastPictureUpdate: Date(),
