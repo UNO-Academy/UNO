@@ -31,7 +31,7 @@ class FriendCardViewModel: ObservableObject, Hashable {
         haveButton: Bool = false,
         action: @escaping () -> Void = {}
     ) {
-        self.image = user.lastPicture
+        self.image = user.profilePicture
         self.name = user.name
         self.id = user.id!
         self.friendStatus = friendStatus
