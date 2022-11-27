@@ -10,6 +10,7 @@ import Firebase
 
 @main
 struct WhyNotApp: App {
+    var urlManager = URLManager()
 
     init() {
         FirebaseApp.configure()
@@ -17,7 +18,9 @@ struct WhyNotApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(urlManager).onOpenURL { url in
+                urlManager.checkDeepLink(url: url)
+            }
         }
     }
 }
