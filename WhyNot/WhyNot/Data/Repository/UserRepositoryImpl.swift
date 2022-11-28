@@ -8,11 +8,6 @@
 import Foundation
 import FirebaseFirestore
 
-enum OperationError: Error {
-    case userNotLogged
-    case idNotFound
-}
-
 class UserRepositoryImpl: UserRepository {
 
     private var isLogged: Bool = false

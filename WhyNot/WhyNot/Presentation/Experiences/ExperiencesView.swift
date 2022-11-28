@@ -96,7 +96,6 @@ struct ExperiencesView: View {
             .swipeActions(edge: .leading) {
                 Button {
                     viewModel.likeExperience(experience)
-                    print("call like function")
                 } label: {
                     Label("likedActionLabel", systemImage: "heart.fill")
                 } .tint(Color.CustomColor.purpleSwipe)
