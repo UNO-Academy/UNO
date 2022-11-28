@@ -37,6 +37,7 @@
 		24C5CBE9292E3A250082515C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C5CBE8292E3A250082515C /* CardView.swift */; };
 		24C5CBEB292E3A950082515C /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C5CBEA292E3A950082515C /* CardViewModel.swift */; };
 		27C0716F291438570076D6C4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27C07171291438570076D6C4 /* Localizable.strings */; };
+		5936762B2934F92600AB946B /* PopulateDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5936762A2934F92600AB946B /* PopulateDatabase.swift */; };
 		594A5FA82902CCBE00A1C10C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594A5FA72902CCBE00A1C10C /* User.swift */; };
 		594A5FAA2902CDB700A1C10C /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594A5FA92902CDB700A1C10C /* UserAPI.swift */; };
 		59778DB6291589E5008748E6 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59778DB5291589E5008748E6 /* AuthenticationManager.swift */; };
@@ -111,6 +112,7 @@
 		24C5CBEA292E3A950082515C /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		27C07170291438570076D6C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		27C071722914385E0076D6C4 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		5936762A2934F92600AB946B /* PopulateDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PopulateDatabase.swift; path = WhyNot/data/remoteDatabase/PopulateDatabase.swift; sourceTree = SOURCE_ROOT; };
 		594A5FA72902CCBE00A1C10C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		594A5FA92902CDB700A1C10C /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
 		59778DB5291589E5008748E6 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 		24202EA528F847B300141CCB /* RemoteDatabase */ = {
 			isa = PBXGroup;
 			children = (
+				5936762A2934F92600AB946B /* PopulateDatabase.swift */,
 				59778DB5291589E5008748E6 /* AuthenticationManager.swift */,
 				59AC84A328F609BA00EB3A9A /* CRUDServices.swift */,
 				862C53D22906AE7200068528 /* StorageServices.swift */,
@@ -755,6 +758,7 @@
 				24BE3E3729101A9500261E0A /* ProfileView.swift in Sources */,
 				24B18B1828FD7BF400EC9A3D /* Memento.swift in Sources */,
 				242B43EC2927AE2A00F0C3C1 /* TagView.swift in Sources */,
+				5936762B2934F92600AB946B /* PopulateDatabase.swift in Sources */,
 				24202EA428F8471300141CCB /* ExperienceRepositoryImpl.swift in Sources */,
 				24BE3E392911618B00261E0A /* TabBar.swift in Sources */,
 				2424527428FEE899006E8629 /* Encodable+Extension.swift in Sources */,
