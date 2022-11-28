@@ -9,7 +9,7 @@ import Foundation
 import FirebaseFirestoreSwift
 import FirebaseFirestore
 
-struct Experience: Codable, Identifiable {
+class Experience: Codable, Identifiable {
     @DocumentID var id: String?
     let category: String
     let cost: Int
@@ -20,6 +20,31 @@ struct Experience: Codable, Identifiable {
     let isActive: Bool
     let name: String
     var friendsInterested: [User]?
+    var wasLiked: Bool? = false
+
+    init(
+        category: String,
+        cost: Int,
+        description: String,
+        duration: Int,
+        effort: Int,
+        expirationDate: Timestamp,
+        isActive: Bool,
+        name: String,
+        friendsInterested: [User],
+        wasLiked: Bool
+    ) {
+        self.category = category
+        self.cost = cost
+        self.description = description
+        self.duration = duration
+        self.effort = effort
+        self.expirationDate = expirationDate
+        self.isActive = isActive
+        self.name = name
+        self.friendsInterested = friendsInterested
+        self.wasLiked = wasLiked
+    }
 }
 
 enum ExperienceFields: String {

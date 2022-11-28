@@ -8,6 +8,11 @@
 import Foundation
 import FirebaseFirestore
 
+enum OperationError: Error {
+    case userNotLogged
+    case idNotFound
+}
+
 class UserRepositoryImpl: UserRepository {
 
     private var isLogged: Bool = false
@@ -39,5 +44,10 @@ class UserRepositoryImpl: UserRepository {
             }
         }
         return friends
+    }
+
+    func likeExperience(_ experienceId: String) async throws {
+        guard let userId = self.user?.id else { throw OperationError.userNotLogged }
+        try await api.showInterest(userID: userId, experienceID: experienceId)
     }
 }

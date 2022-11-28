@@ -38,4 +38,3 @@ struct CategoryIcon_Previews: PreviewProvider {
         CategoryIconPreviewHelper(isEnable: false)
     }
 }
-

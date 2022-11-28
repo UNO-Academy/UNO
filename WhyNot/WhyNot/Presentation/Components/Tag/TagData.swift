@@ -74,7 +74,6 @@ enum TagType {
 }
 
 enum TagValue: String {
-    // TODO: quando o paulo fizer o localizable mudar isso aqui 
     case effort1 = "effort1Tag"
     case effort2 = "effort2Tag"
     case effort3 = "effort3Tag"

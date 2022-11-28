@@ -36,6 +36,8 @@
 		24BE3E392911618B00261E0A /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BE3E382911618B00261E0A /* TabBar.swift */; };
 		24C5CBE9292E3A250082515C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C5CBE8292E3A250082515C /* CardView.swift */; };
 		24C5CBEB292E3A950082515C /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C5CBEA292E3A950082515C /* CardViewModel.swift */; };
+		24F098D7293112A6007713AA /* LikeExperienceUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F098D6293112A6007713AA /* LikeExperienceUseCase.swift */; };
+		24F098D9293112E3007713AA /* LikeExperienceUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F098D8293112E3007713AA /* LikeExperienceUseCaseImpl.swift */; };
 		27C0716F291438570076D6C4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27C07171291438570076D6C4 /* Localizable.strings */; };
 		594A5FA82902CCBE00A1C10C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594A5FA72902CCBE00A1C10C /* User.swift */; };
 		594A5FAA2902CDB700A1C10C /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594A5FA92902CDB700A1C10C /* UserAPI.swift */; };
@@ -109,6 +111,8 @@
 		24BE3E382911618B00261E0A /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		24C5CBE8292E3A250082515C /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		24C5CBEA292E3A950082515C /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+		24F098D6293112A6007713AA /* LikeExperienceUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeExperienceUseCase.swift; sourceTree = "<group>"; };
+		24F098D8293112E3007713AA /* LikeExperienceUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeExperienceUseCaseImpl.swift; sourceTree = "<group>"; };
 		27C07170291438570076D6C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		27C071722914385E0076D6C4 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		594A5FA72902CCBE00A1C10C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -246,6 +250,8 @@
 			children = (
 				242B43F12927ED5B00F0C3C1 /* GetActiveExperiencesUseCase.swift */,
 				242B43F42927F24000F0C3C1 /* GetActiveExperiencesUseCaseImpl.swift */,
+				24F098D6293112A6007713AA /* LikeExperienceUseCase.swift */,
+				24F098D8293112E3007713AA /* LikeExperienceUseCaseImpl.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -727,6 +733,7 @@
 				594A5FA82902CCBE00A1C10C /* User.swift in Sources */,
 				24202EA228F846F900141CCB /* Experience.swift in Sources */,
 				86048456290FF4BB0055AF30 /* FontSize.swift in Sources */,
+				24F098D7293112A6007713AA /* LikeExperienceUseCase.swift in Sources */,
 				242B43F52927F24000F0C3C1 /* GetActiveExperiencesUseCaseImpl.swift in Sources */,
 				A3CD5CE9291A9EFD003895C1 /* ExperiencesViewModel.swift in Sources */,
 				86BA9D1129096A3800C1F330 /* ContentView.swift in Sources */,
@@ -735,6 +742,7 @@
 				86815CF62913E77A00C41522 /* PersonImageCollection.swift in Sources */,
 				86048454290FF3D00055AF30 /* CustomFonts.swift in Sources */,
 				863A8F01290C10A0000DBA1B /* Colors.swift in Sources */,
+				24F098D9293112E3007713AA /* LikeExperienceUseCaseImpl.swift in Sources */,
 				86F5A40F291A8CCA003EEC8A /* PersonImage.swift in Sources */,
 				24202EA828F847E100141CCB /* ExperienceAPI.swift in Sources */,
 				24BE3E2F291002F400261E0A /* ExperiencesView.swift in Sources */,

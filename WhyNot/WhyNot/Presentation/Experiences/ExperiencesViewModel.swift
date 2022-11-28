@@ -19,15 +19,23 @@ class ExperiencesViewModel: ObservableObject {
     @Published var mustShowAllDone: Bool = false
 
     let getActiveExperiences: GetActiveExperiencesUseCase
+    let likeExperienceUseCase: LikeExperienceUseCase
 
-    init(_ useCase: GetActiveExperiencesUseCase, completion: @escaping (() -> Void) = {}) {
-        self.getActiveExperiences = useCase
+    init(
+        getActiveUseCase: GetActiveExperiencesUseCase,
+        likeExperienceUseCase: LikeExperienceUseCase,
+        completion: @escaping (() -> Void) = {}
+    ) {
+        self.getActiveExperiences = getActiveUseCase
+        self.likeExperienceUseCase = likeExperienceUseCase
         loadExperiences(completion)
     }
 
-//    func likeExperience(_ experience: Experience) {
-//        
-//    }
+    func likeExperience(_ experience: Experience) {
+        Task {
+            try await likeExperienceUseCase.execute(experience)
+        }
+    }
 
     private func loadExperiences(_ completion: @escaping () -> Void) {
         Task {

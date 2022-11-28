@@ -8,10 +8,18 @@
 import SwiftUI
 
 struct ExperiencesView: View {
-    @ObservedObject var viewModel = ExperiencesViewModel(GetActiveExperiencesUseCaseImpl(
-        experienceRepository: ExperienceRepositoryImpl(),
-        userRepository: UserRepositoryImpl()
-    ))
+    @ObservedObject var viewModel: ExperiencesViewModel
+
+    init() {
+        let userRepository = UserRepositoryImpl()
+        viewModel = ExperiencesViewModel(
+            getActiveUseCase: GetActiveExperiencesUseCaseImpl(
+                experienceRepository: ExperienceRepositoryImpl(),
+                userRepository: userRepository
+            ),
+            likeExperienceUseCase: LikeExperienceUseCaseImpl(userRepository: userRepository)
+        )
+    }
 
     var body: some View {
         List {
@@ -87,6 +95,7 @@ struct ExperiencesView: View {
             )
             .swipeActions(edge: .leading) {
                 Button {
+                    viewModel.likeExperience(experience)
                     print("call like function")
                 } label: {
                     Label("likedActionLabel", systemImage: "heart.fill")

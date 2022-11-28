@@ -52,7 +52,9 @@ struct TagsViewPreview: PreviewProvider {
             effort: 2,
             expirationDate: Timestamp(date: Date()),
             isActive: true,
-            name: "Teste"
+            name: "Teste",
+            friendsInterested: [],
+            wasLiked: false
         ))
     }
 }

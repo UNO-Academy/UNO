@@ -46,7 +46,6 @@ struct CardView_Previews: PreviewProvider {
         CardView(
             viewModel: CardViewModel(
                 experience: Experience(
-                    id: "",
                     category: "cooking",
                     cost: 2,
                     description: "",
@@ -54,7 +53,9 @@ struct CardView_Previews: PreviewProvider {
                     effort: 2,
                     expirationDate: Timestamp(date: Date()),
                     isActive: true,
-                    name: "Teste"
+                    name: "Teste",
+                    friendsInterested: [],
+                    wasLiked: true
                 )
             )
         )
