@@ -101,6 +101,14 @@ class ExperienceRepositoryMock: ExperienceRepository {
 }
 
 class UserRepositoryMock: UserRepository {
+    func createUser(email: String, password: String, user: WhyNot.User) async throws {
+
+    }
+
+    func getFriendsInteretedInExperience(_ experienceId: String) async throws -> [WhyNot.User] {
+        return []
+    }
+
 
     let isLogged: Bool
     let doneExperiences: [String]
@@ -121,8 +129,8 @@ class UserRepositoryMock: UserRepository {
     func getUserExample() -> User {
         return User(
             id: "id",
-            name: "erci",
-            profilePicture: "photo",
+            name: "erci", profilePictureID: "",
+            profilePicture: "ph" as? Data,
             lastPictureUpdate: Date.now,
             friendsID: [],
             mementosID: [],
