@@ -59,6 +59,10 @@
 		86815CF82913E78D00C41522 /* PersonImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86815CF72913E78D00C41522 /* PersonImageViewModel.swift */; };
 		86BA9D1129096A3800C1F330 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BA9D1029096A3800C1F330 /* ContentView.swift */; };
 		86CCE30C291D20460077E1E9 /* PersonImageViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CCE30B291D20460077E1E9 /* PersonImageViewModelTests.swift */; };
+		86DD0AD4293533990019E748 /* FriendCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DD0AD3293533990019E748 /* FriendCardView.swift */; };
+		86DD0AD7293533E00019E748 /* FriendCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DD0AD6293533E00019E748 /* FriendCardViewModel.swift */; };
+		86DD0AD92935342A0019E748 /* FriendsCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DD0AD82935342A0019E748 /* FriendsCollection.swift */; };
+		86DD0ADB293536960019E748 /* FriendsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DD0ADA293536960019E748 /* FriendsViewModelTests.swift */; };
 		86F5A40F291A8CCA003EEC8A /* PersonImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F5A40E291A8CCA003EEC8A /* PersonImage.swift */; };
 		9AA6A319BE95B0A190F53A4C /* Pods_WhyNotUnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45E9BEA697AC8AD755691025 /* Pods_WhyNotUnitTests.framework */; };
 		A3CD5CE9291A9EFD003895C1 /* ExperiencesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CD5CE8291A9EFD003895C1 /* ExperiencesViewModel.swift */; };
@@ -135,6 +139,10 @@
 		86BA9D1029096A3800C1F330 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		86CCE309291D20460077E1E9 /* WhyNotUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhyNotUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86CCE30B291D20460077E1E9 /* PersonImageViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonImageViewModelTests.swift; sourceTree = "<group>"; };
+		86DD0AD3293533990019E748 /* FriendCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCardView.swift; sourceTree = "<group>"; };
+		86DD0AD6293533E00019E748 /* FriendCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCardViewModel.swift; sourceTree = "<group>"; };
+		86DD0AD82935342A0019E748 /* FriendsCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCollection.swift; sourceTree = "<group>"; };
+		86DD0ADA293536960019E748 /* FriendsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewModelTests.swift; sourceTree = "<group>"; };
 		86F5A40E291A8CCA003EEC8A /* PersonImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonImage.swift; sourceTree = "<group>"; };
 		9EF737D895D7826C16E7FA99 /* Pods-WhyNotUnitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhyNotUnitTests.debug.xcconfig"; path = "Target Support Files/Pods-WhyNotUnitTests/Pods-WhyNotUnitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A3CD5CE8291A9EFD003895C1 /* ExperiencesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperiencesViewModel.swift; sourceTree = "<group>"; };
@@ -391,6 +399,7 @@
 				242B43E22926825300F0C3C1 /* ExperiencesViewModelTests.swift */,
 				86CCE30B291D20460077E1E9 /* PersonImageViewModelTests.swift */,
 				242B43FD2928024C00F0C3C1 /* GetActiveExperiencesUseCaseTests.swift */,
+				86DD0ADA293536960019E748 /* FriendsViewModelTests.swift */,
 			);
 			path = WhyNotUnitTests;
 			sourceTree = "<group>";
@@ -412,6 +421,16 @@
 				242B43EA2927AE2A00F0C3C1 /* TagView.swift */,
 			);
 			path = Tag;
+			sourceTree = "<group>";
+		};
+		86DD0AD5293533BA0019E748 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				86DD0AD3293533990019E748 /* FriendCardView.swift */,
+				86DD0AD6293533E00019E748 /* FriendCardViewModel.swift */,
+				86DD0AD82935342A0019E748 /* FriendsCollection.swift */,
+			);
+			path = Friends;
 			sourceTree = "<group>";
 		};
 		A3CD5CEA291AAD61003895C1 /* Repository */ = {
@@ -458,6 +477,7 @@
 		D6E766C329114A7A000D940F /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				86DD0AD5293533BA0019E748 /* Friends */,
 				242B43DD2926630600F0C3C1 /* EmptyListCard.swift */,
 				242B4404292D0DC400F0C3C1 /* CategoryIcon.swift */,
 				24C5CBE3292D1E750082515C /* Card */,
@@ -721,15 +741,18 @@
 				86048454290FF3D00055AF30 /* CustomFonts.swift in Sources */,
 				863A8F01290C10A0000DBA1B /* Colors.swift in Sources */,
 				86F5A40F291A8CCA003EEC8A /* PersonImage.swift in Sources */,
+				86DD0AD7293533E00019E748 /* FriendCardViewModel.swift in Sources */,
 				24202EA828F847E100141CCB /* ExperienceAPI.swift in Sources */,
 				24BE3E2F291002F400261E0A /* ExperiencesView.swift in Sources */,
 				24B18B1628FD757A00EC9A3D /* MementoAPI.swift in Sources */,
 				248FDA012925322F003DA666 /* Date+Extension.swift in Sources */,
 				24C5CBE9292E3A250082515C /* CardView.swift in Sources */,
+				86DD0AD92935342A0019E748 /* FriendsCollection.swift in Sources */,
 				2424526F28FEE104006E8629 /* Sequence+Extension.swift in Sources */,
 				86048458290FFFD70055AF30 /* Space.swift in Sources */,
 				242B43E129266DA500F0C3C1 /* CornerRadius.swift in Sources */,
 				24BE3E31291012C600261E0A /* TabIcon.swift in Sources */,
+				86DD0AD4293533990019E748 /* FriendCardView.swift in Sources */,
 				24BE3E3529101A8A00261E0A /* SearchView.swift in Sources */,
 				242B43DE2926630600F0C3C1 /* EmptyListCard.swift in Sources */,
 				D6E24D6929114C6F0018C0C6 /* ExperienceType.swift in Sources */,
@@ -762,6 +785,7 @@
 				D603C9872934F7B000F2D0E3 /* ExperienceTypeTest.swift in Sources */,
 				242B43FE2928024C00F0C3C1 /* GetActiveExperiencesUseCaseTests.swift in Sources */,
 				86CCE30C291D20460077E1E9 /* PersonImageViewModelTests.swift in Sources */,
+				86DD0ADB293536960019E748 /* FriendsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
