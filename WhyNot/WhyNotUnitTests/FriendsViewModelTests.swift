@@ -6,26 +6,84 @@
 //
 
 import XCTest
+import SwiftUI
 @testable import WhyNot
 
 final class FriendsViewModelTests: XCTestCase {
+    let user1 = User(
+        id: "ID1",
+        name: "Fernando",
+        profilePictureID: "A",
+        profilePicture: nil,
+        lastPictureUpdate: Date.now,
+        friendsID: [],
+        mementosID: [],
+        doneExperiencesID: [],
+        interestExperiencesID: []
+    )
 
-    func test_all_experiences_are_undone() {
+    let user2 = User(
+        id: "ID2",
+        name: "Fernando",
+        profilePictureID: "A",
+        profilePicture: nil,
+        lastPictureUpdate: Date.now,
+        friendsID: [],
+        mementosID: [],
+        doneExperiencesID: [],
+        interestExperiencesID: []
+    )
 
-        let expectation = XCTestExpectation(description: #function)
+    let user3 = User(
+        id: "ID1",
+        name: "Bassani",
+        profilePictureID: "B",
+        profilePicture: nil,
+        lastPictureUpdate: Date.now,
+        friendsID: [],
+        mementosID: [],
+        doneExperiencesID: [],
+        interestExperiencesID: []
+    )
 
-        let repository = GetActiveExperiencesUseCaseMock(toDoSize: 4, doneSize: 0)
-        let viewModel = ExperiencesViewModel(repository) {
-            expectation.fulfill()
-        }
+    func test_if_two_view_model_are_equal() {
+        let viewModel1 = FriendCardViewModel(user: user1)
+        let viewModel2 = FriendCardViewModel(user: user2)
+        let viewModel3 = FriendCardViewModel(user: user3)
+        let sameId = (viewModel1 == viewModel2)
+        XCTAssertEqual(sameId, false)
 
-        wait(for: [expectation], timeout: 3.0)
+        let differentId = (viewModel1 == viewModel3)
+        XCTAssertEqual(differentId, true)
+    }
 
-        XCTAssertEqual(viewModel.toDoExperiences.count, 4)
-        XCTAssertEqual(viewModel.doneExperiences.count, 0)
+    func test_button_labels() {
+        let friendCardViewModel = FriendCardViewModel(user: user1)
+        XCTAssertEqual(
+            friendCardViewModel.getButtonLabel(),
+            NSLocalizedString("RequestFriendshipLabel", comment: "")
+        )
 
-        XCTAssertEqual(viewModel.mustShowEmptyLived, true)
-        XCTAssertEqual(viewModel.mustShowSpaceLeft, false)
-        XCTAssertEqual(viewModel.mustShowAllDone, false)
+        friendCardViewModel.friendStatus = FriendStatus.remove
+        XCTAssertEqual(
+            friendCardViewModel.getButtonLabel(),
+            NSLocalizedString("RemoveFriendshipLabel", comment: "")
+        )
+        friendCardViewModel.friendStatus = FriendStatus.sent
+        XCTAssertEqual(
+            friendCardViewModel.getButtonLabel(),
+            NSLocalizedString("SentFriendshipLabel", comment: "")
+        )
+    }
+
+    func test_button_colors() {
+        let friendCardViewModel = FriendCardViewModel(user: user1)
+        XCTAssertEqual(friendCardViewModel.getButtonCollor(), Color.CustomColor.clicableColor)
+
+        friendCardViewModel.friendStatus = FriendStatus.remove
+        XCTAssertEqual(friendCardViewModel.getButtonCollor(), Color.red)
+
+        friendCardViewModel.friendStatus = FriendStatus.sent
+        XCTAssertEqual(friendCardViewModel.getButtonCollor(), Color.green)
     }
 }
