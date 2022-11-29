@@ -14,6 +14,14 @@ struct Memento: Codable {
     let userID: [String]
     let experienceID: String
     let imagesID: [String]
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case caption
+        case userID
+        case experienceID
+        case imagesID
+    }
 }
 
 enum MementoFields: String {
