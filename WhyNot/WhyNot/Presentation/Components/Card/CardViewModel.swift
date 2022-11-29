@@ -8,8 +8,8 @@
 import SwiftUI
 
 class CardViewModel: ObservableObject {
-
     @Published var experience: Experience
+    @Published var isActive: Bool
 
     var experienceType: ExperienceType {
         switch experience.category.lowercased() {
@@ -22,12 +22,9 @@ class CardViewModel: ObservableObject {
         }
     }
 
-    var isActive: Bool {
-        return experience.isActive
-    }
-
     init(experience: Experience) {
         self.experience = experience
+        self.isActive = experience.isActive
     }
 
     func getFillColor() -> Color {

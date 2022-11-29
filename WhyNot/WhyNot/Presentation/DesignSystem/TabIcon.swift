@@ -16,11 +16,11 @@ enum Tab {
     func getIcon() -> Image {
         switch self {
         case .search:
-            return Image(systemName: "magnifyingglass")
+            return Image(systemName: Icons.magnifyingglass)
         case .experience:
-            return Image("experience-symbol")
+            return Image(Icons.experiences)
         case .profile:
-            return Image(systemName: "person")
+            return Image(systemName: Icons.person)
         }
     }
 

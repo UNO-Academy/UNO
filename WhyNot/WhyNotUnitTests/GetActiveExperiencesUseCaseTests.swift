@@ -109,7 +109,6 @@ class UserRepositoryMock: UserRepository {
         return []
     }
 
-
     let isLogged: Bool
     let doneExperiences: [String]
 

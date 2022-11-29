@@ -64,6 +64,13 @@
 		A3CD5CE9291A9EFD003895C1 /* ExperiencesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CD5CE8291A9EFD003895C1 /* ExperiencesViewModel.swift */; };
 		D603C9872934F7B000F2D0E3 /* ExperienceTypeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D603C9862934F7B000F2D0E3 /* ExperienceTypeTest.swift */; };
 		D6E24D6929114C6F0018C0C6 /* ExperienceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E24D6829114C6F0018C0C6 /* ExperienceType.swift */; };
+		EE0D073429361EB700960224 /* DoneBtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0D072F29361EB700960224 /* DoneBtnView.swift */; };
+		EE0D073529361EB700960224 /* DoneBtnViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0D073029361EB700960224 /* DoneBtnViewModel.swift */; };
+		EE0D073629361EB700960224 /* LikeBtnViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0D073229361EB700960224 /* LikeBtnViewModel.swift */; };
+		EE0D073729361EB700960224 /* LikeBtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0D073329361EB700960224 /* LikeBtnView.swift */; };
+		EE0D073929361ED900960224 /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0D073829361ED900960224 /* Icons.swift */; };
+		EE0D073D2936296B00960224 /* ExperienceDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0D073B2936296B00960224 /* ExperienceDetailsViewModel.swift */; };
+		EE0D073E2936296B00960224 /* ExperiencesDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0D073C2936296B00960224 /* ExperiencesDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +150,13 @@
 		D603C9862934F7B000F2D0E3 /* ExperienceTypeTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceTypeTest.swift; sourceTree = "<group>"; };
 		D64727D72913E93C007B13ED /* WhyNotUserInterfaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhyNotUserInterfaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6E24D6829114C6F0018C0C6 /* ExperienceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceType.swift; sourceTree = "<group>"; };
+		EE0D072F29361EB700960224 /* DoneBtnView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoneBtnView.swift; sourceTree = "<group>"; };
+		EE0D073029361EB700960224 /* DoneBtnViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoneBtnViewModel.swift; sourceTree = "<group>"; };
+		EE0D073229361EB700960224 /* LikeBtnViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeBtnViewModel.swift; sourceTree = "<group>"; };
+		EE0D073329361EB700960224 /* LikeBtnView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeBtnView.swift; sourceTree = "<group>"; };
+		EE0D073829361ED900960224 /* Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
+		EE0D073B2936296B00960224 /* ExperienceDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceDetailsViewModel.swift; sourceTree = "<group>"; };
+		EE0D073C2936296B00960224 /* ExperiencesDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperiencesDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +278,7 @@
 				D6E766C329114A7A000D940F /* Components */,
 				24BE3E3329101A7E00261E0A /* Search */,
 				24BE3E3229101A7900261E0A /* Profile */,
+				EE0D073A2936296B00960224 /* ExperiencesDetails */,
 				24BE3E2D291002CC00261E0A /* Experiences */,
 			);
 			path = Presentation;
@@ -378,6 +393,7 @@
 				86048455290FF4BB0055AF30 /* FontSize.swift */,
 				86048457290FFFD70055AF30 /* Space.swift */,
 				24BE3E30291012C600261E0A /* TabIcon.swift */,
+				EE0D073829361ED900960224 /* Icons.swift */,
 				27C07171291438570076D6C4 /* Localizable.strings */,
 			);
 			path = DesignSystem;
@@ -460,11 +476,40 @@
 			children = (
 				242B43DD2926630600F0C3C1 /* EmptyListCard.swift */,
 				242B4404292D0DC400F0C3C1 /* CategoryIcon.swift */,
+				EE0D072E29361EB700960224 /* DoneButton */,
+				EE0D073129361EB700960224 /* LikeButton */,
 				24C5CBE3292D1E750082515C /* Card */,
 				86DA3CEF291E6B0800A88479 /* Tag */,
 				86DA3CEE291E699B00A88479 /* PersonImage */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		EE0D072E29361EB700960224 /* DoneButton */ = {
+			isa = PBXGroup;
+			children = (
+				EE0D072F29361EB700960224 /* DoneBtnView.swift */,
+				EE0D073029361EB700960224 /* DoneBtnViewModel.swift */,
+			);
+			path = DoneButton;
+			sourceTree = "<group>";
+		};
+		EE0D073129361EB700960224 /* LikeButton */ = {
+			isa = PBXGroup;
+			children = (
+				EE0D073229361EB700960224 /* LikeBtnViewModel.swift */,
+				EE0D073329361EB700960224 /* LikeBtnView.swift */,
+			);
+			path = LikeButton;
+			sourceTree = "<group>";
+		};
+		EE0D073A2936296B00960224 /* ExperiencesDetails */ = {
+			isa = PBXGroup;
+			children = (
+				EE0D073B2936296B00960224 /* ExperienceDetailsViewModel.swift */,
+				EE0D073C2936296B00960224 /* ExperiencesDetailsView.swift */,
+			);
+			path = ExperiencesDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -724,28 +769,35 @@
 				24202EA828F847E100141CCB /* ExperienceAPI.swift in Sources */,
 				24BE3E2F291002F400261E0A /* ExperiencesView.swift in Sources */,
 				24B18B1628FD757A00EC9A3D /* MementoAPI.swift in Sources */,
+				EE0D073929361ED900960224 /* Icons.swift in Sources */,
 				248FDA012925322F003DA666 /* Date+Extension.swift in Sources */,
 				24C5CBE9292E3A250082515C /* CardView.swift in Sources */,
 				2424526F28FEE104006E8629 /* Sequence+Extension.swift in Sources */,
 				86048458290FFFD70055AF30 /* Space.swift in Sources */,
+				EE0D073629361EB700960224 /* LikeBtnViewModel.swift in Sources */,
 				242B43E129266DA500F0C3C1 /* CornerRadius.swift in Sources */,
 				24BE3E31291012C600261E0A /* TabIcon.swift in Sources */,
 				24BE3E3529101A8A00261E0A /* SearchView.swift in Sources */,
 				242B43DE2926630600F0C3C1 /* EmptyListCard.swift in Sources */,
 				D6E24D6929114C6F0018C0C6 /* ExperienceType.swift in Sources */,
+				EE0D073429361EB700960224 /* DoneBtnView.swift in Sources */,
 				862C53D32906AE7200068528 /* StorageServices.swift in Sources */,
 				59B892CC28FD77DF0045EAA9 /* DocumentSnapshot+Extension.swift in Sources */,
 				242B43F22927ED5B00F0C3C1 /* GetActiveExperiencesUseCase.swift in Sources */,
 				242B43FA2927F5AB00F0C3C1 /* UserRepositoryImpl.swift in Sources */,
 				24BE3E3729101A9500261E0A /* ProfileView.swift in Sources */,
 				24B18B1828FD7BF400EC9A3D /* Memento.swift in Sources */,
+				EE0D073D2936296B00960224 /* ExperienceDetailsViewModel.swift in Sources */,
 				242B43EC2927AE2A00F0C3C1 /* TagView.swift in Sources */,
 				24202EA428F8471300141CCB /* ExperienceRepositoryImpl.swift in Sources */,
 				24BE3E392911618B00261E0A /* TabBar.swift in Sources */,
 				2424527428FEE899006E8629 /* Encodable+Extension.swift in Sources */,
 				59AC84A428F609BA00EB3A9A /* CRUDServices.swift in Sources */,
 				59B892CE28FD7FB60045EAA9 /* CollectionNames.swift in Sources */,
+				EE0D073E2936296B00960224 /* ExperiencesDetailsView.swift in Sources */,
+				EE0D073729361EB700960224 /* LikeBtnView.swift in Sources */,
 				242B43F82927F56500F0C3C1 /* UserRepository.swift in Sources */,
+				EE0D073529361EB700960224 /* DoneBtnViewModel.swift in Sources */,
 				242B4405292D0DC400F0C3C1 /* CategoryIcon.swift in Sources */,
 				59778DB6291589E5008748E6 /* AuthenticationManager.swift in Sources */,
 				242B43E72926832100F0C3C1 /* ExperienceRepository.swift in Sources */,
@@ -920,7 +972,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WhyNot/Preview Content\"";
-				DEVELOPMENT_TEAM = D7KS69836R;
+				DEVELOPMENT_TEAM = KP5N7V93HZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WhyNot/Info.plist;
@@ -934,12 +986,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = WhyNot.com.WhyNotFer;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.uno.whynot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -952,7 +1004,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WhyNot/Preview Content\"";
-				DEVELOPMENT_TEAM = D7KS69836R;
+				DEVELOPMENT_TEAM = KP5N7V93HZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WhyNot/Info.plist;
@@ -966,12 +1018,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = WhyNot.com.WhyNotFer;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.uno.whynot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

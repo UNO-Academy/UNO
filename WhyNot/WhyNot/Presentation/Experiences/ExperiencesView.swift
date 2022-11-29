@@ -14,25 +14,27 @@ struct ExperiencesView: View {
     ))
 
     var body: some View {
-        List {
-            topScreen
-                .listRowSeparator(.hidden)
-                .listRowInsets(EdgeInsets())
-                .listRowBackground(Color.clear)
-                .ignoresSafeArea()
-            activitiesList
-            topLeaved
-                .listRowSeparator(.hidden)
-                .listRowInsets(EdgeInsets())
-                .listRowBackground(Color.clear)
-                .ignoresSafeArea()
-                .padding(.bottom, Space.space1x)
-                .padding(.top, Space.space1x)
-            livedList
-                .padding(.bottom, Space.space2x)
+        NavigationView {
+            List {
+                topScreen
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets())
+                    .listRowBackground(Color.clear)
+                    .ignoresSafeArea()
+                activitiesList
+                topLeaved
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets())
+                    .listRowBackground(Color.clear)
+                    .ignoresSafeArea()
+                    .padding(.bottom, Space.space1x)
+                    .padding(.top, Space.space1x)
+                livedList
+                    .padding(.bottom, Space.space2x)
+            }
+            .listStyle(.plain)
+            .padding(.horizontal, Space.space2x)
         }
-        .listStyle(.plain)
-        .padding(.horizontal, Space.space2x)
     }
 
     var topScreen: some View {
@@ -44,7 +46,7 @@ struct ExperiencesView: View {
                 .padding(.bottom, Space.space1x)
             if viewModel.mustShowAllDone {
                 EmptyListCard(
-                    icon: "flag.2.crossed.fill",
+                    icon: Icons.flag2CrossedFill,
                     text: String(localized: "cardAllDoneText"),
                     textColor: Color.CustomColor.titleColorReversed,
                     backgoundColor: Color.CustomColor.daysLeft
@@ -89,16 +91,24 @@ struct ExperiencesView: View {
                 Button {
                     print("call like function")
                 } label: {
-                    Label("likedActionLabel", systemImage: "heart.fill")
+                    Label("likedActionLabel", systemImage: Icons.heartFill)
                 } .tint(Color.CustomColor.purpleSwipe)
             }
             .swipeActions(edge: .trailing) {
                 Button {
                     print("call done function")
                 } label: {
-                    Label("doneActionLabel", systemImage: "flag.fill")
+                    Label("doneActionLabel", systemImage: Icons.flagFill)
                 } .tint(Color.CustomColor.orangeSwipe)
             }
+            // TODO: remove navegation mcgavier fix when implementing correction in title page
+            .overlay(NavigationLink(
+                destination: ExperiencesDetailsView(
+                viewModel: ExperienceDetailsViewModel(experience: experience)
+
+            ), label: {})
+                .navigationBarTitle("", displayMode: .inline)
+            )
             .listRowSeparator(.hidden)
             .listRowInsets(EdgeInsets())
             .listRowBackground(Color.clear)
@@ -113,14 +123,14 @@ struct ExperiencesView: View {
                 .padding(.bottom, Space.space1x)
             if viewModel.mustShowEmptyLived {
                 EmptyListCard(
-                    icon: "flag.slash",
+                    icon: Icons.flagSlash,
                     text: String(localized: "cardEmptyLivedText"),
                     textColor: Color.CustomColor.titleColor,
                     backgoundColor: Color.CustomColor.cardBackground
                 )
             } else if viewModel.mustShowSpaceLeft {
                 EmptyListCard(
-                    icon: "tray",
+                    icon: Icons.tray,
                     text: String(localized: "cardSpaceLeftText"),
                     textColor: Color.CustomColor.titleColor,
                     backgoundColor: Color.CustomColor.cardBackground

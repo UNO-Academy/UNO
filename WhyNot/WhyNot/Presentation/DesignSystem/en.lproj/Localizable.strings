@@ -25,6 +25,12 @@
 "cardAllDoneText" = "You’ve created a few memories.\nWhat will come next?";
 
 //Experience detail Screen
+"doneButton" = "Done";
+"doneButtonDisabled" = "You've done great";
+"yesButton" = "Yes";
+"seeLikesButton" = "See Likes";
+"tipTitle" = "Tips";
+"alertConfirmationMessage" = "Have you done this experience?";
 
 //Login Screen
 
