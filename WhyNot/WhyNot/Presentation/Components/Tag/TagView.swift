@@ -10,17 +10,15 @@ import Firebase
 
 struct TagView: View {
 
-    let imageWidth: CGFloat = 13
     var tagData: TagType
 
     var body: some View {
         HStack {
             tagData.getText()
-                .font(.system(size: FontSize.caption2))
+                .font(.system(size: FontSize.caption2, weight: .medium))
                 .multilineTextAlignment(.center)
             tagData.getImage()
-                .resizable()
-                .frame(width: imageWidth, height: imageWidth)
+                .font(.system(size: FontSize.caption2))
         }
         .foregroundColor(Color.CustomColor.cardTitle)
         .padding(Space.halfSpace)
@@ -34,9 +32,9 @@ struct TagsView: View {
 
     var body: some View {
         HStack {
-            TagView(tagData: TagType.effort(experience.effort))
             TagView(tagData: TagType.duration(experience.duration))
             TagView(tagData: TagType.cost(experience.cost))
+            TagView(tagData: TagType.effort(experience.effort))
             Spacer()
         }
     }

@@ -36,6 +36,7 @@
 		24BE3E392911618B00261E0A /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BE3E382911618B00261E0A /* TabBar.swift */; };
 		24C5CBE9292E3A250082515C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C5CBE8292E3A250082515C /* CardView.swift */; };
 		24C5CBEB292E3A950082515C /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C5CBEA292E3A950082515C /* CardViewModel.swift */; };
+		27483CC2293799CD005CE5DA /* ExpandedTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27483CC1293799CD005CE5DA /* ExpandedTagView.swift */; };
 		27C0716F291438570076D6C4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27C07171291438570076D6C4 /* Localizable.strings */; };
 		594A5FA82902CCBE00A1C10C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594A5FA72902CCBE00A1C10C /* User.swift */; };
 		594A5FAA2902CDB700A1C10C /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594A5FA92902CDB700A1C10C /* UserAPI.swift */; };
@@ -105,6 +106,7 @@
 		24BE3E382911618B00261E0A /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		24C5CBE8292E3A250082515C /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		24C5CBEA292E3A950082515C /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+		27483CC1293799CD005CE5DA /* ExpandedTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedTagView.swift; sourceTree = "<group>"; };
 		27C07170291438570076D6C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		27C071722914385E0076D6C4 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		2A254B833E4942198A3A0825 /* Pods-WhyNotUnitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhyNotUnitTests.release.xcconfig"; path = "Target Support Files/Pods-WhyNotUnitTests/Pods-WhyNotUnitTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -409,6 +411,7 @@
 			isa = PBXGroup;
 			children = (
 				242B43EB2927AE2A00F0C3C1 /* TagData.swift */,
+				27483CC1293799CD005CE5DA /* ExpandedTagView.swift */,
 				242B43EA2927AE2A00F0C3C1 /* TagView.swift */,
 			);
 			path = Tag;
@@ -724,6 +727,7 @@
 				24202EA828F847E100141CCB /* ExperienceAPI.swift in Sources */,
 				24BE3E2F291002F400261E0A /* ExperiencesView.swift in Sources */,
 				24B18B1628FD757A00EC9A3D /* MementoAPI.swift in Sources */,
+				27483CC2293799CD005CE5DA /* ExpandedTagView.swift in Sources */,
 				248FDA012925322F003DA666 /* Date+Extension.swift in Sources */,
 				24C5CBE9292E3A250082515C /* CardView.swift in Sources */,
 				2424526F28FEE104006E8629 /* Sequence+Extension.swift in Sources */,

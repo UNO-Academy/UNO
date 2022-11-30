@@ -64,17 +64,28 @@ enum TagType {
     func getImage() -> Image {
         switch self {
         case .effort:
-            return Image(systemName: "stopwatch.fill")
+            return Image(systemName: "bolt.circle.fill")
         case .cost:
             return Image(systemName: "dollarsign.circle.fill")
         case.duration:
-            return Image(systemName: "bolt.circle.fill")
+            return Image(systemName: "stopwatch.fill")
+        }
+    }
+
+    func getTitle() -> Text {
+        switch self {
+        case .effort:
+            return Text(LocalizedStringKey("CapsEffort"))
+        case .cost:
+            return Text(LocalizedStringKey("CapsCost"))
+        case.duration:
+            return Text(LocalizedStringKey("CapsDuration"))
         }
     }
 }
 
 enum TagValue: String {
-    // TODO: quando o paulo fizer o localizable mudar isso aqui 
+
     case effort1 = "effort1Tag"
     case effort2 = "effort2Tag"
     case effort3 = "effort3Tag"
