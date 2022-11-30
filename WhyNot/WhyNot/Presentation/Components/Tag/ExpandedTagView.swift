@@ -14,11 +14,15 @@ struct ExpandedTagView: View {
 
     var body: some View {
         VStack {
-            tagData.getTitle().font(.system(size: FontSize.caption1))
+            tagData.getTitle()
+                .font(.system(size: FontSize.caption1))
+                .foregroundColor(Color(uiColor: .systemGray))
             tagData.getImage()
                 .font(.system(size: FontSize.caption1))
+                .foregroundColor(Color(.white))
             tagData.getText()
                 .font(.system(size: FontSize.caption1, weight: .semibold))
+                .foregroundColor(Color(.white))
                 .multilineTextAlignment(.center)
         }
     }
@@ -52,5 +56,6 @@ struct ExpandedTagsViewPreview: PreviewProvider {
             isActive: true,
             name: "Teste"
         ))
+        .background(Color(.black))
     }
 }

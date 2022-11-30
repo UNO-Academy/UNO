@@ -19,6 +19,7 @@ struct TagView: View {
                 .multilineTextAlignment(.center)
             tagData.getImage()
                 .font(.system(size: FontSize.caption2))
+                .padding([.leading], -Space.halfSpace)
         }
         .foregroundColor(Color.CustomColor.cardTitle)
         .padding(Space.halfSpace)
