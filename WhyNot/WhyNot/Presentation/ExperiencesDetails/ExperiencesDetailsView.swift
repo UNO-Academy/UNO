@@ -32,6 +32,7 @@ struct ExperiencesDetailsView: View {
             Spacer()
         }
         .padding([.leading, .trailing], ExperiencesDetailsConstants.safetySpace)
+        .navigationBarTitleDisplayMode(.inline)
     }
 
     var titleView: some View {

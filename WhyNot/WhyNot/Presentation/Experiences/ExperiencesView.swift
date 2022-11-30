@@ -32,18 +32,28 @@ struct ExperiencesView: View {
                 livedList
                     .padding(.bottom, Space.space2x)
             }
-            .listStyle(.plain)
+            .listStyle(GroupedListStyle())
             .padding(.horizontal, Space.space2x)
+            .navigationBarTitle(Text(String(localized: "experiencesScreenTitle")), displayMode: .large)
+        }
+        .navigationBarTitleDisplayMode(.large)
+        .onAppear {
+            let appearance = UINavigationBarAppearance()
+            appearance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)
+            appearance.largeTitleTextAttributes = [
+                .foregroundColor: UIColor(Color.CustomColor.titleColor),
+                .font: UIFont(name: CustomFonts.SolidThemeFont, size: FontSize.largeTitle)!
+            ]
+
+            UINavigationBar.appearance().standardAppearance = appearance
+            UITableView.appearance().sectionHeaderHeight = Space.none
+            UITableView.appearance().showsVerticalScrollIndicator = false
         }
     }
 
     var topScreen: some View {
         VStack {
-            title
-                .padding(.top, Space.spaceTitleTop)
-                .padding(.bottom, Space.space2x)
             activitiesTitle
-                .padding(.bottom, Space.space1x)
             if viewModel.mustShowAllDone {
                 EmptyListCard(
                     icon: Icons.flag2CrossedFill,
@@ -52,15 +62,6 @@ struct ExperiencesView: View {
                     backgoundColor: Color.CustomColor.daysLeft
                 )
             }
-        }
-    }
-
-    var title: some View {
-        HStack {
-            Text(String(localized: "experiencesScreenTitle"))
-                .font(Font.custom(CustomFonts.SolidThemeFont, size: FontSize.largeTitle))
-                .foregroundColor(Color.CustomColor.titleColor)
-            Spacer()
         }
     }
 
@@ -82,10 +83,20 @@ struct ExperiencesView: View {
 
     var activitiesList: some View {
         ForEach(viewModel.toDoExperiences) { experience in
-            CardView(
-                viewModel: CardViewModel(
-                    experience: experience
+            Section {
+                CardView(
+                    viewModel: CardViewModel(
+                        experience: experience
                 )
+            )
+            // TODO: remove navegation mcgavier fix when implementing correction in title page
+            .overlay(
+                NavigationLink(
+                destination: ExperiencesDetailsView(
+                viewModel: ExperienceDetailsViewModel(experience: experience)
+                ), label: {})
+                // fixedSize remove arrow indicator from navLink
+                .fixedSize()
             )
             .swipeActions(edge: .leading) {
                 Button {
@@ -101,19 +112,11 @@ struct ExperiencesView: View {
                     Label("doneActionLabel", systemImage: Icons.flagFill)
                 } .tint(Color.CustomColor.orangeSwipe)
             }
-            // TODO: remove navegation mcgavier fix when implementing correction in title page
-            .overlay(NavigationLink(
-                destination: ExperiencesDetailsView(
-                viewModel: ExperienceDetailsViewModel(experience: experience)
-
-            ), label: {})
-                .navigationBarTitle("", displayMode: .inline)
-            )
             .listRowSeparator(.hidden)
             .listRowInsets(EdgeInsets())
             .listRowBackground(Color.clear)
             .ignoresSafeArea()
-            .padding(.bottom, Space.space1x)
+            }
         }
     }
 
@@ -150,11 +153,19 @@ struct ExperiencesView: View {
 
     var livedList: some View {
         ForEach(viewModel.doneExperiences) { experience in
-            CardView(
-                viewModel: CardViewModel(
-                    experience: experience
+            Section {
+                CardView(
+                    viewModel: CardViewModel(
+                        experience: experience
+                    )
                 )
-            )
+                .overlay(NavigationLink(
+                    destination: ExperiencesDetailsView(
+                    viewModel: ExperienceDetailsViewModel(experience: experience)
+
+                    ), label: {})
+                )
+            }
             .listRowSeparator(.hidden)
             .listRowInsets(EdgeInsets())
             .listRowBackground(Color.clear)

@@ -22,7 +22,6 @@ class ExperienceDetailsViewModel: ObservableObject {
 
     init(experience: Experience) {
         // TODO: add some props in firebase table
-        print(experience.category)
         self.experience = experience
         experienceTitle = experience.name
         experienceDescription = experience.description
