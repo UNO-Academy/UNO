@@ -20,18 +20,17 @@ struct ExpandedTagView: View {
             tagData.getImage()
                 .font(.system(size: FontSize.caption1))
                 .foregroundColor(Color(colorScheme == .dark ? .white : .black))
-                .padding(Space.stroke)
             tagData.getText()
                 .font(.system(size: FontSize.caption1, weight: .semibold))
                 .foregroundColor(Color(colorScheme == .dark ? .white : .black))
                 .multilineTextAlignment(.center)
         }
+        .frame(width: Space.space8x)
     }
 }
 
 struct ExpandedTagsView: View {
     var experience: Experience
-    let expandedTagsHeight: CGFloat = 56
 
     var body: some View {
         VStack {
@@ -59,7 +58,7 @@ struct ExpandedTagsView: View {
                 ExpandedTagView(tagData: TagType.effort(experience.effort))
                 Spacer()
             }
-            .frame(height: expandedTagsHeight)
+            .frame(height: Space.space4x)
             Divider()
                 .frame(height: Space.stroke)
                 .overlay(Color(uiColor: .systemGray2))
@@ -79,6 +78,5 @@ struct ExpandedTagsViewPreview: PreviewProvider {
             isActive: true,
             name: "Teste"
         ))
-        .background(Color(.black))
     }
 }

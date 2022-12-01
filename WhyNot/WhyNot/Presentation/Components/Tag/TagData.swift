@@ -73,13 +73,14 @@ enum TagType {
     }
 
     func getTitle() -> Text {
+        Text(LocalizedStringKey(self.localizableKey))
+    }
+
+    var localizableKey: String {
         switch self {
-        case .effort:
-            return Text(LocalizedStringKey("CapsEffort"))
-        case .cost:
-            return Text(LocalizedStringKey("CapsCost"))
-        case.duration:
-            return Text(LocalizedStringKey("CapsDuration"))
+        case .effort: return "effortTagTitle"
+        case .duration: return "durationTagTitle"
+        case .cost: return "costTagTitle"
         }
     }
 }
@@ -97,5 +98,4 @@ enum TagValue: String {
     case cost1 = "cost1Tag"
     case cost2 = "cost2Tag"
     case cost3 = "cost3Tag"
-
 }
