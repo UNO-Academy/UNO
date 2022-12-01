@@ -10,23 +10,17 @@ import SwiftUI
 class ExperienceDetailsViewModel: ObservableObject {
     var experience: Experience
 
-    @Published var experienceTitle: String
-    @Published var experienceDescription: String
-    @Published var experienceDisclaim: String
-    @Published var experienceTip: String
     @Published var experienceType: ExperienceType
     @Published var isExperienceDone: Bool
     @Published var isLiked: Bool
-    var usersLikes: [UIImage] {getPersonImages()}
-    var isExperienceIconEnabled: Bool {!isExperienceDone}
+    var isExperienceIconEnabled: Bool { !isExperienceDone }
+    var showDisclaim: Bool { false }
+    var showTips: Bool { false }
+    var showLikes: Bool { experience.friendsInterested?.isEmpty == false }
 
     init(experience: Experience) {
         // TODO: add some props in firebase table
         self.experience = experience
-        experienceTitle = experience.name
-        experienceDescription = experience.description
-        experienceDisclaim = ""
-        experienceTip = ""
         experienceType = ExperienceType(rawValue: experience.category) ?? .adventure
         isExperienceDone = !experience.isActive
         isLiked = false

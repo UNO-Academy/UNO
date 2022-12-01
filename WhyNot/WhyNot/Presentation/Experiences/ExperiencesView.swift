@@ -42,7 +42,8 @@ struct ExperiencesView: View {
             appearance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)
             appearance.largeTitleTextAttributes = [
                 .foregroundColor: UIColor(Color.CustomColor.titleColor),
-                .font: UIFont(name: CustomFonts.SolidThemeFont, size: FontSize.largeTitle)!
+                .font: UIFont(name: CustomFonts.SolidThemeFont, size: FontSize.largeTitle) ??
+                    .systemFont(ofSize: FontSize.largeTitle)
             ]
 
             UINavigationBar.appearance().standardAppearance = appearance
@@ -162,8 +163,9 @@ struct ExperiencesView: View {
                 .overlay(NavigationLink(
                     destination: ExperiencesDetailsView(
                     viewModel: ExperienceDetailsViewModel(experience: experience)
-
                     ), label: {})
+                    // fixedSize remove arrow indicator from navLink
+                    .fixedSize()
                 )
             }
             .listRowSeparator(.hidden)

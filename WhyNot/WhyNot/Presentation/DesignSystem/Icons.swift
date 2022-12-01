@@ -19,4 +19,7 @@ enum Icons {
     static let experiences = "experience-symbol"
     static let exclamationmarkTriangle = "exclamationmark.triangle"
     static let squareAndArrowUp = "square.and.arrow.up"
+    static let stopwatchFill = "stopwatch.fill"
+    static let dollarsignCircleFill = "dollarsign.circle.fill"
+    static let boltCircleFill = "bolt.circle.fill"
 }

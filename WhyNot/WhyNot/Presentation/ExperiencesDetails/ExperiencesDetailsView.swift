@@ -23,11 +23,11 @@ struct ExperiencesDetailsView: View {
         VStack(alignment: .leading) {
             titleView
             iconLargeView
-            if !viewModel.usersLikes.isEmpty { likesView }
+            if viewModel.showLikes { likesView }
             descriptionView
-            if !viewModel.experienceDisclaim.isEmpty { disclaimView }
+            if viewModel.showDisclaim { disclaimView }
             doneBtnView
-            if !viewModel.experienceTip.isEmpty { tipsView }
+            if viewModel.showTips { tipsView }
 
             Spacer()
         }
@@ -43,7 +43,7 @@ struct ExperiencesDetailsView: View {
 
                 Spacer()
 
-                Text(viewModel.experienceTitle)
+                Text(viewModel.experience.name)
                     .font(Font.custom(CustomFonts.SolidThemeFont, size: FontSize.title3))
 
                 Spacer()
@@ -95,7 +95,7 @@ struct ExperiencesDetailsView: View {
         Group {
             Spacer().frame(height: Space.space1x)
 
-            Text(viewModel.experienceDescription)
+            Text(viewModel.experience.description)
                 .font(.callout)
                 .multilineTextAlignment(.leading)
 
@@ -109,8 +109,8 @@ struct ExperiencesDetailsView: View {
                 .font(.system(size: ExperiencesDetailsConstants.disclaimIconSize))
 
             Spacer().frame( width: Space.halfSpace)
-
-            Text(viewModel.experienceDisclaim)
+            // TODO: add disclaim column in experience -> viewModel.experience.disclaim
+            Text("")
                 .font(.caption2)
                 .multilineTextAlignment(.leading)
         }
@@ -122,7 +122,7 @@ struct ExperiencesDetailsView: View {
             Spacer().frame( height: Space.space2x)
 
             DoneBtnView(viewModel: DoneBtnViewModel(
-                experienceTitle: $viewModel.experienceTitle,
+                experienceTitle: viewModel.experience.name,
                 isExperienceDone: $viewModel.isExperienceDone)
             )
         }
@@ -136,8 +136,8 @@ struct ExperiencesDetailsView: View {
                 .font(Font.custom(CustomFonts.SolidThemeFont, size: FontSize.title2))
 
             Spacer().frame(height: Space.space1x)
-
-            Text(viewModel.experienceTip)
+            // TODO: add tips column in experience -> viewModel.experience.tips
+            Text("")
                 .font(.callout)
                 .multilineTextAlignment(.leading)
         }

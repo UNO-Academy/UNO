@@ -9,18 +9,18 @@ import SwiftUI
 
 enum DoneBtnConfigConstants {
     static let disabledColor = Color.CustomColor.doneDisabledBtn
-    static let enabledColor = Color( UIColor.systemOrange)
+    static let enabledColor = Color(UIColor.systemOrange)
     static let localizeDisabled: LocalizedStringKey = "doneButtonDisabled"
     static let localizeEnabled: LocalizedStringKey = "doneButton"
 }
 
 class DoneBtnViewModel: ObservableObject {
-    @Binding var experienceTitle: String
+    var experienceTitle: String
     @Binding var isExperienceDone: Bool
     @Published var showConfirmAlert: Bool = false
 
-    init(experienceTitle: Binding<String>, isExperienceDone: Binding<Bool>) {
-        self._experienceTitle = experienceTitle
+    init(experienceTitle: String, isExperienceDone: Binding<Bool>) {
+        self.experienceTitle = experienceTitle
         self._isExperienceDone = isExperienceDone
     }
 
