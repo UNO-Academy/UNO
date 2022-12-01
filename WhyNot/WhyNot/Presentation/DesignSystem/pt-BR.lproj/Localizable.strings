@@ -23,6 +23,9 @@
 "cardEmptyLivedText" = "Vamos viver um pouco!\nVamos longe ou volte pra casa.";
 "cardSpaceLeftText" = "Você ainda tem espaço\npara boas lembranças.";
 "cardAllDoneText" = "Você criou algumas memórias.\nO que virá a seguir?";
+"userNotLoggedAlertTitle" = "Faça login para poder aproveitar suas experiências ao máximo";
+"LoginAlertButton" = "Log in";
+"LaterAlertButton" = "Depois";
 
 //Experience detail Screen
 

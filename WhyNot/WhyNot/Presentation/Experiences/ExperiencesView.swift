@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct ExperiencesView: View {
+    @Binding var mustGoToLoginScreen: Bool
     @ObservedObject var viewModel: ExperiencesViewModel
 
-    init() {
+    init(mustGoToLoginScreen: Binding<Bool>) {
+        self._mustGoToLoginScreen = mustGoToLoginScreen
         let userRepository = UserRepositoryImpl()
         viewModel = ExperiencesViewModel(
             getActiveUseCase: GetActiveExperiencesUseCaseImpl(
@@ -41,13 +43,20 @@ struct ExperiencesView: View {
         }
         .listStyle(.plain)
         .padding(.horizontal, Space.space2x)
+        .navigationBarTitle(Text(String(localized: "experiencesScreenTitle")), displayMode: .large)
+        .alert(
+            String(localized: "userNotLoggedAlertTitle"),
+            isPresented: $viewModel.mustShowUserNotLoggedAlert
+        ) {
+            Button(String(localized: "LoginAlertButton")) {
+                self.mustGoToLoginScreen = true
+            }
+            Button(String(localized: "LaterAlertButton"), role: .cancel) { }
+        }
     }
 
     var topScreen: some View {
         VStack {
-            title
-                .padding(.top, Space.spaceTitleTop)
-                .padding(.bottom, Space.space2x)
             activitiesTitle
                 .padding(.bottom, Space.space1x)
             if viewModel.mustShowAllDone {
@@ -58,15 +67,6 @@ struct ExperiencesView: View {
                     backgoundColor: Color.CustomColor.daysLeft
                 )
             }
-        }
-    }
-
-    var title: some View {
-        HStack {
-            Text(String(localized: "experiencesScreenTitle"))
-                .font(Font.custom(CustomFonts.SolidThemeFont, size: FontSize.largeTitle))
-                .foregroundColor(Color.CustomColor.titleColor)
-            Spacer()
         }
     }
 
@@ -162,7 +162,9 @@ struct ExperiencesView: View {
 }
 
 struct ExperiencesView_Previews: PreviewProvider {
+    @State private var mustGoToLoginScreen: Bool = false
+
     static var previews: some View {
-        ExperiencesView()
+        ExperiencesView(mustGoToLoginScreen: .constant(false))
     }
 }

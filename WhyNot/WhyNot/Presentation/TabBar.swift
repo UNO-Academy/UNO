@@ -17,7 +17,7 @@ struct TabBarView: View {
                 .tabItem {
                     TabItem(tab: Tab.search)
                 }.tag(0)
-            ExperiencesView()
+            ExperienceCoordinator()
                 .tabItem {
                     TabItem(tab: Tab.experience)
                 }.tag(1)

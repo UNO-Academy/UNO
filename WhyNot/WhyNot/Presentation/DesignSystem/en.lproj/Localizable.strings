@@ -23,6 +23,9 @@
 "cardEmptyLivedText" = "Let's live a bit!\nGo big or go home.";
 "cardSpaceLeftText" = "You’ve some space left\nfor good memories.";
 "cardAllDoneText" = "You’ve created a few memories.\nWhat will come next?";
+"userNotLoggedAlertTitle" = "Log in to get the most out of your experiences";
+"LoginAlertButton" = "Log in";
+"LaterAlertButton" = "Later";
 
 //Experience detail Screen
 

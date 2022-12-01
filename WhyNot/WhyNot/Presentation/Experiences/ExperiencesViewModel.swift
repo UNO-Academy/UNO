@@ -18,6 +18,8 @@ class ExperiencesViewModel: ObservableObject {
     @Published var mustShowSpaceLeft: Bool = false
     @Published var mustShowAllDone: Bool = false
 
+    @Published var mustShowUserNotLoggedAlert: Bool = false
+
     let getActiveExperiences: GetActiveExperiencesUseCase
     let likeExperienceUseCase: LikeExperienceUseCase
 
@@ -33,7 +35,13 @@ class ExperiencesViewModel: ObservableObject {
 
     func likeExperience(_ experience: Experience) {
         Task {
-            try await likeExperienceUseCase.execute(experience)
+            do {
+                try await likeExperienceUseCase.execute(experience)
+            } catch {
+                DispatchQueue.main.async {
+                    self.mustShowUserNotLoggedAlert = true
+                }
+            }
         }
     }
 
