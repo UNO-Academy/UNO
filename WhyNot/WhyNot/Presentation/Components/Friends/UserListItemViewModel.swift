@@ -17,7 +17,7 @@ enum UserStatus {
     case request, sent, remove
 }
 
-class UserListItemViewModel: ObservableObject, Hashable {
+class UserListItemViewModel: ObservableObject {
     var dataImage: Data?
     var name: String
     var id: String
@@ -34,14 +34,6 @@ class UserListItemViewModel: ObservableObject, Hashable {
         self.id = user.id!
         self.userStatus = userStatus
         self.haveButton = haveButton
-    }
-
-    static func == (lhs: UserListItemViewModel, rhs: UserListItemViewModel) -> Bool {
-        return lhs.id == rhs.id
-    }
-
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(name)
     }
 
     func getImage() -> UIImage {
