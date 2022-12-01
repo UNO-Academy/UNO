@@ -26,6 +26,8 @@
 		242B43FE2928024C00F0C3C1 /* GetActiveExperiencesUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B43FD2928024C00F0C3C1 /* GetActiveExperiencesUseCaseTests.swift */; };
 		242B4405292D0DC400F0C3C1 /* CategoryIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B4404292D0DC400F0C3C1 /* CategoryIcon.swift */; };
 		244A58422938C49200A26D5E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244A58412938C49200A26D5E /* LoginView.swift */; };
+		244A58442938EA9100A26D5E /* CompleteExperienceUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244A58432938EA9100A26D5E /* CompleteExperienceUseCase.swift */; };
+		244A58462938EAA300A26D5E /* CompleteExperienceUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244A58452938EAA300A26D5E /* CompleteExperienceUseCaseImpl.swift */; };
 		248FD9FF2913E167003DA666 /* WhyNotApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8608FCD428F05AE1007FC0BA /* WhyNotApp.swift */; };
 		248FDA012925322F003DA666 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248FDA002925322F003DA666 /* Date+Extension.swift */; };
 		24B18B1628FD757A00EC9A3D /* MementoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B18B1528FD757A00EC9A3D /* MementoAPI.swift */; };
@@ -105,6 +107,8 @@
 		242B43FD2928024C00F0C3C1 /* GetActiveExperiencesUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetActiveExperiencesUseCaseTests.swift; sourceTree = "<group>"; };
 		242B4404292D0DC400F0C3C1 /* CategoryIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryIcon.swift; sourceTree = "<group>"; };
 		244A58412938C49200A26D5E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		244A58432938EA9100A26D5E /* CompleteExperienceUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteExperienceUseCase.swift; sourceTree = "<group>"; };
+		244A58452938EAA300A26D5E /* CompleteExperienceUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteExperienceUseCaseImpl.swift; sourceTree = "<group>"; };
 		248FDA002925322F003DA666 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		24B18B1528FD757A00EC9A3D /* MementoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MementoAPI.swift; sourceTree = "<group>"; };
 		24B18B1728FD7BF400EC9A3D /* Memento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memento.swift; sourceTree = "<group>"; };
@@ -259,6 +263,8 @@
 				242B43F42927F24000F0C3C1 /* GetActiveExperiencesUseCaseImpl.swift */,
 				24F098D6293112A6007713AA /* LikeExperienceUseCase.swift */,
 				24F098D8293112E3007713AA /* LikeExperienceUseCaseImpl.swift */,
+				244A58432938EA9100A26D5E /* CompleteExperienceUseCase.swift */,
+				244A58452938EAA300A26D5E /* CompleteExperienceUseCaseImpl.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -762,6 +768,7 @@
 				24F098D9293112E3007713AA /* LikeExperienceUseCaseImpl.swift in Sources */,
 				86F5A40F291A8CCA003EEC8A /* PersonImage.swift in Sources */,
 				24202EA828F847E100141CCB /* ExperienceAPI.swift in Sources */,
+				244A58462938EAA300A26D5E /* CompleteExperienceUseCaseImpl.swift in Sources */,
 				24BE3E2F291002F400261E0A /* ExperiencesView.swift in Sources */,
 				24B18B1628FD757A00EC9A3D /* MementoAPI.swift in Sources */,
 				248FDA012925322F003DA666 /* Date+Extension.swift in Sources */,
@@ -775,6 +782,7 @@
 				D6E24D6929114C6F0018C0C6 /* ExperienceType.swift in Sources */,
 				862C53D32906AE7200068528 /* StorageServices.swift in Sources */,
 				59B892CC28FD77DF0045EAA9 /* DocumentSnapshot+Extension.swift in Sources */,
+				244A58442938EA9100A26D5E /* CompleteExperienceUseCase.swift in Sources */,
 				242B43F22927ED5B00F0C3C1 /* GetActiveExperiencesUseCase.swift in Sources */,
 				242B43FA2927F5AB00F0C3C1 /* UserRepositoryImpl.swift in Sources */,
 				24BE3E3729101A9500261E0A /* ProfileView.swift in Sources */,

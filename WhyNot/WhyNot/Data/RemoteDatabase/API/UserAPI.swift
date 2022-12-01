@@ -101,6 +101,19 @@ class UserAPI {
         }
     }
 
+    func completeExperience(userID: String, experienceID: String) async throws {
+        if let docRef = crudService.getDocumentReferenceByID(
+            collectionRef: collectionReference,
+            documentID: userID
+        ) {
+            try await crudService.pushInDocumentArray(
+                docRef: docRef,
+                field: UserFields.doneExperiencesID.rawValue,
+                value: experienceID
+            )
+        }
+    }
+
     func getUserFriendsInterestedInAnExperience(userID: String, experienceID: String) async throws -> [User] {
         let data = try await collectionReference.document(userID).getDocument()
         guard var friendsList = data[UserFields.friendsID.rawValue] as? [String] else { return [] }

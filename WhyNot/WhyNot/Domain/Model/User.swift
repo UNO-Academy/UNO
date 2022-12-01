@@ -27,4 +27,5 @@ enum UserFields: String {
     case friendsID
     case mementosID
     case interestExperiencesID
+    case doneExperiencesID
 }

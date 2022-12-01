@@ -9,7 +9,8 @@ import Foundation
 import FirebaseFirestoreSwift
 import FirebaseFirestore
 
-class Experience: Codable, Identifiable {
+class Experience: Codable, Identifiable, Equatable {
+
     @DocumentID var id: String?
     let category: String
     let cost: Int
@@ -44,6 +45,10 @@ class Experience: Codable, Identifiable {
         self.name = name
         self.friendsInterested = friendsInterested
         self.wasLiked = wasLiked
+    }
+
+    static func == (lhs: Experience, rhs: Experience) -> Bool {
+        lhs.id == rhs.id
     }
 }
 

@@ -102,7 +102,7 @@ struct ExperiencesView: View {
             }
             .swipeActions(edge: .trailing) {
                 Button {
-                    print("call done function")
+                    viewModel.completeExperience(experience)
                 } label: {
                     Label("doneActionLabel", systemImage: "flag.fill")
                 } .tint(Color.CustomColor.orangeSwipe)

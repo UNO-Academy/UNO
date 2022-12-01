@@ -45,6 +45,21 @@ class ExperiencesViewModel: ObservableObject {
         }
     }
 
+    func completeExperience(_ experience: Experience) {
+        Task {
+            do {
+                try await likeExperienceUseCase.execute(experience)
+                guard let index = toDoExperiences.firstIndex(of: experience) else { return }
+                toDoExperiences.remove(at: index)
+                doneExperiences.insert(experience, at: 0)
+            } catch {
+                DispatchQueue.main.async {
+                    self.mustShowUserNotLoggedAlert = true
+                }
+            }
+        }
+    }
+
     private func loadExperiences(_ completion: @escaping () -> Void) {
         Task {
             let experiences = try await getActiveExperiences.execute()
