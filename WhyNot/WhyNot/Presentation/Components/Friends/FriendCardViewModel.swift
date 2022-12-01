@@ -18,7 +18,7 @@ enum FriendStatus {
 }
 
 class FriendCardViewModel: ObservableObject, Hashable {
-    var image: Data?
+    var dataImage: Data?
     var name: String
     var id: String
     var friendStatus: FriendStatus
@@ -31,7 +31,7 @@ class FriendCardViewModel: ObservableObject, Hashable {
         haveButton: Bool = false,
         action: @escaping () -> Void = {}
     ) {
-        self.image = user.profilePicture
+        self.dataImage = user.profilePicture
         self.name = user.name
         self.id = user.id!
         self.friendStatus = friendStatus
@@ -48,11 +48,10 @@ class FriendCardViewModel: ObservableObject, Hashable {
     }
 
     func getImage() -> UIImage {
-        if let image = image {
-            return UIImage(data: image)!
-        } else {
-            return UIImage(systemName: "person.crop.circle")!
-        }
+        let emptyPersonImage = UIImage(systemName: "person.crop.circle")!
+        guard let dataImage = dataImage else { return  emptyPersonImage }
+        guard let uiImage = UIImage(data: dataImage) else { return emptyPersonImage }
+        return uiImage
     }
 
     func getName() -> String {

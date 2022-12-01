@@ -25,7 +25,8 @@ struct FriendCardView: View {
             Spacer()
 
             if viewModel.haveButton {
-                Button(action: {
+                Button(
+                    action: {
                     viewModel.performAction()
                 }, label: {
                     Text(viewModel.getButtonLabel()).foregroundColor(viewModel.getButtonCollor())
