@@ -7,39 +7,36 @@
 
 import SwiftUI
 
-enum FriendsConstants {
+enum UserConstants {
     static var friendRatioSize: CGFloat {
         return CGFloat(44)
     }
 }
 
-enum FriendStatus {
+enum UserStatus {
     case request, sent, remove
 }
 
-class FriendCardViewModel: ObservableObject, Hashable {
+class UserListItemViewModel: ObservableObject, Hashable {
     var dataImage: Data?
     var name: String
     var id: String
-    var friendStatus: FriendStatus
+    var userStatus: UserStatus
     var haveButton: Bool
-    var action: () -> Void
 
     init(
         user: User,
-        friendStatus: FriendStatus = .request,
-        haveButton: Bool = false,
-        action: @escaping () -> Void = {}
+        userStatus: UserStatus = .request,
+        haveButton: Bool = false
     ) {
         self.dataImage = user.profilePicture
         self.name = user.name
         self.id = user.id!
-        self.friendStatus = friendStatus
+        self.userStatus = userStatus
         self.haveButton = haveButton
-        self.action = action
     }
 
-    static func == (lhs: FriendCardViewModel, rhs: FriendCardViewModel) -> Bool {
+    static func == (lhs: UserListItemViewModel, rhs: UserListItemViewModel) -> Bool {
         return lhs.id == rhs.id
     }
 
@@ -59,11 +56,23 @@ class FriendCardViewModel: ObservableObject, Hashable {
     }
 
     func performAction() {
-        action()
+        if haveButton {
+            switch userStatus {
+            case .request:
+                print("a")
+                //TODO: Request frindShipInDB
+            case .sent:
+                print("a")
+                //TODO: Sent
+            case .remove:
+                print("a")
+                //TODO: Remove from friends
+            }
+        }
     }
 
     func getButtonLabel() -> String {
-        switch friendStatus {
+        switch userStatus {
         case .request:
             return NSLocalizedString("RequestFriendshipLabel", comment: "")
         case .sent:
@@ -74,7 +83,7 @@ class FriendCardViewModel: ObservableObject, Hashable {
     }
 
     func getButtonCollor() -> Color {
-        switch friendStatus {
+        switch userStatus {
         case .request:
             return Color.CustomColor.clicableColor
         case .sent:

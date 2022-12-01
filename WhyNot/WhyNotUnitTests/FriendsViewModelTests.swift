@@ -9,7 +9,7 @@ import XCTest
 import SwiftUI
 @testable import WhyNot
 
-final class FriendsViewModelTests: XCTestCase {
+final class UserListViewModelTests: XCTestCase {
     let user1 = User(
         id: "ID1",
         name: "Fernando",
@@ -47,9 +47,9 @@ final class FriendsViewModelTests: XCTestCase {
     )
 
     func test_if_two_view_model_are_equal() {
-        let viewModel1 = FriendCardViewModel(user: user1)
-        let viewModel2 = FriendCardViewModel(user: user2)
-        let viewModel3 = FriendCardViewModel(user: user3)
+        let viewModel1 = UserListItemViewModel(user: user1)
+        let viewModel2 = UserListItemViewModel(user: user2)
+        let viewModel3 = UserListItemViewModel(user: user3)
         let sameId = (viewModel1 == viewModel2)
         XCTAssertEqual(sameId, false)
 
@@ -58,32 +58,32 @@ final class FriendsViewModelTests: XCTestCase {
     }
 
     func test_button_labels() {
-        let friendCardViewModel = FriendCardViewModel(user: user1)
+        let userListItemViewModel = UserListItemViewModel(user: user1)
         XCTAssertEqual(
-            friendCardViewModel.getButtonLabel(),
+            userListItemViewModel.getButtonLabel(),
             NSLocalizedString("RequestFriendshipLabel", comment: "")
         )
 
-        friendCardViewModel.friendStatus = FriendStatus.remove
+        userListItemViewModel.userStatus = UserStatus.remove
         XCTAssertEqual(
-            friendCardViewModel.getButtonLabel(),
+            userListItemViewModel.getButtonLabel(),
             NSLocalizedString("RemoveFriendshipLabel", comment: "")
         )
-        friendCardViewModel.friendStatus = FriendStatus.sent
+        userListItemViewModel.userStatus = UserStatus.sent
         XCTAssertEqual(
-            friendCardViewModel.getButtonLabel(),
+            userListItemViewModel.getButtonLabel(),
             NSLocalizedString("SentFriendshipLabel", comment: "")
         )
     }
 
     func test_button_colors() {
-        let friendCardViewModel = FriendCardViewModel(user: user1)
-        XCTAssertEqual(friendCardViewModel.getButtonCollor(), Color.CustomColor.clicableColor)
+        let userListItemViewModel = UserListItemViewModel(user: user1)
+        XCTAssertEqual(userListItemViewModel.getButtonCollor(), Color.CustomColor.clicableColor)
 
-        friendCardViewModel.friendStatus = FriendStatus.remove
-        XCTAssertEqual(friendCardViewModel.getButtonCollor(), Color.red)
+        userListItemViewModel.userStatus = UserStatus.remove
+        XCTAssertEqual(userListItemViewModel.getButtonCollor(), Color.red)
 
-        friendCardViewModel.friendStatus = FriendStatus.sent
-        XCTAssertEqual(friendCardViewModel.getButtonCollor(), Color.green)
+        userListItemViewModel.userStatus = UserStatus.sent
+        XCTAssertEqual(userListItemViewModel.getButtonCollor(), Color.green)
     }
 }

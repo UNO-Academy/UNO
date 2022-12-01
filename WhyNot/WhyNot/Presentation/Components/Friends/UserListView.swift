@@ -7,22 +7,22 @@
 
 import SwiftUI
 
-struct FriendsCollectionView: View {
+struct UserListView: View {
     var friends: [User]
 
     var body: some View {
         List {
             ForEach(friends, id: \.self) { friend in
-                FriendCardView(viewModel: FriendCardViewModel(user: friend))
+                UserListItemView(viewModel: UserListItemViewModel(user: friend))
             }
         }
     }
 }
 
-struct Vider: PreviewProvider {
+struct UserListPreviewProvider: PreviewProvider {
 
     static var previews: some View {
-        FriendsCollectionView(friends: [
+        UserListView(friends: [
             User(id: "1",
             name: "Joana",
             profilePictureID: "",

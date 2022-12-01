@@ -7,20 +7,18 @@
 
 import SwiftUI
 
-struct FriendCardView: View {
+struct UserListItemView: View {
 
-    @ObservedObject var viewModel: FriendCardViewModel
+    @ObservedObject var viewModel: UserListItemViewModel
 
     var body: some View {
-        HStack {
-            HStack(spacing: Space.space1x) {
-                PersonImage(
-                    ratio: FriendsConstants.friendRatioSize,
-                    personImage: Image(uiImage: viewModel.getImage())
-                )
+        HStack(spacing: Space.space1x) {
+            PersonImage(
+                ratio: UserConstants.friendRatioSize,
+                personImage: Image(uiImage: viewModel.getImage())
+            )
 
-                Text(viewModel.getName()).foregroundColor(Color.CustomColor.titleColor)
-            }
+            Text(viewModel.getName()).foregroundColor(Color.CustomColor.titleColor)
 
             Spacer()
 
