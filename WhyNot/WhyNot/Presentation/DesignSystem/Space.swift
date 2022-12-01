@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 enum Space {
+    static var none: CGFloat { return 0 }
     static var stroke: CGFloat { return 1 }
     static var halfSpace: CGFloat { return 4 }
     static var space1x: CGFloat { return 8 }

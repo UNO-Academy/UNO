@@ -30,7 +30,7 @@ struct CardView: View {
 
             CategoryIcon(
                 type: viewModel.experienceType,
-                isEnable: viewModel.experience.isActive
+                isEnable: viewModel.isActive
             )
         }
         .aspectRatio(AspectRatio.cardAspectRatio, contentMode: .fit)

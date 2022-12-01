@@ -39,7 +39,7 @@ struct EmptyListCard: View {
 struct EmptyListCard_Previews: PreviewProvider {
     static var previews: some View {
         EmptyListCard(
-            icon: "flag.slash",
+            icon: Icons.flagSlash,
             text: String(localized: "cardEmptyLivedTextLine"),
             textColor: Color.CustomColor.titleColor,
             backgoundColor: Color.CustomColor.cardBackground
