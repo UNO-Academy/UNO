@@ -9,7 +9,7 @@ import SwiftUI
 import Firebase
 
 struct ExpandedTagView: View {
-
+    @Environment(\.colorScheme) var colorScheme
     var tagData: TagType
 
     var body: some View {
@@ -19,10 +19,11 @@ struct ExpandedTagView: View {
                 .foregroundColor(Color(uiColor: .systemGray))
             tagData.getImage()
                 .font(.system(size: FontSize.caption1))
-                .foregroundColor(Color(.white))
+                .foregroundColor(Color(colorScheme == .dark ? .white : .black))
+                .padding(Space.stroke)
             tagData.getText()
                 .font(.system(size: FontSize.caption1, weight: .semibold))
-                .foregroundColor(Color(.white))
+                .foregroundColor(Color(colorScheme == .dark ? .white : .black))
                 .multilineTextAlignment(.center)
         }
     }
@@ -30,16 +31,38 @@ struct ExpandedTagView: View {
 
 struct ExpandedTagsView: View {
     var experience: Experience
+    let expandedTagsHeight: CGFloat = 56
 
     var body: some View {
-        HStack {
-            Spacer()
-            ExpandedTagView(tagData: TagType.duration(experience.duration))
-            Spacer()
-            ExpandedTagView(tagData: TagType.cost(experience.cost))
-            Spacer()
-            ExpandedTagView(tagData: TagType.effort(experience.effort))
-            Spacer()
+        VStack {
+            Divider()
+                .frame(height: Space.stroke)
+                .overlay(Color(uiColor: .systemGray2))
+            HStack {
+                Spacer()
+                ExpandedTagView(tagData: TagType.duration(experience.duration))
+                Group {
+                    Spacer()
+                    Divider()
+                        .frame(width: Space.stroke)
+                        .overlay(Color(uiColor: .systemGray2))
+                    Spacer()
+                }
+                ExpandedTagView(tagData: TagType.cost(experience.cost))
+                Group {
+                    Spacer()
+                    Divider()
+                        .frame(width: Space.stroke)
+                        .overlay(Color(uiColor: .systemGray2))
+                    Spacer()
+                }
+                ExpandedTagView(tagData: TagType.effort(experience.effort))
+                Spacer()
+            }
+            .frame(height: expandedTagsHeight)
+            Divider()
+                .frame(height: Space.stroke)
+                .overlay(Color(uiColor: .systemGray2))
         }
     }
 }
