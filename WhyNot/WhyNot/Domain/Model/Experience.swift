@@ -20,6 +20,19 @@ struct Experience: Codable, Identifiable {
     let isActive: Bool
     let name: String
     var friendsInterested: [User]?
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case category
+        case cost
+        case description
+        case duration
+        case effort
+        case expirationDate
+        case isActive
+        case name
+        case friendsInterested
+    }
 }
 
 enum ExperienceFields: String {
