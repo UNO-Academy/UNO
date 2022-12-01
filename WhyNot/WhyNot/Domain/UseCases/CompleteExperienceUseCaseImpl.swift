@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CompleteExperienceUseCaseImpl {
+class CompleteExperienceUseCaseImpl: CompleteExperienceUseCase {
     let userRepository: UserRepository
 
     init(userRepository: UserRepository) {

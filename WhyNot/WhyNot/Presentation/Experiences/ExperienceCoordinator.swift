@@ -8,12 +8,38 @@
 import SwiftUI
 
 struct ExperienceCoordinator: View {
+
     @State private var mustGoToLoginScreen: Bool = false
+
+    let getActiveUseCase: GetActiveExperiencesUseCase
+    let likeExperienceUseCase: LikeExperienceUseCase
+    let completeExperienceUseCae: CompleteExperienceUseCase
+
+    init() {
+        let userRepository = UserRepositoryImpl()
+        let experienceRepository = ExperienceRepositoryImpl()
+
+        self.getActiveUseCase = GetActiveExperiencesUseCaseImpl(
+            experienceRepository: experienceRepository,
+            userRepository: userRepository
+        )
+        self.likeExperienceUseCase = LikeExperienceUseCaseImpl(
+            userRepository: userRepository
+        )
+        self.completeExperienceUseCae = CompleteExperienceUseCaseImpl(
+            userRepository: userRepository
+        )
+    }
 
     var body: some View {
         NavigationView {
             NavigationLink(destination: LoginView(), isActive: $mustGoToLoginScreen) {
-                ExperiencesView(mustGoToLoginScreen: $mustGoToLoginScreen)
+                ExperiencesView(
+                    mustGoToLoginScreen: $mustGoToLoginScreen,
+                    getActiveUseCase: getActiveUseCase,
+                    likeExperienceUseCase: likeExperienceUseCase,
+                    completeExperience: completeExperienceUseCae
+                )
             }
         }
         .navigationBarTitleDisplayMode(.large)

@@ -11,15 +11,17 @@ struct ExperiencesView: View {
     @Binding var mustGoToLoginScreen: Bool
     @ObservedObject var viewModel: ExperiencesViewModel
 
-    init(mustGoToLoginScreen: Binding<Bool>) {
+    init(
+        mustGoToLoginScreen: Binding<Bool>,
+        getActiveUseCase: GetActiveExperiencesUseCase,
+        likeExperienceUseCase: LikeExperienceUseCase,
+        completeExperience: CompleteExperienceUseCase
+    ) {
         self._mustGoToLoginScreen = mustGoToLoginScreen
-        let userRepository = UserRepositoryImpl()
         viewModel = ExperiencesViewModel(
-            getActiveUseCase: GetActiveExperiencesUseCaseImpl(
-                experienceRepository: ExperienceRepositoryImpl(),
-                userRepository: userRepository
-            ),
-            likeExperienceUseCase: LikeExperienceUseCaseImpl(userRepository: userRepository)
+            getActiveUseCase: getActiveUseCase,
+            likeExperienceUseCase: likeExperienceUseCase,
+            completeExperienceUseCase: completeExperience
         )
     }
 
@@ -165,6 +167,18 @@ struct ExperiencesView_Previews: PreviewProvider {
     @State private var mustGoToLoginScreen: Bool = false
 
     static var previews: some View {
-        ExperiencesView(mustGoToLoginScreen: .constant(false))
+        ExperiencesView(
+            mustGoToLoginScreen: .constant(false),
+            getActiveUseCase: GetActiveExperiencesUseCaseImpl(
+                experienceRepository: ExperienceRepositoryImpl(),
+                userRepository: UserRepositoryImpl()
+            ),
+            likeExperienceUseCase: LikeExperienceUseCaseImpl(
+                userRepository: UserRepositoryImpl()
+            ),
+            completeExperience: CompleteExperienceUseCaseImpl(
+                userRepository: UserRepositoryImpl()
+            )
+        )
     }
 }

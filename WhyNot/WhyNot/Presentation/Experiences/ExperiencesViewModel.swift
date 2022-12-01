@@ -26,6 +26,7 @@ class ExperiencesViewModel: ObservableObject {
     init(
         getActiveUseCase: GetActiveExperiencesUseCase,
         likeExperienceUseCase: LikeExperienceUseCase,
+        completeExperienceUseCase: CompleteExperienceUseCase,
         completion: @escaping (() -> Void) = {}
     ) {
         self.getActiveExperiences = getActiveUseCase
