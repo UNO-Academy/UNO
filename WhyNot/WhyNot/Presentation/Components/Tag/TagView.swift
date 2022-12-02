@@ -28,7 +28,7 @@ struct TagView: View {
     }
 }
 
-struct TagsView: View {
+struct TagCollectionView: View {
     var experience: Experience
 
     var body: some View {
@@ -43,7 +43,7 @@ struct TagsView: View {
 
 struct TagsViewPreview: PreviewProvider {
     static var previews: some View {
-        TagsView(experience: Experience(
+        TagCollectionView(experience: Experience(
             category: "cooking",
             cost: 1,
             description: "lala",

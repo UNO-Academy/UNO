@@ -29,7 +29,7 @@ struct ExpandedTagView: View {
     }
 }
 
-struct ExpandedTagsView: View {
+struct ExpandedTagCollectionView: View {
     var experience: Experience
 
     var body: some View {
@@ -40,21 +40,9 @@ struct ExpandedTagsView: View {
             HStack {
                 Spacer()
                 ExpandedTagView(tagData: TagType.duration(experience.duration))
-                Group {
-                    Spacer()
-                    Divider()
-                        .frame(width: Space.stroke)
-                        .overlay(Color(uiColor: .systemGray2))
-                    Spacer()
-                }
+                SpacedDivider()
                 ExpandedTagView(tagData: TagType.cost(experience.cost))
-                Group {
-                    Spacer()
-                    Divider()
-                        .frame(width: Space.stroke)
-                        .overlay(Color(uiColor: .systemGray2))
-                    Spacer()
-                }
+                SpacedDivider()
                 ExpandedTagView(tagData: TagType.effort(experience.effort))
                 Spacer()
             }
@@ -66,9 +54,19 @@ struct ExpandedTagsView: View {
     }
 }
 
+struct SpacedDivider: View {
+    var body: some View {
+        Spacer()
+        Divider()
+            .frame(width: Space.stroke)
+            .overlay(Color(uiColor: .systemGray2))
+        Spacer()
+    }
+}
+
 struct ExpandedTagsViewPreview: PreviewProvider {
     static var previews: some View {
-        ExpandedTagsView(experience: Experience(
+        ExpandedTagCollectionView(experience: Experience(
             category: "cooking",
             cost: 1,
             description: "lala",

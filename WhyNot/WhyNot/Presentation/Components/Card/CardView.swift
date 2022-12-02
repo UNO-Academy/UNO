@@ -23,7 +23,7 @@ struct CardView: View {
                     .foregroundColor(Color.CustomColor.cardTitle)
                     .bold()
 
-                TagsView(experience: viewModel.experience)
+                TagCollectionView(experience: viewModel.experience)
 
                 PersonImageCollection(images: viewModel.getPersonImages())
             }.padding([.vertical, .leading], Space.borderSpace)
