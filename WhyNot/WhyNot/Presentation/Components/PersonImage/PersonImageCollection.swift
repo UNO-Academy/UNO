@@ -13,7 +13,6 @@ enum PeopleConstants: CGFloat {
 }
 
 struct PersonImageCollection: View {
-    
     @ObservedObject var viewModel: PersonImageViewModel
 
     init(images: [UIImage]) {

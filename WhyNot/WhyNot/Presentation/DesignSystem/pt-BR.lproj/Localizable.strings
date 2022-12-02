@@ -25,6 +25,12 @@
 "cardAllDoneText" = "Você criou algumas memórias.\nO que virá a seguir?";
 
 //Experience detail Screen
+"doneButton" = "Concluído";
+"doneButtonDisabled" = "Você se consagrou";
+"yesButton" = "Sim";
+"seeLikesButton" = "Ver Likes";
+"tipTitle" = "Dicas";
+"alertConfirmationMessage" = "Você concluío essa experiência?";
 
 //Login Screen
 

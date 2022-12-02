@@ -8,5 +8,7 @@
 import SwiftUI
 
 enum CornerRadius {
+    static var none: CGFloat { return 0 }
+    static var halfRadius: CGFloat { return 8 }
     static var defaultRadius: CGFloat { return 16 }
 }

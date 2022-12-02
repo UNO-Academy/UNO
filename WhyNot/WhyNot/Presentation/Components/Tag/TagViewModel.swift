@@ -64,11 +64,11 @@ enum TagType {
     func getImage() -> Image {
         switch self {
         case .effort:
-            return Image(systemName: "bolt.circle.fill")
+            return Image(systemName: Icons.boltCircleFill)
         case .cost:
-            return Image(systemName: "dollarsign.circle.fill")
+            return Image(systemName: Icons.dollarsignCircleFill)
         case.duration:
-            return Image(systemName: "stopwatch.fill")
+            return Image(systemName: Icons.stopwatchFill)
         }
     }
 
