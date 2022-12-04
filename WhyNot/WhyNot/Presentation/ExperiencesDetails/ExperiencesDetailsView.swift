@@ -24,6 +24,8 @@ struct ExperiencesDetailsView: View {
             titleView
             iconLargeView
             if viewModel.showLikes { likesView }
+            ExpandedTagCollectionView(experience: viewModel.experience)
+                .padding([.top, .bottom], Space.space2x)
             descriptionView
             if viewModel.showDisclaim { disclaimView }
             doneBtnView

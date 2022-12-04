@@ -10,17 +10,16 @@ import Firebase
 
 struct TagView: View {
 
-    let imageWidth: CGFloat = 13
     var tagData: TagType
 
     var body: some View {
         HStack {
             tagData.getText()
-                .font(.system(size: FontSize.caption2))
+                .font(.system(size: FontSize.caption2, weight: .medium))
                 .multilineTextAlignment(.center)
             tagData.getImage()
-                .resizable()
-                .frame(width: imageWidth, height: imageWidth)
+                .font(.system(size: FontSize.caption2))
+                .padding([.leading], -Space.halfSpace)
         }
         .foregroundColor(Color.CustomColor.cardTitle)
         .padding(Space.halfSpace)
@@ -29,14 +28,14 @@ struct TagView: View {
     }
 }
 
-struct TagsView: View {
+struct TagCollectionView: View {
     var experience: Experience
 
     var body: some View {
         HStack {
-            TagView(tagData: TagType.effort(experience.effort))
             TagView(tagData: TagType.duration(experience.duration))
             TagView(tagData: TagType.cost(experience.cost))
+            TagView(tagData: TagType.effort(experience.effort))
             Spacer()
         }
     }
@@ -44,7 +43,7 @@ struct TagsView: View {
 
 struct TagsViewPreview: PreviewProvider {
     static var previews: some View {
-        TagsView(experience: Experience(
+        TagCollectionView(experience: Experience(
             category: "cooking",
             cost: 1,
             description: "lala",

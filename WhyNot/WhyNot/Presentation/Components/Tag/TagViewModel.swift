@@ -71,10 +71,22 @@ enum TagType {
             return Image(systemName: Icons.stopwatchFill)
         }
     }
+
+    func getTitle() -> Text {
+        Text(LocalizedStringKey(self.localizableKey))
+    }
+
+    var localizableKey: String {
+        switch self {
+        case .effort: return "effortTagTitle"
+        case .duration: return "durationTagTitle"
+        case .cost: return "costTagTitle"
+        }
+    }
 }
 
 enum TagValue: String {
-    // TODO: quando o paulo fizer o localizable mudar isso aqui 
+
     case effort1 = "effort1Tag"
     case effort2 = "effort2Tag"
     case effort3 = "effort3Tag"
@@ -86,5 +98,4 @@ enum TagValue: String {
     case cost1 = "cost1Tag"
     case cost2 = "cost2Tag"
     case cost3 = "cost3Tag"
-
 }

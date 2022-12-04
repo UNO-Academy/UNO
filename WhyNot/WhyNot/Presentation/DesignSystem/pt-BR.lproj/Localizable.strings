@@ -44,3 +44,6 @@
 "cost1Tag" = "Barato";
 "cost2Tag" = "Acessível";
 "cost3Tag" = "Caro";
+"effortTagTitle" = "ESFORÇO";
+"durationTagTitle" = "DURAÇÃO";
+"costTagTitle" = "CUSTO";
