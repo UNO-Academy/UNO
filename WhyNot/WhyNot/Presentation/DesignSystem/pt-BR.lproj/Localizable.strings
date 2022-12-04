@@ -44,3 +44,17 @@
 "cost1Tag" = "Barato";
 "cost2Tag" = "Acessível";
 "cost3Tag" = "Caro";
+
+// MonthsShort
+"janShort" = "JAN";
+"febShort" = "FEV";
+"marShort" = "MAR";
+"aprShort" = "ABR";
+"mayShort" = "MAI";
+"junShort" = "JUN";
+"julShort" = "JUL";
+"augShort" = "AGO";
+"sepShort" = "SET";
+"octShort" = "OUT";
+"novShort" = "NOV";
+"dezShort" = "DEZ";

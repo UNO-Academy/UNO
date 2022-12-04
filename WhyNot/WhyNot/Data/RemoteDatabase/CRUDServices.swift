@@ -141,6 +141,7 @@ extension CRUDServices {
             var friends: [String] = []
             for id in friendsID {
                 guard let document = try await collectionRef.document(id).getDocument().data() else { continue }
+
                 guard let data = document[UserFields.interestExperiencesID.rawValue] as? [String] else { continue }
 
                 if data.contains(experienceID) {

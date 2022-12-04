@@ -21,7 +21,7 @@ struct TabBarView: View {
                 .tabItem {
                     TabItem(tab: Tab.experience)
                 }.tag(1)
-            ProfileView()
+            ProfileView(viewModel: nil)
                 .tabItem {
                     TabItem(tab: Tab.profile)
                 }.tag(2)
