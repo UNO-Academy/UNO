@@ -49,6 +49,7 @@ struct ExperiencesView: View {
             UINavigationBar.appearance().standardAppearance = appearance
             UITableView.appearance().sectionHeaderHeight = Space.none
             UITableView.appearance().showsVerticalScrollIndicator = false
+            UITableView.appearance().backgroundColor = .clear
         }
     }
 
@@ -97,7 +98,8 @@ struct ExperiencesView: View {
                 viewModel: ExperienceDetailsViewModel(experience: experience)
                 ), label: {})
                 // fixedSize remove arrow indicator from navLink
-                .fixedSize()
+                .opacity(0.0)
+                .buttonStyle(PlainButtonStyle())
             )
             .swipeActions(edge: .leading) {
                 Button {
@@ -165,7 +167,8 @@ struct ExperiencesView: View {
                     viewModel: ExperienceDetailsViewModel(experience: experience)
                     ), label: {})
                     // fixedSize remove arrow indicator from navLink
-                    .fixedSize()
+                    .opacity(0.0)
+                    .buttonStyle(PlainButtonStyle())
                 )
             }
             .listRowSeparator(.hidden)
