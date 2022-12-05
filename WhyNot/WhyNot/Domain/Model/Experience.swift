@@ -50,15 +50,17 @@ class Experience: Codable, Identifiable, Equatable {
     static func == (lhs: Experience, rhs: Experience) -> Bool {
         lhs.id == rhs.id
     }
-}
 
-enum ExperienceFields: String {
-    case name
-    case description
-    case effort
-    case duration
-    case cost
-    case category
-    case isActive
-    case expirationDate
+    enum CodingKeys: String, CodingKey {
+        case id
+        case category
+        case cost
+        case description
+        case duration
+        case effort
+        case expirationDate
+        case isActive
+        case name
+        case friendsInterested
+    }
 }

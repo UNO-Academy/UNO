@@ -48,11 +48,10 @@ struct ExperienceCoordinator: View {
             appearance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)
             appearance.largeTitleTextAttributes = [
                 .foregroundColor: UIColor(Color.CustomColor.titleColor),
-                .font: UIFont(name: CustomFonts.SolidThemeFont, size: FontSize.largeTitle)!
+                .font: UIFont(name: CustomFonts.SolidThemeFont, size: FontSize.largeTitle) ??
+                    .systemFont(ofSize: FontSize.largeTitle)
             ]
             UINavigationBar.appearance().standardAppearance = appearance
-            UITableView.appearance().sectionHeaderHeight = Space.none
-            UITableView.appearance().showsVerticalScrollIndicator = false
         }
     }
 }

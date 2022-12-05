@@ -10,7 +10,7 @@ import SwiftUI
 struct CategoryIcon: View {
 
     let type: ExperienceType
-    let isEnable: Bool
+    var isEnable: Bool
 
     var body: some View {
         Image(type.rawValue)

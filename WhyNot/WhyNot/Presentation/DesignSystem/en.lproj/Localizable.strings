@@ -28,6 +28,12 @@
 "LaterAlertButton" = "Later";
 
 //Experience detail Screen
+"doneButton" = "Done";
+"doneButtonDisabled" = "You've done great";
+"yesButton" = "Yes";
+"seeLikesButton" = "See Likes";
+"tipTitle" = "Tips";
+"alertConfirmationMessage" = "Have you done this experience?";
 
 //Login Screen
 
@@ -41,3 +47,6 @@
 "cost1Tag" = "Cheap";
 "cost2Tag" = "Affordable";
 "cost3Tag" = "Expensive";
+"effortTagTitle" = "EFFORT";
+"durationTagTitle" = "DURATION";
+"costTagTitle" = "COST";

@@ -43,7 +43,7 @@ struct ExperiencesView: View {
             livedList
                 .padding(.bottom, Space.space2x)
         }
-        .listStyle(.plain)
+        .listStyle(GroupedListStyle())
         .padding(.horizontal, Space.space2x)
         .navigationBarTitle(Text(String(localized: "experiencesScreenTitle")), displayMode: .large)
         .alert(
@@ -55,15 +55,20 @@ struct ExperiencesView: View {
             }
             Button(String(localized: "LaterAlertButton"), role: .cancel) { }
         }
+        .onAppear {
+            UITableView.appearance().sectionHeaderHeight = Space.none
+            UITableView.appearance().sectionFooterHeight = Space.space1x
+            UITableView.appearance().showsVerticalScrollIndicator = false
+            UITableView.appearance().backgroundColor = .clear
+        }
     }
 
     var topScreen: some View {
         VStack {
             activitiesTitle
-                .padding(.bottom, Space.space1x)
             if viewModel.mustShowAllDone {
                 EmptyListCard(
-                    icon: "flag.2.crossed.fill",
+                    icon: Icons.flag2CrossedFill,
                     text: String(localized: "cardAllDoneText"),
                     textColor: Color.CustomColor.titleColorReversed,
                     backgoundColor: Color.CustomColor.daysLeft
@@ -90,30 +95,37 @@ struct ExperiencesView: View {
 
     var activitiesList: some View {
         ForEach(viewModel.toDoExperiences) { experience in
-            CardView(
-                viewModel: CardViewModel(
-                    experience: experience
+            Section {
+                CardView(
+                    viewModel: CardViewModel(experience: experience)
                 )
-            )
-            .swipeActions(edge: .leading) {
-                Button {
-                    viewModel.likeExperience(experience)
-                } label: {
-                    Label("likedActionLabel", systemImage: "heart.fill")
-                } .tint(Color.CustomColor.purpleSwipe)
+                .overlay(
+                    NavigationLink(
+                        destination: ExperiencesDetailsView(viewModel: ExperienceDetailsViewModel(experience: experience)),
+                        label: {}
+                    )
+                    .opacity(0.0)
+                    .buttonStyle(PlainButtonStyle())
+                )
+                .swipeActions(edge: .leading) {
+                    Button {
+                        viewModel.likeExperience(experience)
+                    } label: {
+                        Label("likedActionLabel", systemImage: Icons.heartFill)
+                    } .tint(Color.CustomColor.purpleSwipe)
+                }
+                .swipeActions(edge: .trailing) {
+                    Button {
+                        viewModel.completeExperience(experience)
+                    } label: {
+                        Label("doneActionLabel", systemImage: Icons.flagFill)
+                    } .tint(Color.CustomColor.orangeSwipe)
+                }
+                .listRowSeparator(.hidden)
+                .listRowInsets(EdgeInsets())
+                .listRowBackground(Color.clear)
+                .ignoresSafeArea()
             }
-            .swipeActions(edge: .trailing) {
-                Button {
-                    viewModel.completeExperience(experience)
-                } label: {
-                    Label("doneActionLabel", systemImage: "flag.fill")
-                } .tint(Color.CustomColor.orangeSwipe)
-            }
-            .listRowSeparator(.hidden)
-            .listRowInsets(EdgeInsets())
-            .listRowBackground(Color.clear)
-            .ignoresSafeArea()
-            .padding(.bottom, Space.space1x)
         }
     }
 
@@ -123,14 +135,14 @@ struct ExperiencesView: View {
                 .padding(.bottom, Space.space1x)
             if viewModel.mustShowEmptyLived {
                 EmptyListCard(
-                    icon: "flag.slash",
+                    icon: Icons.flagSlash,
                     text: String(localized: "cardEmptyLivedText"),
                     textColor: Color.CustomColor.titleColor,
                     backgoundColor: Color.CustomColor.cardBackground
                 )
             } else if viewModel.mustShowSpaceLeft {
                 EmptyListCard(
-                    icon: "tray",
+                    icon: Icons.tray,
                     text: String(localized: "cardSpaceLeftText"),
                     textColor: Color.CustomColor.titleColor,
                     backgoundColor: Color.CustomColor.cardBackground
@@ -150,11 +162,21 @@ struct ExperiencesView: View {
 
     var livedList: some View {
         ForEach(viewModel.doneExperiences) { experience in
-            CardView(
-                viewModel: CardViewModel(
-                    experience: experience
+            Section {
+                CardView(
+                    viewModel: CardViewModel(
+                        experience: experience
+                    )
                 )
-            )
+                .overlay(NavigationLink(
+                    destination: ExperiencesDetailsView(
+                    viewModel: ExperienceDetailsViewModel(experience: experience)
+                    ), label: {})
+                    // fixedSize remove arrow indicator from navLink
+                    .opacity(0.0)
+                    .buttonStyle(PlainButtonStyle())
+                )
+            }
             .listRowSeparator(.hidden)
             .listRowInsets(EdgeInsets())
             .listRowBackground(Color.clear)

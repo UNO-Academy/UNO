@@ -64,11 +64,23 @@ enum TagType {
     func getImage() -> Image {
         switch self {
         case .effort:
-            return Image(systemName: "stopwatch.fill")
+            return Image(systemName: Icons.boltCircleFill)
         case .cost:
-            return Image(systemName: "dollarsign.circle.fill")
+            return Image(systemName: Icons.dollarsignCircleFill)
         case.duration:
-            return Image(systemName: "bolt.circle.fill")
+            return Image(systemName: Icons.stopwatchFill)
+        }
+    }
+
+    func getTitle() -> Text {
+        Text(LocalizedStringKey(self.localizableKey))
+    }
+
+    var localizableKey: String {
+        switch self {
+        case .effort: return "effortTagTitle"
+        case .duration: return "durationTagTitle"
+        case .cost: return "costTagTitle"
         }
     }
 }
@@ -85,5 +97,4 @@ enum TagValue: String {
     case cost1 = "cost1Tag"
     case cost2 = "cost2Tag"
     case cost3 = "cost3Tag"
-
 }

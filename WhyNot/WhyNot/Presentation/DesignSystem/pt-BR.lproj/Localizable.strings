@@ -28,6 +28,12 @@
 "LaterAlertButton" = "Depois";
 
 //Experience detail Screen
+"doneButton" = "Concluído";
+"doneButtonDisabled" = "Você se consagrou";
+"yesButton" = "Sim";
+"seeLikesButton" = "Ver Likes";
+"tipTitle" = "Dicas";
+"alertConfirmationMessage" = "Você concluío essa experiência?";
 
 //Login Screen
 
@@ -41,3 +47,6 @@
 "cost1Tag" = "Barato";
 "cost2Tag" = "Acessível";
 "cost3Tag" = "Caro";
+"effortTagTitle" = "ESFORÇO";
+"durationTagTitle" = "DURAÇÃO";
+"costTagTitle" = "CUSTO";
