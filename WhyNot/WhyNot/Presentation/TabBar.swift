@@ -25,7 +25,7 @@ struct TabBarView: View {
                 .tabItem {
                     TabItem(tab: Tab.profile)
                 }.tag(2)
-        }.accentColor(Color.CustomColor.tabBarSymbol)
+        }.accentColor(Color.CustomColor.clicableColor)
     }
 }
 

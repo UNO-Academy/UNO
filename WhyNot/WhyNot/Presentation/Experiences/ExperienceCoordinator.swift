@@ -33,13 +33,14 @@ struct ExperienceCoordinator: View {
 
     var body: some View {
         NavigationView {
-            NavigationLink(destination: LoginView(), isActive: $mustGoToLoginScreen) {
+            VStack {
                 ExperiencesView(
                     mustGoToLoginScreen: $mustGoToLoginScreen,
                     getActiveUseCase: getActiveUseCase,
                     likeExperienceUseCase: likeExperienceUseCase,
                     completeExperience: completeExperienceUseCae
                 )
+                NavigationLink(destination: LoginView(), isActive: $mustGoToLoginScreen) { }
             }
         }
         .navigationBarTitleDisplayMode(.large)

@@ -172,7 +172,6 @@ struct ExperiencesView: View {
                     destination: ExperiencesDetailsView(
                     viewModel: ExperienceDetailsViewModel(experience: experience)
                     ), label: {})
-                    // fixedSize remove arrow indicator from navLink
                     .opacity(0.0)
                     .buttonStyle(PlainButtonStyle())
                 )
