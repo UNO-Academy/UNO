@@ -8,7 +8,7 @@
 import SwiftUI
 
 enum ExperiencesDetailsConstants {
-    static let safetySpace: CGFloat = 36
+    static let safetySpace: CGFloat = 16
     static let iconBtnSize: CGFloat = 22
     static let disclaimIconSize: CGFloat = 15
     static let categoryIconWidth: CGFloat = 224
