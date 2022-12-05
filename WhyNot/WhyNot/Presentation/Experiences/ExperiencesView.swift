@@ -8,46 +8,56 @@
 import SwiftUI
 
 struct ExperiencesView: View {
-    @ObservedObject var viewModel = ExperiencesViewModel(GetActiveExperiencesUseCaseImpl(
-        experienceRepository: ExperienceRepositoryImpl(),
-        userRepository: UserRepositoryImpl()
-    ))
+    @Binding var mustGoToLoginScreen: Bool
+    @ObservedObject var viewModel: ExperiencesViewModel
+
+    init(
+        mustGoToLoginScreen: Binding<Bool>,
+        getActiveUseCase: GetActiveExperiencesUseCase,
+        likeExperienceUseCase: LikeExperienceUseCase,
+        completeExperience: CompleteExperienceUseCase
+    ) {
+        self._mustGoToLoginScreen = mustGoToLoginScreen
+        viewModel = ExperiencesViewModel(
+            getActiveUseCase: getActiveUseCase,
+            likeExperienceUseCase: likeExperienceUseCase,
+            completeExperienceUseCase: completeExperience
+        )
+    }
 
     var body: some View {
-        NavigationView {
-            List {
-                topScreen
-                    .listRowSeparator(.hidden)
-                    .listRowInsets(EdgeInsets())
-                    .listRowBackground(Color.clear)
-                    .ignoresSafeArea()
-                activitiesList
-                topLeaved
-                    .listRowSeparator(.hidden)
-                    .listRowInsets(EdgeInsets())
-                    .listRowBackground(Color.clear)
-                    .ignoresSafeArea()
-                    .padding(.bottom, Space.space1x)
-                    .padding(.top, Space.space1x)
-                livedList
-                    .padding(.bottom, Space.space2x)
-            }
-            .listStyle(GroupedListStyle())
-            .padding(.horizontal, Space.space2x)
-            .navigationBarTitle(Text(String(localized: "experiencesScreenTitle")), displayMode: .large)
+        List {
+            topScreen
+                .listRowSeparator(.hidden)
+                .listRowInsets(EdgeInsets())
+                .listRowBackground(Color.clear)
+                .ignoresSafeArea()
+            activitiesList
+            topLeaved
+                .listRowSeparator(.hidden)
+                .listRowInsets(EdgeInsets())
+                .listRowBackground(Color.clear)
+                .ignoresSafeArea()
+                .padding(.bottom, Space.space1x)
+                .padding(.top, Space.space1x)
+            livedList
+                .padding(.bottom, Space.space2x)
         }
-        .navigationBarTitleDisplayMode(.large)
+        .listStyle(GroupedListStyle())
+        .padding(.horizontal, Space.space2x)
+        .navigationBarTitle(Text(String(localized: "experiencesScreenTitle")), displayMode: .large)
+        .alert(
+            String(localized: "userNotLoggedAlertTitle"),
+            isPresented: $viewModel.mustShowUserNotLoggedAlert
+        ) {
+            Button(String(localized: "LoginAlertButton")) {
+                self.mustGoToLoginScreen = true
+            }
+            Button(String(localized: "LaterAlertButton"), role: .cancel) { }
+        }
         .onAppear {
-            let appearance = UINavigationBarAppearance()
-            appearance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)
-            appearance.largeTitleTextAttributes = [
-                .foregroundColor: UIColor(Color.CustomColor.titleColor),
-                .font: UIFont(name: CustomFonts.SolidThemeFont, size: FontSize.largeTitle) ??
-                    .systemFont(ofSize: FontSize.largeTitle)
-            ]
-
-            UINavigationBar.appearance().standardAppearance = appearance
             UITableView.appearance().sectionHeaderHeight = Space.none
+            UITableView.appearance().sectionFooterHeight = Space.space1x
             UITableView.appearance().showsVerticalScrollIndicator = false
             UITableView.appearance().backgroundColor = .clear
         }
@@ -87,38 +97,34 @@ struct ExperiencesView: View {
         ForEach(viewModel.toDoExperiences) { experience in
             Section {
                 CardView(
-                    viewModel: CardViewModel(
-                        experience: experience
+                    viewModel: CardViewModel(experience: experience)
                 )
-            )
-            // TODO: remove navegation mcgavier fix when implementing correction in title page
-            .overlay(
-                NavigationLink(
-                destination: ExperiencesDetailsView(
-                viewModel: ExperienceDetailsViewModel(experience: experience)
-                ), label: {})
-                // fixedSize remove arrow indicator from navLink
-                .opacity(0.0)
-                .buttonStyle(PlainButtonStyle())
-            )
-            .swipeActions(edge: .leading) {
-                Button {
-                    print("call like function")
-                } label: {
-                    Label("likedActionLabel", systemImage: Icons.heartFill)
-                } .tint(Color.CustomColor.purpleSwipe)
-            }
-            .swipeActions(edge: .trailing) {
-                Button {
-                    print("call done function")
-                } label: {
-                    Label("doneActionLabel", systemImage: Icons.flagFill)
-                } .tint(Color.CustomColor.orangeSwipe)
-            }
-            .listRowSeparator(.hidden)
-            .listRowInsets(EdgeInsets())
-            .listRowBackground(Color.clear)
-            .ignoresSafeArea()
+                .overlay(
+                    NavigationLink(
+                        destination: ExperiencesDetailsView(viewModel: ExperienceDetailsViewModel(experience: experience)),
+                        label: {}
+                    )
+                    .opacity(0.0)
+                    .buttonStyle(PlainButtonStyle())
+                )
+                .swipeActions(edge: .leading) {
+                    Button {
+                        viewModel.likeExperience(experience)
+                    } label: {
+                        Label("likedActionLabel", systemImage: Icons.heartFill)
+                    } .tint(Color.CustomColor.purpleSwipe)
+                }
+                .swipeActions(edge: .trailing) {
+                    Button {
+                        viewModel.completeExperience(experience)
+                    } label: {
+                        Label("doneActionLabel", systemImage: Icons.flagFill)
+                    } .tint(Color.CustomColor.orangeSwipe)
+                }
+                .listRowSeparator(.hidden)
+                .listRowInsets(EdgeInsets())
+                .listRowBackground(Color.clear)
+                .ignoresSafeArea()
             }
         }
     }
@@ -166,7 +172,6 @@ struct ExperiencesView: View {
                     destination: ExperiencesDetailsView(
                     viewModel: ExperienceDetailsViewModel(experience: experience)
                     ), label: {})
-                    // fixedSize remove arrow indicator from navLink
                     .opacity(0.0)
                     .buttonStyle(PlainButtonStyle())
                 )
@@ -180,7 +185,21 @@ struct ExperiencesView: View {
 }
 
 struct ExperiencesView_Previews: PreviewProvider {
+    @State private var mustGoToLoginScreen: Bool = false
+
     static var previews: some View {
-        ExperiencesView()
+        ExperiencesView(
+            mustGoToLoginScreen: .constant(false),
+            getActiveUseCase: GetActiveExperiencesUseCaseImpl(
+                experienceRepository: ExperienceRepositoryImpl(),
+                userRepository: UserRepositoryImpl()
+            ),
+            likeExperienceUseCase: LikeExperienceUseCaseImpl(
+                userRepository: UserRepositoryImpl()
+            ),
+            completeExperience: CompleteExperienceUseCaseImpl(
+                userRepository: UserRepositoryImpl()
+            )
+        )
     }
 }

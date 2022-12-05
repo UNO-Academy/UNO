@@ -40,4 +40,14 @@ class UserRepositoryImpl: UserRepository {
         }
         return friends
     }
+
+    func likeExperience(_ experienceId: String) async throws {
+        guard let userId = self.user?.id else { throw OperationError.userNotLogged }
+        try await api.showInterest(userID: userId, experienceID: experienceId)
+    }
+
+    func completeExperience(_ experienceId: String) async throws {
+        guard let userId = self.user?.id else { throw OperationError.userNotLogged }
+        try await api.showInterest(userID: userId, experienceID: experienceId)
+    }
 }

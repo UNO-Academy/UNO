@@ -25,6 +25,9 @@
 		242B43FA2927F5AB00F0C3C1 /* UserRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B43F92927F5AB00F0C3C1 /* UserRepositoryImpl.swift */; };
 		242B43FE2928024C00F0C3C1 /* GetActiveExperiencesUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B43FD2928024C00F0C3C1 /* GetActiveExperiencesUseCaseTests.swift */; };
 		242B4405292D0DC400F0C3C1 /* CategoryIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B4404292D0DC400F0C3C1 /* CategoryIcon.swift */; };
+		244A58422938C49200A26D5E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244A58412938C49200A26D5E /* LoginView.swift */; };
+		244A58442938EA9100A26D5E /* CompleteExperienceUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244A58432938EA9100A26D5E /* CompleteExperienceUseCase.swift */; };
+		244A58462938EAA300A26D5E /* CompleteExperienceUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244A58452938EAA300A26D5E /* CompleteExperienceUseCaseImpl.swift */; };
 		248FD9FF2913E167003DA666 /* WhyNotApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8608FCD428F05AE1007FC0BA /* WhyNotApp.swift */; };
 		248FDA012925322F003DA666 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248FDA002925322F003DA666 /* Date+Extension.swift */; };
 		24B18B1628FD757A00EC9A3D /* MementoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B18B1528FD757A00EC9A3D /* MementoAPI.swift */; };
@@ -36,6 +39,10 @@
 		24BE3E392911618B00261E0A /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BE3E382911618B00261E0A /* TabBar.swift */; };
 		24C5CBE9292E3A250082515C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C5CBE8292E3A250082515C /* CardView.swift */; };
 		24C5CBEB292E3A950082515C /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C5CBEA292E3A950082515C /* CardViewModel.swift */; };
+		24F098D7293112A6007713AA /* LikeExperienceUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F098D6293112A6007713AA /* LikeExperienceUseCase.swift */; };
+		24F098D9293112E3007713AA /* LikeExperienceUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F098D8293112E3007713AA /* LikeExperienceUseCaseImpl.swift */; };
+		24F098DC2934F4F6007713AA /* OperationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F098DB2934F4F6007713AA /* OperationError.swift */; };
+		24F098DE2934FDB3007713AA /* ExperienceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F098DD2934FDB3007713AA /* ExperienceCoordinator.swift */; };
 		27483CC2293799CD005CE5DA /* ExpandedTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27483CC1293799CD005CE5DA /* ExpandedTagView.swift */; };
 		27C0716F291438570076D6C4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27C07171291438570076D6C4 /* Localizable.strings */; };
 		594A5FA82902CCBE00A1C10C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594A5FA72902CCBE00A1C10C /* User.swift */; };
@@ -108,6 +115,9 @@
 		242B43F92927F5AB00F0C3C1 /* UserRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryImpl.swift; sourceTree = "<group>"; };
 		242B43FD2928024C00F0C3C1 /* GetActiveExperiencesUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetActiveExperiencesUseCaseTests.swift; sourceTree = "<group>"; };
 		242B4404292D0DC400F0C3C1 /* CategoryIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryIcon.swift; sourceTree = "<group>"; };
+		244A58412938C49200A26D5E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		244A58432938EA9100A26D5E /* CompleteExperienceUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteExperienceUseCase.swift; sourceTree = "<group>"; };
+		244A58452938EAA300A26D5E /* CompleteExperienceUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteExperienceUseCaseImpl.swift; sourceTree = "<group>"; };
 		248FDA002925322F003DA666 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		24B18B1528FD757A00EC9A3D /* MementoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MementoAPI.swift; sourceTree = "<group>"; };
 		24B18B1728FD7BF400EC9A3D /* Memento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memento.swift; sourceTree = "<group>"; };
@@ -118,6 +128,10 @@
 		24BE3E382911618B00261E0A /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		24C5CBE8292E3A250082515C /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		24C5CBEA292E3A950082515C /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+		24F098D6293112A6007713AA /* LikeExperienceUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeExperienceUseCase.swift; sourceTree = "<group>"; };
+		24F098D8293112E3007713AA /* LikeExperienceUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeExperienceUseCaseImpl.swift; sourceTree = "<group>"; };
+		24F098DB2934F4F6007713AA /* OperationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationError.swift; sourceTree = "<group>"; };
+		24F098DD2934FDB3007713AA /* ExperienceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceCoordinator.swift; sourceTree = "<group>"; };
 		27483CC1293799CD005CE5DA /* ExpandedTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedTagView.swift; sourceTree = "<group>"; };
 		27C07170291438570076D6C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		27C071722914385E0076D6C4 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -253,6 +267,7 @@
 		242B43EE2927ED2800F0C3C1 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				24F098DA2934F4E4007713AA /* Error */,
 				24202EA028F846E100141CCB /* Model */,
 				242B43EF2927ED2E00F0C3C1 /* UseCases */,
 			);
@@ -264,6 +279,10 @@
 			children = (
 				242B43F12927ED5B00F0C3C1 /* GetActiveExperiencesUseCase.swift */,
 				242B43F42927F24000F0C3C1 /* GetActiveExperiencesUseCaseImpl.swift */,
+				24F098D6293112A6007713AA /* LikeExperienceUseCase.swift */,
+				24F098D8293112E3007713AA /* LikeExperienceUseCaseImpl.swift */,
+				244A58432938EA9100A26D5E /* CompleteExperienceUseCase.swift */,
+				244A58452938EAA300A26D5E /* CompleteExperienceUseCaseImpl.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -290,6 +309,7 @@
 			children = (
 				24BE3E2E291002F400261E0A /* ExperiencesView.swift */,
 				A3CD5CE8291A9EFD003895C1 /* ExperiencesViewModel.swift */,
+				24F098DD2934FDB3007713AA /* ExperienceCoordinator.swift */,
 			);
 			path = Experiences;
 			sourceTree = "<group>";
@@ -298,6 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				24BE3E3629101A9500261E0A /* ProfileView.swift */,
+				244A58412938C49200A26D5E /* LoginView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -317,6 +338,14 @@
 				24C5CBEA292E3A950082515C /* CardViewModel.swift */,
 			);
 			path = Card;
+			sourceTree = "<group>";
+		};
+		24F098DA2934F4E4007713AA /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				24F098DB2934F4F6007713AA /* OperationError.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 		276E91717FC3D30EC41A898D /* Pods */ = {
@@ -780,6 +809,7 @@
 				594A5FA82902CCBE00A1C10C /* User.swift in Sources */,
 				24202EA228F846F900141CCB /* Experience.swift in Sources */,
 				86048456290FF4BB0055AF30 /* FontSize.swift in Sources */,
+				24F098D7293112A6007713AA /* LikeExperienceUseCase.swift in Sources */,
 				242B43F52927F24000F0C3C1 /* GetActiveExperiencesUseCaseImpl.swift in Sources */,
 				A3CD5CE9291A9EFD003895C1 /* ExperiencesViewModel.swift in Sources */,
 				86BA9D1129096A3800C1F330 /* ContentView.swift in Sources */,
@@ -788,9 +818,11 @@
 				86815CF62913E77A00C41522 /* PersonImageCollection.swift in Sources */,
 				86048454290FF3D00055AF30 /* CustomFonts.swift in Sources */,
 				863A8F01290C10A0000DBA1B /* Colors.swift in Sources */,
+				24F098D9293112E3007713AA /* LikeExperienceUseCaseImpl.swift in Sources */,
 				86F5A40F291A8CCA003EEC8A /* PersonImage.swift in Sources */,
 				86DD0AD7293533E00019E748 /* UserListItemViewModel.swift in Sources */,
 				24202EA828F847E100141CCB /* ExperienceAPI.swift in Sources */,
+				244A58462938EAA300A26D5E /* CompleteExperienceUseCaseImpl.swift in Sources */,
 				24BE3E2F291002F400261E0A /* ExperiencesView.swift in Sources */,
 				24B18B1628FD757A00EC9A3D /* MementoAPI.swift in Sources */,
 				27483CC2293799CD005CE5DA /* ExpandedTagView.swift in Sources */,
@@ -810,6 +842,7 @@
 				EE0D073429361EB700960224 /* DoneBtnView.swift in Sources */,
 				862C53D32906AE7200068528 /* StorageServices.swift in Sources */,
 				59B892CC28FD77DF0045EAA9 /* DocumentSnapshot+Extension.swift in Sources */,
+				244A58442938EA9100A26D5E /* CompleteExperienceUseCase.swift in Sources */,
 				242B43F22927ED5B00F0C3C1 /* GetActiveExperiencesUseCase.swift in Sources */,
 				242B43FA2927F5AB00F0C3C1 /* UserRepositoryImpl.swift in Sources */,
 				24BE3E3729101A9500261E0A /* ProfileView.swift in Sources */,
@@ -818,18 +851,21 @@
 				242B43EC2927AE2A00F0C3C1 /* TagView.swift in Sources */,
 				24202EA428F8471300141CCB /* ExperienceRepositoryImpl.swift in Sources */,
 				24BE3E392911618B00261E0A /* TabBar.swift in Sources */,
+				244A58422938C49200A26D5E /* LoginView.swift in Sources */,
 				2424527428FEE899006E8629 /* Encodable+Extension.swift in Sources */,
 				59AC84A428F609BA00EB3A9A /* CRUDServices.swift in Sources */,
 				59B892CE28FD7FB60045EAA9 /* CollectionNames.swift in Sources */,
 				EE0D073E2936296B00960224 /* ExperiencesDetailsView.swift in Sources */,
 				EE0D073729361EB700960224 /* LikeBtnView.swift in Sources */,
 				242B43F82927F56500F0C3C1 /* UserRepository.swift in Sources */,
+				24F098DC2934F4F6007713AA /* OperationError.swift in Sources */,
 				EE0D073529361EB700960224 /* DoneBtnViewModel.swift in Sources */,
 				242B4405292D0DC400F0C3C1 /* CategoryIcon.swift in Sources */,
 				59778DB6291589E5008748E6 /* AuthenticationManager.swift in Sources */,
 				242B43E72926832100F0C3C1 /* ExperienceRepository.swift in Sources */,
 				594A5FAA2902CDB700A1C10C /* UserAPI.swift in Sources */,
 				24C5CBEB292E3A950082515C /* CardViewModel.swift in Sources */,
+				24F098DE2934FDB3007713AA /* ExperienceCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

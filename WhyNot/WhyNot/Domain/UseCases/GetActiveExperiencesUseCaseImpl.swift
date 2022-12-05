@@ -8,6 +8,7 @@
 import Foundation
 
 class GetActiveExperiencesUseCaseImpl: GetActiveExperiencesUseCase {
+
     let experienceRepository: ExperienceRepository
     let userRepository: UserRepository
 
@@ -17,7 +18,7 @@ class GetActiveExperiencesUseCaseImpl: GetActiveExperiencesUseCase {
     }
 
     func execute() async throws -> ActiveExperiences {
-        var list = try await experienceRepository.fetchExperiences()
+        let list = try await experienceRepository.fetchExperiences()
 
         for i in 0 ..< list.count {
             list[i].friendsInterested = try await userRepository.getFriendsInteretedInExperience(list[i].id!)

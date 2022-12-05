@@ -18,16 +18,48 @@ class ExperiencesViewModel: ObservableObject {
     @Published var mustShowSpaceLeft: Bool = false
     @Published var mustShowAllDone: Bool = false
 
-    let getActiveExperiences: GetActiveExperiencesUseCase
+    @Published var mustShowUserNotLoggedAlert: Bool = false
 
-    init(_ useCase: GetActiveExperiencesUseCase, completion: @escaping (() -> Void) = {}) {
-        self.getActiveExperiences = useCase
+    let getActiveExperiences: GetActiveExperiencesUseCase
+    let likeExperienceUseCase: LikeExperienceUseCase
+
+    init(
+        getActiveUseCase: GetActiveExperiencesUseCase,
+        likeExperienceUseCase: LikeExperienceUseCase,
+        completeExperienceUseCase: CompleteExperienceUseCase,
+        completion: @escaping (() -> Void) = {}
+    ) {
+        self.getActiveExperiences = getActiveUseCase
+        self.likeExperienceUseCase = likeExperienceUseCase
         loadExperiences(completion)
     }
 
-//    func likeExperience(_ experience: Experience) {
-//        
-//    }
+    func likeExperience(_ experience: Experience) {
+        Task {
+            do {
+                try await likeExperienceUseCase.execute(experience)
+            } catch {
+                DispatchQueue.main.async {
+                    self.mustShowUserNotLoggedAlert = true
+                }
+            }
+        }
+    }
+
+    func completeExperience(_ experience: Experience) {
+        Task {
+            do {
+                try await likeExperienceUseCase.execute(experience)
+                guard let index = toDoExperiences.firstIndex(of: experience) else { return }
+                toDoExperiences.remove(at: index)
+                doneExperiences.insert(experience, at: 0)
+            } catch {
+                DispatchQueue.main.async {
+                    self.mustShowUserNotLoggedAlert = true
+                }
+            }
+        }
+    }
 
     private func loadExperiences(_ completion: @escaping () -> Void) {
         Task {

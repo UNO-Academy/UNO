@@ -52,13 +52,13 @@ class UserListItemViewModel: ObservableObject {
             switch userStatus {
             case .request:
                 print("a")
-                //TODO: Request frindShipInDB
+                // TODO: Request frindShipInDB
             case .sent:
                 print("a")
-                //TODO: Sent
+                // TODO: Sent
             case .remove:
                 print("a")
-                //TODO: Remove from friends
+                // TODO: Remove from friends
             }
         }
     }

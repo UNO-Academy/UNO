@@ -9,7 +9,8 @@ import Foundation
 import FirebaseFirestoreSwift
 import FirebaseFirestore
 
-struct Experience: Codable, Identifiable {
+class Experience: Codable, Identifiable, Equatable {
+
     @DocumentID var id: String?
     let category: String
     let cost: Int
@@ -20,6 +21,35 @@ struct Experience: Codable, Identifiable {
     let isActive: Bool
     let name: String
     var friendsInterested: [User]?
+    var wasLiked: Bool? = false
+
+    init(
+        category: String,
+        cost: Int,
+        description: String,
+        duration: Int,
+        effort: Int,
+        expirationDate: Timestamp,
+        isActive: Bool,
+        name: String,
+        friendsInterested: [User],
+        wasLiked: Bool
+    ) {
+        self.category = category
+        self.cost = cost
+        self.description = description
+        self.duration = duration
+        self.effort = effort
+        self.expirationDate = expirationDate
+        self.isActive = isActive
+        self.name = name
+        self.friendsInterested = friendsInterested
+        self.wasLiked = wasLiked
+    }
+
+    static func == (lhs: Experience, rhs: Experience) -> Bool {
+        lhs.id == rhs.id
+    }
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -33,15 +63,4 @@ struct Experience: Codable, Identifiable {
         case name
         case friendsInterested
     }
-}
-
-enum ExperienceFields: String {
-    case name
-    case description
-    case effort
-    case duration
-    case cost
-    case category
-    case isActive
-    case expirationDate
 }

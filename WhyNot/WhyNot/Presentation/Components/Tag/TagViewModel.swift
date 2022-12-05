@@ -86,7 +86,6 @@ enum TagType {
 }
 
 enum TagValue: String {
-
     case effort1 = "effort1Tag"
     case effort2 = "effort2Tag"
     case effort3 = "effort3Tag"

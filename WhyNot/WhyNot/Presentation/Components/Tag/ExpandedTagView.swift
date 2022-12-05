@@ -74,7 +74,9 @@ struct ExpandedTagsViewPreview: PreviewProvider {
             effort: 1,
             expirationDate: Timestamp(date: Date()),
             isActive: true,
-            name: "Teste"
+            name: "Teste",
+            friendsInterested: [],
+            wasLiked: false
         ))
     }
 }
